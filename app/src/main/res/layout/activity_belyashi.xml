@@ -516,20 +516,6 @@
                 android:layout_marginBottom="18dp"
                 android:text="Если для жарки беляшей использовать керамическую сковороду (с антипригарным покрытием), то беляши не будут купаться в излишнем количестве растительного масла."
                 android:textSize="20sp" />
-
-                <Button
-                    android:id="@+id/buttonStart"
-                    android:layout_width="300dp"
-                    android:layout_height="60dp"
-                    android:textColor="@color/white"
-                    android:backgroundTint="@color/orange"
-                    android:text="В начало"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="15dp"/>
-
         </LinearLayout>
 
         </LinearLayout>
