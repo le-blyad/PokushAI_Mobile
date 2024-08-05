@@ -20,6 +20,7 @@ class Belyashi : AppCompatActivity() {
 
         val layout: LinearLayout = findViewById(R.id.allSteps)
 
+
 // Проверяем текущую тему приложения
         val currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
         if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {

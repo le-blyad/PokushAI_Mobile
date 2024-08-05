@@ -26,6 +26,7 @@ class AllRecipes : AppCompatActivity() {
             imageButtones.add(imageButton)
         }
 
+
         val textViewes = mutableListOf<TextView>()
         for (i in 0..49) {
             val textViewId = resources.getIdentifier("textView$i", "id", packageName)

@@ -17,7 +17,6 @@ class cutlets : AppCompatActivity() {
         setContentView(R.layout.activity_cutlets)
 
         //Ингредиенты
-
         val portions = 5
 
         val pointOne = 50f

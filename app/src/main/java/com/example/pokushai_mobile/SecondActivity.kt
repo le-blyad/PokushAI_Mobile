@@ -13,7 +13,6 @@ import java.io.FileInputStream
 import java.nio.MappedByteBuffer
 import java.nio.channels.FileChannel
 
-
 class SecondActivity : AppCompatActivity() {
 
     private lateinit var interpreter: Interpreter
