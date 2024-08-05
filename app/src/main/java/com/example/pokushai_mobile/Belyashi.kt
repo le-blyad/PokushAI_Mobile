@@ -42,5 +42,10 @@ class Belyashi : AppCompatActivity() {
         val textViewCarbohydrates = findViewById<TextView>(R.id.textViewCarbohydrates)
         textViewCarbohydrates.text = "Углеводы\n110 грамм"
 
+        val buttonStart = findViewById<Button>(R.id.buttonStart)
+        buttonStart.setOnClickListener {
+            val intent = Intent(this, SecondActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
