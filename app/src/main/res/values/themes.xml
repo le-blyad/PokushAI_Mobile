@@ -1,9 +1,27 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.PokushAI_Mobile" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:windowBackground">@color/white</item>
+        <item name="colorPrimaryDark">@color/yelow2</item>
+        <item name="android:colorPrimary">@color/yelow</item>
+        <item name="colorAccent">@color/red</item>
     </style>
 
-    <style name="Theme.PokushAI_Mobile" parent="Base.Theme.PokushAI_Mobile" />
+    <style name="MyRadioButton" parent="Theme.AppCompat.Light">
+        <item name="colorControlActivated">#EB3F14</item>
+    </style>
+
+    <style name="MySearchViewStyle"
+        parent="Widget.AppCompat.SearchView">
+        <item name="android:editTextColor">@color/black</item>
+    </style>
+
+    <style name="MyCustomSwitch" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="Theme.Holost20" parent="Base.Theme.PokushAI_Mobile" />
 </resources>
