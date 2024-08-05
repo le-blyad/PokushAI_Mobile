@@ -11,11 +11,12 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/main_image"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absouteY="0dp"
         android:scaleType="fitXY"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@drawable/main_image"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absouteY="0dp" />
 
 
     <TextView
@@ -39,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginBottom="10dp"
-        android:text="beta 4.0"
+        android:text="beta 5.0"
         android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -49,29 +50,14 @@
         android:id="@+id/textView1"
         android:layout_width="235dp"
         android:layout_height="70dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="76dp"
         android:gravity="right"
         android:text="Отличные блюда из подручных продуктов"
         android:textSize="22dp"
-        app:layout_constraintBottom_toTopOf="@+id/startButton"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintHorizontal_bias="0.909"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/startButton"
-        android:layout_width="203dp"
-        android:layout_height="74dp"
-        android:layout_marginBottom="52dp"
-        android:backgroundTint="@color/orange"
-        android:text="Начать"
-        android:textColor="@color/white"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
