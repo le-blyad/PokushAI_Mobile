@@ -2,4 +2,13 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="red">#EB3F14</color>
+    <color name="yelow">#FAC22C</color>
+    <color name="yelow2">#E6B329</color>
+    <color name="orange">#F28303</color>
+    <color name ="nutritionalValueDark">#393939</color>
+    <color name ="nutritionalValueLight">#DDDDDD</color>
+    <color name ="timerBackgroundLight">#BFBFBF</color>
+    <color name ="timerBackgroundDark">#555555</color>
+
 </resources>
