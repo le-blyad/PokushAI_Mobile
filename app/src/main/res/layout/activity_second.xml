@@ -89,6 +89,7 @@
             android:nestedScrollingEnabled="true"
             android:scrollbars="none">
 
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -601,9 +602,9 @@
             app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+        <!--
 
-
-        <TextView
+            <TextView
             android:id="@+id/textView0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -874,41 +875,40 @@
             </LinearLayout>
 
         </HorizontalScrollView>
+            -->
+    <ImageButton
+        android:id="@+id/buttonPremium0"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:padding="10dp"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"/>
+    <TextView
+        android:id="@+id/textViewPremium0"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="-80dp"
+        android:text="Хотите больше возможностей?"
+        android:textStyle="bold"
+        android:gravity="right"
+        android:layout_marginBottom="50dp"
+        android:textSize="20dp"/>
 
-        <ImageButton
-            android:id="@+id/buttonPremium0"
-            android:layout_width="350dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="15dp"
-            android:padding="10dp"
-            android:text="Картофельное пюре"
-            android:textColor="@android:color/white"
-            android:textSize="16sp"/>
-        <TextView
-            android:id="@+id/textViewPremium0"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="-80dp"
-            android:text="Хотите больше возможностей?"
-            android:textStyle="bold"
-            android:gravity="right"
-            android:layout_marginBottom="50dp"
-            android:textSize="20dp"/>
+    <TextView
+        android:id="@+id/textViewPremium1"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="-50dp"
+        android:text="Оформите премиум!"
+        android:gravity="right"
+        android:layout_marginBottom="40dp"
+        android:textSize="20dp"/>
 
-        <TextView
-            android:id="@+id/textViewPremium1"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="-50dp"
-            android:text="Оформите премиум!"
-            android:gravity="right"
-            android:layout_marginBottom="40dp"
-            android:textSize="20dp"/>
-
-
+        <!--
 
         <TextView
             android:id="@+id/textView3"
@@ -1149,8 +1149,8 @@
 
             </LinearLayout>
         </HorizontalScrollView>
-
+    -->
     </LinearLayout>
     </ScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
