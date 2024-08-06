@@ -85,7 +85,7 @@
         <ScrollView
             android:id="@+id/scrollViewProducts"
             android:layout_width="match_parent"
-            android:layout_height="275dp"
+            android:layout_height="400dp"
             android:nestedScrollingEnabled="true"
             android:scrollbars="none">
 
@@ -121,10 +121,12 @@
             android:text="Бекон"
             style="@style/MyCustomSwitch"/>
 
-        <Switch
-            android:id="@+id/switch6"
-            android:text="Ваниль"
-            style="@style/MyCustomSwitch"/>
+                <Switch
+                    android:id="@+id/switch6"
+                    style="@style/MyCustomSwitch"
+                    android:layout_width="303dp"
+                    android:layout_height="57dp"
+                    android:text="Ваниль" />
 
         <Switch
             android:id="@+id/switch7"

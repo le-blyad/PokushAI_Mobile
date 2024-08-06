@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.LinearLayout
 import android.content.res.Configuration
@@ -13,7 +14,7 @@ class Belyashi : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_belyashi)
 
-        val buttonBack = findViewById<Button>(R.id.buttonBack)
+        val buttonBack = findViewById<ImageButton>(R.id.buttonBack)
         buttonBack.setOnClickListener {
             onBackPressed()
         }

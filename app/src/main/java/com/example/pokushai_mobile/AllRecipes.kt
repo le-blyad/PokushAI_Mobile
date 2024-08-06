@@ -3,21 +3,16 @@ package com.example.pokushai_mobile
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
-import org.tensorflow.lite.Interpreter
-import java.io.FileInputStream
-import java.nio.MappedByteBuffer
-import java.nio.channels.FileChannel
 
 class AllRecipes : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_all_recipes)
 
-        val buttonBack2 = findViewById<Button>(R.id.buttonBack2)
+        val buttonBack2 = findViewById<ImageButton>(R.id.buttonBack2)
 
         val imageButtones = mutableListOf<ImageButton>()
         for (i in 0..49) {

@@ -45,11 +45,11 @@ class SecondActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val imageButtonCutlets = findViewById<ImageButton>(R.id.imageButtonCutlets)
-        imageButtonCutlets.setOnClickListener {
-            val intent = Intent(this, cutlets::class.java)
-            startActivity(intent)
-        }
+        //val imageButtonCutlets = findViewById<ImageButton>(R.id.imageButtonCutlets)
+        //imageButtonCutlets.setOnClickListener {
+        //    val intent = Intent(this, cutlets::class.java)
+        //    startActivity(intent)
+        //}
 
 
         val modelFile = assets.openFd("model.tflite")

@@ -28,7 +28,7 @@ class ThirdActivity : AppCompatActivity() {
             fileChannel.map(FileChannel.MapMode.READ_ONLY, startOffset, length)
         interpreter = Interpreter(mappedByteBuffer)
         val switchValues = intent.getBooleanArrayExtra("switchValues")
-        val buttonBack2 = findViewById<Button>(R.id.buttonBack2)
+        val buttonBack2 = findViewById<ImageButton>(R.id.buttonBack2)
         val result: FloatArray? = intent.getFloatArrayExtra("result")
         val pizda: Float? = result?.maxOrNull()
         var maxIndex = -1

@@ -106,7 +106,7 @@ class cutlets : AppCompatActivity() {
 
         //Кнопка назад
 
-        val buttonBack = findViewById<Button>(R.id.buttonBack)
+        val buttonBack = findViewById<ImageButton>(R.id.buttonBack)
     buttonBack.setOnClickListener {
         onBackPressed()
     }
