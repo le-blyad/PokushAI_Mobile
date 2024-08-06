@@ -25,18 +25,14 @@
                 android:layout_height="50dp"
                 android:background="@color/yelow" />
 
-            <Button
-                android:id="@+id/buttonBack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <ImageButton
+                android:id="@+id/buttonBack2"
+                android:layout_width="63dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="-50dp"
-                android:backgroundTint="@color/orange"
-                android:text="назад"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteX="6dp"
-                tools:layout_editor_absoluteY="6dp"
-                tools:ignore="HardcodedText" />
+                android:backgroundTint="@color/yelow"
+                android:src="@drawable/back"
+                android:scaleType="centerCrop"/>
 
             <View
                 android:id="@+id/divider"
