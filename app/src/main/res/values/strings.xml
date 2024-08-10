@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">PokushAI_Mobile</string>
-
+    <string name="underlined_text"><u>Создать аккаунт</u></string>
 </resources>
