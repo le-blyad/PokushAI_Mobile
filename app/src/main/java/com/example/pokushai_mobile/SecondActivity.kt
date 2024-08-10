@@ -45,6 +45,12 @@ class SecondActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val logIn = findViewById<Button>(R.id.logIn)
+        logIn.setOnClickListener {
+            val intent = Intent(this, LogIn::class.java)
+            startActivity(intent)
+        }
+
         //val imageButtonCutlets = findViewById<ImageButton>(R.id.imageButtonCutlets)
         //imageButtonCutlets.setOnClickListener {
         //    val intent = Intent(this, cutlets::class.java)
