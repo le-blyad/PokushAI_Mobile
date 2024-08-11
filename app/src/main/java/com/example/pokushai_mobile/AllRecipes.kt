@@ -31,16 +31,19 @@ class AllRecipes : AppCompatActivity() {
 
         buttonBack2.setOnClickListener {
             onBackPressed()
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 
         imageButtones[0].setOnClickListener {
             val intent = Intent(this, Belyashi::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 
         imageButtones[10].setOnClickListener {
             val intent = Intent(this, cutlets::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 
     }

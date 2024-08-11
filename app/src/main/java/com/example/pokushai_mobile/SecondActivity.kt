@@ -43,12 +43,14 @@ class SecondActivity : AppCompatActivity() {
         allRecipes.setOnClickListener {
             val intent = Intent(this, AllRecipes::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 
         val logIn = findViewById<Button>(R.id.logIn)
         logIn.setOnClickListener {
             val intent = Intent(this, LogIn::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 
         //val imageButtonCutlets = findViewById<ImageButton>(R.id.imageButtonCutlets)
@@ -97,7 +99,7 @@ class SecondActivity : AppCompatActivity() {
             intent.putExtra("switchValues", switchValues.toBooleanArray())
             intent.putExtra("result", result)
             startActivity(intent)
-
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 
         filterSwitches(null)

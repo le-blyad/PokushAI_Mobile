@@ -44,11 +44,11 @@
 
     <EditText
         android:id="@+id/inputFieldLogin"
-        android:layout_width="250dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/searchviewcastom"
-        android:hint="Введите логин"
+        android:hint="Логин"
         android:inputType="text"
         android:paddingStart="13dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,11 +58,11 @@
 
     <EditText
         android:id="@+id/inputFieldNumberPhone"
-        android:layout_width="250dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="5dp"
         android:background="@drawable/searchviewcastom"
-        android:hint="Введите номер телефона"
+        android:hint="Номер телефона"
         android:inputType="phone"
         android:paddingStart="13dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,45 +71,34 @@
 
     <EditText
         android:id="@+id/inputFieldEmailAddress"
-        android:layout_width="250dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="5dp"
         android:background="@drawable/searchviewcastom"
-        android:hint="Введите E-mail"
+        android:hint="E-mail (необязательно)"
         android:inputType="textEmailAddress"
         android:paddingStart="13dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputFieldNumberPhoneError" />
 
-    <TextView
-        android:id="@+id/textView50"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="*необязательное поле"
-        android:textSize="16dp"
+    <EditText
+        android:id="@+id/inputFieldPassword"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/searchviewcastom"
+        android:hint="Пароль"
+        android:inputType="textPassword"
+        android:paddingStart="13dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.331"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputFieldEmailAddressError" />
 
     <EditText
-        android:id="@+id/inputFieldPassword"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/searchviewcastom"
-        android:hint="Введите пароль"
-        android:inputType="textPassword"
-        android:paddingStart="13dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView50" />
-
-    <EditText
         android:id="@+id/inputFieldPasswordRepeat"
-        android:layout_width="250dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="5dp"
         android:background="@drawable/searchviewcastom"
@@ -137,47 +126,52 @@
 
     <TextView
         android:id="@+id/inputFieldLoginError"
-        android:layout_width="250dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:gravity="start"
+        android:textColor="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.550"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputFieldLogin" />
 
     <TextView
         android:id="@+id/inputFieldNumberPhoneError"
-        android:layout_width="250dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:textColor="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.550"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputFieldNumberPhone" />
 
     <TextView
         android:id="@+id/inputFieldEmailAddressError"
-        android:layout_width="250dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:textColor="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.550"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputFieldEmailAddress" />
 
     <TextView
         android:id="@+id/inputFieldPasswordError"
-        android:layout_width="250dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:textColor="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.550"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputFieldPassword" />
 
     <TextView
         android:id="@+id/inputFieldPasswordRepeatError"
-        android:layout_width="250dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:textColor="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.550"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputFieldPasswordRepeat" />
 

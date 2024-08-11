@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, SecondActivity::class.java))
             // Закрываем SplashActivity, чтобы пользователь не мог вернуться к ней
             finish()
-        }, 500) // Задержка в миллисекундах
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+        }, 300) // Задержка в миллисекундах
     }
 }

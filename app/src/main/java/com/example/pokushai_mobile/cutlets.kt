@@ -109,6 +109,7 @@ class cutlets : AppCompatActivity() {
         val buttonBack = findViewById<ImageButton>(R.id.buttonBack)
     buttonBack.setOnClickListener {
         onBackPressed()
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
     }
 
     val layout: LinearLayout = findViewById(R.id.allSteps)
