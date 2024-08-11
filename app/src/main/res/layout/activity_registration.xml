@@ -33,7 +33,7 @@
         android:id="@+id/textViewSearchProducts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="140dp"
         android:text="Создание аккаунта"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -42,39 +42,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
-    <Button
-        android:id="@+id/buttonLogIn"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="15dp"
-        android:backgroundTint="@color/orange"
-        android:text="Зарегистрироваться"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPasswordSecond" />
-
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/inputFieldLogin"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/searchviewcastom"
-        android:inputType="textMultiLine"
         android:hint="Введите логин"
+        android:inputType="textMultiLine"
         android:paddingStart="13dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewSearchProducts" />
 
-
     <EditText
-        android:id="@+id/editTextPhone"
+        android:id="@+id/inputFieldNumberPhone"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginTop="5dp"
@@ -84,10 +67,10 @@
         android:paddingStart="13dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintTop_toBottomOf="@+id/inputFieldLoginError" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/inputFieldEmailAddress"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginTop="5dp"
@@ -96,27 +79,26 @@
         android:inputType="textEmailAddress"
         android:paddingStart="13dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
+        app:layout_constraintTop_toBottomOf="@+id/inputFieldNumberPhoneError" />
 
     <TextView
         android:id="@+id/textView50"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="4dp"
         android:text="*необязательное поле"
         android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.331"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/inputFieldEmailAddressError" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/inputFieldPassword"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/searchviewcastom"
         android:hint="Введите пароль"
         android:inputType="textPassword"
@@ -126,7 +108,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView50" />
 
     <EditText
-        android:id="@+id/editTextTextPasswordSecond"
+        android:id="@+id/inputFieldPasswordRepeat"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginTop="5dp"
@@ -136,8 +118,68 @@
         android:paddingStart="13dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/inputFieldPasswordError" />
 
+    <Button
+        android:id="@+id/buttonRegistration"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/orange"
+        android:text="Зарегистрироваться"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputFieldPasswordRepeatError" />
+
+    <TextView
+        android:id="@+id/inputFieldLoginError"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputFieldLogin" />
+
+    <TextView
+        android:id="@+id/inputFieldNumberPhoneError"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputFieldNumberPhone" />
+
+    <TextView
+        android:id="@+id/inputFieldEmailAddressError"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputFieldEmailAddress" />
+
+    <TextView
+        android:id="@+id/inputFieldPasswordError"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputFieldPassword" />
+
+    <TextView
+        android:id="@+id/inputFieldPasswordRepeatError"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputFieldPasswordRepeat" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
