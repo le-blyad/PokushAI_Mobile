@@ -22,9 +22,6 @@
             android:name=".Registration"
             android:exported="false" />
         <activity
-            android:name=".logOut"
-            android:exported="false" />
-        <activity
             android:name=".LogIn"
             android:exported="false" />
         <activity
