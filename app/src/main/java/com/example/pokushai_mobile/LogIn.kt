@@ -18,7 +18,7 @@ class LogIn : AppCompatActivity() {
 
         val logOut = findViewById<TextView>(R.id.logOut)
         logOut.setOnClickListener {
-            val intent = Intent(this, LogOut::class.java)
+            val intent = Intent(this, Registration::class.java)
             startActivity(intent)
         }
     }

@@ -19,7 +19,7 @@
         android:theme="@style/Theme.PokushAI_Mobile"
         tools:targetApi="31">
         <activity
-            android:name=".LogOut"
+            android:name=".Registration"
             android:exported="false" />
         <activity
             android:name=".logOut"
