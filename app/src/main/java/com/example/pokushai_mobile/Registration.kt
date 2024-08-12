@@ -1,5 +1,6 @@
 package com.example.pokushai_mobile
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -8,11 +9,18 @@ import android.widget.ImageButton
 import android.widget.TextView
 import android.text.Editable
 import android.text.TextWatcher
+import android.widget.Toast
+
 
 class Registration : AppCompatActivity() {
+
+    private lateinit var userDAO: UserDAO
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration)
+
+        userDAO = UserDAO(this)
 
         val inputFieldLogin = findViewById<EditText>(R.id.inputFieldLogin)
         val inputFieldLoginError = findViewById<TextView>(R.id.inputFieldLoginError)
@@ -33,7 +41,6 @@ class Registration : AppCompatActivity() {
         val inputFieldPasswordRepeat = findViewById<EditText>(R.id.inputFieldPasswordRepeat)
         val inputFieldPasswordRepeatError = findViewById<TextView>(R.id.inputFieldPasswordRepeatError)
         inputFieldPasswordRepeatError.visibility = TextView.GONE
-
 
         inputFieldNumberPhone.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
@@ -105,6 +112,33 @@ class Registration : AppCompatActivity() {
             } else {
                 inputFieldPasswordRepeatError.visibility = TextView.GONE
             }
+
+            if (inputFieldLoginError.visibility == TextView.GONE &&
+                inputFieldNumberPhoneError.visibility == TextView.GONE &&
+                inputFieldEmailAddressError.visibility == TextView.GONE &&
+                inputFieldPasswordError.visibility == TextView.GONE &&
+                inputFieldPasswordRepeatError.visibility == TextView.GONE) {
+
+                val username = inputFieldLogin.text.toString()
+                val password = inputFieldPassword.text.toString()
+                val number = inputFieldNumberPhone.text.toString()
+                val email = inputFieldEmailAddress.text.toString()
+                val result = userDAO.addUser(username, password, number, email)
+                if (result != -1L) {
+                    Toast.makeText(this, "Успешно зарегистрирован!", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, "Ошибка в регистрации!", Toast.LENGTH_SHORT).show()
+                }
+                val isValid = userDAO.checkUser(username, password)
+                if (isValid) {
+                    userDAO.setUserLoggedIn(username) // Установка пользователя как вошедшего
+                    val intent = Intent(this, SecondActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+                finish()
+            }
+
         }
 
         val buttonBack = findViewById<ImageButton>(R.id.buttonBack)
@@ -116,7 +150,7 @@ class Registration : AppCompatActivity() {
 
     private fun isValidEmail(email: String): Boolean {
         // Регулярное выражение для проверки формата электронной почты
-        val emailRegex = "^[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$".toRegex()
+        val emailRegex = "^[A-Za-z0-9._-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$".toRegex()
         return emailRegex.matches(email)
     }
 
@@ -124,7 +158,7 @@ class Registration : AppCompatActivity() {
         val cleaned = phoneNumber.replace(Regex("[^0-9]"), "") // Удаляем все нецифровые символы
 
         return if ((cleaned.length == 11 && cleaned.startsWith("7")) || (cleaned.length == 11 && cleaned.startsWith("8"))) {
-            "+7 (${cleaned.substring(1, 4)}) ${cleaned.substring(4, 7)}-${cleaned.substring(7, 9)}-${cleaned.substring(9, 11)}"
+            "+7 (${cleaned.substring(1, 4)})-${cleaned.substring(4, 7)}-${cleaned.substring(7, 9)}-${cleaned.substring(9, 11)}"
         } else {
             phoneNumber // Возвращаем исходный номер, если он некорректен
         }
