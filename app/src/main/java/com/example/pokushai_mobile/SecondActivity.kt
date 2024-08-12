@@ -7,7 +7,6 @@ import android.widget.SearchView
 import android.view.View
 import android.content.Intent
 import android.widget.Button
-import android.widget.ImageButton
 import org.tensorflow.lite.Interpreter
 import java.io.FileInputStream
 import java.nio.MappedByteBuffer
@@ -17,11 +16,13 @@ class SecondActivity : AppCompatActivity() {
 
     private lateinit var interpreter: Interpreter
     private val switches = mutableListOf<Switch>()
-
+    private lateinit var userDAO: UserDAO
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
+
+        userDAO = UserDAO(this)
 
         val searchView = findViewById<SearchView>(R.id.searchView)
         searchView.setOnClickListener {
@@ -52,6 +53,24 @@ class SecondActivity : AppCompatActivity() {
             startActivity(intent)
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
+
+        val user = findViewById<Button>(R.id.user)
+        user.setOnClickListener {
+            val intent = Intent(this, User::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+        }
+
+
+        val loggedInUser = userDAO.getLoggedInUser()
+        if (loggedInUser == null) {
+            logIn.visibility = Button.VISIBLE
+            user.visibility = Button.INVISIBLE
+        } else {
+            logIn.visibility = Button.INVISIBLE
+            user.visibility = Button.VISIBLE
+        }
+
 
         //val imageButtonCutlets = findViewById<ImageButton>(R.id.imageButtonCutlets)
         //imageButtonCutlets.setOnClickListener {
