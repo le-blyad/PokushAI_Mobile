@@ -26,29 +26,42 @@
             android:background="@color/yelow"
             android:orientation="vertical">
 
+            <Button
+                android:id="@+id/allRecipes"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="right"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/orange"
+                android:text="Все рецепты"
+                android:textColor="#FFFFFF"
+                android:textSize="16dp" />
 
-        <Button
-            android:id="@+id/logIn"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_gravity="left"
-            android:layout_marginStart="10dp"
-            android:backgroundTint="@color/orange"
-            android:text="Войти"
-            android:textColor="#FFFFFF"
-            android:textSize="16dp" />
+            <Button
+                android:id="@+id/logIn"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginTop="-50dp"
+                android:layout_gravity="left"
+                android:layout_marginStart="10dp"
+                android:backgroundTint="@color/orange"
+                android:text="Войти"
+                android:textColor="#FFFFFF"
+                android:textSize="16dp" />
 
-        <Button
-            android:id="@+id/allRecipes"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_gravity="right"
-            android:layout_marginEnd="10dp"
-            android:layout_marginTop="-50dp"
-            android:backgroundTint="@color/orange"
-            android:text="Все рецепты"
-            android:textColor="#FFFFFF"
-            android:textSize="16dp" />
+            <Button
+                android:id="@+id/user"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="left"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="-50dp"
+                android:backgroundTint="@color/orange"
+                android:text="Аккаунт"
+                android:textColor="#FFFFFF"
+                android:textSize="16dp" />
+
+
 
         </LinearLayout>
 
