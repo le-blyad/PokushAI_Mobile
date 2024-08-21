@@ -57,8 +57,16 @@ class Registration : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
 
+        val textError = findViewById<TextView>(R.id.textError)
+        textError.visibility = TextView.GONE
+        var countError = 0
+
         val buttonRegistration = findViewById<Button>(R.id.buttonRegistration)
         buttonRegistration.setOnClickListener {
+            countError += 1
+            if (countError >= 2 && inputFieldPasswordError.visibility == TextView.VISIBLE   ){
+                textError.visibility = TextView.VISIBLE
+            }
 
             fun EditText.isEmpty(): Boolean {
                 return this.text.toString().trim().isEmpty()
@@ -96,8 +104,29 @@ class Registration : AppCompatActivity() {
                 inputFieldEmailAddressError.visibility = TextView.GONE
             }
 
+            var countNumbers = 0
+            var countLetters = 0
+
+            for (i in inputFieldPassword.text.indices) {
+                val char = inputFieldPassword.text[i]
+                if (char.isLetter()) {
+                    countLetters += 1
+                } else if (char.isDigit()) {
+                    countNumbers += 1
+                }
+            }
+
             if (inputFieldPassword.isEmpty()) {
                 inputFieldPasswordError.text = "Поле с паролем пустое!"
+                inputFieldPasswordError.visibility = TextView.VISIBLE
+            } else if (inputFieldPassword.text.length < 8) {
+                inputFieldPasswordError.text = "Пароль меньше 8 символов!"
+                inputFieldPasswordError.visibility = TextView.VISIBLE
+            } else if (countNumbers == 0) {
+                inputFieldPasswordError.text = "Пароль должен иметь цифры!"
+                inputFieldPasswordError.visibility = TextView.VISIBLE
+            } else if (countLetters==0) {
+                inputFieldPasswordError.text = "Пароль должен иметь буквы!"
                 inputFieldPasswordError.visibility = TextView.VISIBLE
             } else {
                 inputFieldPasswordError.visibility = TextView.GONE
@@ -134,8 +163,8 @@ class Registration : AppCompatActivity() {
                     userDAO.setUserLoggedIn(username) // Установка пользователя как вошедшего
                     val intent = Intent(this, SecondActivity::class.java)
                     startActivity(intent)
-                    finish()
                 }
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
                 finish()
             }
 

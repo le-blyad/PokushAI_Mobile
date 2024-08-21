@@ -175,4 +175,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputFieldPasswordRepeat" />
 
+    <TextView
+        android:id="@+id/textError"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/rounded_background"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        android:textColor="#7D363C"
+        android:text="Пароль должен иметь не менее 8 символов! Должен содержать буквы и цифры!"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

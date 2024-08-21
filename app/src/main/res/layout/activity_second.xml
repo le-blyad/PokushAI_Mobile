@@ -147,12 +147,10 @@
             android:text="Бекон"
             style="@style/MyCustomSwitch"/>
 
-                <Switch
-                    android:id="@+id/switch6"
-                    style="@style/MyCustomSwitch"
-                    android:layout_width="303dp"
-                    android:layout_height="57dp"
-                    android:text="Ваниль" />
+        <Switch
+            android:id="@+id/switch6"
+            style="@style/MyCustomSwitch"
+            android:text="Ваниль" />
 
         <Switch
             android:id="@+id/switch7"
@@ -250,10 +248,10 @@
             android:text="Квас"
             style="@style/MyCustomSwitch"/>
 
-                <Switch
-                    android:id="@+id/switch25"
-                    style="@style/MyCustomSwitch"
-                    android:text="Кетчуп" />
+        <Switch
+            android:id="@+id/switch25"
+            style="@style/MyCustomSwitch"
+            android:text="Кетчуп" />
 
         <Switch
             android:id="@+id/switch26"
