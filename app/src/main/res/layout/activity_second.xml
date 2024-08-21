@@ -121,7 +121,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-            <Switch
+        <Switch
             android:id="@+id/switch1"
             style="@style/MyCustomSwitch"
             android:layout_marginTop="5dp"
