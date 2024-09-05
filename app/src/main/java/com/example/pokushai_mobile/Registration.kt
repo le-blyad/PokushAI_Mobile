@@ -12,6 +12,7 @@ import android.text.TextWatcher
 import android.widget.Toast
 
 
+
 class Registration : AppCompatActivity() {
 
     private lateinit var userDAO: UserDAO
@@ -62,110 +63,120 @@ class Registration : AppCompatActivity() {
         var countError = 0
 
         val buttonRegistration = findViewById<Button>(R.id.buttonRegistration)
+
         buttonRegistration.setOnClickListener {
-            countError += 1
-            if (countError >= 2 && inputFieldPasswordError.visibility == TextView.VISIBLE   ){
-                textError.visibility = TextView.VISIBLE
-            }
-
-            fun EditText.isEmpty(): Boolean {
-                return this.text.toString().trim().isEmpty()
-            }
 
 
-            if (inputFieldLogin.isEmpty()) {
-                inputFieldLoginError.text = "Поле с логином пустое!"
-                inputFieldLoginError.visibility = TextView.VISIBLE
-            } else {
-                inputFieldLoginError.visibility = TextView.GONE
-            }
+            if (isInternetAvailable(this)) {
 
-
-            val phoneNumber = inputFieldNumberPhone.text.toString().trim()
-            if (phoneNumber.isEmpty()) {
-                inputFieldNumberPhoneError.text = "Поле с номером телефона пустое!"
-                inputFieldNumberPhoneError.visibility = TextView.VISIBLE
-            } else if (!isValidPhoneNumber(phoneNumber)) {
-                inputFieldNumberPhoneError.text = "Неверный формат номера телефона!"
-                inputFieldNumberPhoneError.visibility = TextView.VISIBLE
-            } else {
-                inputFieldNumberPhoneError.visibility = TextView.GONE
-                val formattedPhoneNumber = formatPhoneNumber(phoneNumber)
-                inputFieldNumberPhone.setText(formattedPhoneNumber) // Форматируем и устанавливаем текст
-            }
-
-            val email = inputFieldEmailAddress.text.toString().trim()
-            if (email.isEmpty()) {
-                inputFieldEmailAddressError.visibility = TextView.GONE
-            } else if (!isValidEmail(email)) {
-                inputFieldEmailAddressError.text = "Неверно введён E-mail!"
-                inputFieldEmailAddressError.visibility = TextView.VISIBLE
-            } else {
-                inputFieldEmailAddressError.visibility = TextView.GONE
-            }
-
-            var countNumbers = 0
-            var countLetters = 0
-
-            for (i in inputFieldPassword.text.indices) {
-                val char = inputFieldPassword.text[i]
-                if (char.isLetter()) {
-                    countLetters += 1
-                } else if (char.isDigit()) {
-                    countNumbers += 1
+                countError += 1
+                if (countError >= 2 && inputFieldPasswordError.visibility == TextView.VISIBLE   ){
+                    textError.visibility = TextView.VISIBLE
                 }
-            }
 
-            if (inputFieldPassword.isEmpty()) {
-                inputFieldPasswordError.text = "Поле с паролем пустое!"
-                inputFieldPasswordError.visibility = TextView.VISIBLE
-            } else if (inputFieldPassword.text.length < 8) {
-                inputFieldPasswordError.text = "Пароль меньше 8 символов!"
-                inputFieldPasswordError.visibility = TextView.VISIBLE
-            } else if (countNumbers == 0) {
-                inputFieldPasswordError.text = "Пароль должен иметь цифры!"
-                inputFieldPasswordError.visibility = TextView.VISIBLE
-            } else if (countLetters==0) {
-                inputFieldPasswordError.text = "Пароль должен иметь буквы!"
-                inputFieldPasswordError.visibility = TextView.VISIBLE
-            } else {
-                inputFieldPasswordError.visibility = TextView.GONE
-            }
+                fun EditText.isEmpty(): Boolean {
+                    return this.text.toString().trim().isEmpty()
+                }
 
-            if (inputFieldPasswordRepeat.isEmpty()) {
-                inputFieldPasswordRepeatError.text = "Поле с повторным паролем пустое!"
-                inputFieldPasswordRepeatError.visibility = TextView.VISIBLE
-            } else if (inputFieldPassword.text.toString() != inputFieldPasswordRepeat.text.toString()) {
-                inputFieldPasswordRepeatError.text = "Пароли не совпадают!"
-                inputFieldPasswordRepeatError.visibility = TextView.VISIBLE
-            } else {
-                inputFieldPasswordRepeatError.visibility = TextView.GONE
-            }
 
-            if (inputFieldLoginError.visibility == TextView.GONE &&
-                inputFieldNumberPhoneError.visibility == TextView.GONE &&
-                inputFieldEmailAddressError.visibility == TextView.GONE &&
-                inputFieldPasswordError.visibility == TextView.GONE &&
-                inputFieldPasswordRepeatError.visibility == TextView.GONE) {
-
-                val username = inputFieldLogin.text.toString()
-                val password = inputFieldPassword.text.toString()
-                val number = inputFieldNumberPhone.text.toString()
-                val email = inputFieldEmailAddress.text.toString()
-                val result = userDAO.addUser(username, password, number, email)
-                if (result != -1L) {
-                    Toast.makeText(this, "Успешно зарегистрирован!", Toast.LENGTH_SHORT).show()
+                if (inputFieldLogin.isEmpty()) {
+                    inputFieldLoginError.text = "Поле с логином пустое!"
+                    inputFieldLoginError.visibility = TextView.VISIBLE
                 } else {
-                    Toast.makeText(this, "Ошибка в регистрации!", Toast.LENGTH_SHORT).show()
+                    inputFieldLoginError.visibility = TextView.GONE
                 }
-                val isValid = userDAO.checkUser(username, password)
-                if (isValid) {
-                    userDAO.setUserLoggedIn(username) // Установка пользователя как вошедшего
-                    val intent = Intent(this, SecondActivity::class.java)
-                    startActivity(intent)
+
+
+                val phoneNumber = inputFieldNumberPhone.text.toString().trim()
+                if (phoneNumber.isEmpty()) {
+                    inputFieldNumberPhoneError.text = "Поле с номером телефона пустое!"
+                    inputFieldNumberPhoneError.visibility = TextView.VISIBLE
+                } else if (!isValidPhoneNumber(phoneNumber)) {
+                    inputFieldNumberPhoneError.text = "Неверный формат номера телефона!"
+                    inputFieldNumberPhoneError.visibility = TextView.VISIBLE
+                } else {
+                    inputFieldNumberPhoneError.visibility = TextView.GONE
+                    val formattedPhoneNumber = formatPhoneNumber(phoneNumber)
+                    inputFieldNumberPhone.setText(formattedPhoneNumber) // Форматируем и устанавливаем текст
                 }
-                overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-                finish()
+
+                val email = inputFieldEmailAddress.text.toString().trim()
+                if (email.isEmpty()) {
+                    inputFieldEmailAddressError.visibility = TextView.GONE
+                } else if (!isValidEmail(email)) {
+                    inputFieldEmailAddressError.text = "Неверно введён E-mail!"
+                    inputFieldEmailAddressError.visibility = TextView.VISIBLE
+                } else {
+                    inputFieldEmailAddressError.visibility = TextView.GONE
+                }
+
+                var countNumbers = 0
+                var countLetters = 0
+
+                for (i in inputFieldPassword.text.indices) {
+                    val char = inputFieldPassword.text[i]
+                    if (char.isLetter()) {
+                        countLetters += 1
+                    } else if (char.isDigit()) {
+                        countNumbers += 1
+                    }
+                }
+
+                if (inputFieldPassword.isEmpty()) {
+                    inputFieldPasswordError.text = "Поле с паролем пустое!"
+                    inputFieldPasswordError.visibility = TextView.VISIBLE
+                } else if (inputFieldPassword.text.length < 8) {
+                    inputFieldPasswordError.text = "Пароль меньше 8 символов!"
+                    inputFieldPasswordError.visibility = TextView.VISIBLE
+                } else if (countNumbers == 0) {
+                    inputFieldPasswordError.text = "Пароль должен иметь цифры!"
+                    inputFieldPasswordError.visibility = TextView.VISIBLE
+                } else if (countLetters==0) {
+                    inputFieldPasswordError.text = "Пароль должен иметь буквы!"
+                    inputFieldPasswordError.visibility = TextView.VISIBLE
+                } else {
+                    inputFieldPasswordError.visibility = TextView.GONE
+                }
+
+                if (inputFieldPasswordRepeat.isEmpty()) {
+                    inputFieldPasswordRepeatError.text = "Поле с повторным паролем пустое!"
+                    inputFieldPasswordRepeatError.visibility = TextView.VISIBLE
+                } else if (inputFieldPassword.text.toString() != inputFieldPasswordRepeat.text.toString()) {
+                    inputFieldPasswordRepeatError.text = "Пароли не совпадают!"
+                    inputFieldPasswordRepeatError.visibility = TextView.VISIBLE
+                } else {
+                    inputFieldPasswordRepeatError.visibility = TextView.GONE
+                }
+
+                if (inputFieldLoginError.visibility == TextView.GONE &&
+                    inputFieldNumberPhoneError.visibility == TextView.GONE &&
+                    inputFieldEmailAddressError.visibility == TextView.GONE &&
+                    inputFieldPasswordError.visibility == TextView.GONE &&
+                    inputFieldPasswordRepeatError.visibility == TextView.GONE) {
+
+                    val username = inputFieldLogin.text.toString()
+                    val password = inputFieldPassword.text.toString()
+                    val number = inputFieldNumberPhone.text.toString()
+                    val email = inputFieldEmailAddress.text.toString()
+                    val result = userDAO.addUser(username, password, number, email)
+                    if (result != -1L) {
+                        Toast.makeText(this, "Успешно зарегистрирован!", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(this, "Ошибка в регистрации!", Toast.LENGTH_SHORT).show()
+                    }
+                    val isValid = userDAO.checkUser(username, password)
+                    if (isValid) {
+                        userDAO.setUserLoggedIn(username) // Установка пользователя как вошедшего
+                        val intent = Intent(this, SecondActivity::class.java)
+                        startActivity(intent)
+                    }
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+                    finish()
+                }
+
+
+            } else {
+                Toast.makeText(this, "Нет подключения к интернету", Toast.LENGTH_SHORT).show()
             }
 
         }

@@ -7,6 +7,7 @@ import android.widget.SearchView
 import android.view.View
 import android.content.Intent
 import android.widget.Button
+import android.widget.Toast
 import org.tensorflow.lite.Interpreter
 import java.io.FileInputStream
 import java.nio.MappedByteBuffer
@@ -49,16 +50,24 @@ class SecondActivity : AppCompatActivity() {
 
         val logIn = findViewById<Button>(R.id.logIn)
         logIn.setOnClickListener {
-            val intent = Intent(this, LogIn::class.java)
-            startActivity(intent)
-            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+            if (isInternetAvailable(this)) {
+                val intent = Intent(this, LogIn::class.java)
+                startActivity(intent)
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+            } else {
+                Toast.makeText(this, "Нет подключения к интернету", Toast.LENGTH_SHORT).show()
+            }
         }
 
         val user = findViewById<Button>(R.id.user)
         user.setOnClickListener {
-            val intent = Intent(this, User::class.java)
-            startActivity(intent)
-            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+            if (isInternetAvailable(this)) {
+                val intent = Intent(this, User::class.java)
+                startActivity(intent)
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+            } else {
+                Toast.makeText(this, "Нет подключения к интернету", Toast.LENGTH_SHORT).show()
+            }
         }
 
 

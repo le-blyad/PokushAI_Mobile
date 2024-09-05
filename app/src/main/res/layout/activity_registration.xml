@@ -49,12 +49,13 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/searchviewcastom"
         android:hint="Логин"
-        android:inputType="text"
+        android:inputType="textMultiLine"
         android:paddingStart="13dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewSearchProducts" />
+
 
     <EditText
         android:id="@+id/inputFieldNumberPhone"
@@ -189,5 +190,8 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

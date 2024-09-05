@@ -39,15 +39,22 @@ class LogIn : AppCompatActivity() {
             val username = inputFieldLogin.text.toString()
             val password = inputFieldPassword.text.toString()
             val isValid = userDAO.checkUser(username, password)
-            if (isValid) {
-                userDAO.setUserLoggedIn(username) // Установка пользователя как вошедшего
-                val intent = Intent(this, SecondActivity::class.java)
-                startActivity(intent)
-                finish()
-                overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-                Toast.makeText(this, "Успешный вход в аккаунт!", Toast.LENGTH_SHORT).show()
+
+            if (isInternetAvailable(this)) {
+                if (isValid) {
+                    userDAO.setUserLoggedIn(username) // Установка пользователя как вошедшего
+                    val intent = Intent(this, SecondActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+
+                    Toast.makeText(this, "Успешный вход в аккаунт!", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, "Логин и/или пароль неверный", Toast.LENGTH_SHORT).show()
+                }
+
             } else {
-                Toast.makeText(this, "Логин и/или пароль неверный", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Нет подключения к интернету", Toast.LENGTH_SHORT).show()
             }
         }
     }
