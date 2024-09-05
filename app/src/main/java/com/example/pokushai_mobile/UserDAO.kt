@@ -5,6 +5,7 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.content.SharedPreferences
+import com.example.pokushai_mobile.DatabaseHelper
 
 class UserDAO(context: Context) {
 
@@ -40,7 +41,6 @@ class UserDAO(context: Context) {
             arrayOf(userId.toString())
         )
     }
-
 
     fun checkUser(inputFieldLogin: String, inputFieldPassword: String): Boolean {
         val columns = arrayOf("username")
@@ -131,5 +131,4 @@ class UserDAO(context: Context) {
             cursor?.close()
         }
     }
-
 }
