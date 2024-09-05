@@ -57,6 +57,7 @@
         android:layout_height="170dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
+        android:scaleType="centerCrop"
         android:src="@drawable/no_photo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text111" />
