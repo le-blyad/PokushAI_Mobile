@@ -43,6 +43,7 @@ dependencies {
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.constraintlayout)
+    implementation("com.google.android.material:material:1.6.0")
     implementation("de.hdodenhof:circleimageview:3.1.0")
     implementation("com.squareup.picasso:picasso:2.5.2")
     implementation("org.tensorflow:tensorflow-lite:+")
