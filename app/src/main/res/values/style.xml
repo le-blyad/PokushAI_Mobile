@@ -7,5 +7,8 @@
     <style name="themeDark" parent="Theme.PokushAI_Mobile">
         <item name="android:windowBackground">@drawable/shape_dark</item>
     </style>  !-->
+    <style name="CustomEditTextTheme" parent="Theme.AppCompat.Light">
+        <item name="colorControlActivated">@color/red</item>
+    </style>
 
 </resources>

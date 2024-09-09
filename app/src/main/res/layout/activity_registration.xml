@@ -6,192 +6,211 @@
     android:layout_height="match_parent"
     tools:context=".SecondActivity">
 
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/yelow"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageButton
-            android:id="@+id/buttonBack"
-            android:layout_width="63dp"
-            android:layout_height="50dp"
-            android:backgroundTint="@color/yelow"
-            android:scaleType="centerCrop"
-            android:src="@drawable/back"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout2"
-            app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!-- Шапка с кнопкой назад -->
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/yelow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-    </LinearLayout>
+                <ImageButton
+                    android:id="@+id/buttonBack"
+                    android:layout_width="63dp"
+                    android:layout_height="50dp"
+                    android:backgroundTint="@color/yelow"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/back" />
+            </LinearLayout>
 
+            <!-- Общий текст ошибки -->
+            <TextView
+                android:id="@+id/textError"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:background="@drawable/rounded_background"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:textColor="#7D363C"
+                android:text="Пароль должен иметь не менее 8 символов! Должен содержать буквы и цифры!" />
 
-    <TextView
-        android:id="@+id/textViewSearchProducts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:text="Создание аккаунта"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+            <!-- Заголовок -->
+            <TextView
+                android:id="@+id/textViewSearchProducts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Создание аккаунта"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
 
-    <EditText
-        android:id="@+id/inputFieldLogin"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/searchviewcastom"
-        android:hint="Логин"
-        android:inputType="textMultiLine"
-        android:paddingStart="13dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewSearchProducts" />
+            <!-- Поле Логин -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputFieldLoginLayout"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                app:hintEnabled="true"
+                app:errorEnabled="true"
+                style="@style/FormTextInputLayoutStyle">
 
-
-    <EditText
-        android:id="@+id/inputFieldNumberPhone"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/searchviewcastom"
-        android:hint="Номер телефона"
-        android:inputType="phone"
-        android:paddingStart="13dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputFieldLoginError" />
-
-    <EditText
-        android:id="@+id/inputFieldEmailAddress"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/searchviewcastom"
-        android:hint="E-mail (необязательно)"
-        android:inputType="textEmailAddress"
-        android:paddingStart="13dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputFieldNumberPhoneError" />
-
-    <EditText
-        android:id="@+id/inputFieldPassword"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/searchviewcastom"
-        android:hint="Пароль"
-        android:inputType="textPassword"
-        android:paddingStart="13dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputFieldEmailAddressError" />
-
-    <EditText
-        android:id="@+id/inputFieldPasswordRepeat"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/searchviewcastom"
-        android:hint="Повторите пароль"
-        android:inputType="textPassword"
-        android:paddingStart="13dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputFieldPasswordError" />
-
-    <Button
-        android:id="@+id/buttonRegistration"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="15dp"
-        android:layout_gravity="center"
-        android:backgroundTint="@color/orange"
-        android:text="Зарегистрироваться"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputFieldPasswordRepeatError" />
-
-    <TextView
-        android:id="@+id/inputFieldLoginError"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:gravity="start"
-        android:textColor="@color/red"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.550"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputFieldLogin" />
-
-    <TextView
-        android:id="@+id/inputFieldNumberPhoneError"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/red"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.550"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputFieldNumberPhone" />
-
-    <TextView
-        android:id="@+id/inputFieldEmailAddressError"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/red"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.550"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputFieldEmailAddress" />
-
-    <TextView
-        android:id="@+id/inputFieldPasswordError"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/red"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.550"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputFieldPassword" />
-
-    <TextView
-        android:id="@+id/inputFieldPasswordRepeatError"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/red"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.550"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputFieldPasswordRepeat" />
-
-    <TextView
-        android:id="@+id/textError"
-        android:layout_width="330dp"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:background="@drawable/rounded_background"
-        android:textStyle="bold"
-        android:layout_marginTop="50dp"
-        android:textColor="#7D363C"
-        android:text="Пароль должен иметь не менее 8 символов! Должен содержать буквы и цифры!"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+                <EditText
+                    android:id="@+id/inputFieldLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Логин"
+                    android:inputType="textVisiblePassword"
+                    android:paddingStart="13dp"
+                    android:textCursorDrawable="@color/red"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
 
 
+            <!-- Ошибка для Логина -->
+            <TextView
+                android:id="@+id/inputFieldLoginError"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:textColor="@color/red"
+                android:layout_gravity="center"/>
+
+            <!-- Поле Номер телефона -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center"
+                style="@style/FormTextInputLayoutStyle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputFieldNumberPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Номер телефона"
+                    android:inputType="phone"
+                    android:paddingStart="13dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Ошибка для Номера телефона -->
+            <TextView
+                android:id="@+id/inputFieldNumberPhoneError"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/red"
+                android:layout_gravity="center"/>
+
+            <!-- Поле Email -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center"
+                style="@style/FormTextInputLayoutStyle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputFieldEmailAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="E-mail (необязательно)"
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="13dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Ошибка для Email -->
+            <TextView
+                android:id="@+id/inputFieldEmailAddressError"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/red"
+                android:layout_gravity="center"/>
+
+            <!-- Поле Пароль -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:passwordToggleEnabled="true"
+                android:layout_gravity="center"
+                app:hintEnabled="true"
+                style="@style/FormTextInputLayoutStyle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputFieldPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Пароль"
+                    android:inputType="textPassword"
+                    android:paddingStart="13dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Ошибка для Пароля -->
+            <TextView
+                android:id="@+id/inputFieldPasswordError"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/red"
+                android:layout_gravity="center"/>
+
+            <!-- Поле Повторите пароль -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:passwordToggleEnabled="true"
+                android:layout_gravity="center"
+                style="@style/FormTextInputLayoutStyle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputFieldPasswordRepeat"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Повторите пароль"
+                    android:inputType="textPassword"
+                    android:paddingStart="13dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Ошибка для Повторите пароль -->
+            <TextView
+                android:id="@+id/inputFieldPasswordRepeatError"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/red"
+                android:layout_gravity="center"/>
+
+            <!-- Кнопка регистрации -->
+            <Button
+                android:id="@+id/buttonRegistration"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="15dp"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/orange"
+                android:text="Зарегистрироваться"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

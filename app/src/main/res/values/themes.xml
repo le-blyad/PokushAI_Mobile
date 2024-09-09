@@ -16,6 +16,18 @@
         <item name="android:editTextColor">@color/black</item>
     </style>
 
+    <style name="FormTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">@color/text_input_stroke_color</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="hintTextColor">#808080</item>
+        <item name="helperTextTextColor">#808080</item>
+        <item name="endIconTint">#808080</item>
+        <item name="android:textColorHint">#808080</item>
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+
     <style name="MyCustomSwitch" parent="TextAppearance.AppCompat">
         <item name="android:textSize">20sp</item>
         <item name="android:layout_width">300dp</item>

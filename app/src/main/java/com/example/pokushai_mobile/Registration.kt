@@ -10,8 +10,7 @@ import android.widget.TextView
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.Toast
-
-
+import com.google.android.material.textfield.TextInputLayout
 
 class Registration : AppCompatActivity() {
 
@@ -67,6 +66,8 @@ class Registration : AppCompatActivity() {
         buttonRegistration.setOnClickListener {
 
 
+            val textInputLayout = findViewById<TextInputLayout>(R.id.inputFieldLoginLayout)
+
             if (isInternetAvailable(this)) {
 
                 countError += 1
@@ -89,6 +90,7 @@ class Registration : AppCompatActivity() {
 
                 val phoneNumber = inputFieldNumberPhone.text.toString().trim()
                 if (phoneNumber.isEmpty()) {
+                    textInputLayout.error = "Ошибка!"
                     inputFieldNumberPhoneError.text = "Поле с номером телефона пустое!"
                     inputFieldNumberPhoneError.visibility = TextView.VISIBLE
                 } else if (!isValidPhoneNumber(phoneNumber)) {
