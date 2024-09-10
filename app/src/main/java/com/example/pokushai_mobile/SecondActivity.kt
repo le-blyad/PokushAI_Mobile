@@ -12,7 +12,6 @@ import org.tensorflow.lite.Interpreter
 import java.io.FileInputStream
 import java.nio.MappedByteBuffer
 import java.nio.channels.FileChannel
-import android.net.Uri
 
 class SecondActivity : AppCompatActivity() {
 
@@ -133,14 +132,6 @@ class SecondActivity : AppCompatActivity() {
 
         filterSwitches(null)
 
-
-        val openLinkButton: Button = findViewById(R.id.scr_site)
-        openLinkButton.setOnClickListener {
-            val url = "http://192.168.1.34:8000/users/password-reset/"
-            val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse(url)
-            startActivity(intent)
-        }
     }
 
     private fun filterSwitches(query: String?) {
