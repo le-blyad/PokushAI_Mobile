@@ -5,12 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.ImageButton
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.Toast
 import com.google.android.material.textfield.TextInputLayout
+import android.util.Patterns
 
 class Registration : AppCompatActivity() {
 
@@ -22,14 +22,51 @@ class Registration : AppCompatActivity() {
 
         userDAO = UserDAO(this)
 
+        // Инициализация полей ввода
         val inputFieldLogin = findViewById<EditText>(R.id.inputFieldLogin)
         val inputFieldNumberPhone = findViewById<EditText>(R.id.inputFieldNumberPhone)
         val inputFieldEmailAddress = findViewById<EditText>(R.id.inputFieldEmailAddress)
         val inputFieldPassword = findViewById<EditText>(R.id.inputFieldPassword)
         val inputFieldPasswordRepeat = findViewById<EditText>(R.id.inputFieldPasswordRepeat)
 
-        var (validLogin, validNumberPhone, validEmailAddress, validPassword, validPasswordRepeat) = List(5) { false }
+        // Инициализация TextInputLayout для отображения ошибок
+        val inputFieldLoginLayout = findViewById<TextInputLayout>(R.id.inputFieldLoginLayout)
+        val inputFieldNumberPhoneLayout = findViewById<TextInputLayout>(R.id.inputFieldNumberPhoneLayout)
+        val inputFieldEmailAddressLayout = findViewById<TextInputLayout>(R.id.inputFieldEmailAddressLayout)
+        val inputFieldPasswordLayout = findViewById<TextInputLayout>(R.id.inputFieldPasswordLayout)
+        val inputFieldPasswordRepeatLayout = findViewById<TextInputLayout>(R.id.inputFieldPasswordRepeatLayout)
 
+        // Установка слушателя на кнопку регистрации
+        val buttonRegistration = findViewById<Button>(R.id.buttonRegistration)
+        buttonRegistration.setOnClickListener {
+            val isValid = validateForm(
+                inputFieldLogin,
+                inputFieldNumberPhone,
+                inputFieldEmailAddress,
+                inputFieldPassword,
+                inputFieldPasswordRepeat,
+                inputFieldLoginLayout,
+                inputFieldNumberPhoneLayout,
+                inputFieldEmailAddressLayout,
+                inputFieldPasswordLayout,
+                inputFieldPasswordRepeatLayout
+            )
+            if (isValid) {
+                registerUser(inputFieldLogin, inputFieldPassword, inputFieldNumberPhone, inputFieldEmailAddress)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            } else {
+                Toast.makeText(this, "Пожалуйста, исправьте ошибки в форме", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        // Установка слушателя на кнопку возврата
+        val buttonBack = findViewById<ImageButton>(R.id.buttonBack)
+        buttonBack.setOnClickListener {
+            onBackPressed()
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+        }
+
+        // Форматирование номера телефона при вводе
         inputFieldNumberPhone.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 val formattedPhoneNumber = formatPhoneNumber(s.toString())
@@ -43,151 +80,110 @@ class Registration : AppCompatActivity() {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
+    }
 
-        val textError = findViewById<TextView>(R.id.textError)
-        textError.visibility = TextView.INVISIBLE
+    // Функция для проверки корректности введённых данных в форме
+    private fun validateForm(
+        login: EditText,
+        phoneNumber: EditText,
+        email: EditText,
+        password: EditText,
+        passwordRepeat: EditText,
+        loginLayout: TextInputLayout,
+        phoneNumberLayout: TextInputLayout,
+        emailLayout: TextInputLayout,
+        passwordLayout: TextInputLayout,
+        passwordRepeatLayout: TextInputLayout
+    ): Boolean {
+        var isValid = true
 
-        //Кнопка регистрации
-        val buttonRegistration = findViewById<Button>(R.id.buttonRegistration)
-        buttonRegistration.setOnClickListener {
+        // Проверка логина
+        val loginText = login.text.toString().trim()
+        if (loginText.isEmpty()) {
+            loginLayout.error = "Логин не может быть пустым"
+            isValid = false
+        } else {
+            loginLayout.error = null
+        }
 
+        // Проверка номера телефона
+        val phoneNumberText = phoneNumber.text.toString().trim()
+        if (phoneNumberText.isEmpty() || !isValidPhoneNumber(phoneNumberText)) {
+            phoneNumberLayout.error = "Введите действительный номер телефона"
+            isValid = false
+        } else {
+            phoneNumberLayout.error = null
+        }
 
-            val inputFieldLoginLayout = findViewById<TextInputLayout>(R.id.inputFieldLoginLayout)
-            val inputFieldNumberPhoneLayout = findViewById<TextInputLayout>(R.id.inputFieldNumberPhoneLayout)
-            val inputFieldEmailAddressLayout = findViewById<TextInputLayout>(R.id.inputFieldEmailAddressLayout)
-            val inputFieldPasswordLayout = findViewById<TextInputLayout>(R.id.inputFieldPasswordLayout)
-            val inputFieldPasswordRepeatLayout = findViewById<TextInputLayout>(R.id.inputFieldPasswordRepeatLayout)
+        // Проверка email
+        val emailText = email.text.toString().trim()
+        if (emailText.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(emailText).matches()) {
+            emailLayout.error = "Введите действительный адрес электронной почты"
+            isValid = false
+        } else {
+            emailLayout.error = null
+        }
 
-            if (isInternetAvailable(this)) {
+        // Проверка пароля
+        val passwordText = password.text.toString().trim()
+        val passwordRepeatText = passwordRepeat.text.toString().trim()
+        if (passwordText.isEmpty()) {
+            passwordLayout.error = "Пароль не может быть пустым"
+            isValid = false
+        } else if (passwordText.length < 8 || !passwordText.any { it.isDigit() } || !passwordText.any { it.isLetter() }) {
+            passwordLayout.error = "Пароль должен содержать не менее 8 символов, буквы и цифры"
+            isValid = false
+        } else {
+            passwordLayout.error = null
+        }
 
+        // Проверка повторного ввода пароля
+        if (passwordRepeatText.isEmpty()) {
+            passwordRepeatLayout.error = "Повторите пароль"
+            isValid = false
+        } else if (passwordText != passwordRepeatText) {
+            passwordRepeatLayout.error = "Пароли не совпадают"
+            isValid = false
+        } else {
+            passwordRepeatLayout.error = null
+        }
 
-                fun EditText.isEmpty(): Boolean {
-                    return this.text.toString().trim().isEmpty()
-                }
+        return isValid
+    }
 
-                //Валидация логина
-                if (inputFieldLogin.isEmpty()) {
-                    inputFieldLoginLayout.error = "Поле с логином пустое!"
-                } else {
-                    inputFieldLoginLayout.error = null
-                    validLogin = true
-                }
-
-                //Валидация номера телефона
-                val phoneNumber = inputFieldNumberPhone.text.toString().trim()
-                if (phoneNumber.isEmpty()) {
-                    inputFieldNumberPhoneLayout.error = "Поле с номером телефона пустое!"
-                } else if (!isValidPhoneNumber(phoneNumber)) {
-                    inputFieldNumberPhoneLayout.error = "Неверный формат номера телефона!"
-                } else {
-                    val formattedPhoneNumber = formatPhoneNumber(phoneNumber)
-                    inputFieldNumberPhoneLayout.error = null
-                    inputFieldNumberPhone.setText(formattedPhoneNumber)
-                    validNumberPhone = true
-                }
-
-                // Валидация E-mail
-                val email = inputFieldEmailAddress.text.toString().trim()
-
-                if (email.isEmpty()) {
-                    inputFieldEmailAddressLayout.error = null
-                    validEmailAddress = true
-                } else if (!isValidEmail(email)) {
-                    // Если E-mail неверного формата
-                    inputFieldEmailAddressLayout.error = "Неверно введён E-mail!"
-                    validEmailAddress = false
-                } else {
-                    // Если E-mail валидный
-                    inputFieldEmailAddressLayout.error = null
-                    validEmailAddress = true
-                }
-
-
-                var countNumbers = 0
-                var countLetters = 0
-
-                //Условия существования пароля
-                for (i in inputFieldPassword.text.indices) {
-                    val char = inputFieldPassword.text[i]
-                    if (char.isLetter()) {
-                        countLetters += 1
-                    } else if (char.isDigit()) {
-                        countNumbers += 1
-                    }
-                }
-
-                //Валидация пароля
-                if (inputFieldPassword.isEmpty()) {
-                    inputFieldPasswordLayout.error = "Поле с паролем пустое!"
-                } else if (inputFieldPassword.text.length < 8) {
-                    inputFieldPasswordLayout.error = "Пароль меньше 8 символов!"
-                } else if (countNumbers == 0) {
-                    inputFieldPasswordLayout.error = "Пароль должен иметь цифры!"
-                } else if (countLetters==0) {
-                    inputFieldPasswordLayout.error = "Пароль должен иметь буквы!"
-                } else {
-                    inputFieldPasswordLayout.error = null
-                    validPassword = true
-                }
-
-
-                //Валидация повторного ввода пароля
-                if (inputFieldPasswordRepeat.isEmpty()) {
-                    inputFieldPasswordRepeatLayout.error = "Поле с повторным паролем пустое!"
-                } else if (inputFieldPassword.text.toString() != inputFieldPasswordRepeat.text.toString()) {
-                    inputFieldPasswordRepeatLayout.error = "Пароли не совпадают!"
-                } else {
-                    inputFieldPasswordRepeatLayout.error = null
-                    validPasswordRepeat = true
-                }
-
-                val allValid = listOf(validLogin, validNumberPhone, validEmailAddress, validPassword, validPasswordRepeat).all { it }
-
-                if (allValid) {
-
-                    val username = inputFieldLogin.text.toString()
-                    val password = inputFieldPassword.text.toString()
-                    val number = inputFieldNumberPhone.text.toString()
-                    val email = inputFieldEmailAddress.text.toString()
-                    val result = userDAO.addUser(username, password, number, email)
-                    if (result != -1L) {
-                        Toast.makeText(this, "Успешно зарегистрирован!", Toast.LENGTH_SHORT).show()
-                    } else {
-                        Toast.makeText(this, "Ошибка в регистрации!", Toast.LENGTH_SHORT).show()
-                    }
-                    val isValid = userDAO.checkUser(username, password)
-                    if (isValid) {
-                        userDAO.setUserLoggedIn(username) // Установка пользователя как вошедшего
-                        val intent = Intent(this, SecondActivity::class.java)
-                        startActivity(intent)
-                    }
-                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-                    finish()
-                }
-
-
-            } else {
-                Toast.makeText(this, "Нет подключения к интернету", Toast.LENGTH_SHORT).show()
+    // Функция для регистрации пользователя
+    private fun registerUser(
+        login: EditText,
+        password: EditText,
+        phoneNumber: EditText,
+        email: EditText
+    ) {
+        val username = login.text.toString()
+        val passwordText = password.text.toString()
+        val number = phoneNumber.text.toString()
+        val emailText = email.text.toString()
+        val result = userDAO.addUser(username, passwordText, number, emailText)
+        if (result != -1L) {
+            Toast.makeText(this, "Успешно зарегистрирован!", Toast.LENGTH_SHORT).show()
+            if (userDAO.checkUser(username, passwordText)) {
+                userDAO.setUserLoggedIn(username)
+                // Создаем Intent для запуска SecondActivity
+                val intent = Intent(this, SecondActivity::class.java)
+                // Устанавливаем флаги для Intent
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                // Запускаем активность
+                startActivity(intent)
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+                finish() // Завершаем текущую активность
             }
-
-        }
-
-        val buttonBack = findViewById<ImageButton>(R.id.buttonBack)
-        buttonBack.setOnClickListener {
-            onBackPressed()
-            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+        } else {
+            Toast.makeText(this, "Ошибка в регистрации!", Toast.LENGTH_SHORT).show()
         }
     }
 
-    private fun isValidEmail(email: String): Boolean {
-        // Регулярное выражение для проверки формата электронной почты
-        val emailRegex = "^[A-Za-z0-9._-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$".toRegex()
-        return emailRegex.matches(email)
-    }
-
+    // Функция для форматирования номера телефона
     private fun formatPhoneNumber(phoneNumber: String): String {
-        val cleaned = phoneNumber.replace(Regex("[^0-9]"), "") // Удаляем все нецифровые символы
-
+        val cleaned = phoneNumber.replace(Regex("[^0-9]"), "")
         return if ((cleaned.length == 11 && cleaned.startsWith("7")) || (cleaned.length == 11 && cleaned.startsWith("8"))) {
             "+7 (${cleaned.substring(1, 4)})-${cleaned.substring(4, 7)}-${cleaned.substring(7, 9)}-${cleaned.substring(9, 11)}"
         } else {
@@ -195,8 +191,9 @@ class Registration : AppCompatActivity() {
         }
     }
 
+    // Функция для проверки корректности номера телефона
     private fun isValidPhoneNumber(phoneNumber: String): Boolean {
         val cleaned = phoneNumber.replace(Regex("[^0-9]"), "")
-        return (cleaned.length == 11 && cleaned.startsWith("7")) || (cleaned.length == 11 && cleaned.startsWith("8"))
+        return (cleaned.length == 11 && (cleaned.startsWith("7") || cleaned.startsWith("8")))
     }
 }
