@@ -1,12 +1,14 @@
 package com.example.pokushai_mobile
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
+import com.google.android.material.textfield.TextInputLayout
 
 class LogIn : AppCompatActivity() {
 
@@ -19,6 +21,8 @@ class LogIn : AppCompatActivity() {
 
         val inputFieldLogin = findViewById<EditText>(R.id.inputFieldLogin)
         val inputFieldPassword = findViewById<EditText>(R.id.inputFieldPassword)
+        val inputFieldLoginLayout = findViewById<TextInputLayout>(R.id.inputFieldLoginLayout)
+        val inputFieldPasswordLayout = findViewById<TextInputLayout>(R.id.inputFieldPasswordLayout)
 
         val buttonBack = findViewById<ImageButton>(R.id.buttonBack)
         buttonBack.setOnClickListener {
@@ -34,6 +38,14 @@ class LogIn : AppCompatActivity() {
 
         }
 
+        val forgotPassword = findViewById<TextView>(R.id.forgotPassword)
+        forgotPassword.setOnClickListener {
+            val url = "http://192.168.1.34:8000/users/password-reset/"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+        }
+
         val buttonLogIn = findViewById<TextView>(R.id.buttonLogIn)
         buttonLogIn.setOnClickListener {
             val username = inputFieldLogin.text.toString()
@@ -44,13 +56,15 @@ class LogIn : AppCompatActivity() {
                 if (isValid) {
                     userDAO.setUserLoggedIn(username) // Установка пользователя как вошедшего
                     val intent = Intent(this, SecondActivity::class.java)
+                    // Устанавливаем флаги для Intent
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     startActivity(intent)
-                    finish()
                     overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-
+                    finish()
                     Toast.makeText(this, "Успешный вход в аккаунт!", Toast.LENGTH_SHORT).show()
                 } else {
-                    Toast.makeText(this, "Логин и/или пароль неверный", Toast.LENGTH_SHORT).show()
+                    inputFieldLoginLayout.error = "Логин и/или пароль неверный"
+                    inputFieldPasswordLayout.error = "Логин и/или пароль неверный"
                 }
 
             } else {
@@ -59,4 +73,3 @@ class LogIn : AppCompatActivity() {
         }
     }
 }
-
