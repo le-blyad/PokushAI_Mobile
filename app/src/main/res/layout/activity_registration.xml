@@ -78,27 +78,18 @@
                     android:layout_height="50dp"
                     android:hint="Логин"
                     android:inputType="textVisiblePassword"
-                    android:paddingStart="13dp"
-                    android:textCursorDrawable="@color/red"/>
+                    android:paddingStart="13dp"/>
             </com.google.android.material.textfield.TextInputLayout>
 
 
-
-            <!-- Ошибка для Логина -->
-            <TextView
-                android:id="@+id/inputFieldLoginError"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:gravity="start"
-                android:textColor="@color/red"
-                android:layout_gravity="center"/>
-
             <!-- Поле Номер телефона -->
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputFieldNumberPhoneLayout"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_gravity="center"
+                app:errorEnabled="true"
                 style="@style/FormTextInputLayoutStyle">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -110,20 +101,14 @@
                     android:paddingStart="13dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Ошибка для Номера телефона -->
-            <TextView
-                android:id="@+id/inputFieldNumberPhoneError"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:textColor="@color/red"
-                android:layout_gravity="center"/>
-
             <!-- Поле Email -->
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputFieldEmailAddressLayout"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_gravity="center"
+                app:errorEnabled="true"
                 style="@style/FormTextInputLayoutStyle">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -135,22 +120,16 @@
                     android:paddingStart="13dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Ошибка для Email -->
-            <TextView
-                android:id="@+id/inputFieldEmailAddressError"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:textColor="@color/red"
-                android:layout_gravity="center"/>
-
             <!-- Поле Пароль -->
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputFieldPasswordLayout"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 app:passwordToggleEnabled="true"
                 android:layout_gravity="center"
                 app:hintEnabled="true"
+                app:errorEnabled="true"
                 style="@style/FormTextInputLayoutStyle">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -162,21 +141,15 @@
                     android:paddingStart="13dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Ошибка для Пароля -->
-            <TextView
-                android:id="@+id/inputFieldPasswordError"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:textColor="@color/red"
-                android:layout_gravity="center"/>
-
             <!-- Поле Повторите пароль -->
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputFieldPasswordRepeatLayout"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 app:passwordToggleEnabled="true"
                 android:layout_gravity="center"
+                app:errorEnabled="true"
                 style="@style/FormTextInputLayoutStyle">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -189,12 +162,6 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Ошибка для Повторите пароль -->
-            <TextView
-                android:id="@+id/inputFieldPasswordRepeatError"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:textColor="@color/red"
-                android:layout_gravity="center"/>
 
             <!-- Кнопка регистрации -->
             <Button

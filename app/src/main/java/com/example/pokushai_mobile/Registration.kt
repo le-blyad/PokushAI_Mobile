@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.ImageButton
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.Toast
@@ -23,24 +23,12 @@ class Registration : AppCompatActivity() {
         userDAO = UserDAO(this)
 
         val inputFieldLogin = findViewById<EditText>(R.id.inputFieldLogin)
-        val inputFieldLoginError = findViewById<TextView>(R.id.inputFieldLoginError)
-        inputFieldLoginError.visibility = TextView.GONE
-
         val inputFieldNumberPhone = findViewById<EditText>(R.id.inputFieldNumberPhone)
-        val inputFieldNumberPhoneError = findViewById<TextView>(R.id.inputFieldNumberPhoneError)
-        inputFieldNumberPhoneError.visibility = TextView.GONE
-
         val inputFieldEmailAddress = findViewById<EditText>(R.id.inputFieldEmailAddress)
-        val inputFieldEmailAddressError = findViewById<TextView>(R.id.inputFieldEmailAddressError)
-        inputFieldEmailAddressError.visibility = TextView.GONE
-
         val inputFieldPassword = findViewById<EditText>(R.id.inputFieldPassword)
-        val inputFieldPasswordError = findViewById<TextView>(R.id.inputFieldPasswordError)
-        inputFieldPasswordError.visibility = TextView.GONE
-
         val inputFieldPasswordRepeat = findViewById<EditText>(R.id.inputFieldPasswordRepeat)
-        val inputFieldPasswordRepeatError = findViewById<TextView>(R.id.inputFieldPasswordRepeatError)
-        inputFieldPasswordRepeatError.visibility = TextView.GONE
+
+        var (validLogin, validNumberPhone, validEmailAddress, validPassword, validPasswordRepeat) = List(5) { false }
 
         inputFieldNumberPhone.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
@@ -52,69 +40,73 @@ class Registration : AppCompatActivity() {
                     inputFieldNumberPhone.addTextChangedListener(this)
                 }
             }
-
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
 
         val textError = findViewById<TextView>(R.id.textError)
-        textError.visibility = TextView.GONE
-        var countError = 0
+        textError.visibility = TextView.INVISIBLE
 
+        //Кнопка регистрации
         val buttonRegistration = findViewById<Button>(R.id.buttonRegistration)
-
         buttonRegistration.setOnClickListener {
 
 
-            val textInputLayout = findViewById<TextInputLayout>(R.id.inputFieldLoginLayout)
+            val inputFieldLoginLayout = findViewById<TextInputLayout>(R.id.inputFieldLoginLayout)
+            val inputFieldNumberPhoneLayout = findViewById<TextInputLayout>(R.id.inputFieldNumberPhoneLayout)
+            val inputFieldEmailAddressLayout = findViewById<TextInputLayout>(R.id.inputFieldEmailAddressLayout)
+            val inputFieldPasswordLayout = findViewById<TextInputLayout>(R.id.inputFieldPasswordLayout)
+            val inputFieldPasswordRepeatLayout = findViewById<TextInputLayout>(R.id.inputFieldPasswordRepeatLayout)
 
             if (isInternetAvailable(this)) {
 
-                countError += 1
-                if (countError >= 2 && inputFieldPasswordError.visibility == TextView.VISIBLE   ){
-                    textError.visibility = TextView.VISIBLE
-                }
 
                 fun EditText.isEmpty(): Boolean {
                     return this.text.toString().trim().isEmpty()
                 }
 
-
+                //Валидация логина
                 if (inputFieldLogin.isEmpty()) {
-                    inputFieldLoginError.text = "Поле с логином пустое!"
-                    inputFieldLoginError.visibility = TextView.VISIBLE
+                    inputFieldLoginLayout.error = "Поле с логином пустое!"
                 } else {
-                    inputFieldLoginError.visibility = TextView.GONE
+                    inputFieldLoginLayout.error = null
+                    validLogin = true
                 }
 
-
+                //Валидация номера телефона
                 val phoneNumber = inputFieldNumberPhone.text.toString().trim()
                 if (phoneNumber.isEmpty()) {
-                    textInputLayout.error = "Ошибка!"
-                    inputFieldNumberPhoneError.text = "Поле с номером телефона пустое!"
-                    inputFieldNumberPhoneError.visibility = TextView.VISIBLE
+                    inputFieldNumberPhoneLayout.error = "Поле с номером телефона пустое!"
                 } else if (!isValidPhoneNumber(phoneNumber)) {
-                    inputFieldNumberPhoneError.text = "Неверный формат номера телефона!"
-                    inputFieldNumberPhoneError.visibility = TextView.VISIBLE
+                    inputFieldNumberPhoneLayout.error = "Неверный формат номера телефона!"
                 } else {
-                    inputFieldNumberPhoneError.visibility = TextView.GONE
                     val formattedPhoneNumber = formatPhoneNumber(phoneNumber)
-                    inputFieldNumberPhone.setText(formattedPhoneNumber) // Форматируем и устанавливаем текст
+                    inputFieldNumberPhoneLayout.error = null
+                    inputFieldNumberPhone.setText(formattedPhoneNumber)
+                    validNumberPhone = true
                 }
 
+                // Валидация E-mail
                 val email = inputFieldEmailAddress.text.toString().trim()
+
                 if (email.isEmpty()) {
-                    inputFieldEmailAddressError.visibility = TextView.GONE
+                    inputFieldEmailAddressLayout.error = null
+                    validEmailAddress = true
                 } else if (!isValidEmail(email)) {
-                    inputFieldEmailAddressError.text = "Неверно введён E-mail!"
-                    inputFieldEmailAddressError.visibility = TextView.VISIBLE
+                    // Если E-mail неверного формата
+                    inputFieldEmailAddressLayout.error = "Неверно введён E-mail!"
+                    validEmailAddress = false
                 } else {
-                    inputFieldEmailAddressError.visibility = TextView.GONE
+                    // Если E-mail валидный
+                    inputFieldEmailAddressLayout.error = null
+                    validEmailAddress = true
                 }
+
 
                 var countNumbers = 0
                 var countLetters = 0
 
+                //Условия существования пароля
                 for (i in inputFieldPassword.text.indices) {
                     val char = inputFieldPassword.text[i]
                     if (char.isLetter()) {
@@ -124,37 +116,34 @@ class Registration : AppCompatActivity() {
                     }
                 }
 
+                //Валидация пароля
                 if (inputFieldPassword.isEmpty()) {
-                    inputFieldPasswordError.text = "Поле с паролем пустое!"
-                    inputFieldPasswordError.visibility = TextView.VISIBLE
+                    inputFieldPasswordLayout.error = "Поле с паролем пустое!"
                 } else if (inputFieldPassword.text.length < 8) {
-                    inputFieldPasswordError.text = "Пароль меньше 8 символов!"
-                    inputFieldPasswordError.visibility = TextView.VISIBLE
+                    inputFieldPasswordLayout.error = "Пароль меньше 8 символов!"
                 } else if (countNumbers == 0) {
-                    inputFieldPasswordError.text = "Пароль должен иметь цифры!"
-                    inputFieldPasswordError.visibility = TextView.VISIBLE
+                    inputFieldPasswordLayout.error = "Пароль должен иметь цифры!"
                 } else if (countLetters==0) {
-                    inputFieldPasswordError.text = "Пароль должен иметь буквы!"
-                    inputFieldPasswordError.visibility = TextView.VISIBLE
+                    inputFieldPasswordLayout.error = "Пароль должен иметь буквы!"
                 } else {
-                    inputFieldPasswordError.visibility = TextView.GONE
+                    inputFieldPasswordLayout.error = null
+                    validPassword = true
                 }
 
+
+                //Валидация повторного ввода пароля
                 if (inputFieldPasswordRepeat.isEmpty()) {
-                    inputFieldPasswordRepeatError.text = "Поле с повторным паролем пустое!"
-                    inputFieldPasswordRepeatError.visibility = TextView.VISIBLE
+                    inputFieldPasswordRepeatLayout.error = "Поле с повторным паролем пустое!"
                 } else if (inputFieldPassword.text.toString() != inputFieldPasswordRepeat.text.toString()) {
-                    inputFieldPasswordRepeatError.text = "Пароли не совпадают!"
-                    inputFieldPasswordRepeatError.visibility = TextView.VISIBLE
+                    inputFieldPasswordRepeatLayout.error = "Пароли не совпадают!"
                 } else {
-                    inputFieldPasswordRepeatError.visibility = TextView.GONE
+                    inputFieldPasswordRepeatLayout.error = null
+                    validPasswordRepeat = true
                 }
 
-                if (inputFieldLoginError.visibility == TextView.GONE &&
-                    inputFieldNumberPhoneError.visibility == TextView.GONE &&
-                    inputFieldEmailAddressError.visibility == TextView.GONE &&
-                    inputFieldPasswordError.visibility == TextView.GONE &&
-                    inputFieldPasswordRepeatError.visibility == TextView.GONE) {
+                val allValid = listOf(validLogin, validNumberPhone, validEmailAddress, validPassword, validPasswordRepeat).all { it }
+
+                if (allValid) {
 
                     val username = inputFieldLogin.text.toString()
                     val password = inputFieldPassword.text.toString()
