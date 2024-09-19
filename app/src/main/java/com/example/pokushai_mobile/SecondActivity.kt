@@ -12,6 +12,9 @@ import org.tensorflow.lite.Interpreter
 import java.io.FileInputStream
 import java.nio.MappedByteBuffer
 import java.nio.channels.FileChannel
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class SecondActivity : AppCompatActivity() {
 
@@ -132,6 +135,33 @@ class SecondActivity : AppCompatActivity() {
 
         filterSwitches(null)
 
+        //новый код связанный с обменом данных с серверами django
+        val checkButton = findViewById<Button>(R.id.checkButton)
+
+        checkButton.setOnClickListener {
+
+            RetrofitInstance.api.getProfiles().enqueue(object : Callback<List<Profile>> {
+                override fun onResponse(
+                    call: Call<List<Profile>>,
+                    response: Response<List<Profile>>
+                ) {
+                    if (response.isSuccessful) {
+                        val profiles = response.body()
+                        Toast.makeText(this@SecondActivity, "Норм", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(this@SecondActivity, "Хуйня, переделывай", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<List<Profile>>, t: Throwable) {
+                    // Обработайте ошибку
+                    Toast.makeText(this@SecondActivity, "Пизда как переделывай", Toast.LENGTH_SHORT).show()
+                }
+            })
+        }
+
+
+
     }
 
     private fun filterSwitches(query: String?) {
@@ -154,6 +184,5 @@ class SecondActivity : AppCompatActivity() {
         }
         return maxIndex
     }
-
 }
 
