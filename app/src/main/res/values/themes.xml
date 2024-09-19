@@ -4,6 +4,7 @@
         <item name="android:windowBackground">@color/white</item>
         <item name="colorPrimaryDark">@color/yelow2</item>
         <item name="android:colorPrimary">@color/yelow</item>
+        <item name="colorError">@color/red</item>
         <item name="colorAccent">@color/red</item>
     </style>
 
@@ -25,6 +26,11 @@
         <item name="endIconTint">#808080</item>
         <item name="android:textColorHint">#808080</item>
         <item name="android:textColor">@color/red</item>
+        <item name="errorTextColor">@color/red</item>
+        <item name="errorIconTint">@color/red</item>
+        <item name="boxStrokeErrorColor">@color/orange</item>
+        <item name="cursorColor">@color/red</item>
+        <item name="android:textColorHighlight">@color/red</item>
     </style>
 
 
