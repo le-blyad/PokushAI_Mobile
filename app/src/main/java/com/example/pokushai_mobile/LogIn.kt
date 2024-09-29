@@ -12,6 +12,8 @@ import com.google.android.material.textfield.TextInputLayout
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import android.util.Log
+
 
 
 class LogIn : AppCompatActivity() {
@@ -67,25 +69,17 @@ class LogIn : AppCompatActivity() {
                     override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                         if (response.isSuccessful) {
                             val loginResponse = response.body()
-
-                            // Сохранение информации о пользователе
+                            Log.d("LogIn", "Ответ от сервера: ${loginResponse}") // Логирование
                             loginResponse?.userId?.let { userId ->
-                                val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
-                                sharedPreferences.edit().putLong("user_id", userId).apply() // Используйте userId из ответа
+                                onLoginSuccess(userId)
                             }
-
-                            // Если ответ успешен, переходим на следующий экран
-                            val intent = Intent(this@LogIn, SecondActivity::class.java)
-                            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                            startActivity(intent)
-                            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-                            finish()
                             Toast.makeText(this@LogIn, "Успешный вход!", Toast.LENGTH_SHORT).show()
                         } else {
                             inputFieldLoginLayout.error = "Логин и/или пароль неверный"
                             inputFieldPasswordLayout.error = "Логин и/или пароль неверный"
                         }
                     }
+
 
                     override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                         Toast.makeText(this@LogIn, "Ошибка сети: ${t.message}", Toast.LENGTH_SHORT).show()
@@ -96,5 +90,15 @@ class LogIn : AppCompatActivity() {
             }
         }
 
+
     }
+    private fun onLoginSuccess(userId: Long) {
+        val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
+        sharedPreferences.edit().putLong("user_id", userId).apply()
+        Log.d("LogIn", "Сохранён user_id: $userId") // Логирование
+        val intent = Intent(this, User::class.java)
+        startActivity(intent)
+        finish()
+    }
+
 }
