@@ -37,24 +37,13 @@
                 android:textColor="#FFFFFF"
                 android:textSize="16dp" />
 
-            <Button
-                android:id="@+id/logIn"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginTop="-50dp"
-                android:layout_gravity="left"
-                android:layout_marginStart="10dp"
-                android:backgroundTint="@color/orange"
-                android:text="Войти"
-                android:textColor="#FFFFFF"
-                android:textSize="16dp" />
 
             <Button
                 android:id="@+id/user"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_gravity="left"
-                android:layout_marginStart="120dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="-50dp"
                 android:backgroundTint="@color/orange"
                 android:text="Аккаунт"

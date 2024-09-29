@@ -47,17 +47,6 @@ class SecondActivity : AppCompatActivity() {
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 
-        val logIn = findViewById<Button>(R.id.logIn)
-        logIn.setOnClickListener {
-            if (isInternetAvailable(this)) {
-                val intent = Intent(this, LogIn::class.java)
-                startActivity(intent)
-                overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-            } else {
-                Toast.makeText(this, "Нет подключения к интернету", Toast.LENGTH_SHORT).show()
-            }
-        }
-
         val user = findViewById<Button>(R.id.user)
         user.setOnClickListener {
             if (isInternetAvailable(this)) {
