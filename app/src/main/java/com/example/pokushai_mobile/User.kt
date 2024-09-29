@@ -12,12 +12,18 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.io.ByteArrayOutputStream
-import android.graphics.BitmapFactory
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+
 
 class User : AppCompatActivity() {
 
     private lateinit var imageViewProfile: ImageView
+    private lateinit var apiService: ApiService  // Объявляем переменную для ApiService
     private val PICK_IMAGE_REQUEST = 1
     private var loggedInUserId: Long? = null
 
@@ -25,11 +31,38 @@ class User : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user)
 
+        apiService = Retrofit.Builder()
+            .baseUrl("http://172.20.10.2:8000/")  // Адрес вашего сервера
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(ApiService::class.java)
+
         val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
         loggedInUserId = sharedPreferences.getLong("user_id", -1)
 
-        if (loggedInUserId != -1L) {
-            // Загрузите данные пользователя и отобразите их
+        val textViewUsername = findViewById<TextView>(R.id.textViewUsername)
+        imageViewProfile = findViewById(R.id.imageViewProfile)
+
+        if (loggedInUserId != -1L && loggedInUserId != 0L) {
+            // Загружаем профиль пользователя
+            apiService.getUserProfile(loggedInUserId!!).enqueue(object : Callback<Profile> {
+                override fun onResponse(call: Call<Profile>, response: Response<Profile>) {
+                    if (response.isSuccessful) {
+                        val profile = response.body()
+                        profile?.let {
+                            textViewUsername.text = it.username  // Отображаем имя пользователя
+                        }
+                    } else {
+                        Log.e("User", "Ошибка получения профиля: ${response.errorBody()?.string()}")
+                        Toast.makeText(this@User, "Ошибка получения профиля", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<Profile>, t: Throwable) {
+                    Log.e("User", "Ошибка: ${t.message}")
+                    Toast.makeText(this@User, "Ошибка сети", Toast.LENGTH_SHORT).show()
+                }
+            })
         } else {
             // Если ID пользователя не найден, перенаправьте на экран входа
             val intent = Intent(this, LogIn::class.java)
@@ -37,16 +70,7 @@ class User : AppCompatActivity() {
             finish()
         }
 
-
         val logOut = findViewById<Button>(R.id.logOut)
-        val textViewUsername = findViewById<TextView>(R.id.textViewUsername)
-        imageViewProfile = findViewById(R.id.imageViewProfile)
-        val buttonRemoveImage = findViewById<Button>(R.id.buttonRemoveImage)
-        val buttonAddImage = findViewById<Button>(R.id.buttonAddImage)
-
-
-
-
         logOut.setOnClickListener {
             val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
             sharedPreferences.edit().clear().apply() // Очистка данных пользователя
@@ -60,18 +84,6 @@ class User : AppCompatActivity() {
         buttonBack.setOnClickListener {
             onBackPressed()
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-        }
-
-
-
-        buttonAddImage.setOnClickListener {
-            checkPermissionAndOpenGallery()
-        }
-
-        buttonRemoveImage.setOnClickListener {
-            loggedInUserId?.let { userId ->
-                imageViewProfile.setImageResource(R.drawable.no_photo) // Установите изображение по умолчанию
-            }
         }
     }
 
@@ -106,6 +118,8 @@ class User : AppCompatActivity() {
             val imageBytes = getBytesFromBitmap(bitmap)
 
             loggedInUserId?.let { userId ->
+                // Отправка изображения на сервер, если это необходимо
+                // Например, вы можете вызвать метод API для загрузки изображения
             }
 
             imageViewProfile.setImageBitmap(bitmap)
@@ -119,4 +133,3 @@ class User : AppCompatActivity() {
         }
     }
 }
-
