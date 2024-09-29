@@ -1,8 +1,9 @@
 package com.example.pokushai_mobile
-import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.POST
+import retrofit2.http.GET
 import retrofit2.http.Body
+import retrofit2.http.Path
 
 
 // Определите модель данных, которая будет использоваться
@@ -27,12 +28,20 @@ data class LoginResponse(
     val userId: Long
 )
 
+data class Profile(
+    val username: String,
+    val userId: Long
+)
 
 interface ApiService {
+    @GET("users/profiles/{id}/")
+    fun getUserProfile(@Path("id") id: Long): Call<Profile>
+
     @POST("register/")
     fun register(@Body request: RegisterRequest): Call<RegisterResponse>
 
     @POST("login/")
     fun login(@Body request: LoginRequest): Call<LoginResponse>
 }
+
 
