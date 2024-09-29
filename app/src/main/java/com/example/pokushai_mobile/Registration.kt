@@ -11,16 +11,15 @@ import android.text.TextWatcher
 import android.widget.Toast
 import com.google.android.material.textfield.TextInputLayout
 import android.util.Patterns
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class Registration : AppCompatActivity() {
-
-    private lateinit var userDAO: UserDAO
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration)
-
-        userDAO = UserDAO(this)
 
         // Инициализация полей ввода
         val inputFieldLogin = findViewById<EditText>(R.id.inputFieldLogin)
@@ -53,7 +52,6 @@ class Registration : AppCompatActivity() {
             )
             if (isValid) {
                 registerUser(inputFieldLogin, inputFieldPassword, inputFieldNumberPhone, inputFieldEmailAddress)
-                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             } else {
                 Toast.makeText(this, "Пожалуйста, исправьте ошибки в форме", Toast.LENGTH_SHORT).show()
             }
@@ -162,23 +160,43 @@ class Registration : AppCompatActivity() {
         val passwordText = password.text.toString()
         val number = phoneNumber.text.toString()
         val emailText = email.text.toString()
-        val result = userDAO.addUser(username, passwordText, number, emailText)
-        if (result != -1L) {
-            Toast.makeText(this, "Успешно зарегистрирован!", Toast.LENGTH_SHORT).show()
-            if (userDAO.checkUser(username, passwordText)) {
-                userDAO.setUserLoggedIn(username)
-                // Создаем Intent для запуска SecondActivity
-                val intent = Intent(this, SecondActivity::class.java)
-                // Устанавливаем флаги для Intent
-                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                // Запускаем активность
-                startActivity(intent)
-                overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-                finish() // Завершаем текущую активность
+
+        // Создаем запрос
+        val registerRequest = RegisterRequest(
+            username = username,
+            phone = number,
+            email = emailText,
+            password1 = passwordText,
+            password2 = passwordText // Используем один и тот же пароль
+        )
+
+        // Отправляем запрос через Retrofit
+        apiService.register(registerRequest).enqueue(object : Callback<RegisterResponse> {
+            override fun onResponse(call: Call<RegisterResponse>, response: Response<RegisterResponse>) {
+                if (response.isSuccessful) {
+                    Toast.makeText(this@Registration, "Успешно зарегистрирован!", Toast.LENGTH_SHORT).show()
+
+                    val registerResponse = response.body()
+                    // Сохранение информации о пользователе
+                    registerResponse?.userId?.let { userId ->
+                        val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
+                        sharedPreferences.edit().putLong("user_id", userId).apply() // Используйте userId из ответа
+                    }
+                    // Перенаправляем на следующую активность
+                    val intent = Intent(this@Registration, SecondActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    startActivity(intent)
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+                    finish() // Завершаем текущую активность
+                } else {
+                    Toast.makeText(this@Registration, "Ошибка в регистрации!", Toast.LENGTH_SHORT).show()
+                }
             }
-        } else {
-            Toast.makeText(this, "Ошибка в регистрации!", Toast.LENGTH_SHORT).show()
-        }
+
+            override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
+                Toast.makeText(this@Registration, "Ошибка: ${t.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 
     // Функция для форматирования номера телефона

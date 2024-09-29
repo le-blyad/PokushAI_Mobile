@@ -9,15 +9,16 @@ import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.textfield.TextInputLayout
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+
 
 class LogIn : AppCompatActivity() {
-
-    private lateinit var userDAO: UserDAO
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_log_in)
 
-        userDAO = UserDAO(this)
 
         val inputFieldLogin = findViewById<EditText>(R.id.inputFieldLogin)
         val inputFieldPassword = findViewById<EditText>(R.id.inputFieldPassword)
@@ -50,26 +51,50 @@ class LogIn : AppCompatActivity() {
         buttonLogIn.setOnClickListener {
             val username = inputFieldLogin.text.toString()
             val password = inputFieldPassword.text.toString()
-            val isValid = userDAO.checkUser(username, password)
+
+            if (username.isEmpty() || password.isEmpty()) {
+                inputFieldLoginLayout.error = "Логин не может быть пустым"
+                inputFieldPasswordLayout.error = "Пароль не может быть пустым"
+                return@setOnClickListener
+            }
 
             if (isInternetAvailable(this)) {
-                if (isValid) {
-                    userDAO.setUserLoggedIn(username) // Установка пользователя как вошедшего
-                    val intent = Intent(this, SecondActivity::class.java)
-                    // Устанавливаем флаги для Intent
-                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                    startActivity(intent)
-                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-                    finish()
-                    Toast.makeText(this, "Успешный вход в аккаунт!", Toast.LENGTH_SHORT).show()
-                } else {
-                    inputFieldLoginLayout.error = "Логин и/или пароль неверный"
-                    inputFieldPasswordLayout.error = "Логин и/или пароль неверный"
-                }
+                // Создание объекта запроса
+                val loginRequest = LoginRequest(username, password)
 
+                // Выполнение запроса на сервер
+                apiService.login(loginRequest).enqueue(object : Callback<LoginResponse> {
+                    override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+                        if (response.isSuccessful) {
+                            val loginResponse = response.body()
+
+                            // Сохранение информации о пользователе
+                            loginResponse?.userId?.let { userId ->
+                                val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
+                                sharedPreferences.edit().putLong("user_id", userId).apply() // Используйте userId из ответа
+                            }
+
+                            // Если ответ успешен, переходим на следующий экран
+                            val intent = Intent(this@LogIn, SecondActivity::class.java)
+                            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                            startActivity(intent)
+                            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+                            finish()
+                            Toast.makeText(this@LogIn, "Успешный вход!", Toast.LENGTH_SHORT).show()
+                        } else {
+                            inputFieldLoginLayout.error = "Логин и/или пароль неверный"
+                            inputFieldPasswordLayout.error = "Логин и/или пароль неверный"
+                        }
+                    }
+
+                    override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                        Toast.makeText(this@LogIn, "Ошибка сети: ${t.message}", Toast.LENGTH_SHORT).show()
+                    }
+                })
             } else {
                 Toast.makeText(this, "Нет подключения к интернету", Toast.LENGTH_SHORT).show()
             }
         }
+
     }
 }

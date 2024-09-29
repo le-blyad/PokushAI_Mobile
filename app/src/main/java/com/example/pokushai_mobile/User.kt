@@ -17,7 +17,6 @@ import android.graphics.BitmapFactory
 
 class User : AppCompatActivity() {
 
-    private lateinit var userDAO: UserDAO
     private lateinit var imageViewProfile: ImageView
     private val PICK_IMAGE_REQUEST = 1
     private var loggedInUserId: Long? = null
@@ -26,30 +25,35 @@ class User : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user)
 
-        userDAO = UserDAO(this)
+        val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
+        loggedInUserId = sharedPreferences.getLong("user_id", -1)
+
+        if (loggedInUserId != -1L) {
+            // Загрузите данные пользователя и отобразите их
+        } else {
+            // Если ID пользователя не найден, перенаправьте на экран входа
+            val intent = Intent(this, LogIn::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+
         val logOut = findViewById<Button>(R.id.logOut)
-        val loggedInUser = userDAO.getLoggedInUser()
         val textViewUsername = findViewById<TextView>(R.id.textViewUsername)
         imageViewProfile = findViewById(R.id.imageViewProfile)
         val buttonRemoveImage = findViewById<Button>(R.id.buttonRemoveImage)
         val buttonAddImage = findViewById<Button>(R.id.buttonAddImage)
 
 
-        textViewUsername.text = "$loggedInUser"
 
-        loggedInUserId = userDAO.getUserIdByUsername(loggedInUser)
 
         logOut.setOnClickListener {
-            Log.d("Logout", "Log out button clicked")
-            try {
-                userDAO.clearUserLoggedIn()
-                val intent = Intent(this, SecondActivity::class.java)
-                startActivity(intent)
-                finish()
-                overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-            } catch (e: Exception) {
-                Log.e("LogoutError", "Error logging out", e)
-            }
+            val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
+            sharedPreferences.edit().clear().apply() // Очистка данных пользователя
+            val intent = Intent(this, LogIn::class.java)
+            startActivity(intent)
+            finish()
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 
         val buttonBack = findViewById<ImageButton>(R.id.buttonBack)
@@ -58,13 +62,7 @@ class User : AppCompatActivity() {
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 
-        loggedInUserId?.let { userId ->
-            val imageBytes = userDAO.getProfileImage(userId)
-            if (imageBytes != null) {
-                val bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
-                imageViewProfile.setImageBitmap(bitmap)
-            }
-        }
+
 
         buttonAddImage.setOnClickListener {
             checkPermissionAndOpenGallery()
@@ -72,7 +70,6 @@ class User : AppCompatActivity() {
 
         buttonRemoveImage.setOnClickListener {
             loggedInUserId?.let { userId ->
-                userDAO.removeProfileImage(userId)
                 imageViewProfile.setImageResource(R.drawable.no_photo) // Установите изображение по умолчанию
             }
         }
@@ -109,7 +106,6 @@ class User : AppCompatActivity() {
             val imageBytes = getBytesFromBitmap(bitmap)
 
             loggedInUserId?.let { userId ->
-                userDAO.updateProfileImage(userId, imageBytes)
             }
 
             imageViewProfile.setImageBitmap(bitmap)

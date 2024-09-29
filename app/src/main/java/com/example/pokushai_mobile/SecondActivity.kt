@@ -20,14 +20,10 @@ class SecondActivity : AppCompatActivity() {
 
     private lateinit var interpreter: Interpreter
     private val switches = mutableListOf<Switch>()
-    private lateinit var userDAO: UserDAO
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
-
-        userDAO = UserDAO(this)
-
         val searchView = findViewById<SearchView>(R.id.searchView)
         searchView.setOnClickListener {
             searchView.isIconified = false
@@ -73,15 +69,6 @@ class SecondActivity : AppCompatActivity() {
             }
         }
 
-
-        val loggedInUser = userDAO.getLoggedInUser()
-        if (loggedInUser == null) {
-            logIn.visibility = Button.VISIBLE
-            user.visibility = Button.INVISIBLE
-        } else {
-            logIn.visibility = Button.INVISIBLE
-            user.visibility = Button.VISIBLE
-        }
 
 
         //val imageButtonCutlets = findViewById<ImageButton>(R.id.imageButtonCutlets)
@@ -134,33 +121,6 @@ class SecondActivity : AppCompatActivity() {
         }
 
         filterSwitches(null)
-
-        //новый код связанный с обменом данных с серверами django
-        val checkButton = findViewById<Button>(R.id.checkButton)
-
-        checkButton.setOnClickListener {
-
-            RetrofitInstance.api.getProfiles().enqueue(object : Callback<List<Profile>> {
-                override fun onResponse(
-                    call: Call<List<Profile>>,
-                    response: Response<List<Profile>>
-                ) {
-                    if (response.isSuccessful) {
-                        val profiles = response.body()
-                        Toast.makeText(this@SecondActivity, "Норм", Toast.LENGTH_SHORT).show()
-                    } else {
-                        Toast.makeText(this@SecondActivity, "Хуйня, переделывай", Toast.LENGTH_SHORT).show()
-                    }
-                }
-
-                override fun onFailure(call: Call<List<Profile>>, t: Throwable) {
-                    // Обработайте ошибку
-                    Toast.makeText(this@SecondActivity, "Пизда как переделывай", Toast.LENGTH_SHORT).show()
-                }
-            })
-        }
-
-
 
     }
 
