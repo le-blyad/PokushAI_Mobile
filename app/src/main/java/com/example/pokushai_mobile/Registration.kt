@@ -17,10 +17,11 @@ import retrofit2.Response
 
 class Registration : AppCompatActivity() {
 
+    val apiService = ApiClient.instance
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration)
-
         // Инициализация полей ввода
         val inputFieldLogin = findViewById<EditText>(R.id.inputFieldLogin)
         val inputFieldNumberPhone = findViewById<EditText>(R.id.inputFieldNumberPhone)
@@ -169,7 +170,6 @@ class Registration : AppCompatActivity() {
             password1 = passwordText,
             password2 = passwordText // Используем один и тот же пароль
         )
-
         // Отправляем запрос через Retrofit
         apiService.register(registerRequest).enqueue(object : Callback<RegisterResponse> {
             override fun onResponse(call: Call<RegisterResponse>, response: Response<RegisterResponse>) {
