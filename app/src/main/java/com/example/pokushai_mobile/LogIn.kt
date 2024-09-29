@@ -17,11 +17,12 @@ import android.util.Log
 
 
 class LogIn : AppCompatActivity() {
+
+    val apiService = ApiClient.instance
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_log_in)
-
-
         val inputFieldLogin = findViewById<EditText>(R.id.inputFieldLogin)
         val inputFieldPassword = findViewById<EditText>(R.id.inputFieldPassword)
         val inputFieldLoginLayout = findViewById<TextInputLayout>(R.id.inputFieldLoginLayout)

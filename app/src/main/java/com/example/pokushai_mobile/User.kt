@@ -22,20 +22,12 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class User : AppCompatActivity() {
 
+    val apiService = ApiClient.instance
     private lateinit var imageViewProfile: ImageView
-    private lateinit var apiService: ApiService  // Объявляем переменную для ApiService
-    private val PICK_IMAGE_REQUEST = 1
     private var loggedInUserId: Long? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user)
-
-        apiService = Retrofit.Builder()
-            .baseUrl("http://172.20.10.2:8000/")  // Адрес вашего сервера
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-            .create(ApiService::class.java)
 
         val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
         loggedInUserId = sharedPreferences.getLong("user_id", -1)
@@ -43,6 +35,7 @@ class User : AppCompatActivity() {
         val textViewUsername = findViewById<TextView>(R.id.textViewUsername)
         imageViewProfile = findViewById(R.id.imageViewProfile)
 
+        // Проверяем, что userId не пустой
         if (loggedInUserId != -1L && loggedInUserId != 0L) {
             // Загружаем профиль пользователя
             apiService.getUserProfile(loggedInUserId!!).enqueue(object : Callback<Profile> {
@@ -64,16 +57,17 @@ class User : AppCompatActivity() {
                 }
             })
         } else {
-            // Если ID пользователя не найден, перенаправьте на экран входа
+            // Если ID пользователя не найден, перенаправляем на экран входа
             val intent = Intent(this, LogIn::class.java)
             startActivity(intent)
             finish()
         }
 
+        // Логика для кнопки выхода и кнопки назад
         val logOut = findViewById<Button>(R.id.logOut)
         logOut.setOnClickListener {
             val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
-            sharedPreferences.edit().clear().apply() // Очистка данных пользователя
+            sharedPreferences.edit().clear().apply()
             val intent = Intent(this, LogIn::class.java)
             startActivity(intent)
             finish()
@@ -86,50 +80,5 @@ class User : AppCompatActivity() {
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
     }
-
-    private fun getBytesFromBitmap(bitmap: Bitmap): ByteArray {
-        val stream = ByteArrayOutputStream()
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
-        return stream.toByteArray()
-    }
-
-    private fun checkPermissionAndOpenGallery() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), PICK_IMAGE_REQUEST)
-        } else {
-            openGallery()
-        }
-    }
-
-    private fun openGallery() {
-        val intent = Intent(Intent.ACTION_PICK)
-        intent.type = "image/*"
-        startActivityForResult(intent, PICK_IMAGE_REQUEST)
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null) {
-            val imageUri: Uri? = data.data
-            imageViewProfile.setImageURI(imageUri)
-
-            val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, imageUri)
-            val imageBytes = getBytesFromBitmap(bitmap)
-
-            loggedInUserId?.let { userId ->
-                // Отправка изображения на сервер, если это необходимо
-                // Например, вы можете вызвать метод API для загрузки изображения
-            }
-
-            imageViewProfile.setImageBitmap(bitmap)
-        }
-    }
-
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == PICK_IMAGE_REQUEST && grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            openGallery()
-        }
-    }
 }
+
