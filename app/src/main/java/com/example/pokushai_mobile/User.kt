@@ -130,39 +130,58 @@ class User : AppCompatActivity() {
         }
     }
 
-    fun getCompressedBitmap(uri: Uri): Bitmap {
-        val originalBitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, uri)
-        return Bitmap.createScaledBitmap(originalBitmap, 800, 800, true)
+    fun getCompressedBitmap(uri: Uri): Bitmap? {
+        return try {
+            val originalBitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, uri)
+            Bitmap.createScaledBitmap(originalBitmap, 800, 800, true)
+        } catch (e: Exception) {
+            Log.e("User", "Ошибка получения битмапа: ${e.message}")
+            null
+        }
     }
+
 
     private fun uploadProfileImage(imageUri: Uri?) {
         imageUri?.let {
-            val bitmap = getCompressedBitmap(it) // Используем сжатие
-            val stream = ByteArrayOutputStream()
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 85, stream) // Сжимаем до 85% качества
-            val byteArray = stream.toByteArray()
+            val bitmap = getCompressedBitmap(it) // Получаем сжатый Bitmap
+            // Проверяем, что bitmap не равен null перед вызовом compress
+            if (bitmap != null) {
+                val stream = ByteArrayOutputStream()
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 85, stream) // Сжимаем до 85% качества
+                val byteArray = stream.toByteArray()
 
-            val requestBody = byteArray.toRequestBody("image/jpeg".toMediaType())
-            val imagePart = MultipartBody.Part.createFormData("image", "profile_image.jpg", requestBody)
-            val userIdBody = loggedInUserId.toString().toRequestBody("text/plain".toMediaType())
+                val requestBody = byteArray.toRequestBody("image/jpeg".toMediaType())
+                val imagePart = MultipartBody.Part.createFormData("image", "profile_image.jpg", requestBody)
+                val userIdBody = loggedInUserId.toString().toRequestBody("text/plain".toMediaType())
 
-            val call = apiService.uploadProfileImage(userIdBody, imagePart)
-            call.enqueue(object : Callback<ResponseBody> {
-                override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                    if (response.isSuccessful) {
-                        Toast.makeText(this@User, "Изображение загружено", Toast.LENGTH_SHORT).show()
-                    } else {
-                        val errorBody = response.errorBody()?.string() ?: "Ошибка"
-                        Toast.makeText(this@User, "Ошибка загрузки: $errorBody", Toast.LENGTH_SHORT).show()
+                Log.d("Upload", "Uploading image for user ID: $loggedInUserId") // Лог
+                val call = apiService.uploadProfileImage(userIdBody, imagePart)
+                call.enqueue(object : Callback<ResponseBody> {
+                    override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                        if (response.isSuccessful) {
+                            Toast.makeText(this@User, "Изображение загружено", Toast.LENGTH_SHORT).show()
+                        } else {
+                            val errorBody = response.errorBody()?.string() ?: "Ошибка"
+                            Log.e("Upload", "Ошибка загрузки: $errorBody") // Лог ошибки
+                            Toast.makeText(this@User, "Ошибка загрузки: $errorBody", Toast.LENGTH_SHORT).show()
+                        }
                     }
-                }
 
-                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                    Toast.makeText(this@User, "Ошибка сети", Toast.LENGTH_SHORT).show()
-                }
-            })
+                    override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                        Log.e("Upload", "Ошибка сети: ${t.message}") // Лог ошибки сети
+                        Toast.makeText(this@User, "Ошибка сети", Toast.LENGTH_SHORT).show()
+                    }
+                })
+            } else {
+                // Обработка случая, когда bitmap равен null
+                Log.e("Upload", "Ошибка: Полученный Bitmap равен null")
+                Toast.makeText(this, "Ошибка: Полученный Bitmap равен null", Toast.LENGTH_SHORT).show()
+            }
         }
     }
+
+
+
 
     // Функция для удаления изображения профиля с сервера
     private fun deleteProfileImage() {
