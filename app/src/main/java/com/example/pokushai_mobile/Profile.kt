@@ -1,10 +1,7 @@
 package com.example.pokushai_mobile
 import retrofit2.Call
-import retrofit2.http.POST
-import retrofit2.http.GET
-import retrofit2.http.Body
-import retrofit2.http.Path
-
+import retrofit2.http.*
+import okhttp3.*
 
 // Определите модель данных, которая будет использоваться
 data class RegisterRequest(
@@ -24,14 +21,21 @@ data class LoginRequest(
     val password: String
 )
 data class LoginResponse(
-    val message: String, // Ожидаемый формат ответа
+    val message: String,
     val userId: Long
 )
 
 data class Profile(
     val username: String,
-    val userId: Long
+    val userId: Long,
+    val userImage: String?
 )
+
+data class ProfileResponse(
+    val message: String,
+    val success: Boolean // Или другие поля, которые вам нужны
+)
+
 
 interface ApiService {
     @GET("users/profiles/{id}/")
@@ -42,6 +46,17 @@ interface ApiService {
 
     @POST("login/")
     fun login(@Body request: LoginRequest): Call<LoginResponse>
+
+    @Multipart
+    @POST("media/profile_pics")
+    fun uploadProfileImage(
+        @Part("user_id") userId: RequestBody,
+        @Part image: MultipartBody.Part
+    ): Call<ResponseBody>
+
+    @DELETE("media/profile_pics/{id}/delete-image/")
+    fun deleteProfileImage(@Path("id") id: Long): Call<ResponseBody>
+
 }
 
 
