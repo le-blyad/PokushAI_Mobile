@@ -21,6 +21,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.app.ActivityCompat
 import okhttp3.RequestBody.Companion.toRequestBody
 import com.squareup.picasso.Picasso
+import okhttp3.*
 
 class User : AppCompatActivity() {
 
@@ -69,9 +70,17 @@ class User : AppCompatActivity() {
                         val profile = response.body()
                         profile?.let {
                             textViewUsername.text = it.username  // Отображаем имя пользователя
-                            // Загружаем изображение профиля через Picasso
+                            // Загружаем изображение профиля
                             val imageUrl = it.userImage // Предполагаем, что это поле есть в объекте Profile
-                            Picasso.get().load(imageUrl).into(imageViewProfile)
+
+                            if (!imageUrl.isNullOrEmpty()) {
+                                Picasso.get()
+                                    .load(imageUrl)
+                                    .placeholder(R.drawable.no_photo)
+                                    .into(imageViewProfile)
+                            } else {
+                                imageViewProfile.setImageResource(R.drawable.no_photo)
+                            }
                         }
                     } else {
                         Log.e("User", "Ошибка получения профиля: ${response.errorBody()?.string()}")
@@ -110,12 +119,14 @@ class User : AppCompatActivity() {
         }
     }
 
+
     // Функция для открытия выбора файла
     private fun openFileChooser() {
         val intent = Intent(Intent.ACTION_PICK)
         intent.type = "image/*"
         startActivityForResult(intent, PICK_IMAGE_REQUEST)
     }
+
 
     // Обработка результата выбора изображения
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -129,6 +140,7 @@ class User : AppCompatActivity() {
             }
         }
     }
+
 
     fun getCompressedBitmap(uri: Uri): Bitmap? {
         return try {
@@ -144,7 +156,6 @@ class User : AppCompatActivity() {
     private fun uploadProfileImage(imageUri: Uri?) {
         imageUri?.let {
             val bitmap = getCompressedBitmap(it) // Получаем сжатый Bitmap
-            // Проверяем, что bitmap не равен null перед вызовом compress
             if (bitmap != null) {
                 val stream = ByteArrayOutputStream()
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 85, stream) // Сжимаем до 85% качества
@@ -152,28 +163,28 @@ class User : AppCompatActivity() {
 
                 val requestBody = byteArray.toRequestBody("image/jpeg".toMediaType())
                 val imagePart = MultipartBody.Part.createFormData("image", "profile_image.jpg", requestBody)
-                val userIdBody = loggedInUserId.toString().toRequestBody("text/plain".toMediaType())
+                val userIdRequestBody = loggedInUserId!!.toString().toRequestBody("text/plain".toMediaType())
 
-                Log.d("Upload", "Uploading image for user ID: $loggedInUserId") // Лог
-                val call = apiService.uploadProfileImage(userIdBody, imagePart)
+                // Выполняем POST запрос для загрузки изображения
+                val call = apiService.uploadProfileImage(userIdRequestBody, imagePart)
+                Log.d("Upload", "Uploading image for user ID: $loggedInUserId")
                 call.enqueue(object : Callback<ResponseBody> {
                     override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                         if (response.isSuccessful) {
                             Toast.makeText(this@User, "Изображение загружено", Toast.LENGTH_SHORT).show()
                         } else {
                             val errorBody = response.errorBody()?.string() ?: "Ошибка"
-                            Log.e("Upload", "Ошибка загрузки: $errorBody") // Лог ошибки
+                            Log.e("Upload", "Ошибка загрузки: $errorBody")
                             Toast.makeText(this@User, "Ошибка загрузки: $errorBody", Toast.LENGTH_SHORT).show()
                         }
                     }
 
                     override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                        Log.e("Upload", "Ошибка сети: ${t.message}") // Лог ошибки сети
+                        Log.e("Upload", "Ошибка сети: ${t.message}")
                         Toast.makeText(this@User, "Ошибка сети", Toast.LENGTH_SHORT).show()
                     }
                 })
             } else {
-                // Обработка случая, когда bitmap равен null
                 Log.e("Upload", "Ошибка: Полученный Bitmap равен null")
                 Toast.makeText(this, "Ошибка: Полученный Bitmap равен null", Toast.LENGTH_SHORT).show()
             }
@@ -181,9 +192,6 @@ class User : AppCompatActivity() {
     }
 
 
-
-
-    // Функция для удаления изображения профиля с сервера
     private fun deleteProfileImage() {
         if (loggedInUserId != null) {
             val call = apiService.deleteProfileImage(loggedInUserId!!)
