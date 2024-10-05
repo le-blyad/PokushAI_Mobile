@@ -38,7 +38,7 @@ data class ProfileResponse(
 
 
 interface ApiService {
-    @GET("users/profiles/{id}/")
+    @GET("profiles/{id}")
     fun getUserProfile(@Path("id") id: Long): Call<Profile>
 
     @POST("register/")
