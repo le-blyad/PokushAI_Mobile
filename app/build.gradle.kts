@@ -34,6 +34,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -54,6 +57,8 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
     implementation("com.squareup.picasso:picasso:2.8")
     implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
+    implementation(libs.lifecycle.livedata.ktx)
+    implementation(libs.lifecycle.viewmodel.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)

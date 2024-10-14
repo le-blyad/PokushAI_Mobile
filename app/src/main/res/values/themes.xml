@@ -12,8 +12,7 @@
         <item name="colorControlActivated">#EB3F14</item>
     </style>
 
-    <style name="MySearchViewStyle"
-        parent="Widget.AppCompat.SearchView">
+    <style name="MySearchViewStyle" parent="Widget.AppCompat.SearchView">
         <item name="android:editTextColor">@color/black</item>
     </style>
 
@@ -42,4 +41,17 @@
     </style>
 
     <style name="Theme.PokushAI_Mobile" parent="Base.Theme.PokushAI_Mobile" />
+
+    <style name="Theme.PokushAI_Mobile.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.PokushAI_Mobile.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="colorPrimary">@color/yelow2</item>
+    </style>
+
+    <style name="Theme.PokushAI_Mobile.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColorSecondary">@color/yelow</item>
+    </style>
 </resources>

@@ -1,29 +1,60 @@
 package com.example.pokushai_mobile
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.widget.Switch
+import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.navigation.NavigationView
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.appcompat.app.AppCompatActivity
+import com.example.pokushai_mobile.databinding.ActivityNavMenuBinding
+import org.tensorflow.lite.Interpreter
 import android.widget.SearchView
 import android.view.View
 import android.content.Intent
 import android.widget.Button
 import android.widget.Toast
-import org.tensorflow.lite.Interpreter
 import java.io.FileInputStream
 import java.nio.MappedByteBuffer
 import java.nio.channels.FileChannel
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
-class SecondActivity : AppCompatActivity() {
+class Nav_menu : AppCompatActivity() {
 
+    private lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var binding: ActivityNavMenuBinding
     private lateinit var interpreter: Interpreter
     private val switches = mutableListOf<Switch>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_second)
+
+        binding = ActivityNavMenuBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        setSupportActionBar(binding.appBarNavMenu.toolbar)
+
+        binding.appBarNavMenu.fab.setOnClickListener { view ->
+            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show()
+        }
+        val drawerLayout: DrawerLayout = binding.drawerLayout
+        val navView: NavigationView = binding.navView
+        val navController = findNavController(R.id.nav_host_fragment_content_nav_menu)
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+        appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
+            ), drawerLayout
+        )
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        navView.setupWithNavController(navController)
+
         val searchView = findViewById<SearchView>(R.id.searchView)
         searchView.setOnClickListener {
             searchView.isIconified = false
@@ -40,6 +71,7 @@ class SecondActivity : AppCompatActivity() {
             }
         })
 
+        /*
         val allRecipes = findViewById<Button>(R.id.allRecipes)
         allRecipes.setOnClickListener {
             val intent = Intent(this, AllRecipes::class.java)
@@ -59,13 +91,12 @@ class SecondActivity : AppCompatActivity() {
         }
 
 
-
-        //val imageButtonCutlets = findViewById<ImageButton>(R.id.imageButtonCutlets)
-        //imageButtonCutlets.setOnClickListener {
-        //    val intent = Intent(this, cutlets::class.java)
-        //    startActivity(intent)
-        //}
-
+        val imageButtonCutlets = findViewById<ImageButton>(R.id.imageButtonCutlets)
+        imageButtonCutlets.setOnClickListener {
+            val intent = Intent(this, cutlets::class.java)
+            startActivity(intent)
+        }
+        */
 
         val modelFile = assets.openFd("model.tflite")
         val fileDescriptor = modelFile.fileDescriptor
@@ -90,12 +121,6 @@ class SecondActivity : AppCompatActivity() {
             }
         }
 
-        val nav = findViewById<Button>(R.id.nav)
-        nav.setOnClickListener {
-            val intent = Intent(this, Nav_menu::class.java)
-            startActivity(intent)
-        }
-
         val buttonNext2 = findViewById<Button>(R.id.buttonNext2)
 
         buttonNext2.setOnClickListener {
@@ -117,6 +142,19 @@ class SecondActivity : AppCompatActivity() {
 
         filterSwitches(null)
 
+
+    }
+
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.nav_menu, menu)
+        return true
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment_content_nav_menu)
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
     private fun filterSwitches(query: String?) {
@@ -140,4 +178,5 @@ class SecondActivity : AppCompatActivity() {
         return maxIndex
     }
 }
+
 
