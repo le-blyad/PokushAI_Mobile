@@ -163,7 +163,7 @@ class User : AppCompatActivity() {
 
                 val requestBody = byteArray.toRequestBody("image/jpeg".toMediaType())
                 val imagePart = MultipartBody.Part.createFormData("image", "profile_image.jpg", requestBody)
-                val userIdRequestBody = loggedInUserId!!.toString().toRequestBody("text/plain".toMediaType())
+                val userIdRequestBody = loggedInUserId!!
 
                 // Выполняем POST запрос для загрузки изображения
                 val call = apiService.uploadProfileImage(userIdRequestBody, imagePart)

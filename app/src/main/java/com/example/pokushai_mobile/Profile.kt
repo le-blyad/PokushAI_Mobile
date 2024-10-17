@@ -51,9 +51,9 @@ interface ApiService {
     fun login(@Body request: LoginRequest): Call<LoginResponse>
 
     @Multipart
-    @POST("/users/profile")
+    @POST("update_profile/")
     fun uploadProfileImage(
-        @Part("user_id") userId: RequestBody,
+        @Part("userId") userId: Long,
         @Part image: MultipartBody.Part
     ): Call<ResponseBody>
 
