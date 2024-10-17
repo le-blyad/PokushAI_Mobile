@@ -63,6 +63,17 @@
             android:textColor="#FFFFFF"
             android:textSize="16dp" />
 
+        <Button
+            android:id="@+id/recip"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="@color/orange"
+            android:text="хуй 2.0"
+            android:textColor="#FFFFFF"
+            android:textSize="16dp" />
+
         <TextView
             android:id="@+id/textViewSearchProducts"
             android:layout_width="180dp"

@@ -21,6 +21,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".RecipeDesigner"
+            android:exported="false" />
+        <activity
             android:name=".Nav_menu"
             android:exported="false"
             android:label="@string/title_activity_nav_menu"

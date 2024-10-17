@@ -1,5 +1,6 @@
 package com.example.pokushai_mobile
 import retrofit2.Call
+import android.net.Uri
 import retrofit2.http.*
 import okhttp3.*
 
@@ -31,10 +32,12 @@ data class Profile(
     val userImage: String?
 )
 
-data class ProfileResponse(
-    val message: String,
-    val success: Boolean // Или другие поля, которые вам нужны
+data class Step(
+    var number: Int,
+    var photoUri: Uri? = null,
+    var description: String = "",
 )
+
 
 
 interface ApiService {

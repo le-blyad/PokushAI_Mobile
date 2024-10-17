@@ -12,9 +12,7 @@ import org.tensorflow.lite.Interpreter
 import java.io.FileInputStream
 import java.nio.MappedByteBuffer
 import java.nio.channels.FileChannel
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+
 
 class SecondActivity : AppCompatActivity() {
 
@@ -93,6 +91,12 @@ class SecondActivity : AppCompatActivity() {
         val nav = findViewById<Button>(R.id.nav)
         nav.setOnClickListener {
             val intent = Intent(this, Nav_menu::class.java)
+            startActivity(intent)
+        }
+
+        val recip = findViewById<Button>(R.id.recip)
+        recip.setOnClickListener {
+            val intent = Intent(this, RecipeDesigner::class.java)
             startActivity(intent)
         }
 
