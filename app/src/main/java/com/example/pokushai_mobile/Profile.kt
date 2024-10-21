@@ -57,7 +57,7 @@ interface ApiService {
         @Part image: MultipartBody.Part
     ): Call<ResponseBody>
 
-    @DELETE("media/profile_pics/{id}/delete-image/")
+    @DELETE("delete_image/{id}/")
     fun deleteProfileImage(@Path("id") id: Long): Call<ResponseBody>
 
 }
