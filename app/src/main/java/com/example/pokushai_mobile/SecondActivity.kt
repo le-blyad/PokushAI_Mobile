@@ -88,7 +88,9 @@ class SecondActivity : AppCompatActivity() {
             }
         }
 
-        val nav = findViewById<Button>(R.id.nav)
+        //закомментил хуи)
+
+        /*val nav = findViewById<Button>(R.id.nav)
         nav.setOnClickListener {
             val intent = Intent(this, Nav_menu::class.java)
             startActivity(intent)
@@ -98,7 +100,7 @@ class SecondActivity : AppCompatActivity() {
         recip.setOnClickListener {
             val intent = Intent(this, RecipeDesigner::class.java)
             startActivity(intent)
-        }
+        }*/
 
         val buttonNext2 = findViewById<Button>(R.id.buttonNext2)
 

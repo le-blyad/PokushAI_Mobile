@@ -52,6 +52,10 @@
 
         </LinearLayout>
 
+        <!--
+
+        пока хуев нет)
+
         <Button
             android:id="@+id/nav"
             android:layout_width="wrap_content"
@@ -73,6 +77,8 @@
             android:text="хуй 2.0"
             android:textColor="#FFFFFF"
             android:textSize="16dp" />
+
+            -->
 
         <TextView
             android:id="@+id/textViewSearchProducts"
@@ -910,7 +916,7 @@
             </LinearLayout>
 
         </HorizontalScrollView>
-            -->
+
     <ImageButton
         android:id="@+id/buttonPremium0"
         android:layout_width="350dp"
@@ -943,7 +949,6 @@
         android:layout_marginBottom="40dp"
         android:textSize="20dp"/>
 
-        <!--
 
         <TextView
             android:id="@+id/textView3"
