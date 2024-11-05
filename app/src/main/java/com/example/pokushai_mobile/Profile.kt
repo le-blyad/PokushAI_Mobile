@@ -38,7 +38,18 @@ data class Step(
     var description: String = "",
 )
 
+data class userUpdateProfileRequest(
+    var userId: Long,
+    var username: String,
+    var email: String,
+    var phone: String
+)
 
+data class userUpdateProfileResponse(
+    var username: String,
+    var email: String,
+    var phone: String
+)
 
 interface ApiService {
     @GET("profiles/{id}")
@@ -59,6 +70,9 @@ interface ApiService {
 
     @DELETE("delete_image/{id}/")
     fun deleteProfileImage(@Path("id") id: Long): Call<ResponseBody>
+
+    @POST("update_profile/{id}")
+    fun userUpdateProfile(@Path("id") request: userUpdateProfileRequest): Call<userUpdateProfileResponse>
 
 }
 
