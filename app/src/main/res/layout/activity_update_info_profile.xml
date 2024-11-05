@@ -28,26 +28,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <!-- Шапка с кнопкой назад -->
-        <LinearLayout
-            android:id="@+id/linearLayout2"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@color/yelow"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageButton
-                android:id="@+id/buttonBack"
-                android:layout_width="63dp"
-                android:layout_height="50dp"
-                android:backgroundTint="@color/yelow"
-                android:scaleType="centerCrop"
-                android:src="@drawable/back" />
-        </LinearLayout>
-
-
 
         <!-- Заголовок -->
         <TextView
@@ -55,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
-            android:text="Создание аккаунта"
+            android:text="Обновление данных профиля"
             android:textSize="25sp"
             android:textStyle="bold"
             android:layout_gravity="center"/>
