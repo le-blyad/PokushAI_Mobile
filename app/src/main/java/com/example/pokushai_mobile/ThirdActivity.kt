@@ -20,7 +20,6 @@ class ThirdActivity : AppCompatActivity() {
         setContentView(R.layout.activity_third)
 
         val modelFile = assets.openFd("model.tflite")
-        val fileDescriptor = modelFile.fileDescriptor
         val startOffset = modelFile.startOffset
         val length = modelFile.length
         val fileChannel = FileInputStream(modelFile.fileDescriptor).channel
@@ -72,7 +71,7 @@ class ThirdActivity : AppCompatActivity() {
 
 
         buttonBack2.setOnClickListener {
-            onBackPressed()
+            finish()
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 
