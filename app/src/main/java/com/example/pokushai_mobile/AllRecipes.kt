@@ -30,7 +30,7 @@ class AllRecipes : AppCompatActivity() {
         }
 
         buttonBack2.setOnClickListener {
-            onBackPressed()
+            finish()
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 

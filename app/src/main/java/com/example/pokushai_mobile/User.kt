@@ -61,6 +61,7 @@ class User : AppCompatActivity() {
             val intent = intent
             finish()
             startActivity(intent)
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 
         //Кнопка обновления данных профиля
@@ -125,7 +126,7 @@ class User : AppCompatActivity() {
 
         val buttonBack = findViewById<ImageButton>(R.id.buttonBack)
         buttonBack.setOnClickListener {
-            onBackPressed()
+            finish()
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 

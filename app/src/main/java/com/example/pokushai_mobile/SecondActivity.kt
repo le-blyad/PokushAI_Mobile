@@ -66,7 +66,6 @@ class SecondActivity : AppCompatActivity() {
 
 
         val modelFile = assets.openFd("model.tflite")
-        val fileDescriptor = modelFile.fileDescriptor
         val startOffset = modelFile.startOffset
         val length = modelFile.length
         val fileChannel = FileInputStream(modelFile.fileDescriptor).channel
