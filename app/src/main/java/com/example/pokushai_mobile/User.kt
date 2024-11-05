@@ -58,6 +58,17 @@ class User : AppCompatActivity() {
         // Логика для кнопки удаления изображения
         buttonRemoveImage.setOnClickListener {
             deleteProfileImage()
+            val intent = intent
+            finish()
+            startActivity(intent)
+        }
+
+        //Кнопка обновления данных профиля
+        val updateInfoProfile = findViewById<Button>(R.id.updateInfoProfile)
+        updateInfoProfile.setOnClickListener {
+            val intent = Intent(this, UpdateInfoProfile::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 
         // Проверяем, что userId не пустой
@@ -117,6 +128,7 @@ class User : AppCompatActivity() {
             onBackPressed()
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
+
     }
 
 
