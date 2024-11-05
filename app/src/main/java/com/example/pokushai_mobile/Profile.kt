@@ -39,7 +39,7 @@ data class Step(
 )
 
 data class userUpdateProfileRequest(
-    var userId: Long,
+    val userId: Long,
     var username: String,
     var email: String,
     var phone: String
@@ -62,7 +62,7 @@ interface ApiService {
     fun login(@Body request: LoginRequest): Call<LoginResponse>
 
     @Multipart
-    @POST("update_profile/")
+    @POST("update_profile_pic/")
     fun uploadProfileImage(
         @Part("userId") userId: Long,
         @Part image: MultipartBody.Part
@@ -71,8 +71,8 @@ interface ApiService {
     @DELETE("delete_image/{id}/")
     fun deleteProfileImage(@Path("id") id: Long): Call<ResponseBody>
 
-    @POST("update_profile/{id}")
-    fun userUpdateProfile(@Path("id") request: userUpdateProfileRequest): Call<userUpdateProfileResponse>
+    @POST("update_profile/")
+    fun userUpdateProfile(@Body request: userUpdateProfileRequest): Call<userUpdateProfileResponse>
 
 }
 
