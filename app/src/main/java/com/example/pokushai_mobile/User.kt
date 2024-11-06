@@ -21,7 +21,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.app.ActivityCompat
 import okhttp3.RequestBody.Companion.toRequestBody
 import com.squareup.picasso.Picasso
-import okhttp3.*
+
 
 class User : AppCompatActivity() {
 
@@ -45,6 +45,9 @@ class User : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
         loggedInUserId = sharedPreferences.getLong("user_id", -1)
 
+        intent.putExtra("REMOVE_USER_ID", loggedInUserId)
+
+
         val textViewUsername = findViewById<TextView>(R.id.textViewUsername)
         imageViewProfile = findViewById(R.id.imageViewProfile)
         buttonAddImage = findViewById(R.id.buttonAddImage)
@@ -61,6 +64,7 @@ class User : AppCompatActivity() {
             val intent = intent
             finish()
             startActivity(intent)
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 
         //Кнопка обновления данных профиля

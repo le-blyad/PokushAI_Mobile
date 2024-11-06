@@ -99,49 +99,6 @@
                 android:paddingStart="13dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Поле Пароль -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/inputFieldPasswordLayout"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            app:passwordToggleEnabled="true"
-            android:layout_gravity="center"
-            app:hintEnabled="true"
-            app:errorEnabled="true"
-            style="@style/FormTextInputLayoutStyle">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/inputFieldPassword"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:hint="Пароль"
-                android:inputType="textPassword"
-                android:paddingStart="13dp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Поле Повторите пароль -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/inputFieldPasswordRepeatLayout"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            app:passwordToggleEnabled="true"
-            android:layout_gravity="center"
-            app:errorEnabled="true"
-            style="@style/FormTextInputLayoutStyle">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/inputFieldPasswordRepeat"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:hint="Повторите пароль"
-                android:inputType="textPassword"
-                android:paddingStart="13dp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Ошибка для Повторите пароль -->
-
         <!-- Кнопка регистрации -->
         <Button
             android:id="@+id/buttonRegistration"

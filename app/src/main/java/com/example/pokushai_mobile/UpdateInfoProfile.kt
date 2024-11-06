@@ -14,24 +14,23 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+
 class UpdateInfoProfile : AppCompatActivity() {
 
-    val apiService = ApiClient.instance
-
-    private var loggedInUserId: Long? = null
+    private val apiService = ApiClient.instance
+    //private val loggedInUserId = intent.getLongExtra("REMOVE_USER_ID", -1)
+    private val loggedInUserId: Long = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update_info_profile)
+
 
         val buttonBack = findViewById<ImageButton>(R.id.buttonBack)
         buttonBack.setOnClickListener {
             finish()
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
-
-        val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
-        loggedInUserId = sharedPreferences.getLong("user_id", -1)
 
         // Инициализация полей ввода
         val inputFieldLogin = findViewById<EditText>(R.id.inputFieldLogin)
@@ -129,7 +128,7 @@ class UpdateInfoProfile : AppCompatActivity() {
 
         // Создаем запрос
         val userUpdateProfile = userUpdateProfileRequest(
-            userId = loggedInUserId!!,
+            userId = loggedInUserId,
             username = username,
             phone = number,
             email = emailText
