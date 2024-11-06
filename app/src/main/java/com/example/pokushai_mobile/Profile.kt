@@ -40,15 +40,13 @@ data class Step(
 
 data class userUpdateProfileRequest(
     val userId: Long,
-    var username: String,
-    var email: String,
-    var phone: String
+    val username: String,
+    val email: String,
+    val phone: String
 )
 
 data class userUpdateProfileResponse(
-    var username: String,
-    var email: String,
-    var phone: String
+    val message: String
 )
 
 interface ApiService {

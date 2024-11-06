@@ -18,13 +18,14 @@ import retrofit2.Response
 class UpdateInfoProfile : AppCompatActivity() {
 
     private val apiService = ApiClient.instance
-    //private val loggedInUserId = intent.getLongExtra("REMOVE_USER_ID", -1)
-    private val loggedInUserId: Long = 1
+    private var loggedInUserId: Long? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update_info_profile)
 
+        val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
+        loggedInUserId = sharedPreferences.getLong("user_id", -1)
 
         val buttonBack = findViewById<ImageButton>(R.id.buttonBack)
         buttonBack.setOnClickListener {
@@ -128,18 +129,17 @@ class UpdateInfoProfile : AppCompatActivity() {
 
         // Создаем запрос
         val userUpdateProfile = userUpdateProfileRequest(
-            userId = loggedInUserId,
+            userId = loggedInUserId!!,
             username = username,
+            email = emailText,
             phone = number,
-            email = emailText
         )
 
 
-        val call = apiService.userUpdateProfile(userUpdateProfile)
-        call.enqueue(object : Callback<userUpdateProfileResponse> {
+        apiService.userUpdateProfile(userUpdateProfile).enqueue(object : Callback<userUpdateProfileResponse> {
             override fun onResponse(call: Call<userUpdateProfileResponse>, response: Response<userUpdateProfileResponse>) {
                 if (response.isSuccessful) {
-                    Toast.makeText(this@UpdateInfoProfile, "Данные поменяны!", Toast.LENGTH_SHORT)
+                    Toast.makeText(this@UpdateInfoProfile, "Смена данных успешна!", Toast.LENGTH_SHORT)
                         .show()
                 }
             }

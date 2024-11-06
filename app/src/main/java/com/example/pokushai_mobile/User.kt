@@ -45,8 +45,6 @@ class User : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
         loggedInUserId = sharedPreferences.getLong("user_id", -1)
 
-        intent.putExtra("REMOVE_USER_ID", loggedInUserId)
-
 
         val textViewUsername = findViewById<TextView>(R.id.textViewUsername)
         imageViewProfile = findViewById(R.id.imageViewProfile)
@@ -70,6 +68,7 @@ class User : AppCompatActivity() {
         //Кнопка обновления данных профиля
         val updateInfoProfile = findViewById<Button>(R.id.updateInfoProfile)
         updateInfoProfile.setOnClickListener {
+            intent.putExtra("REMOVE_USER_ID", loggedInUserId)
             val intent = Intent(this, UpdateInfoProfile::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
