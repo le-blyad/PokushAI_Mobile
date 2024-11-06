@@ -134,6 +134,14 @@ class User : AppCompatActivity() {
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 
+        //  Кнопка смены пароля
+        val buttonUpdatePassword = findViewById<Button>(R.id.buttonUpdatePassword)
+        buttonUpdatePassword.setOnClickListener {
+            val intent = Intent(this, UpdatePassword::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+        }
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

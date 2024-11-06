@@ -49,6 +49,15 @@ data class userUpdateProfileResponse(
     val message: String
 )
 
+data class updatePasswordRequest(
+    val userId: Long,
+    val password: String
+)
+
+data class updatePasswordResponse(
+    val message: String
+)
+
 interface ApiService {
     @GET("profiles/{id}")
     fun getUserProfile(@Path("id") id: Long): Call<Profile>
@@ -71,6 +80,9 @@ interface ApiService {
 
     @POST("update_profile/")
     fun userUpdateProfile(@Body request: userUpdateProfileRequest): Call<userUpdateProfileResponse>
+
+    @POST("xuy_znaet/")
+    fun userUpdateProfile(@Body request: updatePasswordRequest): Call<updatePasswordResponse>
 
 }
 
