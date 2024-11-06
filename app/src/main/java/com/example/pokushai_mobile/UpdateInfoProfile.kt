@@ -13,6 +13,8 @@ import com.google.android.material.textfield.TextInputLayout
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import android.app.Activity
+
 
 
 class UpdateInfoProfile : AppCompatActivity() {
@@ -55,6 +57,9 @@ class UpdateInfoProfile : AppCompatActivity() {
                 inputFieldEmailAddressLayout,
             )
             if (isValid) {
+                setResult(Activity.RESULT_FIRST_USER)
+                finish()
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
                 userUpdateProfile(inputFieldLogin, inputFieldNumberPhone, inputFieldEmailAddress)
             } else {
                 Toast.makeText(this, "Пожалуйста, исправьте ошибки в форме", Toast.LENGTH_SHORT).show()

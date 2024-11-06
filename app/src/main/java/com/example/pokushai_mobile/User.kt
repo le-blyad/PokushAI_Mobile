@@ -21,6 +21,8 @@ import androidx.core.content.ContextCompat
 import androidx.core.app.ActivityCompat
 import okhttp3.RequestBody.Companion.toRequestBody
 import com.squareup.picasso.Picasso
+import android.app.Activity
+
 
 
 class User : AppCompatActivity() {
@@ -70,7 +72,7 @@ class User : AppCompatActivity() {
         updateInfoProfile.setOnClickListener {
             intent.putExtra("REMOVE_USER_ID", loggedInUserId)
             val intent = Intent(this, UpdateInfoProfile::class.java)
-            startActivity(intent)
+            startActivityForResult(intent, 1)
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 
@@ -128,24 +130,16 @@ class User : AppCompatActivity() {
 
         val buttonBack = findViewById<ImageButton>(R.id.buttonBack)
         buttonBack.setOnClickListener {
-            onBackPressed()
+            finish()
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 
     }
 
-
-    // Функция для открытия выбора файла
-    private fun openFileChooser() {
-        val intent = Intent(Intent.ACTION_PICK)
-        intent.type = "image/*"
-        startActivityForResult(intent, PICK_IMAGE_REQUEST)
-    }
-
-
-    // Обработка результата выбора изображения
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+
+        // Обработка результата выбора изображения
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null) {
             val imageUri: Uri? = data.data
             imageUri?.let {
@@ -154,8 +148,22 @@ class User : AppCompatActivity() {
                 uploadProfileImage(it) // Загружаем изображение на сервер
             }
         }
+
+        // Перезапуск Activity User
+        if (requestCode == 1 && resultCode == Activity.RESULT_FIRST_USER) {
+            finish()
+            val intent = Intent(this, User::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+        }
     }
 
+    // Функция для открытия выбора файла
+    private fun openFileChooser() {
+        val intent = Intent(Intent.ACTION_PICK)
+        intent.type = "image/*"
+        startActivityForResult(intent, PICK_IMAGE_REQUEST)
+    }
 
     fun getCompressedBitmap(uri: Uri): Bitmap? {
         return try {
