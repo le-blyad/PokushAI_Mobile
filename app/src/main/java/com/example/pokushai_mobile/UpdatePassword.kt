@@ -42,6 +42,7 @@ class UpdatePassword : AppCompatActivity() {
         // Установка слушателя на кнопку регистрации
         val buttonRegistration = findViewById<Button>(R.id.buttonRegistration)
         buttonRegistration.setOnClickListener {
+
             val isValid = validateForm(
                 inputFieldOldPassword,
                 inputFieldNewPassword,
@@ -51,8 +52,6 @@ class UpdatePassword : AppCompatActivity() {
                 inputFieldNewPasswordRepeatLayout,
             )
             if (isValid) {
-
-                overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
                 updatePassword(inputFieldNewPassword, inputFieldOldPassword)
             } else {
                 Toast.makeText(this, "Пожалуйста, исправьте ошибки в форме", Toast.LENGTH_SHORT).show()
@@ -68,7 +67,7 @@ class UpdatePassword : AppCompatActivity() {
         passwordRepeat: EditText,
         oldPasswordLayout: TextInputLayout,
         passwordLayout: TextInputLayout,
-        passwordRepeatLayout: TextInputLayout
+        passwordRepeatLayout: TextInputLayout,
     ): Boolean {
         var isValid = true
 
@@ -126,6 +125,11 @@ class UpdatePassword : AppCompatActivity() {
             override fun onResponse(call: Call<updatePasswordResponse>, response: Response<updatePasswordResponse>) {
                 if (response.isSuccessful) {
                     Toast.makeText(this@UpdatePassword, "Смена данных успешна!", Toast.LENGTH_SHORT)
+                        .show()
+                    finish()
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+                } else {
+                    Toast.makeText(this@UpdatePassword, "Ошибка", Toast.LENGTH_SHORT)
                         .show()
                 }
             }
