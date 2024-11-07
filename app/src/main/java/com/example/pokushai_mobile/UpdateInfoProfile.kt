@@ -14,7 +14,8 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import android.app.Activity
-
+import android.content.res.Configuration
+import android.widget.LinearLayout
 
 
 class UpdateInfoProfile : AppCompatActivity() {
@@ -33,6 +34,18 @@ class UpdateInfoProfile : AppCompatActivity() {
         buttonBack.setOnClickListener {
             finish()
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+        }
+
+        val layout: LinearLayout = findViewById(R.id.topMenu)
+
+        // Проверяем текущую тему приложения
+        val currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
+        if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
+            // Темная тема
+            layout.setBackgroundResource(R.drawable.bottom_menu_dark)
+        } else {
+            // Светлая тема
+            layout.setBackgroundResource(R.drawable.bottom_menu_light)
         }
 
         // Инициализация полей ввода

@@ -6,7 +6,10 @@ import android.widget.Switch
 import android.widget.SearchView
 import android.view.View
 import android.content.Intent
+import android.content.res.Configuration
 import android.widget.Button
+import android.widget.ImageButton
+import android.widget.LinearLayout
 import android.widget.Toast
 import org.tensorflow.lite.Interpreter
 import java.io.FileInputStream
@@ -27,6 +30,19 @@ class SecondActivity : AppCompatActivity() {
             searchView.isIconified = false
         }
 
+
+        val layout: LinearLayout = findViewById(R.id.bottomMenu)
+
+        // Проверяем текущую тему приложения
+        val currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
+        if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
+            // Темная тема
+            layout.setBackgroundResource(R.drawable.bottom_menu_dark)
+        } else {
+            // Светлая тема
+            layout.setBackgroundResource(R.drawable.bottom_menu_light)
+        }
+
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
@@ -38,14 +54,21 @@ class SecondActivity : AppCompatActivity() {
             }
         })
 
-        val allRecipes = findViewById<Button>(R.id.allRecipes)
+        val feed = findViewById<ImageButton>(R.id.feed)
+        feed.setOnClickListener {
+            val intent = Intent(this, Feed::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+        }
+
+        val allRecipes = findViewById<ImageButton>(R.id.allRecipes)
         allRecipes.setOnClickListener {
             val intent = Intent(this, AllRecipes::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 
-        val user = findViewById<Button>(R.id.user)
+        val user = findViewById<ImageButton>(R.id.user)
         user.setOnClickListener {
             if (isInternetAvailable(this)) {
                 val intent = Intent(this, User::class.java)

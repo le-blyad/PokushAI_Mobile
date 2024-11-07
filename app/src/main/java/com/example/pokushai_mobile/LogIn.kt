@@ -1,6 +1,7 @@
 package com.example.pokushai_mobile
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,7 +14,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import android.util.Log
-
+import android.widget.LinearLayout
 
 
 class LogIn : AppCompatActivity() {
@@ -27,6 +28,18 @@ class LogIn : AppCompatActivity() {
         val inputFieldPassword = findViewById<EditText>(R.id.inputFieldPassword)
         val inputFieldLoginLayout = findViewById<TextInputLayout>(R.id.inputFieldLoginLayout)
         val inputFieldPasswordLayout = findViewById<TextInputLayout>(R.id.inputFieldPasswordLayout)
+
+        val layout: LinearLayout = findViewById(R.id.topMenu)
+
+        // Проверяем текущую тему приложения
+        val currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
+        if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
+            // Темная тема
+            layout.setBackgroundResource(R.drawable.bottom_menu_dark)
+        } else {
+            // Светлая тема
+            layout.setBackgroundResource(R.drawable.bottom_menu_light)
+        }
 
         val buttonBack = findViewById<ImageButton>(R.id.buttonBack)
         buttonBack.setOnClickListener {

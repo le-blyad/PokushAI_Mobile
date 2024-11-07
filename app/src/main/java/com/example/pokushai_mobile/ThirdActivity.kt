@@ -1,10 +1,12 @@
 package com.example.pokushai_mobile
 
 import android.content.Intent
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
 import android.view.View
+import android.widget.LinearLayout
 import org.tensorflow.lite.Interpreter
 import java.nio.MappedByteBuffer
 import java.nio.channels.FileChannel
@@ -26,7 +28,7 @@ class ThirdActivity : AppCompatActivity() {
             fileChannel.map(FileChannel.MapMode.READ_ONLY, startOffset, length)
         interpreter = Interpreter(mappedByteBuffer)
         val switchValues = intent.getBooleanArrayExtra("switchValues")
-        val buttonBack2 = findViewById<ImageButton>(R.id.buttonBack2)
+        val buttonBack2 = findViewById<ImageButton>(R.id.buttonBack)
         val result: FloatArray? = intent.getFloatArrayExtra("result")
         val pizda: Float? = result?.maxOrNull()
         var maxIndex = -1
@@ -37,6 +39,18 @@ class ThirdActivity : AppCompatActivity() {
                     break
                 }
             }
+        }
+
+        val layout: LinearLayout = findViewById(R.id.topMenu)
+
+        // Проверяем текущую тему приложения
+        val currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
+        if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
+            // Темная тема
+            layout.setBackgroundResource(R.drawable.bottom_menu_dark)
+        } else {
+            // Светлая тема
+            layout.setBackgroundResource(R.drawable.bottom_menu_light)
         }
 
         val imageButtones = mutableListOf<ImageButton>()

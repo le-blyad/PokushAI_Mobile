@@ -1,11 +1,13 @@
 package com.example.pokushai_mobile
 
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.LinearLayout
 import android.widget.Toast
 import com.google.android.material.textfield.TextInputLayout
 import retrofit2.Call
@@ -27,6 +29,18 @@ class UpdatePassword : AppCompatActivity() {
         buttonBack.setOnClickListener {
             finish()
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+        }
+
+        val layout: LinearLayout = findViewById(R.id.topMenu)
+
+        // Проверяем текущую тему приложения
+        val currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
+        if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
+            // Темная тема
+            layout.setBackgroundResource(R.drawable.bottom_menu_dark)
+        } else {
+            // Светлая тема
+            layout.setBackgroundResource(R.drawable.bottom_menu_light)
         }
 
         // Инициализация полей ввода

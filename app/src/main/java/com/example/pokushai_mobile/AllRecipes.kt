@@ -1,10 +1,12 @@
 package com.example.pokushai_mobile
 
 import android.content.Intent
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.LinearLayout
 import android.widget.TextView
 
 class AllRecipes : AppCompatActivity() {
@@ -12,7 +14,19 @@ class AllRecipes : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_all_recipes)
 
-        val buttonBack2 = findViewById<ImageButton>(R.id.buttonBack2)
+        val layout: LinearLayout = findViewById(R.id.topMenu)
+
+        // Проверяем текущую тему приложения
+        val currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
+        if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
+            // Темная тема
+            layout.setBackgroundResource(R.drawable.bottom_menu_dark)
+        } else {
+            // Светлая тема
+            layout.setBackgroundResource(R.drawable.bottom_menu_light)
+        }
+
+        val buttonBack2 = findViewById<ImageButton>(R.id.buttonBack)
 
         val imageButtones = mutableListOf<ImageButton>()
         for (i in 0..49) {

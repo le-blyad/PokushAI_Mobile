@@ -6,6 +6,13 @@
         <item name="android:colorPrimary">@color/yelow</item>
         <item name="colorError">@color/red</item>
         <item name="colorAccent">@color/red</item>
+        <item name="iconColor">@color/buttonBottomMenuTextLight</item>
+        <item name="android:statusBarColor">@color/statusBarColor</item>
+    </style>
+
+    <style name="AppTheme.CustomNavigationBar" parent="Base.Theme.PokushAI_Mobile">
+        <item name="android:navigationBarColor">@color/nutritionalValueLight</item>
+        <item name="android:statusBarColor">@color/buttonBottomMenuDark</item>
     </style>
 
     <style name="MyRadioButton" parent="Theme.AppCompat.Light">

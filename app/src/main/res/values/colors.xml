@@ -7,8 +7,13 @@
     <color name="yelow2">#E6B329</color>
     <color name="orange">#F28303</color>
     <color name="gray">#808080</color>
-    <color name ="nutritionalValueDark">#393939</color>
-    <color name ="nutritionalValueLight">#DDDDDD</color>
+    <color name ="nutritionalValueDark">#222222</color>
+    <color name ="nutritionalValueLight">#F3F3F3</color>
     <color name ="timerBackgroundLight">#BFBFBF</color>
     <color name ="timerBackgroundDark">#555555</color>
+    <color name="buttonBottomMenuLight">#D8D8D8</color>
+    <color name="buttonBottomMenuDark">#B3B3B3</color>
+    <color name="statusBarColor">#D8D8D8</color>
+    <color name ="buttonBottomMenuTextDark">#A5A5A5</color>
+    <color name ="buttonBottomMenuTextLight">#555555</color>
 </resources>

@@ -6,42 +6,69 @@
     android:layout_height="match_parent"
     tools:context=".Belyashi">
 
-    <ScrollView
+    <LinearLayout
+        android:id="@+id/topMenu"
         android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:id="@+id/tableRow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingVertical="5dp"
+            android:weightSum="5">
+
+            <ImageButton
+                android:id="@+id/buttonBack"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:src="@drawable/back"
+                app:tint="?attr/iconColor" />
+
+            <TextView
+                android:id="@+id/place1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/place2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/place3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/place4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+        </TableRow>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/topMenu">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/text111"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@color/yelow" />
-
-            <ImageButton
-                android:id="@+id/buttonBack"
-                android:layout_width="63dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="-50dp"
-                android:backgroundTint="@color/yelow"
-                android:src="@drawable/back"
-                android:scaleType="centerCrop"/>
-
-            <View
-                android:id="@+id/divider"
-                android:layout_width="wrap_content"
-                android:layout_height="1dp"
-                android:background="?android:attr/listDivider"
-                tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="60dp" />
-
 
             <ImageView
                 android:id="@+id/imageView2"
@@ -72,10 +99,10 @@
                     android:layout_marginStart="12dp"
                     android:layout_marginEnd="12dp"
                     android:layout_weight="1"
-                    android:textStyle="bold"
-                    android:textColor="@color/white"
                     android:background="@drawable/orange_radius"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textViewSquirrels"
@@ -84,10 +111,10 @@
                     android:layout_marginStart="12dp"
                     android:layout_marginEnd="12dp"
                     android:layout_weight="1"
-                    android:textStyle="bold"
-                    android:textColor="@color/white"
                     android:background="@drawable/orange_radius"
-                    android:gravity="center" />
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textViewFats"
@@ -96,10 +123,10 @@
                     android:layout_marginStart="12dp"
                     android:layout_marginEnd="12dp"
                     android:layout_weight="1"
-                    android:textStyle="bold"
-                    android:textColor="@color/white"
                     android:background="@drawable/orange_radius"
-                    android:gravity="center" />
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textViewCarbohydrates"
@@ -108,10 +135,10 @@
                     android:layout_marginStart="12dp"
                     android:layout_marginEnd="12dp"
                     android:layout_weight="1"
-                    android:textStyle="bold"
-                    android:textColor="@color/white"
                     android:background="@drawable/orange_radius"
-                    android:gravity="center" />
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
 
             </TableRow>
 
@@ -389,9 +416,9 @@
                 android:id="@+id/textView18"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
-                android:layout_marginStart="12dp"
                 android:text="Пошаговый рецепт"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -400,120 +427,119 @@
                 android:id="@+id/allSteps"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginEnd="12dp"
                 android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
                 android:layout_marginBottom="10dp"
                 android:orientation="vertical">
 
-            <CheckBox
-                android:id="@+id/radioButtonStep0"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:buttonTint="@color/orange"
-                android:textStyle="bold"
-                android:textSize="18dp"
-                android:text="1 ШАГ"/>
+                <CheckBox
+                    android:id="@+id/radioButtonStep0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:buttonTint="@color/orange"
+                    android:text="1 ШАГ"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textViewStep0"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginEnd="12dp"
-                android:text="В ведерко хлебопечки налить теплую воду (500 мл), влить 2 ст. ложки растительного масла, всыпать 500 г муки, 1 ч. л. соли, чуть сахара. Насыпать 1 ч. л. сухих дрожжей в ямку в середине мучной горки. (Если нужно, чтобы тесто получилось в пирожках пышным и воздушным, можно подсыпать немного пекарского порошка в муку.) Поставить ведерко в хлебопечку и запустить ее в режиме подъем теста без выпекания. Не торопиться закрывать крышку. Если тесто покажется несколько жидковатым, вполне можно добавить еще муки, или воды, если тесто замешивается слишком крутым. Из теста должен образоваться шар эластичной консистенции."
-                android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/textViewStep0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:text="В ведерко хлебопечки налить теплую воду (500 мл), влить 2 ст. ложки растительного масла, всыпать 500 г муки, 1 ч. л. соли, чуть сахара. Насыпать 1 ч. л. сухих дрожжей в ямку в середине мучной горки. (Если нужно, чтобы тесто получилось в пирожках пышным и воздушным, можно подсыпать немного пекарского порошка в муку.) Поставить ведерко в хлебопечку и запустить ее в режиме подъем теста без выпекания. Не торопиться закрывать крышку. Если тесто покажется несколько жидковатым, вполне можно добавить еще муки, или воды, если тесто замешивается слишком крутым. Из теста должен образоваться шар эластичной консистенции."
+                    android:textSize="20sp" />
 
-            <View
-                android:id="@+id/dividerStep0"
-                android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginEnd="12dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:background="?android:attr/listDivider" />
+                <View
+                    android:id="@+id/dividerStep0"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="?android:attr/listDivider" />
 
 
-            <CheckBox
-                android:id="@+id/radioButtonStep1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:buttonTint="@color/orange"
-                android:textStyle="bold"
-                android:textSize="18dp"
-                android:text="2 ШАГ"/>
+                <CheckBox
+                    android:id="@+id/radioButtonStep1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:buttonTint="@color/orange"
+                    android:text="2 ШАГ"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textViewStep1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginEnd="12dp"
-                android:text="Фарш для приготовления беляшей можно приготовить из любого мяса, это дело индивидуального вкуса домашнего кулинара. Мясо желательно пропускать через мясорубку с крупной решеткой, а лук для фарша мелко нарезать. Солить фарш лучше непосредственно перед приготовлением беляшей. Итак, когда верная помощница хлебопечка возвестила о подошедшем тесте, можно приниматься за жарку беляшей. Выложить тесто в глубокую миску. Оторвать от теста небольшой его кусочек, разделить на нужные по размеру части, дать полежать им пару минут. Затем пальчиками сделать в каждом кусочке теста углубление. Не раскатывая скалкой, положить туда начинку, чуть примять и закрепить края, завернув их к середине, оставить небольшое отверстие."
-                android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/textViewStep1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:text="Фарш для приготовления беляшей можно приготовить из любого мяса, это дело индивидуального вкуса домашнего кулинара. Мясо желательно пропускать через мясорубку с крупной решеткой, а лук для фарша мелко нарезать. Солить фарш лучше непосредственно перед приготовлением беляшей. Итак, когда верная помощница хлебопечка возвестила о подошедшем тесте, можно приниматься за жарку беляшей. Выложить тесто в глубокую миску. Оторвать от теста небольшой его кусочек, разделить на нужные по размеру части, дать полежать им пару минут. Затем пальчиками сделать в каждом кусочке теста углубление. Не раскатывая скалкой, положить туда начинку, чуть примять и закрепить края, завернув их к середине, оставить небольшое отверстие."
+                    android:textSize="20sp" />
 
-            <View
-                android:id="@+id/dividerStep1"
-                android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginEnd="12dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:background="?android:attr/listDivider" />
+                <View
+                    android:id="@+id/dividerStep1"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="?android:attr/listDivider" />
 
-            <CheckBox
-                android:id="@+id/radioButtonStep2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:buttonTint="@color/orange"
-                android:textStyle="bold"
-                android:textSize="18dp"
-                android:text="3 ШАГ"/>
+                <CheckBox
+                    android:id="@+id/radioButtonStep2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:buttonTint="@color/orange"
+                    android:text="3 ШАГ"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textViewStep2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginEnd="12dp"
-                android:text="Класть каждый пирожок отверстием вниз в сильно разогретое растительное масло. Переворачивать по мере готовности одной стороны."
-                android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/textViewStep2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:text="Класть каждый пирожок отверстием вниз в сильно разогретое растительное масло. Переворачивать по мере готовности одной стороны."
+                    android:textSize="20sp" />
 
-            <View
-                android:id="@+id/dividerStep2"
-                android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginEnd="12dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:background="?android:attr/listDivider" />
+                <View
+                    android:id="@+id/dividerStep2"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="?android:attr/listDivider" />
 
-            <CheckBox
-                android:id="@+id/radioButtonStep3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:buttonTint="@color/orange"
-                android:textSize="18dp"
-                android:textStyle="bold"
-                android:text="4 ШАГ"
-                 />
+                <CheckBox
+                    android:id="@+id/radioButtonStep3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:buttonTint="@color/orange"
+                    android:text="4 ШАГ"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textViewStep3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginEnd="12dp"
-                android:layout_marginBottom="18dp"
-                android:text="Если для жарки беляшей использовать керамическую сковороду (с антипригарным покрытием), то беляши не будут купаться в излишнем количестве растительного масла."
-                android:textSize="20sp" />
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/textViewStep3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="18dp"
+                    android:text="Если для жарки беляшей использовать керамическую сковороду (с антипригарным покрытием), то беляши не будут купаться в излишнем количестве растительного масла."
+                    android:textSize="20sp" />
+            </LinearLayout>
 
         </LinearLayout>
 

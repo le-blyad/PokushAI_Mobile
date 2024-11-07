@@ -1,6 +1,5 @@
 package com.example.pokushai_mobile
 
-import android.content.Intent
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -112,33 +111,25 @@ class cutlets : AppCompatActivity() {
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
     }
 
-    val layout: LinearLayout = findViewById(R.id.allSteps)
-
-        //Фон всех шагов рецепта
+        val layout: LinearLayout = findViewById(R.id.allSteps)
+        val topMenu: LinearLayout = findViewById(R.id.topMenu)
+        val layoutTimer: LinearLayout = findViewById(R.id.timerBackground)
+        val timerCurrentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
 
         // Проверяем текущую тему приложения
         val currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
         if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
             // Темная тема
             layout.setBackgroundResource(R.drawable.shape_dark)
-        } else {
-            // Светлая тема
-            layout.setBackgroundResource(R.drawable.shape_light)
-        }
-
-        val layoutTimer: LinearLayout = findViewById(R.id.timerBackground)
-
-        //Фон таймера
-
-        // Проверяем текущую тему приложения
-        val timerCurrentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
-        if (timerCurrentNightMode == Configuration.UI_MODE_NIGHT_YES) {
-            // Темная тема
+            topMenu.setBackgroundResource(R.drawable.bottom_menu_dark)
             layoutTimer.setBackgroundResource(R.drawable.timerbackgrounddark)
         } else {
             // Светлая тема
+            layout.setBackgroundResource(R.drawable.shape_light)
+            topMenu.setBackgroundResource(R.drawable.bottom_menu_light)
             layoutTimer.setBackgroundResource(R.drawable.timerbackgroundlight)
         }
+
 
 
         //Энергитическая ценность

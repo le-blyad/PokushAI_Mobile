@@ -22,6 +22,12 @@ import androidx.core.app.ActivityCompat
 import okhttp3.RequestBody.Companion.toRequestBody
 import com.squareup.picasso.Picasso
 import android.app.Activity
+import android.content.res.Configuration
+import android.widget.Button
+import android.widget.ImageButton
+import android.widget.LinearLayout
+import android.widget.Toast
+
 
 
 
@@ -47,6 +53,17 @@ class User : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
         loggedInUserId = sharedPreferences.getLong("user_id", -1)
 
+        val layout: LinearLayout = findViewById(R.id.topMenu)
+
+        // Проверяем текущую тему приложения
+        val currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
+        if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
+            // Темная тема
+            layout.setBackgroundResource(R.drawable.bottom_menu_dark)
+        } else {
+            // Светлая тема
+            layout.setBackgroundResource(R.drawable.bottom_menu_light)
+        }
 
         val textViewUsername = findViewById<TextView>(R.id.textViewUsername)
         imageViewProfile = findViewById(R.id.imageViewProfile)
@@ -118,7 +135,7 @@ class User : AppCompatActivity() {
         }
 
         // Логика для кнопки выхода и кнопки назад
-        val logOut = findViewById<Button>(R.id.logOut)
+        val logOut = findViewById<ImageButton>(R.id.logOut)
         logOut.setOnClickListener {
             val sharedPreferences = getSharedPreferences("user_prefs", AppCompatActivity.MODE_PRIVATE)
             sharedPreferences.edit().clear().apply()

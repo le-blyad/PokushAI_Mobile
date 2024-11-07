@@ -21,16 +21,18 @@ class Belyashi : AppCompatActivity() {
         }
 
         val layout: LinearLayout = findViewById(R.id.allSteps)
+        val topMenu: LinearLayout = findViewById(R.id.topMenu)
 
-
-// Проверяем текущую тему приложения
+        // Проверяем текущую тему приложения
         val currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
         if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
             // Темная тема
             layout.setBackgroundResource(R.drawable.shape_dark)
+            topMenu.setBackgroundResource(R.drawable.bottom_menu_dark)
         } else {
             // Светлая тема
             layout.setBackgroundResource(R.drawable.shape_light)
+            topMenu.setBackgroundResource(R.drawable.bottom_menu_light)
         }
 
         val textViewCalories = findViewById<TextView>(R.id.textViewCalories)

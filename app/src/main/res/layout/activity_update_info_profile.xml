@@ -6,27 +6,62 @@
     android:layout_height="match_parent"
     tools:context=".UpdateInfoProfile">
 
-    <TextView
-        android:id="@+id/text111"
+    <LinearLayout
+        android:id="@+id/topMenu"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/yelow"
-        android:textSize="16dp"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="60dp"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageButton
-        android:id="@+id/buttonBack"
-        android:layout_width="63dp"
-        android:layout_height="50dp"
-        android:backgroundTint="@color/yelow"
-        android:scaleType="centerCrop"
-        android:src="@drawable/back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/text111" />
+    <TableRow
+        android:id="@+id/tableRow"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingVertical="5dp"
+        android:weightSum="5">
+
+        <ImageButton
+            android:id="@+id/buttonBack"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:src="@drawable/back"
+            app:tint="?attr/iconColor" />
+
+        <TextView
+            android:id="@+id/place1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/place2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/place3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/place4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </TableRow>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="60dp"
         android:orientation="vertical">
 
         <!-- Заголовок -->
