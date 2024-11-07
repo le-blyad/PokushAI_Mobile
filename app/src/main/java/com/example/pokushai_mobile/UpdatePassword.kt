@@ -2,6 +2,7 @@ package com.example.pokushai_mobile
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
@@ -50,9 +51,9 @@ class UpdatePassword : AppCompatActivity() {
                 inputFieldNewPasswordRepeatLayout,
             )
             if (isValid) {
-                finish()
+
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-                updatePassword(inputFieldNewPassword)
+                updatePassword(inputFieldNewPassword, inputFieldOldPassword)
             } else {
                 Toast.makeText(this, "Пожалуйста, исправьте ошибки в форме", Toast.LENGTH_SHORT).show()
             }
@@ -75,10 +76,6 @@ class UpdatePassword : AppCompatActivity() {
         val oldPasswordText = oldPassword.text.toString().trim()
         if (oldPasswordText.isEmpty()) {
             oldPasswordLayout.error = "Пароль не может быть пустым"
-            isValid = false
-        } else if (oldPasswordText.isEmpty()) {
-            // нужно выставить ^^^ правильное условие
-            oldPasswordLayout.error = "Вы указали неверный пароль"
             isValid = false
         } else {
             oldPasswordLayout.error = null
@@ -113,12 +110,15 @@ class UpdatePassword : AppCompatActivity() {
 
     private fun updatePassword(
         password: EditText,
+        oldPassword: EditText
     ) {
+        val oldPassword = oldPassword.text.toString()
         val newPassword = password.text.toString()
 
         // Создаем запрос
         val updatePassword = updatePasswordRequest(
             userId = loggedInUserId!!,
+            oldPassword = oldPassword,
             password = newPassword
         )
 
@@ -130,7 +130,8 @@ class UpdatePassword : AppCompatActivity() {
                 }
             }
             override fun onFailure(call: Call<updatePasswordResponse>, t: Throwable) {
-                Toast.makeText(this@UpdatePassword, "Ошибка", Toast.LENGTH_SHORT).show()
+                Log.e("Mismath", "Ошибка: ${t.message}")
+                Toast.makeText(this@UpdatePassword, "Ошибка  ${t.message}", Toast.LENGTH_SHORT).show()
             }
         })
     }
