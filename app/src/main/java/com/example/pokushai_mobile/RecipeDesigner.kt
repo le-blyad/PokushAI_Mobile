@@ -3,6 +3,7 @@ package com.example.pokushai_mobile
 import android.content.res.Configuration
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,15 +23,24 @@ class RecipeDesigner: AppCompatActivity() {
 
 
         val layout: LinearLayout = findViewById(R.id.stepsBackground)
+        val topMenu: LinearLayout = findViewById(R.id.topMenu)
 
         // Проверяем текущую тему приложения
         val currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
         if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
             // Темная тема
             layout.setBackgroundResource(R.drawable.shape_dark)
+            topMenu.setBackgroundResource(R.drawable.bottom_menu_dark)
         } else {
             // Светлая тема
             layout.setBackgroundResource(R.drawable.shape_light)
+            topMenu.setBackgroundResource(R.drawable.bottom_menu_light)
+        }
+
+        val buttonBack = findViewById<ImageButton>(R.id.buttonBack)
+        buttonBack.setOnClickListener {
+            finish()
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 
         // Настройка RecyclerView

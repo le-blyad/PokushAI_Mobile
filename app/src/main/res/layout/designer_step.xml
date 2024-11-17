@@ -56,12 +56,13 @@
         <!-- Кнопка для удаления шага -->
         <Button
             android:id="@+id/deleteStepButton"
-            android:layout_width="wrap_content"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/orange"
             android:layout_gravity="center"
             android:textColor="@color/white"
-            android:text="Удалить шаг" />
+            android:text="Удалить шаг"
+            android:textSize="16dp"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

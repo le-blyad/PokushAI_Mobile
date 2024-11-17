@@ -1,9 +1,10 @@
 package com.example.pokushai_mobile
 
+import android.content.Intent
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.Toast
@@ -29,6 +30,13 @@ class Feed : AppCompatActivity() {
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 
+        val buttonRecipeDesigner = findViewById<Button>(R.id.buttonRecipeDesigner)
+        buttonRecipeDesigner.setOnClickListener {
+            val intent = Intent(this, RecipeDesigner::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+        }
+
         val layout: LinearLayout = findViewById(R.id.topMenu)
 
         // Проверяем текущую тему приложения
@@ -41,6 +49,7 @@ class Feed : AppCompatActivity() {
             layout.setBackgroundResource(R.drawable.bottom_menu_light)
         }
 
+        /*
         val call = apiService.usersPostsGet(usersPostsGetRequest(loggedInUserId!!))
         call.enqueue(object: Callback<usersPostsGetResponse>{
             override fun onResponse(call: Call<usersPostsGetResponse>, response: Response<usersPostsGetResponse>
@@ -53,12 +62,11 @@ class Feed : AppCompatActivity() {
                     Toast.makeText(this@Feed, "Вот так - $errorBody", Toast.LENGTH_SHORT).show()
                 }
             }
-
             override fun onFailure(call: Call<usersPostsGetResponse>, t: Throwable) {
                 Log.e("Upload", "Errors: ${t.message}")
                 Toast.makeText(this@Feed, "Xyeta: ${t.message}", Toast.LENGTH_SHORT).show()
             }
         })
-
+        */
     }
 }
