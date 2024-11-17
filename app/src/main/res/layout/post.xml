@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/postBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="10">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageViewProfile"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:radius="150dip"
+            android:src="@drawable/no_photo"
+            android:scaleType="centerCrop"
+            android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="userName"
+                android:textStyle="bold"
+                android:textSize="25dp"
+                android:layout_gravity="center_vertical"/>
+
+        </TableRow>
+
+        <ImageButton
+            android:id="@+id/imageButton0"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/buttonBottomMenuTextDark"
+            android:background="@drawable/rounded_image_button"
+            android:scaleType="centerCrop"
+            android:clipToOutline="true"
+            app:srcCompat="@drawable/nophotostep"/>
+
+        <TextView
+            android:id="@+id/recipeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="recipeName"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="description"
+            android:textSize="20dp"
+            android:layout_gravity="center"/>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="10">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="3">
+
+                    <ImageView
+                        android:id="@+id/imageLikes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:srcCompat="@drawable/like" />
+
+                    <TextView
+                        android:id="@+id/countLikes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="30dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_gravity="center_vertical"/>
+                </TableRow>
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="9"/>
+
+            <ImageView
+                android:id="@+id/imageEye"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:srcCompat="@drawable/eye" />
+
+            <TextView
+                android:id="@+id/countEye"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="30dp"
+                android:layout_marginStart="10dp"
+                android:layout_gravity="center_vertical"/>
+
+        </TableRow>
+
+        <Button
+            android:id="@+id/checkPost"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/orange"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:text="Смотреть рецепт"
+            android:textSize="25dp"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <!-- Фото шага -->
+        <ImageButton
+            android:id="@+id/imageButton0"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/buttonBottomMenuTextDark"
+            android:background="@drawable/rounded_image_button"
+            android:scaleType="centerCrop"
+            android:clipToOutline="true"
+            app:srcCompat="@drawable/nophotostep"/>
+
+        <!-- Номер шага -->
+        <TextView
+            android:id="@+id/stepNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Шаг 1"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:layout_marginStart="40dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/titleEditTextLayout"
+            style="@style/FormTextInputLayoutStyle"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            app:errorEnabled="true"
+            app:hintEnabled="true">
+
+        <!-- Описание шага -->
+        <EditText
+            android:id="@+id/stepDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Описание шага" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Кнопка для удаления шага -->
+        <Button
+            android:id="@+id/deleteStepButton"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/orange"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:text="Удалить шаг"
+            android:textSize="16dp"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

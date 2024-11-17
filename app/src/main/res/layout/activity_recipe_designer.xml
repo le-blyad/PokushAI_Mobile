@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/topMenu"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingVertical="5dp"
+            android:weightSum="5">
+
+            <ImageButton
+                android:id="@+id/buttonBack"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:src="@drawable/back"
+                app:tint="?attr/iconColor"/>
+
+            <TextView
+                android:id="@+id/place1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/place2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/place3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/place4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+        </TableRow>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:background="?android:attr/listDivider" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageButton
+            android:id="@+id/imageButton0"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/buttonBottomMenuTextDark"
+            android:background="@drawable/rounded_image_button"
+            android:scaleType="centerCrop"
+            android:clipToOutline="true"
+            app:srcCompat="@drawable/nophotostep"/>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/titleEditTextLayout"
+            style="@style/FormTextInputLayoutStyle"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            app:errorEnabled="true"
+            app:hintEnabled="true">
+
+            <EditText
+                android:id="@+id/titleEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Введите название блюда" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/descriptionLayout"
+            style="@style/FormTextInputLayoutStyle"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:errorEnabled="true"
+            app:hintEnabled="true">
+
+            <EditText
+                android:id="@+id/descriptionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:hint="Описание рецепта" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="5dp"
+            android:text="Шаги" />
+
+        <LinearLayout
+            android:id="@+id/stepsBackground"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:scrollbars="vertical"
+            android:paddingTop="8dp"
+            android:layout_marginBottom="10dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/stepsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <!-- Кнопка добавления нового шага -->
+        <Button
+            android:id="@+id/addStepButton"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:text="Добавить шаг"
+            android:textSize="16dp"
+            android:backgroundTint="@color/orange"
+            android:textColor="@color/white"
+            android:layout_gravity="center"/>
+
+        <!-- Кнопка для сохранения -->
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:text="Сохранить"
+            android:textSize="16dp"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/orange"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp" />
+    </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

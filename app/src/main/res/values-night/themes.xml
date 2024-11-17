@@ -1,0 +1,27 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.PokushAI_Mobile" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimaryDark">@color/yelow2</item>
+        <item name="android:colorPrimary">@color/yelow</item>
+        <item name="colorAccent">@color/red</item>>
+        <item name="android:navigationBarColor">#121212</item>
+        <item name="iconColor">@color/buttonBottomMenuTextDark</item>
+        <item name="android:statusBarColor">@color/nutritionalValueDark</item>
+    </style>
+
+    <style name="AppTheme.CustomNavigationBar" parent="Base.Theme.PokushAI_Mobile">
+        <item name="android:navigationBarColor">@color/nutritionalValueDark</item>
+        <item name="android:statusBarColor">#121212</item>
+    </style>
+
+    <style name="MySearchViewStyle"
+        parent="Widget.AppCompat.SearchView">
+    <item name="android:editTextColor">@color/white</item>
+</style>
+
+    <style name="MyRadioButton" parent="Theme.AppCompat">
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="colorControlNormal">#FFFFFFFF</item>
+        <item name="colorControlActivated">#EB3F14</item>
+    </style>
+</resources>

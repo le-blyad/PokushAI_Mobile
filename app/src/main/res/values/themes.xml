@@ -1,0 +1,64 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.PokushAI_Mobile" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/white</item>
+        <item name="colorPrimaryDark">@color/yelow2</item>
+        <item name="android:colorPrimary">@color/yelow</item>
+        <item name="colorError">@color/red</item>
+        <item name="colorAccent">@color/red</item>
+        <item name="iconColor">@color/buttonBottomMenuTextLight</item>
+        <item name="android:statusBarColor">@color/statusBarColor</item>
+    </style>
+
+    <style name="AppTheme.CustomNavigationBar" parent="Base.Theme.PokushAI_Mobile">
+        <item name="android:navigationBarColor">@color/nutritionalValueLight</item>
+        <item name="android:statusBarColor">@color/buttonBottomMenuDark</item>
+    </style>
+
+    <style name="MyRadioButton" parent="Theme.AppCompat.Light">
+        <item name="colorControlActivated">#EB3F14</item>
+    </style>
+
+    <style name="MySearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <item name="android:editTextColor">@color/black</item>
+    </style>
+
+    <style name="FormTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">@color/text_input_stroke_color</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="hintTextColor">#808080</item>
+        <item name="helperTextTextColor">#808080</item>
+        <item name="endIconTint">#808080</item>
+        <item name="android:textColorHint">#808080</item>
+        <item name="android:textColor">@color/red</item>
+        <item name="errorTextColor">@color/red</item>
+        <item name="errorIconTint">@color/red</item>
+        <item name="boxStrokeErrorColor">@color/orange</item>
+        <item name="cursorColor">@color/red</item>
+        <item name="android:textColorHighlight">@color/red</item>
+    </style>
+
+
+    <style name="MyCustomSwitch" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="Theme.PokushAI_Mobile" parent="Base.Theme.PokushAI_Mobile" />
+
+    <style name="Theme.PokushAI_Mobile.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.PokushAI_Mobile.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="colorPrimary">@color/yelow2</item>
+    </style>
+
+    <style name="Theme.PokushAI_Mobile.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColorSecondary">@color/yelow</item>
+    </style>
+</resources>

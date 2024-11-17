@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<!--    <style name="themeLight" parent="Theme.PokushAI_Mobile">
+        <item name="android:windowBackground">@drawable/shape_light</item>
+    </style
+    <style name="themeDark" parent="Theme.PokushAI_Mobile">
+        <item name="android:windowBackground">@drawable/shape_dark</item>
+    </style>  !-->
+    <style name="CustomEditTextTheme" parent="Theme.AppCompat.Light">
+        <item name="colorControlActivated">@color/red</item>
+    </style>
+
+
+</resources>
