@@ -3,13 +3,25 @@ package com.example.pokushai_mobile
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageButton
 import android.widget.LinearLayout
+import android.widget.Toast
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class Feed : AppCompatActivity() {
+
+    val apiService = ApiClient.instance
+    private var loggedInUserId: Long? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_feed)
+
+        val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
+        loggedInUserId = sharedPreferences.getLong("user_id", -1)
 
         val buttonBack = findViewById<ImageButton>(R.id.buttonBack)
         buttonBack.setOnClickListener {
@@ -28,6 +40,25 @@ class Feed : AppCompatActivity() {
             // Светлая тема
             layout.setBackgroundResource(R.drawable.bottom_menu_light)
         }
+
+        val call = apiService.usersPostsGet(usersPostsGetRequest(loggedInUserId!!))
+        call.enqueue(object: Callback<usersPostsGetResponse>{
+            override fun onResponse(call: Call<usersPostsGetResponse>, response: Response<usersPostsGetResponse>
+            ) {
+                if (response.isSuccessful){
+                    Toast.makeText(this@Feed, "Работает?", Toast.LENGTH_SHORT).show()
+                } else {
+                    val errorBody = response.errorBody()?.string() ?: "Не работает("
+                    Log.e("Upload", "Error: $errorBody")
+                    Toast.makeText(this@Feed, "Вот так - $errorBody", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<usersPostsGetResponse>, t: Throwable) {
+                Log.e("Upload", "Errors: ${t.message}")
+                Toast.makeText(this@Feed, "Xyeta: ${t.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
 
     }
 }

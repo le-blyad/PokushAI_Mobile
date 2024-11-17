@@ -59,6 +59,23 @@ data class updatePasswordResponse(
     val message: String
 )
 
+data class usersPostsGetRequest(
+    val userId: Long
+)
+
+data class usersPostsGetResponse(
+    val author: String,
+    val title: String,
+    val desc: String,
+    val post_image: Uri?,
+    val created_at: String,
+    val update_at: String,
+    val views: String,
+    val likes: String,
+    val users: String,
+    val userImage: Uri?,
+)
+
 interface ApiService {
     @GET("profiles/{id}")
     fun getUserProfile(@Path("id") id: Long): Call<Profile>
@@ -84,6 +101,9 @@ interface ApiService {
 
     @POST("update_password/")
     fun userUpdateProfile(@Body request: updatePasswordRequest): Call<updatePasswordResponse>
+
+    @GET("users_posts/")
+    fun usersPostsGet(@Body request: usersPostsGetRequest): Call<usersPostsGetResponse>
 
 }
 
