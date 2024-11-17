@@ -13,7 +13,6 @@ class StepsAdapter(
     private val onRemoveStep: (Int) -> Unit
 ) : RecyclerView.Adapter<StepsAdapter.StepViewHolder>() {
 
-    // Создайте ViewHolder и свяжите с item_step.xml
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StepViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.designer_step, parent, false)
         return StepViewHolder(view)

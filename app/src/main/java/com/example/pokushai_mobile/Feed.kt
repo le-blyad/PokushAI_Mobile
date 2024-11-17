@@ -1,8 +1,10 @@
 package com.example.pokushai_mobile
 
+import android.content.Intent
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.LinearLayout
 
@@ -17,6 +19,13 @@ class Feed : AppCompatActivity() {
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 
+        val buttonRecipeDesigner = findViewById<Button>(R.id.buttonRecipeDesigner)
+        buttonRecipeDesigner.setOnClickListener {
+            val intent = Intent(this, RecipeDesigner::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+        }
+
         val layout: LinearLayout = findViewById(R.id.topMenu)
 
         // Проверяем текущую тему приложения
@@ -28,6 +37,8 @@ class Feed : AppCompatActivity() {
             // Светлая тема
             layout.setBackgroundResource(R.drawable.bottom_menu_light)
         }
+
+
 
     }
 }
