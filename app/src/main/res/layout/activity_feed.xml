@@ -73,5 +73,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topMenu" />
 
+    <!-- эта хуета нормально не работает, нужно фиксить
+    <include
+        layout="@layout/post" />
+    -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
