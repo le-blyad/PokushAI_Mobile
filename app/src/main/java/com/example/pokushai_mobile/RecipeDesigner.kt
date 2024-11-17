@@ -1,7 +1,9 @@
 package com.example.pokushai_mobile
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.widget.Button
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -17,6 +19,19 @@ class RecipeDesigner: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recipe_designer)
+
+
+        val layout: LinearLayout = findViewById(R.id.stepsBackground)
+
+        // Проверяем текущую тему приложения
+        val currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
+        if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
+            // Темная тема
+            layout.setBackgroundResource(R.drawable.shape_dark)
+        } else {
+            // Светлая тема
+            layout.setBackgroundResource(R.drawable.shape_light)
+        }
 
         // Настройка RecyclerView
         stepsAdapter = StepsAdapter(steps) { position ->

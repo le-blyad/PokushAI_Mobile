@@ -11,32 +11,53 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Заглавная фотография -->
-        <EditText
-            android:id="@+id/titleEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:hint="Введите название" />
-
-        <ImageView
-            android:id="@+id/mainImage"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginBottom="8dp"
-            android:background="?android:attr/selectableItemBackground"
+        <ImageButton
+            android:id="@+id/imageButton0"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/buttonBottomMenuTextDark"
+            android:background="@drawable/rounded_image_button"
             android:scaleType="centerCrop"
-            />
+            android:clipToOutline="true"
+            app:srcCompat="@drawable/nophotostep"/>
 
-        <!-- Поле для названия -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/titleEditTextLayout"
+            style="@style/FormTextInputLayoutStyle"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            app:errorEnabled="true"
+            app:hintEnabled="true">
 
-        <!-- RecyclerView для шагов -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/stepsRecyclerView"
+            <EditText
+                android:id="@+id/titleEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:hint="Введите название блюда" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <LinearLayout
+            android:id="@+id/stepsBackground"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:scrollbars="vertical"
-            android:layout_weight="1"/>
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/stepsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:scrollbars="vertical"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
 
         <!-- Кнопка добавления нового шага -->
         <Button
@@ -44,6 +65,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Добавить шаг"
+            android:backgroundTint="@color/orange"
+            android:textColor="@color/white"
             android:layout_gravity="center"/>
 
         <!-- Кнопка для сохранения -->
@@ -53,6 +76,8 @@
             android:layout_height="wrap_content"
             android:text="Сохранить"
             android:layout_gravity="center"
+            android:backgroundTint="@color/orange"
+            android:textColor="@color/white"
             android:layout_marginTop="10dp"/>
     </LinearLayout>
 
