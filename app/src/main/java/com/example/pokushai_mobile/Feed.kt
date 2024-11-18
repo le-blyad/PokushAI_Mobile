@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.LinearLayout
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.widget.Toast
 import retrofit2.Call
 import retrofit2.Callback
@@ -30,12 +32,15 @@ class Feed : AppCompatActivity() {
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 
-        val buttonRecipeDesigner = findViewById<Button>(R.id.buttonRecipeDesigner)
+        val buttonRecipeDesigner = findViewById<ImageButton>(R.id.buttonRecipeDesigner)
         buttonRecipeDesigner.setOnClickListener {
             val intent = Intent(this, RecipeDesigner::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
+
+        val posts: RecyclerView = findViewById(R.id.posts)
+        posts.layoutManager = LinearLayoutManager(this)
 
         val layout: LinearLayout = findViewById(R.id.topMenu)
 
@@ -48,6 +53,17 @@ class Feed : AppCompatActivity() {
             // Светлая тема
             layout.setBackgroundResource(R.drawable.bottom_menu_light)
         }
+
+        // сюда должны попадать данные пользователей
+        val samplePosts = listOf(
+            usersPostsGetResponse("Иван Иванов", "Название рецепта 1", "Описание рецепта 1", "10", "345"),
+            usersPostsGetResponse("Мария Петрова", "Название рецепта 2", "Описание рецепта 2", "25", "989"),
+            usersPostsGetResponse("Хуй Пертрушкин", "Название рецепта 3", "Описание рецепта 3", "1488", "1488"),
+            usersPostsGetResponse("Петрушка Хуюшкин", "Название рецепта 4", "Описание рецепта 4", "696969", "1000000"),
+        )
+
+        val adapter = PostAdapter(samplePosts)
+        posts.adapter = adapter
 
         /*
         val call = apiService.usersPostsGet(usersPostsGetRequest(loggedInUserId!!))
