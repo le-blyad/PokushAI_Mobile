@@ -67,13 +67,15 @@ data class usersPostsGetResponse(
     val author: String,
     val title: String,
     val desc: String,
+    val likes: String,
+    val views: String,
+    /*
     val post_image: Uri?,
     val created_at: String,
     val update_at: String,
-    val views: String,
-    val likes: String,
     val users: String,
     val userImage: Uri?,
+     */
 )
 
 interface ApiService {
