@@ -28,23 +28,25 @@
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:src="@drawable/back"
-                app:tint="?attr/iconColor"/>
+                app:tint="?attr/iconColor" />
 
             <TextView
                 android:id="@+id/place1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
+
             <TextView
                 android:id="@+id/place2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
+
             <TextView
                 android:id="@+id/place3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
             <ImageButton
                 android:id="@+id/logOut"
@@ -53,9 +55,9 @@
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:src="@drawable/logout"
-                app:tint="?attr/iconColor"/>
+                app:tint="?attr/iconColor" />
         </TableRow>
-        
+
         <View
             android:id="@+id/divider"
             android:layout_width="match_parent"
@@ -90,13 +92,8 @@
 
     <Button
         android:id="@+id/updateInfoProfile"
-        android:layout_width="170dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:backgroundTint="@color/orange"
+        style="@style/profileButtonDark"
         android:text="Обновить данные профиля"
-        android:textColor="#FFFFFF"
-        android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -104,13 +101,8 @@
 
     <Button
         android:id="@+id/buttonUpdatePassword"
-        android:layout_width="170dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="@color/orange"
+        style="@style/profileButtonDark"
         android:text="Сменить пароль"
-        android:textColor="#FFFFFF"
-        android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -118,31 +110,20 @@
 
     <Button
         android:id="@+id/buttonRemoveImage"
-        android:layout_width="170dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="@color/orange"
+        style="@style/profileButtonDark"
         android:text="Удалить фото"
-        android:textColor="#FFFFFF"
-        android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAddImage" />
-
-    <Button
-        android:id="@+id/buttonAddImage"
-        android:layout_width="170dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="@color/orange"
-        android:text="Загрузить фото"
-        android:textColor="#FFFFFF"
-        android:textSize="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewUsername" />
+
+    <ImageButton
+        android:id="@+id/buttonAddImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewProfile"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewProfile"
+        app:tint="?attr/iconColor" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

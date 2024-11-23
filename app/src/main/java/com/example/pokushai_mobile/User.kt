@@ -16,6 +16,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.io.ByteArrayOutputStream
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import androidx.core.content.ContextCompat
 import androidx.core.app.ActivityCompat
@@ -36,11 +37,14 @@ class User : AppCompatActivity() {
     private val PICK_IMAGE_REQUEST = 1
     val apiService = ApiClient.instance
     private lateinit var imageViewProfile: ImageView
-    private lateinit var buttonAddImage: Button
+    private lateinit var buttonAddImage: ImageButton
     private lateinit var buttonRemoveImage: Button
+    private lateinit var updateInfoProfile: Button
+    private lateinit var buttonUpdatePassword: Button
     private var loggedInUserId: Long? = null
     private var currentImageUri: Uri? = null
 
+    @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user)
@@ -53,22 +57,33 @@ class User : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
         loggedInUserId = sharedPreferences.getLong("user_id", -1)
 
+        val textViewUsername = findViewById<TextView>(R.id.textViewUsername)
         val layout: LinearLayout = findViewById(R.id.topMenu)
+        imageViewProfile = findViewById(R.id.imageViewProfile)
+        buttonAddImage = findViewById(R.id.buttonAddImage)
+        buttonRemoveImage = findViewById(R.id.buttonRemoveImage)
+        updateInfoProfile = findViewById<Button>(R.id.updateInfoProfile)
+        buttonUpdatePassword = findViewById<Button>(R.id.buttonUpdatePassword)
 
         // Проверяем текущую тему приложения
         val currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
         if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
             // Темная тема
+            val color = ContextCompat.getColor(this, R.color.nutritionalValueDark)
             layout.setBackgroundResource(R.drawable.bottom_menu_dark)
+            buttonAddImage.setBackgroundResource(R.drawable.photo_add_background_dark)
+            buttonRemoveImage.setBackgroundColor(color)
+            updateInfoProfile.setBackgroundColor(color)
+            buttonUpdatePassword.setBackgroundColor(color)
         } else {
             // Светлая тема
+            val color = ContextCompat.getColor(this, R.color.nutritionalValueLight)
             layout.setBackgroundResource(R.drawable.bottom_menu_light)
+            buttonAddImage.setBackgroundResource(R.drawable.photo_add_background)
+            buttonRemoveImage.setBackgroundColor(color)
+            updateInfoProfile.setBackgroundColor(color)
+            buttonUpdatePassword.setBackgroundColor(color)
         }
-
-        val textViewUsername = findViewById<TextView>(R.id.textViewUsername)
-        imageViewProfile = findViewById(R.id.imageViewProfile)
-        buttonAddImage = findViewById(R.id.buttonAddImage)
-        buttonRemoveImage = findViewById(R.id.buttonRemoveImage)
 
         // Логика для кнопки добавления изображения
         buttonAddImage.setOnClickListener {
@@ -85,7 +100,6 @@ class User : AppCompatActivity() {
         }
 
         //Кнопка обновления данных профиля
-        val updateInfoProfile = findViewById<Button>(R.id.updateInfoProfile)
         updateInfoProfile.setOnClickListener {
             intent.putExtra("REMOVE_USER_ID", loggedInUserId)
             val intent = Intent(this, UpdateInfoProfile::class.java)
@@ -137,7 +151,7 @@ class User : AppCompatActivity() {
         // Логика для кнопки выхода и кнопки назад
         val logOut = findViewById<ImageButton>(R.id.logOut)
         logOut.setOnClickListener {
-            val sharedPreferences = getSharedPreferences("user_prefs", AppCompatActivity.MODE_PRIVATE)
+            val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
             sharedPreferences.edit().clear().apply()
             val intent = Intent(this, LogIn::class.java)
             startActivity(intent)
@@ -152,7 +166,6 @@ class User : AppCompatActivity() {
         }
 
         //  Кнопка смены пароля
-        val buttonUpdatePassword = findViewById<Button>(R.id.buttonUpdatePassword)
         buttonUpdatePassword.setOnClickListener {
             val intent = Intent(this, UpdatePassword::class.java)
             startActivity(intent)
@@ -238,7 +251,6 @@ class User : AppCompatActivity() {
             }
         }
     }
-
 
     private fun deleteProfileImage() {
         if (loggedInUserId != null) {

@@ -58,8 +58,6 @@ class Feed : AppCompatActivity() {
         val samplePosts = listOf(
             usersPostsGetResponse("Иван Иванов", "Название рецепта 1", "Описание рецепта 1", "10", "345"),
             usersPostsGetResponse("Мария Петрова", "Название рецепта 2", "Описание рецепта 2", "25", "989"),
-            usersPostsGetResponse("Хуй Пертрушкин", "Название рецепта 3", "Описание рецепта 3", "1488", "1488"),
-            usersPostsGetResponse("Петрушка Хуюшкин", "Название рецепта 4", "Описание рецепта 4", "696969", "1000000"),
         )
 
         val adapter = PostAdapter(samplePosts)
