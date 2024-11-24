@@ -4,6 +4,6 @@
 
     <solid android:color="@color/nutritionalValueLight"/>
     <size
-        android:width="45dp"
-        android:height="45dp" />
+        android:width="40dp"
+        android:height="40dp" />
 </shape>

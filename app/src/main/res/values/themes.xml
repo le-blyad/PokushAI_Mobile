@@ -8,6 +8,7 @@
         <item name="colorAccent">@color/red</item>
         <item name="iconColor">@color/buttonBottomMenuTextLight</item>
         <item name="android:statusBarColor">@color/statusBarColor</item>
+        <item name="colorButtonNormal">@color/gray</item>
     </style>
 
     <style name="AppTheme.CustomNavigationBar" parent="Base.Theme.PokushAI_Mobile">

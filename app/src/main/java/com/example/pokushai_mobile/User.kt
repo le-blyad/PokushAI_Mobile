@@ -28,6 +28,8 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.Toast
+import android.content.res.ColorStateList
+
 
 
 
@@ -62,28 +64,38 @@ class User : AppCompatActivity() {
         imageViewProfile = findViewById(R.id.imageViewProfile)
         buttonAddImage = findViewById(R.id.buttonAddImage)
         buttonRemoveImage = findViewById(R.id.buttonRemoveImage)
-        updateInfoProfile = findViewById<Button>(R.id.updateInfoProfile)
-        buttonUpdatePassword = findViewById<Button>(R.id.buttonUpdatePassword)
+        updateInfoProfile = findViewById(R.id.updateInfoProfile)
+        buttonUpdatePassword = findViewById(R.id.buttonUpdatePassword)
 
         // Проверяем текущую тему приложения
         val currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
         if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
-            // Темная тема
             val color = ContextCompat.getColor(this, R.color.nutritionalValueDark)
+
             layout.setBackgroundResource(R.drawable.bottom_menu_dark)
+
             buttonAddImage.setBackgroundResource(R.drawable.photo_add_background_dark)
-            buttonRemoveImage.setBackgroundColor(color)
-            updateInfoProfile.setBackgroundColor(color)
-            buttonUpdatePassword.setBackgroundColor(color)
+
+            buttonRemoveImage.backgroundTintList = ColorStateList.valueOf(color)
+
+            updateInfoProfile.backgroundTintList = ColorStateList.valueOf(color)
+
+            buttonUpdatePassword.backgroundTintList = ColorStateList.valueOf(color)
+
         } else {
-            // Светлая тема
             val color = ContextCompat.getColor(this, R.color.nutritionalValueLight)
+
             layout.setBackgroundResource(R.drawable.bottom_menu_light)
+
             buttonAddImage.setBackgroundResource(R.drawable.photo_add_background)
-            buttonRemoveImage.setBackgroundColor(color)
-            updateInfoProfile.setBackgroundColor(color)
-            buttonUpdatePassword.setBackgroundColor(color)
+
+            buttonRemoveImage.backgroundTintList = ColorStateList.valueOf(color)
+
+            updateInfoProfile.backgroundTintList = ColorStateList.valueOf(color)
+
+            buttonUpdatePassword.backgroundTintList = ColorStateList.valueOf(color)
         }
+
 
         // Логика для кнопки добавления изображения
         buttonAddImage.setOnClickListener {

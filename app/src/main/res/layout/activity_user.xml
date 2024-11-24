@@ -92,25 +92,27 @@
 
     <Button
         android:id="@+id/updateInfoProfile"
-        style="@style/profileButtonDark"
+        style="@style/profileButton"
         android:text="Обновить данные профиля"
+        android:layout_marginTop="40dp"
+        android:drawableRight="@drawable/right_arrow"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonRemoveImage" />
 
     <Button
         android:id="@+id/buttonUpdatePassword"
-        style="@style/profileButtonDark"
+        style="@style/profileButton"
         android:text="Сменить пароль"
+        android:drawableRight="@drawable/right_arrow"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/updateInfoProfile" />
 
     <Button
         android:id="@+id/buttonRemoveImage"
-        style="@style/profileButtonDark"
+        style="@style/profileButton"
+        android:drawableLeft="@drawable/trash_basket"
         android:text="Удалить фото"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
