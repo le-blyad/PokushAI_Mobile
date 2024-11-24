@@ -49,7 +49,7 @@ class AllRecipes : AppCompatActivity() {
         }
 
         imageButtones[0].setOnClickListener {
-            val intent = Intent(this, Belyashi::class.java)
+            val intent = Intent(this, TestRecip::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
