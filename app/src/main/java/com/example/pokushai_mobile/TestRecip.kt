@@ -25,6 +25,24 @@ class TestRecip : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test_recip)
 
+        // Энергитическая ценность
+
+        val calories = 305
+        val proteins = 25
+        val fats = 20
+        val carbohydrates = 3
+
+        val textViewCalories = findViewById<TextView>(R.id.textViewCalories)
+        textViewCalories.text = "$calories\nкКал"
+
+        val textViewSquirrels = findViewById<TextView>(R.id.textViewSquirrels)
+        textViewSquirrels.text = "$proteins\nг"
+
+        val textViewFats = findViewById<TextView>(R.id.textViewFats)
+        textViewFats.text = "$fats\nг"
+
+        val textViewCarbohydrates = findViewById<TextView>(R.id.textViewCarbohydrates)
+        textViewCarbohydrates.text = "$carbohydrates\nг"
 
 
         val layout: RecyclerView = findViewById(R.id.stepsRecyclerView)
@@ -41,6 +59,11 @@ class TestRecip : AppCompatActivity() {
             layout.setBackgroundResource(R.drawable.shape_dark)
             topMenu.setBackgroundResource(R.drawable.bottom_menu_dark)
 
+            textViewCalories.setBackgroundResource(R.drawable.dark_radius)
+            textViewSquirrels.setBackgroundResource(R.drawable.dark_radius)
+            textViewFats.setBackgroundResource(R.drawable.dark_radius)
+            textViewCarbohydrates.setBackgroundResource(R.drawable.dark_radius)
+
             buttonIncrease.backgroundTintList = ColorStateList.valueOf(color)
             buttonDecrease.backgroundTintList = ColorStateList.valueOf(color)
         } else {
@@ -50,6 +73,11 @@ class TestRecip : AppCompatActivity() {
             layout.setBackgroundResource(R.drawable.shape_light)
             topMenu.setBackgroundResource(R.drawable.bottom_menu_light)
 
+            textViewCalories.setBackgroundResource(R.drawable.light_radius)
+            textViewSquirrels.setBackgroundResource(R.drawable.light_radius)
+            textViewFats.setBackgroundResource(R.drawable.light_radius)
+            textViewCarbohydrates.setBackgroundResource(R.drawable.light_radius)
+
             buttonIncrease.backgroundTintList = ColorStateList.valueOf(color)
             buttonDecrease.backgroundTintList = ColorStateList.valueOf(color)
         }
@@ -57,19 +85,6 @@ class TestRecip : AppCompatActivity() {
         // Ищем RecyclerView
         ingredientsRecyclerView = findViewById(R.id.ingredientsRecyclerView)
         stepsRecyclerView = findViewById(R.id.stepsRecyclerView)
-
-        // Энергитическая ценность
-        val textViewCalories = findViewById<TextView>(R.id.textViewCalories)
-        textViewCalories.text = "Калории\n305\nкКал"
-
-        val textViewSquirrels = findViewById<TextView>(R.id.textViewSquirrels)
-        textViewSquirrels.text = "Белки\n25\nг"
-
-        val textViewFats = findViewById<TextView>(R.id.textViewFats)
-        textViewFats.text = "Жиры\n20\nг"
-
-        val textViewCarbohydrates = findViewById<TextView>(R.id.textViewCarbohydrates)
-        textViewCarbohydrates.text = "Углеводы\n3\nг"
 
         // Количество ингридиентов
         val portions = 5
@@ -88,47 +103,42 @@ class TestRecip : AppCompatActivity() {
         buttonIncrease.setOnClickListener {
             portionsAdditionally++
             val pointValues = listOf(point0, point1, point2)
-            val updatedPoints = pointValues.map { it * portionsAdditionally }
+            val updatedPoints = pointValues.map { (it * portionsAdditionally).toInt() }
 
             val ingredients = listOf(
-                "Вода ${updatedPoints[0]} мл",
-                "Мука ${updatedPoints[1]} г",
-                "Соль ${updatedPoints[2]} г"
+                "Вода" to "${updatedPoints[0]} мл",
+                "Мука" to "${updatedPoints[1]} г",
+                "Соль" to "${updatedPoints[2]} г"
             )
 
             textPortions.text = "$portionsAdditionally"
-
             ingredientsAdapter.updateIngredients(ingredients)
         }
 
-        // Уменьшения порций
+        // Уменьшение порций
         buttonDecrease.setOnClickListener {
-
             if (portionsAdditionally > 1) {
                 portionsAdditionally--
-            } else {
-                portionsAdditionally = 1
             }
 
             val pointValues = listOf(point0, point1, point2)
-            val updatedPoints = pointValues.map { it * portionsAdditionally }
+            val updatedPoints = pointValues.map { (it * portionsAdditionally).toInt() }
 
             val ingredients = listOf(
-                "Вода ${updatedPoints[0]} мл",
-                "Мука ${updatedPoints[1]} г",
-                "Соль ${updatedPoints[2]} г"
+                "Вода" to "${updatedPoints[0]} мл",
+                "Мука" to "${updatedPoints[1]} г",
+                "Соль" to "${updatedPoints[2]} г"
             )
 
             textPortions.text = "$portionsAdditionally"
-
             ingredientsAdapter.updateIngredients(ingredients)
         }
 
-        // Данные для ингредиентов
+        // Изначальные данные
         val ingredients = listOf(
-            "Вода ${point0 * portions} мл",
-            "Мука ${point1 * portions} г",
-            "Соль ${point2 * portions}г "
+            "Вода" to "${(point0 * portions).toInt()} мл",
+            "Мука" to "${(point1 * portions).toInt()} г",
+            "Соль" to "${(point2 * portions).toInt()} г"
         )
         ingredientsAdapter = IngredientsAdapter(ingredients)
 

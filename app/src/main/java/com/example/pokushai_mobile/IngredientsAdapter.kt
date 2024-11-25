@@ -6,31 +6,34 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class IngredientsAdapter(private var ingredients: List<String>) : RecyclerView.Adapter<IngredientsAdapter.IngredientViewHolder>() {
+class IngredientsAdapter(private var ingredients: List<Pair<String, String>>) :
+    RecyclerView.Adapter<IngredientsAdapter.IngredientViewHolder>() {
 
-    // Метод для обновления данных
-    fun updateIngredients(newIngredients: List<String>) {
+    fun updateIngredients(newIngredients: List<Pair<String, String>>) {
         ingredients = newIngredients
-        notifyDataSetChanged()  // Это перерисует RecyclerView с новыми данными
+        notifyDataSetChanged()
     }
 
-    // Ваши остальные методы для адаптера
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IngredientViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_ingredient, parent, false)
+        val itemView = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_ingredient, parent, false)
         return IngredientViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: IngredientViewHolder, position: Int) {
-        holder.bind(ingredients[position])
+        val ingredient = ingredients[position]
+        holder.bind(ingredient.first, ingredient.second)
     }
 
     override fun getItemCount(): Int = ingredients.size
 
     inner class IngredientViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val ingredientText: TextView = itemView.findViewById(R.id.ingredientText)
+        private val nameText: TextView = itemView.findViewById(R.id.ingredientName)
+        private val quantityText: TextView = itemView.findViewById(R.id.ingredientQuantity)
 
-        fun bind(ingredient: String) {
-            ingredientText.text = ingredient
+        fun bind(name: String, quantity: String) {
+            nameText.text = name
+            quantityText.text = quantity
         }
     }
 }
