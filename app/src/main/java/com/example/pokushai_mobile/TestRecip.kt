@@ -1,5 +1,6 @@
 package com.example.pokushai_mobile
 
+import android.content.res.ColorStateList
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +8,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.LinearLayoutManager
 
@@ -18,42 +20,71 @@ class TestRecip : AppCompatActivity() {
     private lateinit var stepsRecyclerView: RecyclerView
     private lateinit var ingredientsAdapter: IngredientsAdapter
     private lateinit var stepAdapter: StepAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test_recip)
 
+        // Энергитическая ценность
 
-        //Тема приложения
+        val calories = 305
+        val proteins = 25
+        val fats = 20
+        val carbohydrates = 3
+
+        val textViewCalories = findViewById<TextView>(R.id.textViewCalories)
+        textViewCalories.text = "$calories\nкКал"
+
+        val textViewSquirrels = findViewById<TextView>(R.id.textViewSquirrels)
+        textViewSquirrels.text = "$proteins\nг"
+
+        val textViewFats = findViewById<TextView>(R.id.textViewFats)
+        textViewFats.text = "$fats\nг"
+
+        val textViewCarbohydrates = findViewById<TextView>(R.id.textViewCarbohydrates)
+        textViewCarbohydrates.text = "$carbohydrates\nг"
+
+
         val layout: RecyclerView = findViewById(R.id.stepsRecyclerView)
         val topMenu: LinearLayout = findViewById(R.id.topMenu)
+        val buttonIncrease = findViewById<Button>(R.id.buttonIncrease)
+        val buttonDecrease = findViewById<Button>(R.id.buttonDecrease)
 
+        //Тема приложения
         val currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
         if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
             // Темная тема
+            val color = ContextCompat.getColor(this, R.color.nutritionalValueDark)
+
             layout.setBackgroundResource(R.drawable.shape_dark)
             topMenu.setBackgroundResource(R.drawable.bottom_menu_dark)
+
+            textViewCalories.setBackgroundResource(R.drawable.dark_radius)
+            textViewSquirrels.setBackgroundResource(R.drawable.dark_radius)
+            textViewFats.setBackgroundResource(R.drawable.dark_radius)
+            textViewCarbohydrates.setBackgroundResource(R.drawable.dark_radius)
+
+            buttonIncrease.backgroundTintList = ColorStateList.valueOf(color)
+            buttonDecrease.backgroundTintList = ColorStateList.valueOf(color)
         } else {
             // Светлая тема
+            val color = ContextCompat.getColor(this, R.color.nutritionalValueLight)
+
             layout.setBackgroundResource(R.drawable.shape_light)
             topMenu.setBackgroundResource(R.drawable.bottom_menu_light)
+
+            textViewCalories.setBackgroundResource(R.drawable.light_radius)
+            textViewSquirrels.setBackgroundResource(R.drawable.light_radius)
+            textViewFats.setBackgroundResource(R.drawable.light_radius)
+            textViewCarbohydrates.setBackgroundResource(R.drawable.light_radius)
+
+            buttonIncrease.backgroundTintList = ColorStateList.valueOf(color)
+            buttonDecrease.backgroundTintList = ColorStateList.valueOf(color)
         }
 
         // Ищем RecyclerView
         ingredientsRecyclerView = findViewById(R.id.ingredientsRecyclerView)
         stepsRecyclerView = findViewById(R.id.stepsRecyclerView)
-
-        // Энергитическая ценность
-        val textViewCalories = findViewById<TextView>(R.id.textViewCalories)
-        textViewCalories.text = "Калории\n305\nККАЛ"
-
-        val textViewSquirrels = findViewById<TextView>(R.id.textViewSquirrels)
-        textViewSquirrels.text = "Белки\n25\nграмм"
-
-        val textViewFats = findViewById<TextView>(R.id.textViewFats)
-        textViewFats.text = "Жиры\n20\nграмм"
-
-        val textViewCarbohydrates = findViewById<TextView>(R.id.textViewCarbohydrates)
-        textViewCarbohydrates.text = "Углеводы\n3\nграмм"
 
         // Количество ингридиентов
         val portions = 5
@@ -64,8 +95,6 @@ class TestRecip : AppCompatActivity() {
 
         // Счетчик порций
         val textPortions = findViewById<TextView>(R.id.textPortions)
-        val buttonIncrease = findViewById<Button>(R.id.buttonIncrease)
-        val buttonDecrease = findViewById<Button>(R.id.buttonDecrease)
 
         // Изначально показываем порции
         textPortions.text = "$portionsAdditionally"
@@ -74,47 +103,42 @@ class TestRecip : AppCompatActivity() {
         buttonIncrease.setOnClickListener {
             portionsAdditionally++
             val pointValues = listOf(point0, point1, point2)
-            val updatedPoints = pointValues.map { it * portionsAdditionally }
+            val updatedPoints = pointValues.map { (it * portionsAdditionally).toInt() }
 
             val ingredients = listOf(
-                "Вода - ${updatedPoints[0]} мл",
-                "Мука - ${updatedPoints[1]} г",
-                "Соль - ${updatedPoints[2]} г"
+                "Вода" to "${updatedPoints[0]} мл",
+                "Мука" to "${updatedPoints[1]} г",
+                "Соль" to "${updatedPoints[2]} г"
             )
 
             textPortions.text = "$portionsAdditionally"
-
             ingredientsAdapter.updateIngredients(ingredients)
         }
 
-        // Уменьшения порций
+        // Уменьшение порций
         buttonDecrease.setOnClickListener {
-
             if (portionsAdditionally > 1) {
                 portionsAdditionally--
-            } else {
-                portionsAdditionally = 1
             }
 
             val pointValues = listOf(point0, point1, point2)
-            val updatedPoints = pointValues.map { it * portionsAdditionally }
+            val updatedPoints = pointValues.map { (it * portionsAdditionally).toInt() }
 
             val ingredients = listOf(
-                "Вода - ${updatedPoints[0]} мл",
-                "Мука - ${updatedPoints[1]} г",
-                "Соль - ${updatedPoints[2]} г"
+                "Вода" to "${updatedPoints[0]} мл",
+                "Мука" to "${updatedPoints[1]} г",
+                "Соль" to "${updatedPoints[2]} г"
             )
 
             textPortions.text = "$portionsAdditionally"
-
             ingredientsAdapter.updateIngredients(ingredients)
         }
 
-        // Данные для ингредиентов
+        // Изначальные данные
         val ingredients = listOf(
-            "Вода - ${point0 * portions}",
-            "Мука - ${point1 * portions}",
-            "Соль - ${point2 * portions}"
+            "Вода" to "${(point0 * portions).toInt()} мл",
+            "Мука" to "${(point1 * portions).toInt()} г",
+            "Соль" to "${(point2 * portions).toInt()} г"
         )
         ingredientsAdapter = IngredientsAdapter(ingredients)
 

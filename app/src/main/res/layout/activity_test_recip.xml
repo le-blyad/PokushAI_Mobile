@@ -75,77 +75,154 @@
 
             <!-- Изображение рецепта -->
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/photo_recip"
                 android:layout_width="wrap_content"
                 android:layout_height="280dp"
                 app:srcCompat="@drawable/belyashi" />
 
             <!-- Заголовок рецепта -->
             <TextView
-                android:id="@+id/textView0"
+                android:id="@+id/title_recip"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginVertical="5dp"
                 android:text="Беляши"
-                android:textSize="35dp"
+                android:textSize="30dp"
                 android:textStyle="bold" />
 
             <!-- Таблица с энергетической ценностью -->
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginHorizontal="7dp"
                 android:weightSum="4">
 
                 <!-- Энергетическая ценность, белки, жиры и углеводы -->
-                <TextView
-                    android:id="@+id/textViewCalories"
-                    android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginEnd="12dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/orange_radius"
-                    android:gravity="center"
-                    android:textColor="@color/white"
-                    android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/textViewSquirrels"
+                <FrameLayout
+                    android:id="@+id/containerCalories"
                     android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginEnd="12dp"
-                    android:layout_weight="1"
+                    android:layout_height="120dp"
+                    android:layout_marginHorizontal="5dp"
                     android:background="@drawable/orange_radius"
-                    android:gravity="center"
-                    android:textColor="@color/white"
-                    android:textStyle="bold" />
+                    android:layout_weight="1"
+                    android:layout_gravity="center">
 
-                <TextView
-                    android:id="@+id/textViewFats"
-                    android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginEnd="12dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/orange_radius"
-                    android:gravity="center"
-                    android:textColor="@color/white"
-                    android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/containerText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal"
+                        android:text="Калории"
+                        android:layout_marginTop="3dp"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
 
-                <TextView
-                    android:id="@+id/textViewCarbohydrates"
+                    <TextView
+                        android:id="@+id/textViewCalories"
+                        android:layout_width="match_parent"
+                        android:layout_height="85dp"
+                        android:gravity="center"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginTop="30dp"
+                        android:textStyle="bold"
+                        android:textSize="17sp"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/containerSquirrels"
                     android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginEnd="12dp"
-                    android:layout_weight="1"
+                    android:layout_height="120dp"
+                    android:layout_marginHorizontal="5dp"
                     android:background="@drawable/orange_radius"
-                    android:gravity="center"
-                    android:textColor="@color/white"
-                    android:textStyle="bold" />
-            </TableRow>
+                    android:layout_weight="1"
+                    android:layout_gravity="center">
+
+                    <TextView
+                        android:id="@+id/containerTextSquirrels"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal"
+                        android:text="Белки"
+                        android:layout_marginTop="3dp"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/textViewSquirrels"
+                        android:layout_width="match_parent"
+                        android:layout_height="85dp"
+                        android:gravity="center"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginTop="30dp"
+                        android:textStyle="bold"
+                        android:textSize="17sp"/>
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/containerFats"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@drawable/orange_radius"
+                    android:layout_weight="1"
+                    android:layout_gravity="center">
+
+                    <TextView
+                        android:id="@+id/containerTextFats"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal"
+                        android:text="Жиры"
+                        android:layout_marginTop="3dp"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/textViewFats"
+                        android:layout_width="match_parent"
+                        android:layout_height="85dp"
+                        android:gravity="center"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginTop="30dp"
+                        android:textStyle="bold"
+                        android:textSize="17sp"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/containerCarbohydrates"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@drawable/orange_radius"
+                    android:layout_weight="1"
+                    android:layout_gravity="center">
+
+                    <TextView
+                        android:id="@+id/containerTextCarbohydrates"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="3dp"
+                        android:text="Углеводы"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/textViewCarbohydrates"
+                        android:layout_width="match_parent"
+                        android:layout_height="85dp"
+                        android:gravity="center"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginTop="30dp"
+                        android:textStyle="bold"
+                        android:textSize="17sp"/>
+                </FrameLayout>
+
+                </TableRow>
+
 
             <TextView
                 android:id="@+id/textEnergy0"
@@ -153,7 +230,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:layout_marginEnd="12dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
                 android:text="*энергитическая ценность на 100 грамм готового продукта" />
 
@@ -166,8 +243,8 @@
                     android:id="@+id/textViewPortions"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:layout_marginEnd="10dp"
                     android:layout_marginStart="12dp"
+                    android:layout_marginEnd="10dp"
                     android:text="Порции"
                     android:textSize="15dp"
                     tools:ignore="HardcodedText,SpUsage" />
@@ -178,9 +255,9 @@
                     android:layout_width="60dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="5dp"
+                    style="@style/recip_portion_button"
                     android:backgroundTint="@color/orange"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20dp"
+                    android:textColor="#EA0000"
                     android:text="-"
                     tools:ignore="HardcodedText,SpUsage" />
 
@@ -196,9 +273,9 @@
                     android:id="@+id/buttonIncrease"
                     android:layout_width="60dp"
                     android:layout_height="50dp"
+                    style="@style/recip_portion_button"
                     android:backgroundTint="@color/orange"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20dp"
+                    android:textColor="#13B600"
                     android:text="+"
                     tools:ignore="HardcodedText" />
 
@@ -210,28 +287,29 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
-                android:layout_marginBottom="7dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="5dp"
                 android:text="Ингредиенты:"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
             <!-- Динамический список ингредиентов -->
-
-            <!-- Заголовок пошагового рецепта -->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/ingredientsRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:nestedScrollingEnabled="false"
+                android:padding="10dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="12dp"/>
 
             <TextView
                 android:id="@+id/textView18"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
+                android:layout_marginHorizontal="12dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="5dp"
                 android:text="Пошаговый рецепт"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -241,8 +319,9 @@
                 android:id="@+id/stepsRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                app:layout_constraintTop_toBottomOf="@id/ingredientsRecyclerView" />
+                android:nestedScrollingEnabled="false"
+                android:padding="10dp"
+                android:layout_marginHorizontal="12dp"/>
 
         </LinearLayout>
 

@@ -1,0 +1,10 @@
+<resources>
+    <style name="recip_portion_button" parent="Widget.AppCompat.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">23sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:background">@drawable/rounded_button_profile</item>
+    </style>
+</resources>
