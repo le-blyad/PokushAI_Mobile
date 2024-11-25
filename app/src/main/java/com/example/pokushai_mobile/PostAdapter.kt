@@ -5,19 +5,15 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import android.widget.ImageView
-import android.content.res.Configuration
-import android.os.Bundle
 import android.widget.LinearLayout
-import android.widget.Toast
 
 
-class PostAdapter(private val posts: List<usersPostsGetResponse>) : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
+class PostAdapter(private val posts: List<aboutPost>) : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
 
     class PostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val userName: TextView = itemView.findViewById(R.id.userName)
         val recipeName: TextView = itemView.findViewById(R.id.recipeName)
         val description: TextView = itemView.findViewById(R.id.description)
-        val countLikes: TextView = itemView.findViewById(R.id.countLikes)
         val countViews: TextView = itemView.findViewById(R.id.countViews)
         val imageLikes: ImageView = itemView.findViewById(R.id.imageLikes)
         val imageViews: ImageView = itemView.findViewById(R.id.imageViews)
@@ -32,8 +28,7 @@ class PostAdapter(private val posts: List<usersPostsGetResponse>) : RecyclerView
         val post = posts[position]
         holder.userName.text = post.author
         holder.recipeName.text = post.title
-        holder.description.text = post.desc
-        holder.countLikes.text = post.likes
+        holder.description.text = post.des
         holder.countViews.text = post.views
 
         holder.imageLikes.setImageResource(R.drawable.like)
