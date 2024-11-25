@@ -1,5 +1,6 @@
 package com.example.pokushai_mobile
 
+import android.content.res.ColorStateList
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +8,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.LinearLayoutManager
 
@@ -18,24 +20,38 @@ class TestRecip : AppCompatActivity() {
     private lateinit var stepsRecyclerView: RecyclerView
     private lateinit var ingredientsAdapter: IngredientsAdapter
     private lateinit var stepAdapter: StepAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test_recip)
 
 
-        //Тема приложения
+
         val layout: RecyclerView = findViewById(R.id.stepsRecyclerView)
         val topMenu: LinearLayout = findViewById(R.id.topMenu)
+        val buttonIncrease = findViewById<Button>(R.id.buttonIncrease)
+        val buttonDecrease = findViewById<Button>(R.id.buttonDecrease)
 
+        //Тема приложения
         val currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
         if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
             // Темная тема
+            val color = ContextCompat.getColor(this, R.color.nutritionalValueDark)
+
             layout.setBackgroundResource(R.drawable.shape_dark)
             topMenu.setBackgroundResource(R.drawable.bottom_menu_dark)
+
+            buttonIncrease.backgroundTintList = ColorStateList.valueOf(color)
+            buttonDecrease.backgroundTintList = ColorStateList.valueOf(color)
         } else {
             // Светлая тема
+            val color = ContextCompat.getColor(this, R.color.nutritionalValueLight)
+
             layout.setBackgroundResource(R.drawable.shape_light)
             topMenu.setBackgroundResource(R.drawable.bottom_menu_light)
+
+            buttonIncrease.backgroundTintList = ColorStateList.valueOf(color)
+            buttonDecrease.backgroundTintList = ColorStateList.valueOf(color)
         }
 
         // Ищем RecyclerView
@@ -44,16 +60,16 @@ class TestRecip : AppCompatActivity() {
 
         // Энергитическая ценность
         val textViewCalories = findViewById<TextView>(R.id.textViewCalories)
-        textViewCalories.text = "Калории\n305\nККАЛ"
+        textViewCalories.text = "Калории\n305\nкКал"
 
         val textViewSquirrels = findViewById<TextView>(R.id.textViewSquirrels)
-        textViewSquirrels.text = "Белки\n25\nграмм"
+        textViewSquirrels.text = "Белки\n25\nг"
 
         val textViewFats = findViewById<TextView>(R.id.textViewFats)
-        textViewFats.text = "Жиры\n20\nграмм"
+        textViewFats.text = "Жиры\n20\nг"
 
         val textViewCarbohydrates = findViewById<TextView>(R.id.textViewCarbohydrates)
-        textViewCarbohydrates.text = "Углеводы\n3\nграмм"
+        textViewCarbohydrates.text = "Углеводы\n3\nг"
 
         // Количество ингридиентов
         val portions = 5
@@ -64,8 +80,6 @@ class TestRecip : AppCompatActivity() {
 
         // Счетчик порций
         val textPortions = findViewById<TextView>(R.id.textPortions)
-        val buttonIncrease = findViewById<Button>(R.id.buttonIncrease)
-        val buttonDecrease = findViewById<Button>(R.id.buttonDecrease)
 
         // Изначально показываем порции
         textPortions.text = "$portionsAdditionally"
@@ -77,9 +91,9 @@ class TestRecip : AppCompatActivity() {
             val updatedPoints = pointValues.map { it * portionsAdditionally }
 
             val ingredients = listOf(
-                "Вода - ${updatedPoints[0]} мл",
-                "Мука - ${updatedPoints[1]} г",
-                "Соль - ${updatedPoints[2]} г"
+                "Вода ${updatedPoints[0]} мл",
+                "Мука ${updatedPoints[1]} г",
+                "Соль ${updatedPoints[2]} г"
             )
 
             textPortions.text = "$portionsAdditionally"
@@ -100,9 +114,9 @@ class TestRecip : AppCompatActivity() {
             val updatedPoints = pointValues.map { it * portionsAdditionally }
 
             val ingredients = listOf(
-                "Вода - ${updatedPoints[0]} мл",
-                "Мука - ${updatedPoints[1]} г",
-                "Соль - ${updatedPoints[2]} г"
+                "Вода ${updatedPoints[0]} мл",
+                "Мука ${updatedPoints[1]} г",
+                "Соль ${updatedPoints[2]} г"
             )
 
             textPortions.text = "$portionsAdditionally"
@@ -112,9 +126,9 @@ class TestRecip : AppCompatActivity() {
 
         // Данные для ингредиентов
         val ingredients = listOf(
-            "Вода - ${point0 * portions}",
-            "Мука - ${point1 * portions}",
-            "Соль - ${point2 * portions}"
+            "Вода ${point0 * portions} мл",
+            "Мука ${point1 * portions} г",
+            "Соль ${point2 * portions}г "
         )
         ingredientsAdapter = IngredientsAdapter(ingredients)
 
