@@ -6,6 +6,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import android.widget.ImageView
 import android.widget.LinearLayout
+import com.squareup.picasso.Picasso
 
 
 class PostAdapter(private val posts: List<aboutPost>) : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
@@ -14,9 +15,11 @@ class PostAdapter(private val posts: List<aboutPost>) : RecyclerView.Adapter<Pos
         val userName: TextView = itemView.findViewById(R.id.userName)
         val recipeName: TextView = itemView.findViewById(R.id.recipeName)
         val description: TextView = itemView.findViewById(R.id.description)
+        val countLikes: TextView = itemView.findViewById(R.id.countLikes)
         val countViews: TextView = itemView.findViewById(R.id.countViews)
         val imageLikes: ImageView = itemView.findViewById(R.id.imageLikes)
         val imageViews: ImageView = itemView.findViewById(R.id.imageViews)
+        val imagePost: ImageView = itemView.findViewById(R.id.image_post)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
@@ -30,6 +33,16 @@ class PostAdapter(private val posts: List<aboutPost>) : RecyclerView.Adapter<Pos
         holder.recipeName.text = post.title
         holder.description.text = post.des
         holder.countViews.text = post.views
+        holder.countLikes.text = post.likes
+
+        if (!post.image.isNullOrEmpty()){
+            Picasso.get()
+                .load(post.image)
+                .placeholder(R.drawable.nophotostep)
+                .into(holder.imagePost)
+        } else {
+            holder.imageViews.setImageResource(R.drawable.nophotostep)
+        }
 
         holder.imageLikes.setImageResource(R.drawable.like)
         holder.imageViews.setImageResource(R.drawable.eye)

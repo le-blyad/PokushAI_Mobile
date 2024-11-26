@@ -64,14 +64,15 @@ data class aboutPost(
     val author: String,
     val title: String,
     val des: String,
-    val image: Uri?,
+    val image: String?,
     val created_at: String,
     val update_at: String,
-    val views: String
+    val views: String,
+    val likes: String
 )
 
 data class aboutUser(
-    val user_image: Uri?
+    val user_image: String?
 )
 
 data class usersPostsGetResponse(
