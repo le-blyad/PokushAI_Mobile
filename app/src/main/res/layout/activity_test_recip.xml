@@ -75,14 +75,14 @@
 
             <!-- Изображение рецепта -->
             <ImageView
-                android:id="@+id/photo_recip"
+                android:id="@+id/mainPhoto"
                 android:layout_width="wrap_content"
                 android:layout_height="280dp"
                 app:srcCompat="@drawable/belyashi" />
 
             <!-- Заголовок рецепта -->
             <TextView
-                android:id="@+id/title_recip"
+                android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"

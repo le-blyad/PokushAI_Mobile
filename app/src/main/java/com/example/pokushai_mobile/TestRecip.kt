@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat
@@ -19,38 +20,129 @@ class TestRecip : AppCompatActivity() {
     private lateinit var ingredientsRecyclerView: RecyclerView
     private lateinit var stepsRecyclerView: RecyclerView
     private lateinit var ingredientsAdapter: IngredientsAdapter
-    private lateinit var stepAdapter: StepAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test_recip)
 
-        // Энергитическая ценность
+        // Заглавное фото
+        val mainPhoto = findViewById<ImageView>(R.id.mainPhoto)
+        mainPhoto.setImageResource(R.drawable.nophotostep)
 
-        val calories = 305
-        val proteins = 25
-        val fats = 20
-        val carbohydrates = 3
+        // Заголовок
+        val title = findViewById<TextView>(R.id.title)
+        title.text = "Название блюда"
+
+        // Энергитическая ценность
+        val calories = 100
+        val proteins = 1
+        val fats = 1
+        val carbohydrates = 1
 
         val textViewCalories = findViewById<TextView>(R.id.textViewCalories)
         textViewCalories.text = "$calories\nкКал"
 
         val textViewSquirrels = findViewById<TextView>(R.id.textViewSquirrels)
-        textViewSquirrels.text = "$proteins\nг"
+        textViewSquirrels.text = "$proteins г"
 
         val textViewFats = findViewById<TextView>(R.id.textViewFats)
-        textViewFats.text = "$fats\nг"
+        textViewFats.text = "$fats г"
 
         val textViewCarbohydrates = findViewById<TextView>(R.id.textViewCarbohydrates)
-        textViewCarbohydrates.text = "$carbohydrates\nг"
+        textViewCarbohydrates.text = "$carbohydrates г"
 
 
-        val layout: RecyclerView = findViewById(R.id.stepsRecyclerView)
-        val topMenu: LinearLayout = findViewById(R.id.topMenu)
+        // Ищем RecyclerView
+        ingredientsRecyclerView = findViewById(R.id.ingredientsRecyclerView)
+        stepsRecyclerView = findViewById(R.id.stepsRecyclerView)
+
+        // Количество ингридиентов
+        val portions = 1
+        val point0 = 1f
+        val point1 = 1f
+        val point2 = 1f
+        var portionsAdditionally = portions
+
+        // Счетчик порций
+        val textPortions = findViewById<TextView>(R.id.textPortions)
+
+        // Изначально показываем порции
+        textPortions.text = "$portionsAdditionally"
+
+        // Увеличение порций
         val buttonIncrease = findViewById<Button>(R.id.buttonIncrease)
+        buttonIncrease.setOnClickListener {
+            portionsAdditionally++
+            val pointValues = listOf(point0, point1, point2)
+            val updatedPoints = pointValues.map { (it * portionsAdditionally).toInt() }
+
+            val ingredients = listOf(
+                "Ингредиент 1" to "${updatedPoints[0]} ед.изм",
+                "Ингредиент 2" to "${updatedPoints[1]} ед.изм",
+                "Ингредиент 3" to "${updatedPoints[2]} ед.изм"
+            )
+
+            textPortions.text = "$portionsAdditionally"
+            ingredientsAdapter.updateIngredients(ingredients)
+        }
+
+        // Уменьшение порций
         val buttonDecrease = findViewById<Button>(R.id.buttonDecrease)
+        buttonDecrease.setOnClickListener {
+            if (portionsAdditionally > 1) {
+                portionsAdditionally--
+            }
+
+            val pointValues = listOf(point0, point1, point2)
+            val updatedPoints = pointValues.map { (it * portionsAdditionally).toInt() }
+
+            val ingredients = listOf(
+                "Ингредиент 1" to "${updatedPoints[0]} ед.изм",
+                "Ингредиент 2" to "${updatedPoints[1]} ед.изм",
+                "Ингредиент 3" to "${updatedPoints[2]} ед.изм"
+            )
+
+            textPortions.text = "$portionsAdditionally"
+            ingredientsAdapter.updateIngredients(ingredients)
+        }
+
+        // Начальные ингредиенты
+        val ingredients = listOf(
+            "Ингредиент 1" to "${(point0 * portions).toInt()} ед.изм",
+            "Ингредиент 2" to "${(point1 * portions).toInt()} ед.изм",
+            "Ингредиент 3" to "${(point2 * portions).toInt()} ед.изм"
+        )
+        ingredientsAdapter = IngredientsAdapter(ingredients)
+
+        // Шаги
+        val steps = listOf(
+            StepAdapter.Step("Это текст для первого шага...", R.drawable.nophotostep),
+            StepAdapter.Step("Это текст для второго шага...", R.drawable.nophotostep),
+            StepAdapter.Step("Это текст для третьего шага...", R.drawable.nophotostep)
+        )
+
+        val stepAdapter = StepAdapter(steps)
+
+        // Настроим RecyclerView для ингредиентов
+        ingredientsRecyclerView.layoutManager = LinearLayoutManager(this)
+        ingredientsRecyclerView.adapter = ingredientsAdapter
+
+        // Настройка RecyclerView для шагов
+        stepsRecyclerView.layoutManager = LinearLayoutManager(this)
+        stepsRecyclerView.adapter = stepAdapter
+
+
+        // Кнопка назад
+        val buttonBack = findViewById<ImageButton>(R.id.buttonBack)
+        buttonBack.setOnClickListener {
+            onBackPressed()
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+        }
 
         //Тема приложения
+        val layout: RecyclerView = findViewById(R.id.stepsRecyclerView)
+        val topMenu: LinearLayout = findViewById(R.id.topMenu)
+
         val currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
         if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
             // Темная тема
@@ -80,89 +172,6 @@ class TestRecip : AppCompatActivity() {
 
             buttonIncrease.backgroundTintList = ColorStateList.valueOf(color)
             buttonDecrease.backgroundTintList = ColorStateList.valueOf(color)
-        }
-
-        // Ищем RecyclerView
-        ingredientsRecyclerView = findViewById(R.id.ingredientsRecyclerView)
-        stepsRecyclerView = findViewById(R.id.stepsRecyclerView)
-
-        // Количество ингридиентов
-        val portions = 5
-        val point0 = 50f
-        val point1 = 50f
-        val point2 = 0.2f
-        var portionsAdditionally = portions
-
-        // Счетчик порций
-        val textPortions = findViewById<TextView>(R.id.textPortions)
-
-        // Изначально показываем порции
-        textPortions.text = "$portionsAdditionally"
-
-        // Увеличение порций
-        buttonIncrease.setOnClickListener {
-            portionsAdditionally++
-            val pointValues = listOf(point0, point1, point2)
-            val updatedPoints = pointValues.map { (it * portionsAdditionally).toInt() }
-
-            val ingredients = listOf(
-                "Вода" to "${updatedPoints[0]} мл",
-                "Мука" to "${updatedPoints[1]} г",
-                "Соль" to "${updatedPoints[2]} г"
-            )
-
-            textPortions.text = "$portionsAdditionally"
-            ingredientsAdapter.updateIngredients(ingredients)
-        }
-
-        // Уменьшение порций
-        buttonDecrease.setOnClickListener {
-            if (portionsAdditionally > 1) {
-                portionsAdditionally--
-            }
-
-            val pointValues = listOf(point0, point1, point2)
-            val updatedPoints = pointValues.map { (it * portionsAdditionally).toInt() }
-
-            val ingredients = listOf(
-                "Вода" to "${updatedPoints[0]} мл",
-                "Мука" to "${updatedPoints[1]} г",
-                "Соль" to "${updatedPoints[2]} г"
-            )
-
-            textPortions.text = "$portionsAdditionally"
-            ingredientsAdapter.updateIngredients(ingredients)
-        }
-
-        // Изначальные данные
-        val ingredients = listOf(
-            "Вода" to "${(point0 * portions).toInt()} мл",
-            "Мука" to "${(point1 * portions).toInt()} г",
-            "Соль" to "${(point2 * portions).toInt()} г"
-        )
-        ingredientsAdapter = IngredientsAdapter(ingredients)
-
-        // Шаги
-        val steps = listOf(
-            "Шаг 1: В ведерко хлебопечки налить теплую воду...",
-            "Шаг 2: Добавить муку и растительное масло...",
-            "Шаг 3: Запустить хлебопечку на режим 'подъем теста'..."
-        )
-        stepAdapter = StepAdapter(steps)
-
-        // Настроим RecyclerView для ингредиентов
-        ingredientsRecyclerView.layoutManager = LinearLayoutManager(this)
-        ingredientsRecyclerView.adapter = ingredientsAdapter
-
-        // Настроим RecyclerView для шагов рецепта
-        stepsRecyclerView.layoutManager = LinearLayoutManager(this)
-        stepsRecyclerView.adapter = stepAdapter
-
-        // Кнопка назад
-        val buttonBack = findViewById<ImageButton>(R.id.buttonBack)
-        buttonBack.setOnClickListener {
-            onBackPressed()
-            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 
     }
