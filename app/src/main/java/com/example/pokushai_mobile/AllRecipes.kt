@@ -1,13 +1,16 @@
 package com.example.pokushai_mobile
 
+import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import java.io.InputStreamReader
 
 class AllRecipes : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +36,13 @@ class AllRecipes : AppCompatActivity() {
             val imageButtonId = resources.getIdentifier("imageButton$i", "id", packageName)
             val imageButton = findViewById<ImageButton>(imageButtonId)
             imageButtones.add(imageButton)
+            val id = i + 1
+            imageButtones[i].setOnClickListener {
+                val intent = Intent(this, TestRecip::class.java)
+                intent.putExtra("recipe_id", id)
+                startActivity(intent)
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+            }
         }
 
 
@@ -45,18 +55,6 @@ class AllRecipes : AppCompatActivity() {
 
         buttonBack2.setOnClickListener {
             finish()
-            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-        }
-
-        imageButtones[0].setOnClickListener {
-            val intent = Intent(this, TestRecip::class.java)
-            startActivity(intent)
-            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-        }
-
-        imageButtones[10].setOnClickListener {
-            val intent = Intent(this, cutlets::class.java)
-            startActivity(intent)
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 

@@ -63,6 +63,7 @@ dependencies {
     implementation("com.squareup.picasso:picasso:2.8")
     implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
     implementation("androidx.room:room-runtime:2.5.0")
+    implementation("com.google.code.gson:gson:2.10")
     kapt("androidx.room:room-compiler:2.5.0")
     implementation(libs.lifecycle.livedata.ktx)
     implementation(libs.lifecycle.viewmodel.ktx)
