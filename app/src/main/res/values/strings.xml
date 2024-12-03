@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PokushAI_Mobile</string>
+    <string name="app_name">ПокушAI</string>
     <string name="underlined_text"><u>Создать аккаунт</u></string>
     <string name="forgot_password"><u>Забыл пароль</u></string>
     <string name="title_activity_nav_menu">Nav_menu</string>
