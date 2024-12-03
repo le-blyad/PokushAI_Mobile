@@ -1,0 +1,14 @@
+<resources>
+    <style name="profileButton" parent="Widget.AppCompat.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:layout_marginHorizontal">12dp</item>
+        <item name="android:background">@drawable/rounded_button_profile</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="android:tint">@color/white</item>
+    </style>
+</resources>

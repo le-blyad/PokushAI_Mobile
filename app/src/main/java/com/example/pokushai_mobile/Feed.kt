@@ -4,7 +4,7 @@ import android.content.Intent
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
+import android.util.Log
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -54,24 +54,15 @@ class Feed : AppCompatActivity() {
             layout.setBackgroundResource(R.drawable.bottom_menu_light)
         }
 
-        // сюда должны попадать данные пользователей
-        val samplePosts = listOf(
-            usersPostsGetResponse("Иван Иванов", "Название рецепта 1", "Описание рецепта 1", "10", "345"),
-            usersPostsGetResponse("Мария Петрова", "Название рецепта 2", "Описание рецепта 2", "25", "989"),
-            usersPostsGetResponse("Хуй Пертрушкин", "Название рецепта 3", "Описание рецепта 3", "1488", "1488"),
-            usersPostsGetResponse("Петрушка Хуюшкин", "Название рецепта 4", "Описание рецепта 4", "696969", "1000000"),
-        )
-
-        val adapter = PostAdapter(samplePosts)
-        posts.adapter = adapter
-
-        /*
-        val call = apiService.usersPostsGet(usersPostsGetRequest(loggedInUserId!!))
+        val call = apiService.usersPostsGet(loggedInUserId!!)
         call.enqueue(object: Callback<usersPostsGetResponse>{
             override fun onResponse(call: Call<usersPostsGetResponse>, response: Response<usersPostsGetResponse>
             ) {
                 if (response.isSuccessful){
                     Toast.makeText(this@Feed, "Работает?", Toast.LENGTH_SHORT).show()
+                    val samplePosts = response.body()?.data ?: emptyList()
+                    val adapter = PostAdapter(samplePosts)
+                    posts.adapter = adapter
                 } else {
                     val errorBody = response.errorBody()?.string() ?: "Не работает("
                     Log.e("Upload", "Error: $errorBody")
@@ -83,6 +74,5 @@ class Feed : AppCompatActivity() {
                 Toast.makeText(this@Feed, "Xyeta: ${t.message}", Toast.LENGTH_SHORT).show()
             }
         })
-        */
     }
 }

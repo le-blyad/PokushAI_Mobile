@@ -3,7 +3,7 @@
     <style name="Base.Theme.PokushAI_Mobile" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimaryDark">@color/yelow2</item>
         <item name="android:colorPrimary">@color/yelow</item>
-        <item name="colorAccent">@color/red</item>>
+        <item name="colorAccent">@color/red</item>
         <item name="android:navigationBarColor">#121212</item>
         <item name="iconColor">@color/buttonBottomMenuTextDark</item>
         <item name="android:statusBarColor">@color/nutritionalValueDark</item>
@@ -14,8 +14,7 @@
         <item name="android:statusBarColor">#121212</item>
     </style>
 
-    <style name="MySearchViewStyle"
-        parent="Widget.AppCompat.SearchView">
+    <style name="MySearchViewStyle" parent="Widget.AppCompat.SearchView">
     <item name="android:editTextColor">@color/white</item>
 </style>
 

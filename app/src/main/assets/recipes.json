@@ -1,0 +1,38 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "name": "Беляши",
+      "image": "drawable/belyashi",
+      "calories": 264,
+      "proteins": 11,
+      "fats": 10,
+      "carbohydrates": 33,
+      "portion": 10,
+      "ingredients": [
+        {"name": "Сухие дрожжи", "amount": "5 г"},
+        {"name": "Сахар", "amount": "1 столовая ложка"},
+        {"name": "Пшеничная мука", "amount": "400 г"},
+        {"name": "Растительное масло", "amount": "800 мл"},
+        {"name": "Фарш", "amount": "400 г"},
+        {"name": "Репчатый лук", "amount": "150 г"},
+        {"name": "Соль", "amount": "по вкусу"},
+        {"name": "Молотый черный перец", "amount": "по вкусу"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/belyashi_step1", "description": "Подготовить необходимые ингредиенты."},
+        {"step_number": 2, "image": "drawable/belyashi_step2", "description": "Развести дрожжи в 250 мл теплой воды с сахаром, добавить половину муки, перемешать, накрыть и оставить на 15 минут."},
+        {"step_number": 3, "image": "drawable/belyashi_step3", "description": "Затем добавить чайную ложку соли и оставшуюся муку и замесить тесто. В конце добавить столовую ложку растительного масла, чтобы собрать вместе всю муку. Положить тесто в смазанную маслом чашу, накрыть и поставить в теплое место на 20 минут."},
+        {"step_number": 4, "image": "drawable/belyashi_step4", "description": "Фарш смешать с измельченным луком, солью и перцем. Если фарш суховат, добавить 1–2 столовых ложки воды. Перемешанный фарш отбить, как на котлеты."},
+        {"step_number": 5, "image": "drawable/belyashi_step5", "description": "Тесто обмять, смазав руки растительным маслом, и дать ему подняться еще раз. Это займет еще 20 минут."},
+        {"step_number": 6, "image": "drawable/belyashi_step6", "description": "Разделить тесто на десять равных частей по 60 грамм и скатать из них шарики."},
+        {"step_number": 7, "image": "drawable/belyashi_step7", "description": "Раскатать шарик теста в толстый блинчик, на середину аккуратно выложить фарш. Защипнуть края теста, оставляя наверху небольшое отверстие."},
+        {"step_number": 8, "image": "drawable/belyashi_step8", "description": "Жарить беляши нужно в растительном масле полупогружным способом. Сначала хорошо разогреть в сковороде достаточное количество масла."},
+        {"step_number": 9, "image": "drawable/belyashi_step9", "description": "Положить беляши в масло отверстием вниз, жарить на среднем огне до золотистого цвета."},
+        {"step_number": 10, "image": "drawable/belyashi_step10", "description": "Затем осторожно перевернуть, масло может брызгаться."},
+        {"step_number": 11, "image": "drawable/belyashi_step11", "description": "Достать готовые беляши на бумагу что бы стек лишний жир."},
+        {"step_number": 12, "image": "drawable/belyashi_step12", "description": "Подать."}
+      ]
+    }
+  ]
+}

@@ -222,7 +222,7 @@
                 <Switch
                     android:id="@+id/switch30"
                     style="@style/MyCustomSwitch"
-                    android:text="Кореандр" />
+                    android:text="Кориандр" />
 
                 <Switch
                     android:id="@+id/switch31"

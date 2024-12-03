@@ -132,8 +132,7 @@ class cutlets : AppCompatActivity() {
 
 
 
-        //Энергитическая ценность
-
+        // Энергитическая ценность
         val textViewCalories = findViewById<TextView>(R.id.textViewCalories)
         textViewCalories.text = "Калории\n305\nККАЛ"
 

@@ -1,4 +1,5 @@
 package com.example.pokushai_mobile
+import android.icu.text.CaseMap.Title
 import retrofit2.Call
 import android.net.Uri
 import retrofit2.http.*
@@ -59,23 +60,24 @@ data class updatePasswordResponse(
     val message: String
 )
 
-data class usersPostsGetRequest(
-    val userId: Long
+data class aboutPost(
+    val author: String,
+    val title: String,
+    val des: String,
+    val image: String?,
+    val created_at: String,
+    val update_at: String,
+    val views: String,
+    val likes: String
+)
+
+data class aboutUser(
+    val user_image: String?
 )
 
 data class usersPostsGetResponse(
-    val author: String,
-    val title: String,
-    val desc: String,
-    val likes: String,
-    val views: String,
-    /*
-    val post_image: Uri?,
-    val created_at: String,
-    val update_at: String,
-    val users: String,
-    val userImage: Uri?,
-     */
+    val data: List<aboutPost>,
+    val user_data: List<aboutUser>,
 )
 
 interface ApiService {
@@ -105,7 +107,7 @@ interface ApiService {
     fun userUpdateProfile(@Body request: updatePasswordRequest): Call<updatePasswordResponse>
 
     @GET("users_posts/")
-    fun usersPostsGet(@Body request: usersPostsGetRequest): Call<usersPostsGetResponse>
+    fun usersPostsGet(@Query("userId") userId: Long): Call<usersPostsGetResponse>
 
 }
 

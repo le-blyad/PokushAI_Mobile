@@ -5,13 +5,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import android.widget.ImageView
-import android.content.res.Configuration
-import android.os.Bundle
 import android.widget.LinearLayout
-import android.widget.Toast
+import com.squareup.picasso.Picasso
 
 
-class PostAdapter(private val posts: List<usersPostsGetResponse>) : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
+class PostAdapter(private val posts: List<aboutPost>) : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
 
     class PostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val userName: TextView = itemView.findViewById(R.id.userName)
@@ -21,6 +19,7 @@ class PostAdapter(private val posts: List<usersPostsGetResponse>) : RecyclerView
         val countViews: TextView = itemView.findViewById(R.id.countViews)
         val imageLikes: ImageView = itemView.findViewById(R.id.imageLikes)
         val imageViews: ImageView = itemView.findViewById(R.id.imageViews)
+        val imagePost: ImageView = itemView.findViewById(R.id.image_post)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
@@ -32,9 +31,18 @@ class PostAdapter(private val posts: List<usersPostsGetResponse>) : RecyclerView
         val post = posts[position]
         holder.userName.text = post.author
         holder.recipeName.text = post.title
-        holder.description.text = post.desc
-        holder.countLikes.text = post.likes
+        holder.description.text = post.des
         holder.countViews.text = post.views
+        holder.countLikes.text = post.likes
+
+        if (!post.image.isNullOrEmpty()){
+            Picasso.get()
+                .load(post.image)
+                .placeholder(R.drawable.nophotostep)
+                .into(holder.imagePost)
+        } else {
+            holder.imageViews.setImageResource(R.drawable.nophotostep)
+        }
 
         holder.imageLikes.setImageResource(R.drawable.like)
         holder.imageViews.setImageResource(R.drawable.eye)
