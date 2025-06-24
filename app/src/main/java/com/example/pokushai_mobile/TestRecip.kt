@@ -2,24 +2,29 @@ package com.example.pokushai_mobile
 
 import android.content.res.ColorStateList
 import android.content.res.Configuration
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import java.io.InputStreamReader
+
 
 class TestRecip : AppCompatActivity() {
 
     private lateinit var ingredientsRecyclerView: RecyclerView
     private lateinit var stepsRecyclerView: RecyclerView
     private lateinit var ingredientsAdapter: IngredientsAdapter
+    private lateinit var recipe: Recipe
     private var portionsAdditionally = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,7 +35,10 @@ class TestRecip : AppCompatActivity() {
 
         // Загружаем данные рецептов из JSON
         val recipes = loadRecipes()
-        val recipe = recipes.find { it.id == recipeId } ?: return
+        recipe = recipes.find { it.id == recipeId } ?: return
+
+        // Устанавливаем начальное количество порций
+        portionsAdditionally = recipe.portion
 
         // Заполняем данные рецепта
         val mainPhoto = findViewById<ImageView>(R.id.mainPhoto)
@@ -51,13 +59,22 @@ class TestRecip : AppCompatActivity() {
 
         // Настраиваем RecyclerView для ингредиентов
         ingredientsRecyclerView = findViewById(R.id.ingredientsRecyclerView)
-        ingredientsAdapter = IngredientsAdapter(recipe.ingredients.map { it.name to it.amount })
+        ingredientsAdapter = IngredientsAdapter(recipe.ingredients.map { ingredient ->
+            val initialValue = if (ingredient.weight != null) {
+                "${ingredient.weight} ${ingredient.amount}"
+            } else {
+                ingredient.amount
+            }
+            ingredient.name to initialValue
+        })
         ingredientsRecyclerView.layoutManager = LinearLayoutManager(this)
         ingredientsRecyclerView.adapter = ingredientsAdapter
 
         // Настраиваем RecyclerView для шагов
         stepsRecyclerView = findViewById(R.id.stepsRecyclerView)
-        val stepAdapter = StepAdapter(recipe.steps.map { StepAdapter.Step(it.description, resources.getIdentifier(it.image, "drawable", packageName)) })
+        val stepAdapter = StepAdapter(recipe.steps.map { step ->
+            StepAdapter.Step(step.description, resources.getIdentifier(step.image, "drawable", packageName))
+        })
         stepsRecyclerView.layoutManager = LinearLayoutManager(this)
         stepsRecyclerView.adapter = stepAdapter
 
@@ -67,14 +84,14 @@ class TestRecip : AppCompatActivity() {
 
         buttonIncrease.setOnClickListener {
             portionsAdditionally++
-            updateIngredients(recipe)
+            updateIngredients()
             textPortions.text = "$portionsAdditionally"
         }
 
         buttonDecrease.setOnClickListener {
             if (portionsAdditionally > 1) {
                 portionsAdditionally--
-                updateIngredients(recipe)
+                updateIngredients()
                 textPortions.text = "$portionsAdditionally"
             }
         }
@@ -97,10 +114,22 @@ class TestRecip : AppCompatActivity() {
         return recipeResponse.recipes
     }
 
+    private fun updateIngredients() {
+        val updatedIngredients = recipe.ingredients.map { ingredient ->
+            // Вычисляем коэффициент относительно базового количества порций
+            val coefficient = portionsAdditionally.toDouble() / recipe.portion
 
-    private fun updateIngredients(recipe: Recipe) {
-        val updatedIngredients = recipe.ingredients.map {
-            it.name to "${(it.amount.toInt() * portionsAdditionally)} г"
+            // Обрабатываем разные типы ингредиентов
+            val displayValue = when {
+                // Для ингредиентов с числовым весом
+                ingredient.weight?.toDoubleOrNull() != null -> {
+                    val scaledValue = ingredient.weight.toDouble() * coefficient
+                    "${scaledValue.toInt()} ${ingredient.amount}"
+                }
+                // Для ингредиентов "по вкусу"
+                else -> ingredient.amount
+            }
+            ingredient.name to displayValue
         }
         ingredientsAdapter.updateIngredients(updatedIngredients)
     }
@@ -138,4 +167,64 @@ class TestRecip : AppCompatActivity() {
             buttonDecrease.backgroundTintList = ColorStateList.valueOf(color)
         }
     }
+
+    // Адаптер для ингредиентов
+    inner class IngredientsAdapter(
+        private var items: List<Pair<String, String>>
+    ) : RecyclerView.Adapter<IngredientsAdapter.ViewHolder>() {
+
+        inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+            val ingredientName: TextView = itemView.findViewById(R.id.ingredientName)
+            val ingredientQuantity: TextView = itemView.findViewById(R.id.ingredientQuantity) // Исправлено на ingredientQuantity
+        }
+
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+            val view = LayoutInflater.from(parent.context)
+                .inflate(R.layout.item_ingredient, parent, false) // Убедитесь что имя файла совпадает
+            return ViewHolder(view)
+        }
+
+        override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+            val (name, quantity) = items[position]
+            holder.ingredientName.text = name
+            holder.ingredientQuantity.text = quantity
+        }
+
+        override fun getItemCount(): Int = items.size
+
+        fun updateIngredients(newItems: List<Pair<String, String>>) {
+            items = newItems
+            notifyDataSetChanged()
+        }
+    }
+
+    // Модели данных
+    data class RecipeResponse(
+        val recipes: List<Recipe>
+    )
+
+    data class Recipe(
+        val id: Int,
+        val name: String,
+        val image: String,
+        val calories: Int,
+        val proteins: Int,
+        val fats: Int,
+        val carbohydrates: Int,
+        val portion: Int, // базовое количество порций
+        val ingredients: List<Ingredient>,
+        val steps: List<Step>
+    )
+
+    data class Ingredient(
+        val name: String,
+        val weight: String?, // может быть null (для "по вкусу")
+        val amount: String
+    )
+
+    data class Step(
+        val step_number: Int,
+        val image: String,
+        val description: String
+    )
 }

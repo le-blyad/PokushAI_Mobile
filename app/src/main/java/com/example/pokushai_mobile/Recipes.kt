@@ -1,4 +1,4 @@
-package com.example.pokushai_mobile
+/*package com.example.pokushai_mobile
 
 data class RecipeResponse(
     val recipes: List<Recipe>
@@ -17,6 +17,7 @@ data class Recipe(
 
 data class Ingredient(
     val name: String,
+    val weight: Float,
     val amount: String
 )
 
@@ -25,3 +26,4 @@ data class Steps(
     val image: String,
     val description: String
 )
+*/
