@@ -211,14 +211,14 @@ class TestRecip : AppCompatActivity() {
         val proteins: Int,
         val fats: Int,
         val carbohydrates: Int,
-        val portion: Int, // базовое количество порций
+        val portion: Int,
         val ingredients: List<Ingredient>,
         val steps: List<Step>
     )
 
     data class Ingredient(
         val name: String,
-        val weight: String?, // может быть null (для "по вкусу")
+        val weight: String?,
         val amount: String
     )
 
