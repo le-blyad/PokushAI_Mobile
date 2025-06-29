@@ -13,4 +13,10 @@
     <string name="menu_home">Главная</string>
     <string name="menu_gallery">Все рецепты</string>
     <string name="menu_slideshow">Аккаунт</string>
+
+    <!-- MainActivity -->
+    <string name="feed">Новостей</string>
+    <string name="recipes">Рецепты</string>
+    <string name="profile">Профиль</string>
+
 </resources>
