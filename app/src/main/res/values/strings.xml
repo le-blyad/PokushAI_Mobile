@@ -117,4 +117,56 @@
     <string name="ingredient94">Яблоки</string>
     <string name="ingredient95">Яйца</string>
 
+    <!-- ResultFragment -->
+    <string name="recip0">Беляши</string>
+    <string name="recip1">Блины</string>
+    <string name="recip2">Блины с мясом</string>
+    <string name="recip3">Борщ</string>
+    <string name="recip4">Горячие бутерброды</string>
+    <string name="recip5">Гречневая каша</string>
+    <string name="recip6">Жаренный картофель</string>
+    <string name="recip7">Запеканка</string>
+    <string name="recip8">Картофельное пюре</string>
+    <string name="recip9">Картошка по-французски</string>
+    <string name="recip10">Котлеты</string>
+    <string name="recip11">Суп куриный</string>
+    <string name="recip12">Лагман</string>
+    <string name="recip13">Макароны</string>
+    <string name="recip14">Манная каша</string>
+    <string name="recip15">Торт Манник</string>
+    <string name="recip16">Торт Медовик</string>
+    <string name="recip17">Мороженное</string>
+    <string name="recip18">Мюсли</string>
+    <string name="recip19">Мясной пирог</string>
+    <string name="recip20">Наггетсы</string>
+    <string name="recip21">Торт Наполеон</string>
+    <string name="recip22">Овощное рагу</string>
+    <string name="recip23">Овсянная каша</string>
+    <string name="recip24">Окрошка</string>
+    <string name="recip25">Оладьи</string>
+    <string name="recip26">Омлет</string>
+    <string name="recip27">Паста Болоньеза</string>
+    <string name="recip28">Паста Карбонара</string>
+    <string name="recip29">Пельмени</string>
+    <string name="recip30">Печенье</string>
+    <string name="recip31">Пончики</string>
+    <string name="recip32">Рассольник</string>
+    <string name="recip33">Салат Греческий</string>
+    <string name="recip34">Салат Цезарь</string>
+    <string name="recip35">Солянка</string>
+    <string name="recip36">Сосиски в тесте</string>
+    <string name="recip37">Суп гороховый</string>
+    <string name="recip38">Суп гречневый</string>
+    <string name="recip39">Суп грибной</string>
+    <string name="recip40">Суп овощной</string>
+    <string name="recip41">Суп с фрикадельками</string>
+    <string name="recip42">Сырники</string>
+    <string name="recip43">Тушеный картофель с курицей</string>
+    <string name="recip44">Фрикадельки</string>
+    <string name="recip45">Фруктовый салат</string>
+    <string name="recip46">Шарлотка</string>
+    <string name="recip47">Шаурма</string>
+    <string name="recip48">Эклеры</string>
+    <string name="recip49">Яичница-глазунья</string>
+
 </resources>
