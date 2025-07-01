@@ -5,11 +5,64 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
-import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class ResultRecipesFragment : Fragment() {
+
+    private val allFoodItems = listOf(
+        FoodItem(0, R.drawable.belya, R.string.recip0),
+        FoodItem(1, R.drawable.bll, R.string.recip1),
+        FoodItem(2, R.drawable.blinmyas, R.string.recip2),
+        FoodItem(3, R.drawable.bor, R.string.recip3),
+        FoodItem(4, R.drawable.grbt, R.string.recip4),
+        FoodItem(5, R.drawable.grech, R.string.recip5),
+        FoodItem(6, R.drawable.zkart, R.string.recip6),
+        FoodItem(7, R.drawable.zapek, R.string.recip7),
+        FoodItem(8, R.drawable.pure, R.string.recip8),
+        FoodItem(9, R.drawable.krfc, R.string.recip9),
+        FoodItem(10, R.drawable.kotl, R.string.recip10),
+        FoodItem(11, R.drawable.supkur, R.string.recip11),
+        FoodItem(12, R.drawable.lagm, R.string.recip12),
+        FoodItem(13, R.drawable.mak, R.string.recip13),
+        FoodItem(14, R.drawable.manka, R.string.recip14),
+        FoodItem(15, R.drawable.manni, R.string.recip15),
+        FoodItem(16, R.drawable.medov, R.string.recip16),
+        FoodItem(17, R.drawable.moroz, R.string.recip17),
+        FoodItem(18, R.drawable.myus, R.string.recip18),
+        FoodItem(19, R.drawable.myaspi, R.string.recip19),
+        FoodItem(20, R.drawable.nagg, R.string.recip20),
+        FoodItem(21, R.drawable.nap, R.string.recip21),
+        FoodItem(22, R.drawable.ovro, R.string.recip22),
+        FoodItem(23, R.drawable.ovsyank, R.string.recip23),
+        FoodItem(24, R.drawable.okro, R.string.recip24),
+        FoodItem(25, R.drawable.oladii, R.string.recip25),
+        FoodItem(26, R.drawable.oml, R.string.recip26),
+        FoodItem(27, R.drawable.pb, R.string.recip27),
+        FoodItem(28, R.drawable.pk, R.string.recip28),
+        FoodItem(29, R.drawable.plm, R.string.recip29),
+        FoodItem(30, R.drawable.peche, R.string.recip30),
+        FoodItem(31, R.drawable.ponch, R.string.recip31),
+        FoodItem(32, R.drawable.rass, R.string.recip32),
+        FoodItem(33, R.drawable.salatgr, R.string.recip33),
+        FoodItem(34, R.drawable.salatcez, R.string.recip34),
+        FoodItem(35, R.drawable.solyank, R.string.recip35),
+        FoodItem(36, R.drawable.svt, R.string.recip36),
+        FoodItem(37, R.drawable.goroh, R.string.recip37),
+        FoodItem(38, R.drawable.subgrech, R.string.recip38),
+        FoodItem(39, R.drawable.supgrib, R.string.recip39),
+        FoodItem(40, R.drawable.supovosh, R.string.recip40),
+        FoodItem(41, R.drawable.supfrik, R.string.recip41),
+        FoodItem(42, R.drawable.sirnik, R.string.recip42),
+        FoodItem(43, R.drawable.tk, R.string.recip43),
+        FoodItem(44, R.drawable.frikk, R.string.recip44),
+        FoodItem(45, R.drawable.stf, R.string.recip45),
+        FoodItem(46, R.drawable.sharl, R.string.recip46),
+        FoodItem(47, R.drawable.shaurm, R.string.recip47),
+        FoodItem(48, R.drawable.ekler, R.string.recip48),
+        FoodItem(49, R.drawable.glzz, R.string.recip49)
+    )
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,59 +75,38 @@ class ResultRecipesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val backButton = view.findViewById<ImageButton>(R.id.buttonBack)
-        setupBackButton(backButton)
-
-        // Получаем данные из аргументов
-        val result = arguments?.getFloatArray("result") ?: run {
-            Toast.makeText(requireContext(), "Данные рецептов не загружены", Toast.LENGTH_SHORT).show()
-            return
+        backButton.setOnClickListener {
+            parentFragmentManager.popBackStack()
         }
 
-        // Получаем индексы топ-3 рецептов
-        val top3Indices = getTopNIndices(result, 3)
-
-        // Собираем все элементы интерфейса
-        val recipeViews = (0 until 50).map { i ->
-            Triple(
-                view.findViewById<ImageButton>(resources.getIdentifier("imageButton$i", "id", requireContext().packageName)),
-                view.findViewById<TextView>(resources.getIdentifier("textView$i", "id", requireContext().packageName)),
-                view.findViewById<View>(resources.getIdentifier("recipeContainer$i", "id", requireContext().packageName))
-            )
-        }
-
-        // Сначала скрываем все элементы
-        recipeViews.forEach { (imageButton, textView, container) ->
-            imageButton?.visibility = View.GONE
-            textView?.visibility = View.GONE
-            container?.visibility = View.GONE
-        }
-
-        // Показываем топ-3 рецепта
-        if (top3Indices.isNotEmpty()) {
-            top3Indices.forEachIndexed { position, index ->
-                val (imageButton, textView, container) = recipeViews[index]
-
-                // Показываем контейнер рецепта (или отдельные элементы)
-                container?.visibility = View.VISIBLE
-                imageButton?.visibility = View.VISIBLE
-                textView?.visibility = View.VISIBLE
-
-                textView?.text = "${textView?.text}"
+        // Определяем какие элементы показывать
+        val itemsToShow = if (arguments?.containsKey("result") == true) {
+            val result = arguments?.getFloatArray("result") ?: floatArrayOf()
+            if (result.isNotEmpty()) {
+                // Показываем топ-3 от нейросети
+                val top3Indices = getTopNIndices(result, 3)
+                top3Indices.map { index -> allFoodItems[index] }
+            } else {
+                // Если массив пустой - показываем всё
+                allFoodItems
             }
+        } else {
+            // Если данных нет - показываем всё
+            allFoodItems
+        }
+
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.adapter = FoodAdapter(itemsToShow) { position ->
+            val item = itemsToShow[position]
         }
     }
 
     private fun getTopNIndices(array: FloatArray, n: Int): List<Int> {
-        // Создаем список пар (индекс, значение) и сортируем по убыванию значений
-        return array.withIndex()
-            .sortedByDescending { it.value }
+        return array
+            .mapIndexed { index, value -> index to value }
+            .sortedByDescending { it.second }
             .take(n)
-            .map { it.index }
-    }
-
-    private fun setupBackButton(backButton: ImageButton) {
-        backButton.setOnClickListener {
-            parentFragmentManager.popBackStack()
-        }
+            .map { it.first }
     }
 }

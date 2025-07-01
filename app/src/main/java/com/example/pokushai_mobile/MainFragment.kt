@@ -83,6 +83,18 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         }
 
         view.findViewById<Button>(R.id.searchRecipes)?.setOnClickListener {
+            // Проверяем количество выбранных ингредиентов
+            val selectedCount = switches.count { it.isChecked }
+
+            if (selectedCount < 5) {
+                Toast.makeText(
+                    requireContext(),
+                    "Пожалуйста, выберите минимум 5 ингредиентов",
+                    Toast.LENGTH_SHORT
+                ).show()
+                return@setOnClickListener
+            }
+
             // Подготовка данных
             val selectedIngredients = switches.map { it.isChecked }.toBooleanArray()
             val inputArray = Array(1) { FloatArray(96) }
@@ -104,7 +116,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
             // Навигация между фрагментами
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, resultFragment) // Используйте ваш контейнер
+                .replace(R.id.fragment_container, resultFragment)
                 .addToBackStack(null)
                 .commit()
         }
