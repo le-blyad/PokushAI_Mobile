@@ -115,10 +115,22 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             }
 
             // Навигация между фрагментами
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, resultFragment)
-                .addToBackStack(null)
-                .commit()
+            FragmentNavigator.navigateForward(
+                parentFragmentManager,
+                R.id.fragment_container,
+                resultFragment
+            )
+
+            FragmentNavigator.navigateForward(
+                parentFragmentManager,
+                R.id.fragment_container,
+                ResultRecipesFragment().apply {
+                    arguments = Bundle().apply {
+                        putBooleanArray("switchValues", selectedIngredients)
+                        putFloatArray("result", result)
+                    }
+                }
+            )
         }
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {

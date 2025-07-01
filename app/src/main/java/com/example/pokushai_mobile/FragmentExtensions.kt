@@ -2,75 +2,61 @@ package com.example.pokushai_mobile
 
 import android.os.Bundle
 import android.view.View
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.commit
 
-/**
- * Навигация между фрагментами с гарантированной анимацией
- */
 object FragmentNavigator {
+    private val defaultAnimations = Animations(
+        enter = R.anim.fade_in,
+        exit = R.anim.fade_out,
+        popEnter = R.anim.fade_in,
+        popExit = R.anim.fade_out
+    )
 
-    // 1. Функция для перехода вперед
+    data class Animations(
+        val enter: Int,
+        val exit: Int,
+        val popEnter: Int,
+        val popExit: Int
+    )
+
     fun navigateForward(
         fragmentManager: FragmentManager,
         containerId: Int,
         targetFragment: Fragment,
-        tag: String? = null
+        tag: String? = null,
+        animations: Animations = defaultAnimations
     ) {
         fragmentManager.commit {
-            // Устанавливаем анимации для перехода вперед и назад
             setCustomAnimations(
-                R.anim.fade_in,   // Анимация входа нового фрагмента
-                R.anim.fade_out,  // Анимация выхода текущего фрагмента
-                R.anim.fade_in,   // Анимация входа при возврате (popEnter)
-                R.anim.fade_out   // Анимация выхода при возврате (popExit)
+                animations.enter,
+                animations.exit,
+                animations.popEnter,
+                animations.popExit
             )
             replace(containerId, targetFragment, tag)
             addToBackStack(tag)
-            setReorderingAllowed(true)  // Важно для корректной работы анимаций
+            setReorderingAllowed(true)
         }
     }
 
-    // 2. Функция для возврата назад
     fun navigateBack(fragmentManager: FragmentManager) {
         if (fragmentManager.backStackEntryCount > 0) {
-            fragmentManager.popBackStackImmediate()
+            fragmentManager.popBackStack()
         }
     }
-}
 
-/**
- * Расширения для упрощения навигации
- */
-fun Fragment.navigateForward(
-    containerId: Int,
-    targetFragment: Fragment,
-    tag: String? = null
-) {
-    FragmentNavigator.navigateForward(
-        requireActivity().supportFragmentManager,
-        containerId,
-        targetFragment,
-        tag
-    )
-}
-
-fun Fragment.navigateBack() {
-    FragmentNavigator.navigateBack(requireActivity().supportFragmentManager)
-}
-
-/**
- * Настройка кнопки "Назад" с гарантированной работой анимации
- */
-fun Fragment.setupBackButton(backButton: View) {
-    backButton.setOnClickListener {
-        // Используем popBackStackImmediate для немедленного выполнения
-        if (requireActivity().supportFragmentManager.backStackEntryCount > 0) {
-            FragmentNavigator.navigateBack(requireActivity().supportFragmentManager)
-        } else {
-            activity?.finish()
+    fun setupBackPressHandler(fragment: Fragment) {
+        val callback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                navigateBack(fragment.parentFragmentManager)
+            }
         }
+        fragment.requireActivity().onBackPressedDispatcher.addCallback(
+            fragment.viewLifecycleOwner,
+            callback
+        )
     }
 }

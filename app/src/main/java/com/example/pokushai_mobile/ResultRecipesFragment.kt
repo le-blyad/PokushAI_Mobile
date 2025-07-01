@@ -76,8 +76,10 @@ class ResultRecipesFragment : Fragment() {
 
         val backButton = view.findViewById<ImageButton>(R.id.buttonBack)
         backButton.setOnClickListener {
-            parentFragmentManager.popBackStack()
+            FragmentNavigator.navigateBack(parentFragmentManager)
         }
+
+        FragmentNavigator.setupBackPressHandler(this)
 
         // Определяем какие элементы показывать
         val itemsToShow = if (arguments?.containsKey("result") == true) {

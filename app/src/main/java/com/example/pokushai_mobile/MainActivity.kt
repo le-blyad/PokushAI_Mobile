@@ -95,16 +95,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun navigateToFragment(fragment: Fragment) {
         val currentFragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
+        if (currentFragment?.javaClass == fragment.javaClass) return
 
-        if (currentFragment?.javaClass == fragment.javaClass) {
-            return
-        }
-
-        supportFragmentManager.beginTransaction()
-            .setCustomAnimations(R.anim.fade_in, R.anim.fade_out)
-            .replace(R.id.fragment_container, fragment)
-            .addToBackStack(null)
-            .commit()
+        FragmentNavigator.navigateForward(
+            supportFragmentManager,
+            R.id.fragment_container,
+            fragment
+        )
     }
 
     private fun isInternetAvailable(context: Context): Boolean {
