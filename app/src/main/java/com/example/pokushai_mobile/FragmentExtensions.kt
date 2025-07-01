@@ -1,7 +1,6 @@
 package com.example.pokushai_mobile
 
-import android.os.Bundle
-import android.view.View
+
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -26,9 +25,17 @@ object FragmentNavigator {
         fragmentManager: FragmentManager,
         containerId: Int,
         targetFragment: Fragment,
-        tag: String? = null,
+        tag: String? = targetFragment::class.java.simpleName,
+        addToBackStack: Boolean = true,
         animations: Animations = defaultAnimations
     ) {
+        val currentFragment = fragmentManager.findFragmentById(containerId)
+
+        // Не заменяем фрагмент, если он уже отображается
+        if (currentFragment?.javaClass == targetFragment.javaClass) {
+            return
+        }
+
         fragmentManager.commit {
             setCustomAnimations(
                 animations.enter,
@@ -37,7 +44,9 @@ object FragmentNavigator {
                 animations.popExit
             )
             replace(containerId, targetFragment, tag)
-            addToBackStack(tag)
+            if (addToBackStack) {
+                addToBackStack(tag)
+            }
             setReorderingAllowed(true)
         }
     }
@@ -45,15 +54,22 @@ object FragmentNavigator {
     fun navigateBack(fragmentManager: FragmentManager) {
         if (fragmentManager.backStackEntryCount > 0) {
             fragmentManager.popBackStack()
+        } else {
+            // Если стек пуст, можно закрыть активность или выполнить другое действие
+            fragmentManager.primaryNavigationFragment?.activity?.finish()
         }
     }
 
-    fun setupBackPressHandler(fragment: Fragment) {
+    fun setupBackPressHandler(
+        fragment: Fragment,
+        customAction: (() -> Unit)? = null
+    ) {
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                navigateBack(fragment.parentFragmentManager)
+                customAction?.invoke() ?: navigateBack(fragment.parentFragmentManager)
             }
         }
+
         fragment.requireActivity().onBackPressedDispatcher.addCallback(
             fragment.viewLifecycleOwner,
             callback

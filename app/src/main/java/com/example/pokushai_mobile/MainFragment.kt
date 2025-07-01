@@ -114,13 +114,6 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                 }
             }
 
-            // Навигация между фрагментами
-            FragmentNavigator.navigateForward(
-                parentFragmentManager,
-                R.id.fragment_container,
-                resultFragment
-            )
-
             FragmentNavigator.navigateForward(
                 parentFragmentManager,
                 R.id.fragment_container,

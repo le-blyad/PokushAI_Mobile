@@ -90,7 +90,6 @@ class MainActivity : AppCompatActivity() {
     private fun recreateActivity() {
         finish()
         startActivity(Intent(this, MainActivity::class.java))
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
 
     private fun navigateToFragment(fragment: Fragment) {
