@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         allRecipesButton.setOnClickListener {
-            navigateToFragment(AllRecipesFragment())
+            navigateToFragment(ResultRecipesFragment())
         }
 
         userButton.setOnClickListener {
