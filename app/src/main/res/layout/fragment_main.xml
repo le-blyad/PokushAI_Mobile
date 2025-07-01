@@ -5,6 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/language_switch_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/language_button"
+        android:backgroundTint="@color/orange"
+        android:textColor="@color/white"
+        android:onClick="onLanguageButtonClick"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"/>
+
     <TextView
         android:id="@+id/textViewSearchProducts"
         android:layout_width="wrap_content"

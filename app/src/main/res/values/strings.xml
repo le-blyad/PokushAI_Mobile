@@ -3,10 +3,17 @@
     <string name="underlined_text"><u>Создать аккаунт</u></string>
     <string name="forgot_password"><u>Забыл пароль</u></string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">ПокушAI</string>
+    <string name="nav_header_desc">android.studio@android.com</string>
+    <string name="action_settings">Настройки</string>
 
     <string name="menu_home">Главная</string>
     <string name="menu_gallery">Все рецепты</string>
     <string name="menu_slideshow">Аккаунт</string>
+
+
+    <string name="language_button">EN</string>
+
 
     <!-- MainActivity -->
     <string name="feed">Новостей</string>
