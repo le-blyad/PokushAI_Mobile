@@ -30,7 +30,6 @@
 
             <View android:layout_weight="1" />
 
-
         </TableRow>
 
     </LinearLayout>

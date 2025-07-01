@@ -8,6 +8,8 @@ import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
+import java.io.InputStreamReader
 
 class ResultRecipesFragment : Fragment() {
 
@@ -99,8 +101,30 @@ class ResultRecipesFragment : Fragment() {
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = FoodAdapter(itemsToShow) { position ->
-            val item = itemsToShow[position]
+        recyclerView.adapter = FoodAdapter(itemsToShow) { recipeId ->
+            val bundle = Bundle().apply {
+                putInt("recipe_id", recipeId)  // Используем полученный ID
+            }
+
+            val fragment = RecipePrescriptionFragment().apply {
+                arguments = bundle
+            }
+
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .addToBackStack(null)
+                .commit()
+        }
+    }
+
+    private fun loadRecipeById(recipeId: Int): RecipePrescriptionFragment.Recipe? {
+        return try {
+            val inputStream = requireContext().assets.open("recipes.json")
+            val reader = InputStreamReader(inputStream)
+            val recipeResponse = Gson().fromJson(reader, RecipePrescriptionFragment.RecipeResponse::class.java)
+            recipeResponse.recipes.find { it.id == recipeId }
+        } catch (e: Exception) {
+            null
         }
     }
 

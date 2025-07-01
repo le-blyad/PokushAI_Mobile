@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class FoodAdapter(
     private val items: List<FoodItem>,
-    private val onClick: (Int) -> Unit
+    private val onClick: (Int) -> Unit  // Теперь передаем ID рецепта, а не позицию
 ) : RecyclerView.Adapter<FoodAdapter.ViewHolder>() {
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -18,7 +18,9 @@ class FoodAdapter(
         val textView: TextView = view.findViewById(R.id.textView)
 
         init {
-            imageButton.setOnClickListener { onClick(adapterPosition) }
+            imageButton.setOnClickListener {
+                onClick(items[adapterPosition].id)  // Передаем ID рецепта
+            }
         }
     }
 
@@ -38,7 +40,7 @@ class FoodAdapter(
 }
 
 data class FoodItem(
-    val originalIndex: Int,
+    val id: Int,
     val imageResId: Int,
     val nameResId: Int
 )
