@@ -30,8 +30,12 @@ class MainActivity : AppCompatActivity() {
         val userButton = findViewById<ImageButton>(R.id.user)
 
         feedButton.setOnClickListener {
-            // Заглушка для FeedFragment
-            Toast.makeText(this, "Feed Fragment (в разработке)", Toast.LENGTH_SHORT).show()
+            if (isInternetAvailable(this)) {
+                // Заглушка для UserFragment
+                Toast.makeText(this, "Feed Fragment (в разработке)", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Нет подключения к интернету", Toast.LENGTH_SHORT).show()
+            }
         }
 
         allRecipesButton.setOnClickListener {
@@ -39,7 +43,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         userButton.setOnClickListener {
-            // Проверка интернета перед переходом
             if (isInternetAvailable(this)) {
                 // Заглушка для UserFragment
                 Toast.makeText(this, "User Fragment (в разработке)", Toast.LENGTH_SHORT).show()
@@ -53,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .setCustomAnimations(R.anim.fade_in, R.anim.fade_out)
             .replace(R.id.fragment_container, fragment)
-            .addToBackStack(null) // Добавляем в стек для кнопки "назад"
+            .addToBackStack(null)
             .commit()
     }
 

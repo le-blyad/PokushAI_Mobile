@@ -1,12 +1,15 @@
 package com.example.pokushai_mobile
 
+import android.graphics.Typeface
 import android.os.Bundle
+import android.util.TypedValue
 import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.SearchView
 import android.widget.Switch
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 
 class MainFragment : Fragment(R.layout.fragment_main) {
@@ -15,40 +18,76 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        // Инициализация UI элементов
         initUIElements(view)
     }
 
+    private fun createSwitches(container: LinearLayout) {
+        container.removeAllViews()
+        switches.clear()
+
+        for (i in 0 until 96) {
+            val switch = Switch(requireContext()).apply {
+                id = View.generateViewId()
+
+                // Получаем строку из ресурсов по имени
+                val resourceName = "ingredient$i"
+                val resourceId = resources.getIdentifier(resourceName, "string", requireContext().packageName)
+
+                if (resourceId != 0) {
+                    text = getString(resourceId)
+                } else {
+                    text = "Ингредиент $i" // Запасной вариант
+                }
+
+                // Устанавливаем стиль через код
+                setTextSize(TypedValue.COMPLEX_UNIT_SP, 20f)
+                setSwitchTextAppearance(requireContext(), R.style.MyCustomSwitch)
+
+                layoutParams = LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+                ).apply {
+                    setMargins(100, 0.dpToPx(), 100, 0.dpToPx())
+                    setPadding(0, 15.dpToPx(), 0, 15.dpToPx())
+                }
+            }
+
+            container.addView(switch)
+            switches.add(switch)
+        }
+    }
+
+    private fun Int.dpToPx(): Int {
+        val density = resources.displayMetrics.density
+        return (this * density).toInt()
+    }
+
     private fun initUIElements(view: View) {
-        // Инициализация SearchView
         val searchView = view.findViewById<SearchView>(R.id.searchView)
         searchView.setOnClickListener { searchView.isIconified = false }
 
-        // Находим контейнер со Switch элементами
         val container = view.findViewById<LinearLayout>(R.id.switches_container)
 
-        // Собираем все Switch в список
-        for (i in 0 until container.childCount) {
-            val child = container.getChildAt(i)
-            if (child is Switch) {
-                switches.add(child)
-            }
-        }
+        // Создаем свитчи вместо сбора существующих
+        createSwitches(container)
 
-        // Кнопка очистки
         view.findViewById<Button>(R.id.deleteCheck)?.setOnClickListener {
-            for (switch in switches) {
-                switch.isChecked = false
-            }
+            switches.forEach { switch -> switch.isChecked = false }
         }
 
-        // Кнопка перехода
-        view.findViewById<Button>(R.id.buttonNext2)?.setOnClickListener {
-            Toast.makeText(requireContext(), "Поиск рецептов (в разработке)", Toast.LENGTH_SHORT).show()
+        view.findViewById<Button>(R.id.searchRecipes)?.setOnClickListener {
+            // Формируем список выбранных ингредиентов
+            val selectedIngredients = switches
+                .filter { it.isChecked }
+                .joinToString { it.text.toString() }
+
+            Toast.makeText(
+                requireContext(),
+                "Выбрано: $selectedIngredients",
+                Toast.LENGTH_SHORT
+            ).show()
         }
 
-        // Фильтрация при поиске
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?) = false
             override fun onQueryTextChange(newText: String?): Boolean {
@@ -59,12 +98,12 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     }
 
     private fun filterSwitches(query: String?) {
+        val queryText = query?.lowercase() ?: ""
         switches.forEach { switch ->
-            val switchText = switch.text.toString().lowercase()
-            if (query.isNullOrEmpty() || switchText.contains(query.lowercase())) {
-                switch.visibility = View.VISIBLE
+            switch.visibility = if (switch.text.toString().lowercase().contains(queryText)) {
+                View.VISIBLE
             } else {
-                switch.visibility = View.GONE
+                View.GONE
             }
         }
     }
