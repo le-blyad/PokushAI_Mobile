@@ -177,4 +177,16 @@
     <string name="recip48">Эклеры</string>
     <string name="recip49">Яичница-глазунья</string>
 
+    <!-- RecipePrescriptionFragment -->
+
+    <string name="calories">Калории</string>
+    <string name="protein">Белки</string>
+    <string name="fats">Жиры</string>
+    <string name="carbohydrates">Углеводы</string>
+    <string name="portions">Порции</string>
+
+    <string name="ingredients">Ингредиенты:</string>
+    <string name="stepbystep">Пошаговый рецепт:</string>
+
+
 </resources>

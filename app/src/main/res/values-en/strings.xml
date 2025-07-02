@@ -175,4 +175,16 @@
     <string name="recip47">Shawarma</string>
     <string name="recip48">Eclairs</string>
     <string name="recip49">Fried eggs</string>
+
+    <!-- RecipePrescriptionFragment -->
+
+    <string name="calories">Calories</string>
+    <string name="protein">Protein</string>
+    <string name="fats">Fats</string>
+    <string name="carbohydrates">Carbohydrates</string>
+    <string name="portions">Portions</string>
+
+    <string name="ingredients">Ingredients:</string>
+    <string name="stepbystep">Step-by-step recipe:</string>
+
 </resources>

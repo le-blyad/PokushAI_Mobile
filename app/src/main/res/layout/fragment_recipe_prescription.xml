@@ -63,98 +63,186 @@
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
-            <!-- Пищевая ценность -->
-            <LinearLayout
+            <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:orientation="horizontal">
+                android:layout_marginHorizontal="7dp"
+                android:weightSum="4">
 
-                <TextView
-                    android:id="@+id/textViewCalories"
+                <!-- Энергетическая ценность, белки, жиры и углеводы -->
+
+                <FrameLayout
+                    android:id="@+id/containerCalories"
                     android:layout_width="0dp"
                     android:layout_height="120dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@drawable/orange_radius"
                     android:layout_weight="1"
-                    android:background="@drawable/nutrition_background"
-                    android:gravity="center"
-                    android:textSize="16sp"
-                    android:layout_marginEnd="4dp"/>
+                    android:layout_gravity="center">
 
-                <TextView
-                    android:id="@+id/textViewSquirrels"
+                    <TextView
+                        android:id="@+id/containerText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal"
+                        android:text="@string/calories"
+                        android:layout_marginTop="3dp"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textViewCalories"
+                        android:layout_width="match_parent"
+                        android:layout_height="85dp"
+                        android:gravity="center"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginTop="30dp"
+                        android:textStyle="bold"
+                        android:textSize="17sp"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/containerSquirrels"
                     android:layout_width="0dp"
                     android:layout_height="120dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@drawable/orange_radius"
                     android:layout_weight="1"
-                    android:background="@drawable/nutrition_background"
-                    android:gravity="center"
-                    android:textSize="16sp"
-                    android:layout_marginHorizontal="4dp"/>
+                    android:layout_gravity="center">
 
-                <TextView
-                    android:id="@+id/textViewFats"
+                    <TextView
+                        android:id="@+id/containerTextSquirrels"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal"
+                        android:text="@string/protein"
+                        android:layout_marginTop="3dp"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/textViewSquirrels"
+                        android:layout_width="match_parent"
+                        android:layout_height="85dp"
+                        android:gravity="center"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginTop="30dp"
+                        android:textStyle="bold"
+                        android:textSize="17sp"/>
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/containerFats"
                     android:layout_width="0dp"
                     android:layout_height="120dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@drawable/orange_radius"
                     android:layout_weight="1"
-                    android:background="@drawable/nutrition_background"
-                    android:gravity="center"
-                    android:textSize="16sp"
-                    android:layout_marginHorizontal="4dp"/>
+                    android:layout_gravity="center">
 
-                <TextView
-                    android:id="@+id/textViewCarbohydrates"
+                    <TextView
+                        android:id="@+id/containerTextFats"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal"
+                        android:text="@string/fats"
+                        android:layout_marginTop="3dp"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/textViewFats"
+                        android:layout_width="match_parent"
+                        android:layout_height="85dp"
+                        android:gravity="center"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginTop="30dp"
+                        android:textStyle="bold"
+                        android:textSize="17sp"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/containerCarbohydrates"
                     android:layout_width="0dp"
                     android:layout_height="120dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@drawable/orange_radius"
                     android:layout_weight="1"
-                    android:background="@drawable/nutrition_background"
-                    android:gravity="center"
-                    android:textSize="16sp"
-                    android:layout_marginStart="4dp"/>
-            </LinearLayout>
+                    android:layout_gravity="center">
 
-            <TextView
-                android:id="@+id/textEnergy0"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="*энергитическая ценность на 100 грамм готового продукта"
-                android:textSize="12sp" />
+                    <TextView
+                        android:id="@+id/containerTextCarbohydrates"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="3dp"
+                        android:text="@string/carbohydrates"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/textViewCarbohydrates"
+                        android:layout_width="match_parent"
+                        android:layout_height="85dp"
+                        android:gravity="center"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginTop="30dp"
+                        android:textStyle="bold"
+                        android:textSize="17sp"/>
+                </FrameLayout>
+
+            </TableRow>
+
 
             <!-- Порции -->
-            <LinearLayout
+            <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:orientation="horizontal"
-                android:gravity="center_vertical">
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:weightSum="4">
 
                 <TextView
+                    android:id="@+id/textViewPortions"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Порции:"
-                    android:textSize="16sp"/>
+                    android:layout_height="50dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="@string/portions"
+                    android:textSize="15dp"
+                    tools:ignore="HardcodedText,SpUsage" />
+
 
                 <Button
                     android:id="@+id/buttonDecrease"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_marginStart="16dp"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="5dp"
+                    style="@style/recip_portion_button"
+                    android:backgroundTint="@color/orange"
+                    android:textColor="#EA0000"
                     android:text="-"
-                    android:textSize="20sp"/>
+                    tools:ignore="HardcodedText,SpUsage" />
 
                 <TextView
                     android:id="@+id/textPortions"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="16dp"
-                    android:textSize="20sp"/>
+                    android:layout_height="50dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:textSize="20dp"/>
 
                 <Button
                     android:id="@+id/buttonIncrease"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    style="@style/recip_portion_button"
+                    android:backgroundTint="@color/orange"
+                    android:textColor="#13B600"
                     android:text="+"
-                    android:textSize="20sp"/>
-            </LinearLayout>
+                    tools:ignore="HardcodedText" />
+
+            </TableRow>
 
             <!-- Ингредиенты -->
             <TextView
@@ -162,14 +250,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:text="Ингредиенты:"
+                android:text="@string/ingredients"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/ingredientsRecyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_margin="16dp"
                 android:nestedScrollingEnabled="false"/>
 
@@ -179,7 +267,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:text="Пошаговый рецепт:"
+                android:text="@string/stepbystep"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
 
