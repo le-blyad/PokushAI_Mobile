@@ -21,6 +21,8 @@
     <string name="profile">Profile</string>
 
     <!-- MainFragment -->
+    <string name="settings">Settings</string>
+
     <string name="searchProducts">Search products:</string>
     <string name="buttonDeleteSearch">Remove all selected products</string>
     <string name="questionLine">What products do you have at home?</string>

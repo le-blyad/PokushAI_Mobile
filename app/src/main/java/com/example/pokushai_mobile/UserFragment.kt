@@ -1,9 +1,7 @@
 package com.example.pokushai_mobile
 
 import android.Manifest
-import android.app.Activity
 import android.content.Context
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.graphics.Bitmap
@@ -19,6 +17,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.getColor
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.commit
 import com.squareup.picasso.Picasso
 import okhttp3.MediaType.Companion.toMediaType
@@ -163,14 +162,21 @@ class UserFragment : Fragment() {
         logOut.setOnClickListener {
             val sharedPreferences = requireContext().getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
             sharedPreferences.edit().clear().apply()
+            parentFragmentManager.popBackStack(
+                null,
+                FragmentManager.POP_BACK_STACK_INCLUSIVE
+            )
+
+            // 2. Переходим на LoginFragment, НЕ добавляя его в back‑stack
             parentFragmentManager.commit {
-                replace(R.id.fragment_container, LoginFragment())
+                setReorderingAllowed(true)
                 setCustomAnimations(
                     R.anim.fade_in,
                     R.anim.fade_out,
                     R.anim.fade_in,
                     R.anim.fade_out
                 )
+                replace(R.id.fragment_container, LoginFragment())
             }
         }
 
