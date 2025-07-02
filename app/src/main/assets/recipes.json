@@ -1147,6 +1147,487 @@
         {"step_number": 5, "image": "drawable/pechenie_step5", "description": "С помощью чайной ложки формируем из теста шарики диаметром 3 см и выкладываем их на противень на небольшом расстоянии друг от друга."},
         {"step_number": 6, "image": "drawable/pechenie_step6", "description": "Выпекаем печенье в разогретой духовке при температуре 180°C 12-15 минут."}
       ]
+    },
+    {
+      "id": 31,
+      "name": "Пончики",
+      "image": "drawable/ponchik",
+      "calories": 320,
+      "proteins": 6,
+      "fats": 15,
+      "carbohydrates": 40,
+      "portion": 1,
+      "ingredients": [
+        {"name": "Мука", "weight": "300", "amount": "г"},
+        {"name": "Дрожжи", "weight": "10", "amount": "г"},
+        {"name": "Молоко", "weight": "150", "amount": "мл"},
+        {"name": "Яйца", "weight": "1", "amount": "шт"},
+        {"name": "Сливочное масло", "weight": "30", "amount": "г"},
+        {"name": "Сахар", "weight": "50", "amount": "г"},
+        {"name": "Соль", "weight": "5", "amount": "г"},
+        {"name": "Растительное масло", "weight": "200", "amount": "мл"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Дрожжи смешать с тёплым молоком, 1 ч.л. сахара и дать постоять 10 минут."},
+        {"step_number": 2, "image": "", "description": "Добавить яйцо, растопленное сливочное масло, оставшийся сахар и соль по вкусу."},
+        {"step_number": 3, "image": "", "description": "Постепенно всыпать муку, замесить мягкое тесто. Накрыть и оставить в тёплом месте на 1 час."},
+        {"step_number": 4, "image": "", "description": "Раскатать тесто толщиной 1,5 см, вырезать кружки с отверстием посередине."},
+        {"step_number": 5, "image": "", "description": "Разогреть растительное масло в глубокой сковороде. Обжаривать пончики по 2-3 минуты с каждой стороны."},
+        {"step_number": 6, "image": "", "description": "Готовые пончики выложить на бумажные полотенца, затем обвалять в сахарной пудре."}
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Рассольник",
+      "image": "drawable/rassolnik",
+      "calories": 180,
+      "proteins": 8,
+      "fats": 5,
+      "carbohydrates": 25,
+      "portion": 1,
+      "ingredients": [
+        {"name": "Говядина", "weight": "200", "amount": "г"},
+        {"name": "Перловая крупа", "weight": "50", "amount": "г"},
+        {"name": "Картофель", "weight": "2", "amount": "шт"},
+        {"name": "Солёные огурцы", "weight": "2", "amount": "шт"},
+        {"name": "Морковь", "weight": "1", "amount": "шт"},
+        {"name": "Репчатый лук", "weight": "1", "amount": "шт"},
+        {"name": "Огуречный рассол", "weight": "100", "amount": "мл"},
+        {"name": "Сметана", "weight": "30", "amount": "г"},
+        {"name": "Зелень", "weight": "", "amount": "по вкусу"},
+        {"name": "Соль", "weight": "", "amount": "по вкусу"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Говядину отварить до готовности, бульон процедить."},
+        {"step_number": 2, "image": "", "description": "Перловую крупу замочить на 1 час, затем отварить до полуготовности."},
+        {"step_number": 3, "image": "", "description": "Добавить в бульон нарезанный кубиками картофель и перловку. Варить 15 минут."},
+        {"step_number": 4, "image": "", "description": "Обжарить лук и морковь, добавить натёртые огурцы, тушить 5 минут."},
+        {"step_number": 5, "image": "", "description": "Добавить зажарку в суп, влить рассол, посолить по вкусу. Варить ещё 10 минут."},
+        {"step_number": 6, "image": "", "description": "Подавать со сметаной и рубленой зеленью."}
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Салат Греческий",
+      "image": "drawable/salatgrech",
+      "calories": 250,
+      "proteins": 6,
+      "fats": 20,
+      "carbohydrates": 10,
+      "portion": 2,
+      "ingredients": [
+        {"name": "Помидоры", "weight": "4", "amount": "шт"},
+        {"name": "Огурцы", "weight": "2", "amount": "шт"},
+        {"name": "Сладкий перец", "weight": "2", "amount": "шт"},
+        {"name": "Красный лук", "weight": "1", "amount": "шт"},
+        {"name": "Сыр фета", "weight": "200", "amount": "г"},
+        {"name": "Оливки", "weight": "100", "amount": "г"},
+        {"name": "Оливковое масло", "weight": "4", "amount": "ст.л"},
+        {"name": "Лимонный сок", "weight": "2", "amount": "ст.л"},
+        {"name": "Соль", "weight": "", "amount": "по вкусу"},
+        {"name": "Орегано", "weight": "", "amount": "по вкусу"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Овощи нарезать крупными кусками, лук - тонкими полукольцами."},
+        {"step_number": 2, "image": "", "description": "Сыр нарезать кубиками, оливки разрезать пополам."},
+        {"step_number": 3, "image": "", "description": "Смешать все ингредиенты в салатнице."},
+        {"step_number": 4, "image": "", "description": "Заправить оливковым маслом и лимонным соком, посолить по вкусу."},
+        {"step_number": 5, "image": "", "description": "Посыпать орегано, аккуратно перемешать перед подачей."}
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Салат Цезарь",
+      "image": "drawable/salatcezar",
+      "calories": 350,
+      "proteins": 15,
+      "fats": 25,
+      "carbohydrates": 20,
+      "portion": 1,
+      "ingredients": [
+        {"name": "Куриное филе", "weight": "200", "amount": "г"},
+        {"name": "Листья салата", "weight": "100", "amount": "г"},
+        {"name": "Пшеничные сухарики", "weight": "50", "amount": "г"},
+        {"name": "Сыр пармезан", "weight": "50", "amount": "г"},
+        {"name": "Яйца", "weight": "1", "amount": "шт"},
+        {"name": "Чеснок", "weight": "1", "amount": "зубчик"},
+        {"name": "Оливковое масло", "weight": "2", "amount": "ст.л"},
+        {"name": "Лимонный сок", "weight": "1", "amount": "ст.л"},
+        {"name": "Горчица", "weight": "1", "amount": "ч.л"},
+        {"name": "Соль", "weight": "", "amount": "по вкусу"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Куриное филе обжарить на оливковом масле с чесноком, нарезать полосками."},
+        {"step_number": 2, "image": "", "description": "Листья салата порвать руками, выложить на тарелку."},
+        {"step_number": 3, "image": "", "description": "Приготовить соус: смешать оливковое масло, лимонный сок, горчицу и соль по вкусу."},
+        {"step_number": 4, "image": "", "description": "Сверху выложить курицу, сухарики и тёртый пармезан."},
+        {"step_number": 5, "image": "", "description": "Полить соусом перед подачей."}
+      ]
+    },
+    {
+      "id": 35,
+      "name": "Солянка",
+      "image": "drawable/solyanka",
+      "calories": 280,
+      "proteins": 18,
+      "fats": 15,
+      "carbohydrates": 20,
+      "portion": 1,
+      "ingredients": [
+        {"name": "Говядина", "weight": "200", "amount": "г"},
+        {"name": "Варёная колбаса", "weight": "100", "amount": "г"},
+        {"name": "Копчёности", "weight": "100", "amount": "г"},
+        {"name": "Солёные огурцы", "weight": "2", "amount": "шт"},
+        {"name": "Каперсы", "weight": "1", "amount": "ст.л"},
+        {"name": "Маслины", "weight": "10", "amount": "шт"},
+        {"name": "Томатная паста", "weight": "2", "amount": "ст.л"},
+        {"name": "Лимон", "weight": "2", "amount": "дольки"},
+        {"name": "Сметана", "weight": "30", "amount": "г"},
+        {"name": "Зелень", "weight": "", "amount": "по вкусу"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Сварить крепкий мясной бульон из говядины."},
+        {"step_number": 2, "image": "", "description": "Все мясные продукты нарезать соломкой, огурцы - ломтиками."},
+        {"step_number": 3, "image": "", "description": "Обжарить лук с томатной пастой, добавить в бульон вместе с мясными продуктами."},
+        {"step_number": 4, "image": "", "description": "Добавить огурцы, каперсы и маслины, варить 10 минут."},
+        {"step_number": 5, "image": "", "description": "Подавать с долькой лимона, сметаной и зеленью."}
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Сосиски в тесте",
+      "image": "",
+      "calories": 380,
+      "proteins": 12,
+      "fats": 18,
+      "carbohydrates": 40,
+      "portion": 1,
+      "ingredients": [
+        {"name": "Сосиски", "weight": "4", "amount": "шт"},
+        {"name": "Готовое слоёное тесто", "weight": "250", "amount": "г"},
+        {"name": "Яйцо", "weight": "1", "amount": "шт"},
+        {"name": "Горчица", "weight": "1", "amount": "ч.л"},
+        {"name": "Кунжут", "weight": "1", "amount": "ч.л"},
+        {"name": "Мука", "weight": "1", "amount": "ст.л"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Разморозить тесто, раскатать в пласт толщиной 3 мм."},
+        {"step_number": 2, "image": "", "description": "Нарезать тесто полосками шириной 1.5 см."},
+        {"step_number": 3, "image": "", "description": "Обернуть каждую сосиску тестом по спирали, оставляя промежутки."},
+        {"step_number": 4, "image": "", "description": "Смазать взбитым яйцом, посыпать кунжутом."},
+        {"step_number": 5, "image": "", "description": "Выпекать при 200°C 15–20 минут до золотистой корочки."}
+      ]
+    },
+    {
+      "id": 37,
+      "name": "Суп гороховый",
+      "image": "",
+      "calories": 210,
+      "proteins": 10,
+      "fats": 5,
+      "carbohydrates": 30,
+      "portion": 1,
+      "ingredients": [
+        {"name": "Горох колотый", "weight": "150", "amount": "г"},
+        {"name": "Копчёные рёбрышки", "weight": "200", "amount": "г"},
+        {"name": "Картофель", "weight": "2", "amount": "шт"},
+        {"name": "Морковь", "weight": "1", "amount": "шт"},
+        {"name": "Лук репчатый", "weight": "1", "amount": "шт"},
+        {"name": "Лавровый лист", "weight": "1", "amount": "шт"},
+        {"name": "Чёрный перец горошком", "weight": "3", "amount": "шт"},
+        {"name": "Соль", "weight": "", "amount": "по вкусу"},
+        {"name": "Зелень", "weight": "", "amount": "по вкусу"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Горох замочить на 2 часа, затем варить с рёбрышками 1 час."},
+        {"step_number": 2, "image": "", "description": "Добавить нарезанный картофель, варить 15 минут."},
+        {"step_number": 3, "image": "", "description": "Обжарить лук и морковь, добавить в суп."},
+        {"step_number": 4, "image": "", "description": "Посолить, добавить специи, варить ещё 10 минут."},
+        {"step_number": 5, "image": "", "description": "Подавать с рубленой зеленью и гренками."}
+      ]
+    },
+    {
+      "id": 39,
+      "name": "Суп грибной",
+      "image": "",
+      "calories": 150,
+      "proteins": 6,
+      "fats": 8,
+      "carbohydrates": 15,
+      "portion": 1,
+      "ingredients": [
+        {"name": "Свежие шампиньоны", "weight": "300", "amount": "г"},
+        {"name": "Картофель", "weight": "2", "amount": "шт"},
+        {"name": "Лук репчатый", "weight": "1", "amount": "шт"},
+        {"name": "Морковь", "weight": "1", "amount": "шт"},
+        {"name": "Сливки 20%", "weight": "100", "amount": "мл"},
+        {"name": "Растительное масло", "weight": "2", "amount": "ст.л"},
+        {"name": "Укроп", "weight": "", "amount": "по вкусу"},
+        {"name": "Соль, перец", "weight": "", "amount": "по вкусу"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Обжарить лук и морковь на масле 5 минут."},
+        {"step_number": 2, "image": "", "description": "Добавить нарезанные грибы, жарить ещё 7 минут."},
+        {"step_number": 3, "image": "", "description": "Залить 1.5 л воды, добавить картофель, варить 15 минут."},
+        {"step_number": 4, "image": "", "description": "Влить сливки, посолить, поперчить, варить 5 минут."},
+        {"step_number": 5, "image": "", "description": "Подавать с укропом и сметаной."}
+      ]
+    },
+    {
+      "id": 40,
+      "name": "Суп овощной",
+      "image": "",
+      "calories": 120,
+      "proteins": 5,
+      "fats": 1,
+      "carbohydrates": 23,
+      "portion": 2,
+      "ingredients": [
+        {"name": "Картофель", "weight": "2", "amount": "шт"},
+        {"name": "Морковь", "weight": "1", "amount": "шт"},
+        {"name": "Помидор", "weight": "2", "amount": "шт"},
+        {"name": "Чечевица красная", "weight": "60", "amount": "г"},
+        {"name": "Лавровый лист", "weight": "2", "amount": "шт"},
+        {"name": "Черный перец", "weight": "", "amount": "по вкусу"},
+        {"name": "Соль", "weight": "", "amount": "по вкусу"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Картофель и морковь очистите и порежьте кубиками. Помидор порежьте любой формы."},
+        {"step_number": 2, "image": "", "description": "Картофель положите вариться в заранее приготовленный бульон. Если бульона нет, то мясо помойте, порежьте и проварите около 30 минут, после чего добавьте картофель."},
+        {"step_number": 3, "image": "", "description": "Через 10 минут варки картофеля добавьте в суп промытую чечевицу, морковь и приправьте суп солью, черным молотым перцем и специями."},
+        {"step_number": 4, "image": "", "description": "В конце приготовления добавьте в суп помидоры. Проварите суп 5 минут и снимите его с плиты."}
+      ]
+    },
+    {
+      "id": 41,
+      "name": "Суп с фрикадельками",
+      "image": "",
+      "calories": 190,
+      "proteins": 14,
+      "fats": 7,
+      "carbohydrates": 20,
+      "portion": 1,
+      "ingredients": [
+        {"name": "Фарш куриный", "weight": "200", "amount": "г"},
+        {"name": "Картофель", "weight": "3", "amount": "шт"},
+        {"name": "Морковь", "weight": "1", "amount": "шт"},
+        {"name": "Рис", "weight": "50", "amount": "г"},
+        {"name": "Яйцо", "weight": "1", "amount": "шт"},
+        {"name": "Зелень", "weight": "", "amount": "по вкусу"},
+        {"name": "Соль, перец", "weight": "", "amount": "по вкусу"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Смешать фарш с яйцом, солью и перцем, сформировать фрикадельки."},
+        {"step_number": 2, "image": "", "description": "В кипящую воду добавить нарезанный картофель и рис, варить 10 минут."},
+        {"step_number": 3, "image": "", "description": "Добавить фрикадельки и тёртую морковь, варить 15 минут."},
+        {"step_number": 4, "image": "", "description": "Посолить, поперчить, посыпать зеленью перед подачей."}
+      ]
+    },
+    {
+      "id": 42,
+      "name": "Сырники",
+      "image": "",
+      "calories": 280,
+      "proteins": 15,
+      "fats": 12,
+      "carbohydrates": 25,
+      "portion": 1,
+      "ingredients": [
+        {"name": "Творог", "weight": "250", "amount": "г"},
+        {"name": "Яйцо", "weight": "1", "amount": "шт"},
+        {"name": "Мука", "weight": "3", "amount": "ст.л"},
+        {"name": "Сахар", "weight": "2", "amount": "ст.л"},
+        {"name": "Ванильный сахар", "weight": "1", "amount": "ч.л"},
+        {"name": "Растительное масло", "weight": "2", "amount": "ст.л"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Смешать творог, яйцо, сахар и ванильный сахар."},
+        {"step_number": 2, "image": "", "description": "Добавить муку, замесить тесто."},
+        {"step_number": 3, "image": "", "description": "Сформировать сырники, обвалять в муке."},
+        {"step_number": 4, "image": "", "description": "Обжарить на масле по 3 минуты с каждой стороны."},
+        {"step_number": 5, "image": "", "description": "Подавать со сметаной или вареньем."}
+      ]
+    },
+
+    {
+      "id": 43,
+      "name": "Тушеный картофель с курицей",
+      "image": "",
+      "calories": 290,
+      "proteins": 22,
+      "fats": 14,
+      "carbohydrates": 18,
+      "portion": 4,
+      "ingredients": [
+        {"name": "Картофель", "weight": "8", "amount": "шт"},
+        {"name": "Куриная ножка", "weight": "8", "amount": "шт"},
+        {"name": "Лук репчатый", "weight": "2", "amount": "шт"},
+        {"name": "Сельдерей", "weight": "2", "amount": "стебля"},
+        {"name": "Морковь", "weight": "2", "amount": "шт"},
+        {"name": "Томатная паста", "weight": "4", "amount": "ст.л"},
+        {"name": "Растительное масло", "weight": "4", "amount": "ст.л"},
+        {"name": "Соль, перец, специи", "weight": "", "amount": "по вкусу"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Взбить яйца с сахаром до пышности."},
+        {"step_number": 2, "image": "", "description": "Добавить муку, аккуратно перемешать."},
+        {"step_number": 3, "image": "", "description": "Яблоки нарезать дольками, выложить в форму."},
+        {"step_number": 4, "image": "", "description": "Залить тестом, выпекать при 180°C 30–35 минут."}
+      ]
+    },
+    {
+      "id": 44,
+      "name": "Фрикадельки",
+      "image": "",
+      "calories": 320,
+      "proteins": 26,
+      "fats": 18,
+      "carbohydrates": 12,
+      "portion": 1,
+      "ingredients": [
+        {"name": "Говяжий фарш", "weight": "200", "amount": "г"},
+        {"name": "Лук репчатый", "weight": "1", "amount": "шт (маленькая)"},
+        {"name": "Яйцо", "weight": "1", "amount": "шт"},
+        {"name": "Томатная паста", "weight": "15", "amount": "г (1 ст.л)"},
+        {"name": "Мука", "weight": "10", "amount": "г (1 ст.л с горкой)"},
+        {"name": "Соль", "weight": "", "amount": "по вкусу"},
+        {"name": "Перец черный", "weight": "", "amount": "по вкусу"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Лук мелко нарезать, обжарить на сковороде до прозрачности."},
+        {"step_number": 2, "image": "", "description": "В миске смешать фарш, яйцо, обжаренный лук, соль и перец. Вымесить массу."},
+        {"step_number": 3, "image": "", "description": "Сформировать 4 круглые фрикадельки, обвалять их в муке."},
+        {"step_number": 4, "image": "", "description": "Обжарить фрикадельки на раскаленном масле 2-3 минуты до румяной корочки."},
+        {"step_number": 5, "image": "", "description": "Добавить томатную пасту и 100 мл воды. Тушить под крышкой 15 минут."},
+        {"step_number": 6, "image": "", "description": "Подавать горячими, посыпав зеленью."}
+      ]
+    },
+    {
+      "id": 45,
+      "name": "Фруктовый салат",
+      "image": "",
+      "calories": 180,
+      "proteins": 2,
+      "fats": 1,
+      "carbohydrates": 42,
+      "portion": 2,
+      "ingredients": [
+        {"name": "Яблоко", "weight": "2", "amount": "шт (среднее)"},
+        {"name": "Груша", "weight": "2", "amount": "шт (маленькая)"},
+        {"name": "Апельсин", "weight": "1", "amount": "шт"},
+        {"name": "Виноград", "weight": "20", "amount": "ягод"},
+        {"name": "Мед", "weight": "20", "amount": "г (4 ч.л)"},
+        {"name": "Лимонный сок", "weight": "10", "amount": "мл (2 ч.л)"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Яблоко и грушу нарезать кубиками, сбрызнуть лимонным соком."},
+        {"step_number": 2, "image": "", "description": "Апельсин очистить, разделить на дольки, каждую разрезать на 2-3 части."},
+        {"step_number": 3, "image": "", "description": "Виноград разрезать пополам, удалить косточки."},
+        {"step_number": 4, "image": "", "description": "Смешать все фрукты в миске, полить медом."},
+        {"step_number": 5, "image": "", "description": "Охладить 15 минут перед подачей."}
+      ]
+    },
+    {
+      "id": 46,
+      "name": "Шарлотка",
+      "image": "",
+      "calories": 280,
+      "proteins": 6,
+      "fats": 8,
+      "carbohydrates": 45,
+      "portion": 1,
+      "ingredients": [
+        {"name": "Мука", "weight": "60", "amount": "г (4 ст.л с горкой)"},
+        {"name": "Сахар", "weight": "50", "amount": "г (3 ст.л)"},
+        {"name": "Яйца", "weight": "1", "amount": "шт (крупное)"},
+        {"name": "Яблоки", "weight": "1", "amount": "шт (среднее)"},
+        {"name": "Ванильный сахар", "weight": "5", "amount": "г (1 ч.л)"},
+        {"name": "Сода", "weight": "3", "amount": "г"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Взбить яйцо с сахаром миксером 5 минут до светлой пышной массы."},
+        {"step_number": 2, "image": "", "description": "Добавить муку, соду и ванильный сахар. Взбить до гладкого теста (консистенция сметаны)."},
+        {"step_number": 3, "image": "", "description": "Яблоко очистить от кожуры и семян, нарезать тонкими дольками."},
+        {"step_number": 4, "image": "", "description": "Аккуратно смешать яблоки с тестом. Вылить в смазанную маслом форму диаметром 15 см."},
+        {"step_number": 5, "image": "", "description": "Выпекать в разогретой до 180°C духовке 25-30 минут до золотистой корочки."},
+        {"step_number": 6, "image": "", "description": "Проверить готовность зубочисткой (должна выходить сухой). Остудить 10 минут перед подачей."}
+      ]
+    },
+    {
+      "id": 47,
+      "name": "Шаурма",
+      "image": "",
+      "calories": 450,
+      "proteins": 20,
+      "fats": 25,
+      "carbohydrates": 35,
+      "portion": 1,
+      "ingredients": [
+        {"name": "Лаваш", "weight": "1", "amount": "шт"},
+        {"name": "Куриное филе", "weight": "150", "amount": "г"},
+        {"name": "Огурцы свежие", "weight": "1", "amount": "шт"},
+        {"name": "Помидоры", "weight": "1", "amount": "шт"},
+        {"name": "Капуста", "weight": "50", "amount": "г"},
+        {"name": "Чеснок", "weight": "1", "amount": "зубчик"},
+        {"name": "Майонез", "weight": "2", "amount": "ст.л"},
+        {"name": "Кетчуп", "weight": "1", "amount": "ст.л"},
+        {"name": "Соль, перец", "weight": "", "amount": "по вкусу"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Курицу обжарить с специями, нарезать полосками."},
+        {"step_number": 2, "image": "", "description": "Овощи нашинковать соломкой."},
+        {"step_number": 3, "image": "", "description": "Смешать майонез, кетчуп и давленый чеснок."},
+        {"step_number": 4, "image": "", "description": "Выложить начинку на лаваш, свернуть рулетом."},
+        {"step_number": 5, "image": "", "description": "Обжарить на сухой сковороде 2 минуты."}
+      ]
+    },
+    {
+      "id": 48,
+      "name": "Эклеры",
+      "image": "",
+      "calories": 380,
+      "proteins": 7,
+      "fats": 22,
+      "carbohydrates": 40,
+      "portion": 1,
+      "ingredients": [
+        {"name": "Мука", "weight": "100", "amount": "г"},
+        {"name": "Яйца", "weight": "2", "amount": "шт"},
+        {"name": "Сливочное масло", "weight": "60", "amount": "г"},
+        {"name": "Вода", "weight": "200", "amount": "мл"},
+        {"name": "Соль", "weight": "1", "amount": "щепотка"},
+        {"name": "Крем заварной", "weight": "100", "amount": "г"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "В кастрюле вскипятить воду с маслом и солью."},
+        {"step_number": 2, "image": "", "description": "Всыпать муку, интенсивно перемешивая. Варить 2 минуты до образования комка."},
+        {"step_number": 3, "image": "", "description": "Снять с огня, добавить яйца по одному, вымешивая гладкое тесто."},
+        {"step_number": 4, "image": "", "description": "Отсадить тесто кондитерским мешком на противень в виде полосок длиной 10 см."},
+        {"step_number": 5, "image": "", "description": "Выпекать при 200°C 25 минут до золотистого цвета."},
+        {"step_number": 6, "image": "", "description": "Остудить, наполнить кремом через отверстие сбоку."}
+      ]
+    },
+    {
+      "id": 49,
+      "name": "Яичница-глазунья",
+      "image": "",
+      "calories": 200,
+      "proteins": 12,
+      "fats": 15,
+      "carbohydrates": 2,
+      "portion": 1,
+      "ingredients": [
+        {"name": "Яйца", "weight": "2", "amount": "шт"},
+        {"name": "Сливочное масло", "weight": "10", "amount": "г"},
+        {"name": "Соль", "weight": "", "amount": "по вкусу"},
+        {"name": "Перец чёрный", "weight": "", "amount": "по вкусу"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Растопить масло на сковороде."},
+        {"step_number": 2, "image": "", "description": "Аккуратно разбить яйца, не повредив желтки."},
+        {"step_number": 3, "image": "", "description": "Жарить на среднем огне 3–4 минуты."},
+        {"step_number": 4, "image": "", "description": "Посолить, поперчить, подавать с тостами."}
+      ]
     }
   ]
 }
