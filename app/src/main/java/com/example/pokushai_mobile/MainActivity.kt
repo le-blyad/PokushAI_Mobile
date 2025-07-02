@@ -11,11 +11,18 @@ import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        if (isUserLoggedIn()) {
+            loadFragment(UserFragment())
+        } else {
+            loadFragment(LoginFragment())
+        }
 
         initBottomMenu()
 
@@ -24,7 +31,10 @@ class MainActivity : AppCompatActivity() {
                 .replace(R.id.fragment_container, MainFragment())
                 .commit()
         }
+
     }
+
+
 
     fun onLanguageButtonClick(view: View) {
         val currentLang = LocaleHelper.getLanguage(this)
@@ -36,6 +46,27 @@ class MainActivity : AppCompatActivity() {
 
     override fun attachBaseContext(newBase: Context) {
         super.attachBaseContext(LocaleHelper.attachBaseContext(newBase))
+    }
+
+
+
+    private fun isUserLoggedIn(): Boolean {
+        val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
+        return sharedPreferences.getLong("user_id", -1) != -1L
+    }
+
+    private fun loadFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .commit()
+    }
+
+    private fun navigateToFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .addToBackStack(null)
+            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+            .commit()
     }
 
     private fun initBottomMenu() {
@@ -57,7 +88,11 @@ class MainActivity : AppCompatActivity() {
 
         userButton.setOnClickListener {
             if (isInternetAvailable(this)) {
-                Toast.makeText(this, "User Fragment", Toast.LENGTH_SHORT).show()
+                if (isUserLoggedIn()) {
+                    navigateToFragment(UserFragment())
+                } else {
+                    navigateToFragment(LoginFragment())
+                }
             } else {
                 Toast.makeText(this, "${getString(R.string.noconn)}", Toast.LENGTH_SHORT).show()
             }
@@ -92,21 +127,9 @@ class MainActivity : AppCompatActivity() {
         startActivity(Intent(this, MainActivity::class.java))
     }
 
-    private fun navigateToFragment(fragment: Fragment) {
-        val currentFragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
-        if (currentFragment?.javaClass == fragment.javaClass) return
-
-        FragmentNavigator.navigateForward(
-            supportFragmentManager,
-            R.id.fragment_container,
-            fragment
-        )
-    }
-
     private fun isInternetAvailable(context: Context): Boolean {
         val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val networkInfo = connectivityManager.activeNetworkInfo
         return networkInfo != null && networkInfo.isConnected
     }
-
 }

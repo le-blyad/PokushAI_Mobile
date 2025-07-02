@@ -1,5 +1,4 @@
 package com.example.pokushai_mobile
-import android.icu.text.CaseMap.Title
 import retrofit2.Call
 import android.net.Uri
 import retrofit2.http.*
@@ -14,17 +13,18 @@ data class RegisterRequest(
     val password2: String
 )
 data class RegisterResponse(
-    val message: String,
-    val userId: Long
+    val token: String?,
+    val userId: Long?
 )
 
 data class LoginRequest(
     val username: String,
     val password: String
 )
+
 data class LoginResponse(
-    val message: String,
-    val userId: Long
+    val token: String?,
+    val userId: Long?
 )
 
 data class Profile(
