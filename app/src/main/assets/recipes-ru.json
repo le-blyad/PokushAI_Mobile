@@ -1347,6 +1347,36 @@
       ]
     },
     {
+      "id": 38,
+      "name": "Суп гречневый",
+      "image": "drawable/subgrechneviy",
+      "calories": 210,
+      "proteins": 8,
+      "fats": 5,
+      "carbohydrates": 35,
+      "portion": 2,
+      "ingredients": [
+        {"name": "Репчатый лук", "weight": "2", "amount": "шт"},
+        {"name": "Морковь", "weight": "1", "amount": "шт"},
+        {"name": "Гречневая крупа", "weight": "6", "amount": "ст.л"},
+        {"name": "Картофель", "weight": "200", "amount": "г"},
+        {"name": "Лавровый лист", "weight": "2", "amount": "шт"},
+        {"name": "Сливочное масло", "weight": "20", "amount": "г"},
+        {"name": "Соль", "weight": "", "amount": "по вкусу"},
+        {"name": "Черный перец", "weight": "", "amount": "по вкусу"},
+        {"name": "Вода", "weight": "300", "amount": "мл"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Поставить кипятиться воду (300 мл)."},
+        {"step_number": 2, "image": "", "description": "Очистить, вымыть картофель. Нарезать кубиками 1х1 см."},
+        {"step_number": 3, "image": "", "description": "Очистить, вымыть лук и морковь. Лук нарезать мелкими кубиками. Морковь натереть на крупной терке."},
+        {"step_number": 4, "image": "", "description": "Гречку перебрать, промыть в холодной воде 2-3 раза."},
+        {"step_number": 5, "image": "", "description": "В кипящую воду добавить картофель, гречку, лук и морковь. Варить 10 минут."},
+        {"step_number": 6, "image": "", "description": "Добавить лавровый лист, сливочное масло, соль и перец. Варить еще 10-15 минут до готовности гречки."},
+        {"step_number": 7, "image": "", "description": "Подавать горячим, посыпав свежей зеленью."}
+      ]
+    },
+    {
       "id": 39,
       "name": "Суп грибной",
       "image": "drawable/supgribnoy",
@@ -1448,7 +1478,6 @@
         {"step_number": 5, "image": "", "description": "Подавать со сметаной или вареньем."}
       ]
     },
-
     {
       "id": 43,
       "name": "Тушеный картофель с курицей",

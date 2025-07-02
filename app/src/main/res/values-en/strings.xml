@@ -184,6 +184,9 @@
     <string name="carbohydrates">Carbohydrates</string>
     <string name="portions">Portions</string>
 
+    <string name="g">g</string>
+    <string name="kcal">kcal</string>
+
     <string name="ingredients">Ingredients:</string>
     <string name="stepbystep">Step-by-step recipe:</string>
 

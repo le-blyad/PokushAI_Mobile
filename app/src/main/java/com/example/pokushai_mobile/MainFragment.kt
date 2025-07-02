@@ -86,10 +86,10 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             // Проверяем количество выбранных ингредиентов
             val selectedCount = switches.count { it.isChecked }
 
-            if (selectedCount < 5) {
+            if (selectedCount < 3) {
                 Toast.makeText(
                     requireContext(),
-                    "Пожалуйста, выберите минимум 5 ингредиентов",
+                    "Пожалуйста, выберите минимум 3 ингредиентов",
                     Toast.LENGTH_SHORT
                 ).show()
                 return@setOnClickListener

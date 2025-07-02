@@ -60,10 +60,10 @@ class RecipePrescriptionFragment : Fragment() {
 
         mainPhoto.setImageResource(resources.getIdentifier(recipe.image, "drawable", requireContext().packageName))
         title.text = recipe.name
-        textViewCalories.text = "${recipe.calories}\nкКал"
-        textViewSquirrels.text = "${recipe.proteins} г"
-        textViewFats.text = "${recipe.fats} г"
-        textViewCarbohydrates.text = "${recipe.carbohydrates} г"
+        textViewCalories.text = "${recipe.calories}\n${getString(R.string.kcal)}"
+        textViewSquirrels.text = "${recipe.proteins} ${getString(R.string.g)}"
+        textViewFats.text = "${recipe.fats} ${getString(R.string.g)}"
+        textViewCarbohydrates.text = "${recipe.carbohydrates} ${getString(R.string.g)}"
         textPortions.text = "$portionsAdditionally"
 
         // Инициализация адаптера ингредиентов
@@ -124,10 +124,26 @@ class RecipePrescriptionFragment : Fragment() {
     }
 
     private fun loadRecipes(): List<Recipe> {
-        val inputStream = requireContext().assets.open("recipes.json")
-        val reader = InputStreamReader(inputStream)
-        val recipeResponse = Gson().fromJson(reader, RecipeResponse::class.java)
-        return recipeResponse.recipes
+        val currentLang = LocaleHelper.getLanguage(requireContext())
+        val fileName = if (currentLang == "ru") "recipes-ru.json" else "recipes-en.json"
+
+        return try {
+            val inputStream = requireContext().assets.open(fileName)
+            val reader = InputStreamReader(inputStream)
+            val recipeResponse = Gson().fromJson(reader, RecipeResponse::class.java)
+            recipeResponse.recipes
+        } catch (e: Exception) {
+            e.printStackTrace()
+            try {
+                val fallbackFile = if (currentLang == "ru") "recipes-en.json" else "recipes-ru.json"
+                val fallbackStream = requireContext().assets.open(fallbackFile)
+                val fallbackReader = InputStreamReader(fallbackStream)
+                Gson().fromJson(fallbackReader, RecipeResponse::class.java).recipes
+            } catch (e: Exception) {
+                e.printStackTrace()
+                emptyList()
+            }
+        }
     }
 
     private fun updateIngredients() {

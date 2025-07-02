@@ -185,6 +185,9 @@
     <string name="carbohydrates">Углеводы</string>
     <string name="portions">Порции</string>
 
+    <string name="g">г</string>
+    <string name="kcal">кКал</string>
+
     <string name="ingredients">Ингредиенты:</string>
     <string name="stepbystep">Пошаговый рецепт:</string>
 

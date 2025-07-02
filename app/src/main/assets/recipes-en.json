@@ -1,0 +1,1671 @@
+{
+  "recipes": [
+    {
+      "id": 0,
+      "name": "Belyashi",
+      "image": "drawable/belyashi",
+      "calories": 264,
+      "proteins": 11,
+      "fats": 10,
+      "carbohydrates": 33,
+      "portion": 1,
+      "ingredients": [
+        {"name": "Dry yeast", "weight": "5", "amount": "g"},
+        {"name": "Sugar", "weight": "1", "amount": "tablespoon"},
+        {"name": "Wheat flour", "weight": "400", "amount": "g"},
+        {"name": "Vegetable oil", "weight": "800", "amount": "ml"},
+        {"name": "Minced meat", "weight": "400", "amount": "g"},
+        {"name": "Onion", "weight": "150", "amount": "g"},
+        {"name": "Salt", "amount": "to taste"},
+        {"name": "Ground black pepper", "amount": "to taste"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/belyashi_step1", "description": "Prepare the necessary ingredients."},
+        {"step_number": 2, "image": "drawable/belyashi_step2", "description": "Dilute the yeast in 250 ml of warm water with sugar, add half the flour, mix, cover and leave for 15 minutes."},
+        {"step_number": 3, "image": "drawable/belyashi_step3", "description": "Then add a teaspoon of salt and the remaining flour and knead the dough. At the end, add a tablespoon of vegetable oil to bring all the flour together. Put the dough in a greased bowl, cover and leave in a warm place for 20 minutes."},
+        {"step_number": 4, "image": "drawable/belyashi_step4", "description": "Mix the minced meat with chopped onion, salt and pepper. If the minced meat is too dry, add 1-2 tablespoons of water. Beat off the mixed minced meat, as in cutlets."},
+        {"step_number": 5, "image": "drawable/belyashi_step5", "description": "Knead the dough with vegetable oil and let it rise again. It will take another 20 minutes."},
+        {"step_number": 6, "image": "drawable/belyashi_step6", "description": "Divide the dough into ten equal parts of 60 grams each and roll them into balls."},
+        {"step_number": 7, "image": "drawable/belyashi_step7", "description": "Roll out the dough ball into a thick pancake, carefully place the minced meat in the middle. Pinch the edges of the dough, leaving a small hole at the top."},
+        {"step_number": 8, "image": "drawable/belyashi_step8", "description": "You need to fry belyashi in vegetable oil in a semi-submersible way. First, heat enough oil well in a frying pan."},
+        {"step_number": 9, "image": "drawable/belyashi_step9", "description": "Put the belyashi in the oil with the hole facing down, fry over medium heat until golden brown."},
+        {"step_number": 10, "image": "drawable/belyashi_step10", "description": "Then carefully flip, oil may splash."},
+        {"step_number": 11, "image": "drawable/belyashi_step11", "description": "Get ready-made belyashi on paper to stack excess fat."},
+        {"step_number": 12, "image": "drawable/belyashi_step12", "description": "Submit."}
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Pancakes",
+      "image": "drawable/blin",
+      "calories": 227,
+      "proteins": 6,
+      "fats": 10,
+      "carbohydrates": 28,
+      "portion": 6,
+      "ingredients": [
+        {"name": "Milk", "weight": "500", "amount": "ml"},
+        {"name": "Eggs", "weight": "3", "amount": "pcs"},
+        {"name": "Vegetable oil", "weight": "30", "amount": "ml"},
+        {"name": "Flour", "weight": "200", "amount": "g"},
+        {"name": "Sugar", "weight": "30", "amount": "g"},
+        {"name": "Salt", "weight": "5", "amount": "g"},
+        {"name": "Butter", "weight": "30", "amount": "g"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/blin_step1", "description": "Mix eggs, salt, sugar and stir with a mixer. Add the flour and pour in the milk. Beat the pancake batter to achieve a smooth consistency."},
+        {"step_number": 2, "image": "drawable/blin_step2", "description": "Next, add vegetable oil to the dough so that the pancakes turn over easily and do not burn during frying."},
+        {"step_number": 3, "image": "drawable/blin_step3", "description": "Heat a frying pan and oil it."},
+        {"step_number": 4, "image": "drawable/blin_step4", "description": "Pour a small portion of dough into the center of the pan. Immediately rotate the pan in a circle so that the dough is evenly distributed over the entire surface."},
+        {"step_number": 5, "image": "drawable/blin_step5", "description": "Fry pancakes on medium heat on both sides until browned. The pancakes are very thin, so turn them over carefully with a spatula. After the pancake is ready, remove from the pan and brush with butter so that the edges are not dry and the pancakes are tender."},
+        {"step_number": 6, "image": "drawable/blin_step6", "description": "Pancakes with milk can be served with jam, jam or condensed milk. Enjoy your meal!"}
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Pancakes with meat",
+      "image": "drawable/blinismyasom",
+      "calories": 320,
+      "proteins": 15,
+      "fats": 18,
+      "carbohydrates": 25,
+      "portion": 4,
+      "ingredients": [
+        {"name": "Milk", "weight": "400", "amount": "ml"},
+        {"name": "Eggs", "weight": "2", "amount": "pcs"},
+        {"name": "Flour", "weight": "180", "amount": "g"},
+        {"name": "Sugar", "weight": "20", "amount": "g"},
+        {"name": "Butter", "weight": "30", "amount": "g"},
+        {"name": "Salt", "weight": "5", "amount": "g"},
+        {"name": "Water", "weight": "100", "amount": "ml"},
+        {"name": "Minced meat", "weight": "300", "amount": "g"},
+        {"name": "Onion", "weight": "100", "amount": "g"},
+        {"name": "Garlic", "weight": "10", "amount": "g"},
+        {"name": "Black pepper", "weight": "3", "amount": "g"},
+        {"name": "Coriander", "weight": "2", "amount": "g"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/bliny_s_myasom_step1", "description": "Beat eggs, sugar and salt with a whisk until smooth."},
+        {"step_number": 2, "image": "drawable/bliny_s_myasom_step2", "description": "Add milk and flour, mix until smooth."},
+        {"step_number": 3, "image": "drawable/bliny_s_myasom_step3", "description": "Add water and vegetable oil. Mix the dough thoroughly and leave for 1 hour."},
+        {"step_number": 4, "image": "drawable/bliny_s_myasom_step4", "description": "Chop the onion and fry in a pan with heated vegetable oil (1 tablespoon) over medium heat for 3 minutes."},
+        {"step_number": 5, "image": "drawable/bliny_s_myasom_step5", "description": "Add minced meat, salt, dried garlic, coriander, black pepper. Fry until tender for 6-7 minutes over medium heat."},
+        {"step_number": 6, "image": "drawable/bliny_s_myasom_step6", "description": "Fry thin pancakes in a hot pan on each side for 1 minute until golden brown."},
+        {"step_number": 7, "image": "drawable/bliny_s_myasom_step7", "description": "Put 1 tablespoon of minced meat on the finished pancakes."},
+        {"step_number": 8, "image": "drawable/bliny_s_myasom_step8", "description": "Wrap pancakes with meat in an envelope."},
+        {"step_number": 9, "image": "drawable/bliny_s_myasom_step9", "description": "Before serving, fry the pancakes in a hot frying pan with butter until golden brown (30 seconds on each side)."}
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Borsch",
+      "image": "drawable/borsch",
+      "calories": 150,
+      "proteins": 8,
+      "fats": 5,
+      "carbohydrates": 18,
+      "portion": 6,
+      "ingredients": [
+        {"name": "Beef", "weight": "500", "amount": "g"},
+        {"name": "Potato", "weight": "300", "amount": "g"},
+        {"name": "Cabbage", "weight": "200", "amount": "g"},
+        {"name": "Beetroot", "weight": "200", "amount": "g"},
+        {"name": "Carrot", "weight": "100", "amount": "g"},
+        {"name": "Onion", "weight": "100", "amount": "g"},
+        {"name": "Tomato paste", "weight": "50", "amount": "g"},
+        {"name": "Prunes", "weight": "50", "amount": "g"},
+        {"name": "Parsley", "weight": "20", "amount": "g"},
+        {"name": "Salt", "weight": "10", "amount": "g"},
+        {"name": "Vegetable oil", "weight": "30", "amount": "ml"},
+        {"name": "Water", "weight": "2500", "amount": "ml"},
+        {"name": "Sour cream", "weight": "100", "amount": "g"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/borsch_step1", "description": "Prepare all the necessary products. If the prunes are dry, pour boiling water over them for 10-15 minutes."},
+        {"step_number": 2, "image": "drawable/borsch_step2", "description": "Meat is cut into small pieces."},
+        {"step_number": 3, "image": "drawable/borsch_step3", "description": "Put the meat in a saucepan, pour cold water. Bring to a boil, remove the foam and cook the meat for 1.5 hours on low heat, under a lid."},
+        {"step_number": 4, "image": "drawable/borsch_step4", "description": "Potatoes are peeled and cut into large pieces."},
+        {"step_number": 5, "image": "drawable/borsch_step5", "description": "Beets are peeled and cut into strips. Usually beets are stewed in a frying pan with lemon juice or vinegar - you can do just that. But in this recipe, beetroot is added to the broth in its raw form and cooked together with potatoes and cabbage."},
+        {"step_number": 6, "image": "drawable/borsch_step6", "description": "Cabbage is chopped into strips."},
+        {"step_number": 7, "image": "drawable/borsch_step7", "description": "Onion is peeled and finely chopped."},
+        {"step_number": 8, "image": "drawable/borsch_step8", "description": "Carrots are peeled and grated on a coarse grater."},
+        {"step_number": 9, "image": "drawable/borshch_step9", "description": "Prunes are pitted and finely chopped."},
+        {"step_number": 10, "image": "drawable/borsch_step10", "description": "The pan is heated, vegetable oil is poured. Add the onion and carrot to the hot oil, fry the vegetables, stirring, for 3-4 minutes over medium heat. Add the tomato paste, stir and fry the vegetables with the tomato for another 1 minute."},
+        {"step_number": 11, "image": "drawable/borsch_step11", "description": "Potatoes, beets, cabbage, fried onions and carrots are added to the meat broth. Add prunes, salt and cook borscht with prunes until potatoes are ready, 20-25 minutes."},
+        {"step_number": 12, "image": "drawable/borsch_step12", "description": "The greens are washed and finely chopped."},
+        {"step_number": 13, "image": "drawable/borsch_step13", "description": "Ready-made borsch with prunes is poured on plates, sprinkled with chopped parsley. Borscht with sour cream is served."}
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Hot sandwiches",
+      "image": "drawable/goryachiebuter",
+      "calories": 280,
+      "proteins": 12,
+      "fats": 15,
+      "carbohydrates": 25,
+      "portion": 4,
+      "ingredients": [
+        {"name": "Loaf", "weight": "200", "amount": "g"},
+        {"name": "Sausage", "weight": "150", "amount": "g"},
+        {"name": "Tomatoes", "weight": "100", "amount": "g"},
+        {"name": "Cheese", "weight": "100", "amount": "g"},
+        {"name": "Dill", "weight": "10", "amount": "g"},
+        {"name": "Mayonnaise", "weight": "50", "amount": "g"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/goriachie_buterbrody_step1", "description": "Finely chop a tomato."},
+        {"step_number": 2, "image": "drawable/goriachie_buterbrody_step2", "description": "Finely chop boiled and smoked sausage."},
+        {"step_number": 3, "image": "drawable/goriachie_buterbrody_step3", "description": "Grate the cheese on a fine grater."},
+        {"step_number": 4, "image": "drawable/goriachie_buterbrody_step4", "description": "Finely chop the greens."},
+        {"step_number": 5, "image": "drawable/goriachie_buterbrody_step5", "description": "Combine chopped ingredients and add mayonnaise."},
+        {"step_number": 6, "image": "drawable/goriachie_buterbrody_step6", "description": "Mix the filling thoroughly."},
+        {"step_number": 7, "image": "drawable/goriachie_buterbrody_step7", "description": "Slice a loaf."},
+        {"step_number": 8, "image": "drawable/goriachie_buterbrody_step8", "description": "Put 1-2 tablespoons of filling on each slice."},
+        {"step_number": 9, "image": "drawable/goriachie_buterbrody_step9", "description": "Put the sandwiches in the preheated oven for 6-7 minutes until the cheese melts."}
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Buckwheat porridge",
+      "image": "drawable/grecha",
+      "calories": 150,
+      "proteins": 5,
+      "fats": 3,
+      "carbohydrates": 25,
+      "portion": 2,
+      "ingredients": [
+        {"name": "Buckwheat groats", "weight": "200", "amount": "g"},
+        {"name": "Water", "weight": "400", "amount": "ml"},
+        {"name": "Butter", "weight": "20", "amount": "g"},
+        {"name": "Salt", "weight": "5", "amount": "g"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/grechnevaia_kasha_step1", "description": "Prepare buckwheat groats for cooking. First, pour it on a worktable lined with white baking paper and spread it in one layer. Sort it out by removing the trash."},
+        {"step_number": 2, "image": "drawable/grechnevaia_kasha_step2", "description": "Pour the buckwheat groats into a large bowl. Fill with cold water and rinse thoroughly several times, draining it periodically, until it becomes transparent."},
+        {"step_number": 3, "image": "drawable/grechnevaia_kasha_step3", "description": "Pour water into a saucepan and quickly bring to a boil. Add salt to taste and mix well. Add buckwheat groats and bring to a boil. Remove the foam."},
+        {"step_number": 4, "image": "drawable/grechnevaia_kasha_step4", "description": "Reduce the heat under the pan to a minimum. Cook the buckwheat porridge under the lid for 20-25 minutes. Do not mix it. Then turn off the heat, add the butter to the porridge and leave it under the lid for another 10 minutes."}
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Fried potatoes",
+      "image": "drawable/zkartof",
+      "calories": 200,
+      "proteins": 4,
+      "fats": 10,
+      "carbohydrates": 25,
+      "portion": 3,
+      "ingredients": [
+        {"name": "Potato", "weight": "500", "amount": "g"},
+        {"name": "Salt", "weight": "5", "amount": "g"},
+        {"name": "Black pepper", "weight": "3", "amount": "g"},
+        {"name": "Paprika", "weight": "3", "amount": "g"},
+        {"name": "Corn", "weight": "50", "amount": "g"},
+        {"name": "Turmeric", "weight": "2", "amount": "g"},
+        {"name": "Vegetable oil", "weight": "50", "amount": "ml"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/zharenyi_artofel_step1", "description": "Wash the potatoes thoroughly with a brush. Dry the tubers with a towel. Cut the potatoes in half. Then cut each potato half into 4 more slices. Prepare the remaining potatoes in the same way."},
+        {"step_number": 2, "image": "drawable/zharenyi_artofel_step2", "description": "Sprinkle the potato slices with salt, add black pepper, paprika and turmeric. Mix thoroughly so that the salt and spices are distributed over the potatoes. (It is more convenient to mix potato slices with your hands)."},
+        {"step_number": 3, "image": "drawable/zharenyi_artofel_step3", "description": "Heat the vegetable oil in a frying pan. Add the prepared potatoes and fry over medium heat, stirring every 3 minutes, until the potatoes are fully cooked. This process will take about 20-25 minutes."},
+        {"step_number": 4, "image": "drawable/zharenyi_artofel_step4", "description": "Serve rustic potatoes fried in a pan, preferably immediately after cooking, until the crust has softened."}
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Casserole",
+      "image": "drawable/zapekanka",
+      "calories": 180,
+      "proteins": 12,
+      "fats": 8,
+      "carbohydrates": 15,
+      "portion": 6,
+      "ingredients": [
+        {"name": "Cottage cheese", "weight": "500", "amount": "g"},
+        {"name": "Eggs", "weight": "3", "amount": "pcs"},
+        {"name": "Lemon", "weight": "50", "amount": "g"},
+        {"name": "Baking powder", "weight": "5", "amount": "g"},
+        {"name": "Sour cream", "weight": "100", "amount": "g"},
+        {"name": "Raisins", "weight": "50", "amount": "g"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/zapekanka_step1", "description": "Rub cottage cheese for classic casserole through a fine sieve. Then add sour cream, eggs and sugar, beat with a whisk. Add the flour sifted with baking powder. Beat it up again."},
+        {"step_number": 2, "image": "drawable/zapekanka_step2", "description": "Wash and dry the lemon. Then remove the peel from the fruit with a fine grater. Rinse the raisins with warm water. Add lemon zest and raisins to the curd mass, mix well."},
+        {"step_number": 3, "image": "drawable/zapekanka_step3", "description": "Cover the baking dish with parchment, lay out the resulting mass, smooth the surface. Cook the casserole in a preheated 180 °C oven for 35 minutes."}
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Mashed potatoes",
+      "image": "drawable/pure_kartofel_nov",
+      "calories": 130,
+      "proteins": 4,
+      "fats": 5,
+      "carbohydrates": 20,
+      "portion": 4,
+      "ingredients": [
+        {"name": "Potato", "weight": "500", "amount": "g"},
+        {"name": "Butter", "weight": "50", "amount": "g"},
+        {"name": "Milk", "weight": "200", "amount": "ml"},
+        {"name": "Salt", "weight": "5", "amount": "g"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/kartofelnoe_pure_step1", "description": "Prepare ingredients. Peel the potatoes."},
+        {"step_number": 2, "image": "drawable/kartofelnoe_pure_step2", "description": "Put the potatoes in a saucepan and pour cold water 2 cm above the potato level. Cook for about 15-20 minutes, check the readiness with a fork – it should freely enter the potatoes. It is necessary to add salt to the potatoes as soon as they boil."},
+        {"step_number": 3, "image": "drawable/kartofelnoe_pure_step3", "description": "While the potatoes are cooking, melt the butter in the milk, which must be heated but not brought to a boil."},
+        {"step_number": 4, "image": "drawable/kartofelnoe_pure_step4", "description": "Cool the milk and butter mixture."},
+        {"step_number": 5, "image": "drawable/kartofelnoe_pure_step5", "description": "When the potatoes are cooked, drain the water and mash the potatoes with a special potato masher."},
+        {"step_number": 6, "image": "drawable/kartofelnoe_pure_step6", "description": "Add the melted milk and butter to the potatoes and mix well."},
+        {"step_number": 7, "image": "drawable/kartofelnoe_pure_step7", "description": "To make the mashed potatoes tender and airy, beat them with a mixer for about 3-4 minutes."},
+        {"step_number": 8, "image": "drawable/kartofelnoe_pure_step8", "description": "Ready-made mashed potatoes can be served with any second course, be it vegetable, meat or fish."},
+        {"step_number": 9, "image": "drawable/kartofelnoe_pure_step9", "description": "Mashed potatoes are ready! Before serving, you can decorate the side dish by sprinkling with any herbs. Enjoy your meal!"}
+      ]
+    },
+    {
+      "id": 9,
+      "name": "French fries",
+      "image": "drawable/kartfranc",
+      "calories": 350,
+      "proteins": 15,
+      "fats": 20,
+      "carbohydrates": 30,
+      "portion": 6,
+      "ingredients": [
+        {"name": "Potato", "weight": "800", "amount": "g"},
+        {"name": "Vegetable oil", "weight": "30", "amount": "ml"},
+        {"name": "Pork", "weight": "500", "amount": "g"},
+        {"name": "Onion", "weight": "200", "amount": "g"},
+        {"name": "Mayonnaise", "weight": "200", "amount": "g"},
+        {"name": "Cheese", "weight": "200", "amount": "g"},
+        {"name": "Salt", "weight": "10", "amount": "g"},
+        {"name": "Pepper", "weight": "5", "amount": "g"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/kartofel_po_frantsuzski_step1", "description": "Wash meat, drain, cut into pieces about 1 cm thick."},
+        {"step_number": 2, "image": "drawable/kartofel_po_frantsuzski_step2", "description": "Chop the meat with a kitchen hammer."},
+        {"step_number": 3, "image": "drawable/kartofel_po_frantsuzski_step3", "description": "Peel and wash potatoes. Turn on the oven."},
+        {"step_number": 4, "image": "drawable/kartofel_po_frantsuzski_step4", "description": "Peel, wash and slice the onion into thin half rings."},
+        {"step_number": 5, "image": "drawable/kartofel_po_frantsuzski_step5", "description": "Cut potatoes into 3-4 mm thick plates."},
+        {"step_number": 6, "image": "drawable/kartofel_po_frantsuzski_step6", "description": "Grease a frying pan without a handle with vegetable oil. Add half of the potatoes and salt."},
+        {"step_number": 7, "image": "drawable/kartofel_po_frantsuzski_step7", "description": "Place pieces of chopped meat on top to completely cover the potato layer. Add salt and pepper."},
+        {"step_number": 8, "image": "drawable/kartofel_po_frantsuzski_step8", "description": "Place a layer of onion sliced into half rings on the meat."},
+        {"step_number": 9, "image": "drawable/kartofel_po_frantsuzski_step9", "description": "Then lay out the remaining layer of potatoes."},
+        {"step_number": 10, "image": "drawable/kartofel_po_frantsuzski_step10", "description": "Add salt and grease liberally with mayonnaise."},
+        {"step_number": 11, "image": "drawable/kartofel_po_frantsuzski_step11", "description": "Put the pan in the oven preheated to 180°C. Bake for 40 minutes."},
+        {"step_number": 12, "image": "drawable/kartofel_po_frantsuzski_step12", "description": "Grate cheese on a coarse grater."},
+        {"step_number": 13, "image": "drawable/kartofel_po_frantsuzski_step13", "description": "After 40 minutes, take out the pan and sprinkle the dish with grated cheese. Put in the oven for another 5-10 minutes until cooked."}
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Cutlets",
+      "image": "drawable/kotleti",
+      "calories": 250,
+      "proteins": 20,
+      "fats": 15,
+      "carbohydrates": 10,
+      "portion": 4,
+      "ingredients": [
+        {"name": "Pork", "weight": "300", "amount": "g"},
+        {"name": "Beef", "weight": "300", "amount": "g"},
+        {"name": "Onion", "weight": "100", "amount": "g"},
+        {"name": "Salt", "weight": "10", "amount": "g"},
+        {"name": "Eggs", "weight": "1", "amount": "pcs"},
+        {"name": "Black pepper", "weight": "5", "amount": "g"},
+        {"name": "Breadcrumbs", "weight": "50", "amount": "g"},
+        {"name": "Vegetable oil", "weight": "50", "amount": "ml"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/kotlety_step1", "description": "Cut the meat into pieces. Peel the onion and cut it into 4 pieces. Grind the meat and onion in a meat grinder."},
+        {"step_number": 2, "image": "drawable/kotlety_step2", "description": "Add eggs, salt, and pepper to the minced meat. Mix the minced meat well. In order for the minced meat to be successful, it must be carefully beaten off, throwing it into a bowl several times with some effort. Next, it is advisable to put the minced meat in the refrigerator for an hour or two, but if there is no time, you can immediately fry the cutlets."},
+        {"step_number": 3, "image": "drawable/kotlety_step3", "description": "Form small minced meat patties. Roll them in breadcrumbs."},
+        {"step_number": 4, "image": "drawable/kotlety_step4", "description": "Preheat the pan. Pour in the vegetable oil. Fry the cutlets over medium heat on both sides until golden brown. Then put all the fried cutlets in a frying pan, pour a little water, cover and simmer for about 10 minutes."},
+        {"step_number": 5, "image": "drawable/kotlety_step5", "description": "The cutlets are ready. Enjoy your meal!"}
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Chicken soup",
+      "image": "drawable/supkurin",
+      "calories": 120,
+      "proteins": 10,
+      "fats": 5,
+      "carbohydrates": 15,
+      "portion": 4,
+      "ingredients": [
+        {"name": "Chicken fillet", "weight": "300", "amount": "g"},
+        {"name": "Potato", "weight": "300", "amount": "g"},
+        {"name": "Carrot", "weight": "100", "amount": "g"},
+        {"name": "Onion", "weight": "100", "amount": "g"},
+        {"name": "Noodles", "weight": "100", "amount": "g"},
+        {"name": "Parsley", "weight": "20", "amount": "g"},
+        {"name": "Black pepper", "weight": "3", "amount": "g"},
+        {"name": "Salt", "weight": "10", "amount": "g"},
+        {"name": "Vegetable oil", "weight": "30", "amount": "ml"},
+        {"name": "Water", "weight": "2000", "amount": "ml"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/sup_kurini_step1", "description": "Prepare the necessary products for the chicken soup with noodles. Peel and wash the vegetables."},
+        {"step_number": 2, "image": "drawable/sup_kurini_step2", "description": "Wash the chicken fillet, dry it, cut off the film from the fillet and chop it coarsely."},
+        {"step_number": 3, "image": "drawable/sup_kurinyi_step3", "description": "Put the chicken in a saucepan, cover with cold water, add bay leaves. Bring to a boil and remove the foam. Cook the chicken fillet for 15 minutes, then place the fillet pieces on a plate."},
+        {"step_number": 4, "image": "drawable/sup_kurini_step4", "description": "Grate the carrots on a coarse grater."},
+        {"step_number": 5, "image": "drawable/sup_kurini_step5", "description": "Cut the onion into small cubes."},
+        {"step_number": 6, "image": "drawable/sup_kurini_step6", "description": "Heat the vegetable oil in a frying pan and fry the chopped onion over medium heat for about 2-3 minutes, until soft."},
+        {"step_number": 7, "image": "drawable/sup_kurini_step7", "description": "Add grated carrots to the onion, stir and fry the onion and carrot for another 2 minutes."},
+        {"step_number": 8, "image": "drawable/sup_kurini_step8", "description": "Cut potatoes into medium cubes or cubes."},
+        {"step_number": 9, "image": "drawable/sup_kurinyi_step9", "description": "Cut chicken fillet into pieces."},
+        {"step_number": 10, "image": "drawable/sup_kurini_step10", "description": "Add potatoes to the pan with broth and cook for about 10 minutes."},
+        {"step_number": 11, "image": "drawable/sup_kurinyi_step11", "description": "After that, add the cooked roast (browning)."},
+        {"step_number": 12, "image": "drawable/sup_kurinyi_step12", "description": "Add chicken fillet to the soup with vegetables."},
+        {"step_number": 13, "image": "drawable/sup_kurinyi_step13", "description": "Add the noodles to the chicken soup, add salt and ground pepper to taste. Mix it up. Cook the chicken soup with noodles for 5-7 minutes. (If desired, you can add chopped parsley to the soup.)"},
+        {"step_number": 14, "image": "drawable/sup_kurinyi_step14", "description": "Let the finished chicken soup brew for a few minutes. Then pour the soup with noodles on plates, sprinkle with chopped fresh herbs and serve."}
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Lagman",
+      "image": "drawable/lagman",
+      "calories": 280,
+      "proteins": 18,
+      "fats": 12,
+      "carbohydrates": 25,
+      "portion": 6,
+      "ingredients": [
+        {
+          "name": "Beef",
+          "weight": "500",
+          "amount": "g"
+        },
+        {
+          "name": "Potato",
+          "weight": "300",
+          "amount": "g"
+        },
+        {
+          "name": "Pepper",
+          "weight": "100",
+          "amount": "g"
+        },
+        {
+          "name": "Carrot",
+          "weight": "100",
+          "amount": "g"
+        },
+        {
+          "name": "Radish",
+          "weight": "100",
+          "amount": "g"
+        },
+        {
+          "name": "Onion",
+          "weight": "100",
+          "amount": "g"
+        },
+        {
+          "name": "Garlic",
+          "weight": "20",
+          "amount": "g"
+        },
+        {
+          "name": "Tomato paste",
+          "weight": "50",
+          "amount": "g"
+        },
+        {
+          "name": "Tomatoes",
+          "weight": "200",
+          "amount": "g"
+        },
+        {
+          "name": "Black pepper",
+          "weight": "5",
+          "amount": "g"
+        },
+        {
+          "name": "Salt",
+          "weight": "10",
+          "amount": "g"
+        },
+        {
+          "name": "Water",
+          "weight": "2000",
+          "amount": "ml"
+        },
+        {
+          "name": "Vegetable oil",
+          "weight": "50",
+          "amount": "ml"
+        },
+        {
+          "name": "Greenery",
+          "weight": "30",
+          "amount": "g"
+        },
+        {
+          "name": "Flour",
+          "weight": "300",
+          "amount": "g"
+        },
+        {
+          "name": "Eggs",
+          "weight": "1",
+          "amount": "pcs"
+        }
+      ],
+      "steps": [
+        {
+          "step_number": 1,
+          "image": "drawable/lagman_step1",
+          "description": "Sift flour into a bowl."
+        },
+        {
+          "step_number": 2,
+          "image": "drawable/lagman_step2",
+          "description": "Add eggs and water, knead unleavened dough."
+        },
+        {
+          "step_number": 3,
+          "image": "drawable/lagman_step3",
+          "description": "Roll out the dough into a layer about 2 mm thick, adding flour if necessary."
+        },
+        {
+          "step_number": 4,
+          "image": "drawable/lagman_step4",
+          "description": "Sprinkle the rolled dough with flour, roll into a roll and slice into thin noodles."
+        },
+        {
+          "step_number": 5,
+          "image": "drawable/lagman_step5",
+          "description": "Boil 2 liters of water, add salt. Put the noodles in boiling water and cook for 3-4 minutes until tender."
+        },
+        {
+          "step_number": 6,
+          "image": "drawable/lagman_step6",
+          "description": "Place the finished noodles in a colander and rinse with cold water."
+        },
+        {
+          "step_number": 7,
+          "image": "drawable/lagman_step7",
+          "description": "For the waju, cut the meat into cubes and add salt."
+        },
+        {
+          "step_number": 8,
+          "image": "drawable/lagman_step8",
+          "description": "Carrot cut into strips, onion into cubes."
+        },
+        {
+          "step_number": 9,
+          "image": "drawable/lagman_step9",
+          "description": "Sweet pepper and radish cut into strips."
+        },
+        {
+          "step_number": 10,
+          "image": "drawable/lagman_step10",
+          "description": "Cut potatoes into cubes, finely chop garlic."
+        },
+        {
+          "step_number": 11,
+          "image": "drawable/lagman_step11",
+          "description": "Heat a frying pan or cauldron, add oil, and fry the meat until golden brown (10-15 minutes)."
+        },
+        {
+          "step_number": 12,
+          "image": "drawable/lagman_step12",
+          "description": "Add carrots, onions, sweet peppers. Fry for 8-10 minutes, stirring."
+        },
+        {
+          "step_number": 13,
+          "image": "drawable/lagman_step13",
+          "description": "Put everything in the cauldron."
+        },
+        {
+          "step_number": 14,
+          "image": "drawable/lagman_step14",
+          "description": "Add potatoes, garlic, tomato paste or tomatoes."
+        },
+        {
+          "step_number": 15,
+          "image": "drawable/lagman_step15",
+          "description": "Season with black and red pepper, salt, pour water or broth. Simmer on low heat for 30-40 minutes."
+        },
+        {
+          "step_number": 16,
+          "image": "drawable/lagman_step16",
+          "description": "To serve, heat noodles in hot water and place in a plate."
+        },
+        {
+          "step_number": 17,
+          "image": "drawable/lagman_step17",
+          "description": "Pour meat sauce over noodles, sprinkle with chopped herbs."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Chicken soup",
+      "image": "drawable/sup_kurinyi",
+      "calories": 120,
+      "proteins": 10,
+      "fats": 5,
+      "carbohydrates": 15,
+      "portion": 4,
+      "ingredients": [
+        {"name": "Chicken fillet", "weight": "300", "amount": "g"},
+        {"name": "Potato", "weight": "300", "amount": "g"},
+        {"name": "Carrot", "weight": "100", "amount": "g"},
+        {"name": "Onion", "weight": "100", "amount": "g"},
+        {"name": "Noodles", "weight": "100", "amount": "g"},
+        {"name": "Parsley", "weight": "20", "amount": "g"},
+        {"name": "Black pepper", "weight": "3", "amount": "g"},
+        {"name": "Salt", "weight": "10", "amount": "g"},
+        {"name": "Vegetable oil", "weight": "30", "amount": "ml"},
+        {"name": "Water", "weight": "2000", "amount": "ml"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/sup_kurini_step1", "description": "Prepare the necessary products for the chicken soup with noodles. Peel and wash the vegetables."},
+        {"step_number": 2, "image": "drawable/sup_kurini_step2", "description": "Wash the chicken fillet, dry it, cut off the film from the fillet and chop it coarsely."},
+        {"step_number": 3, "image": "drawable/sup_kurinyi_step3", "description": "Put the chicken in a saucepan, cover with cold water, add bay leaves. Bring to a boil and remove the foam. Cook the chicken fillet for 15 minutes, then place the fillet pieces on a plate."},
+        {"step_number": 4, "image": "drawable/sup_kurini_step4", "description": "Grate the carrots on a coarse grater."},
+        {"step_number": 5, "image": "drawable/sup_kurini_step5", "description": "Cut the onion into small cubes."},
+        {"step_number": 6, "image": "drawable/sup_kurini_step6", "description": "Heat the vegetable oil in a frying pan and fry the chopped onion over medium heat for about 2-3 minutes, until soft."},
+        {"step_number": 7, "image": "drawable/sup_kurini_step7", "description": "Add grated carrots to the onion, stir and fry the onion and carrot for another 2 minutes."},
+        {"step_number": 8, "image": "drawable/sup_kurini_step8", "description": "Cut potatoes into medium cubes or cubes."},
+        {"step_number": 9, "image": "drawable/sup_kurinyi_step9", "description": "Cut chicken fillet into pieces."},
+        {"step_number": 10, "image": "drawable/sup_kurini_step10", "description": "Add potatoes to the pan with broth and cook for about 10 minutes."},
+        {"step_number": 11, "image": "drawable/sup_kurinyi_step11", "description": "After that, add the cooked roast (browning)."},
+        {"step_number": 12, "image": "drawable/sup_kurinyi_step12", "description": "Add chicken fillet to the soup with vegetables."},
+        {"step_number": 13, "image": "drawable/sup_kurinyi_step13", "description": "Add the noodles to the chicken soup, add salt and ground pepper to taste. Mix it up. Cook the chicken soup with noodles for 5-7 minutes. (If desired, you can add chopped parsley to the soup.)"},
+        {"step_number": 14, "image": "drawable/sup_kurinyi_step14", "description": "Let the finished chicken soup brew for a few minutes. Then pour the soup with noodles on plates, sprinkle with chopped fresh herbs and serve."}
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Lagman",
+      "image": "drawable/lagman",
+      "calories": 280,
+      "proteins": 18,
+      "fats": 12,
+      "carbohydrates": 25,
+      "portion": 6,
+      "ingredients": [
+        {"name": "Beef", "weight": "500", "amount": "g"},
+        {"name": "Potato", "weight": "300", "amount": "g"},
+        {"name": "Pepper", "weight": "100", "amount": "g"},
+        {"name": "Carrot", "weight": "100", "amount": "g"},
+        {"name": "Radish", "weight": "100", "amount": "g"},
+        {"name": "Onion", "weight": "100", "amount": "g"},
+        {"name": "Garlic", "weight": "20", "amount": "g"},
+        {"name": "Tomato paste", "weight": "50", "amount": "g"},
+        {"name": "Tomatoes", "weight": "200", "amount": "g"},
+        {"name": "Black pepper", "weight": "5", "amount": "g"},
+        {"name": "Salt", "weight": "10", "amount": "g"},
+        {"name": "Water", "weight": "2000", "amount": "ml"},
+        {"name": "Vegetable oil", "weight": "50", "amount": "ml"},
+        {"name": "Greenery", "weight": "30", "amount": "g"},
+        {"name": "Flour", "weight": "300", "amount": "g"},
+        {"name": "Eggs", "weight": "1", "amount": "pcs"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/lagman_step1", "description": "Sift flour into a bowl."},
+        {"step_number": 2, "image": "drawable/lagman_step2", "description": "Add eggs and water, knead unleavened dough."},
+        {"step_number": 3, "image": "drawable/lagman_step3", "description": "Roll out the dough into a layer about 2 mm thick, adding flour if necessary."},
+        {"step_number": 4, "image": "drawable/lagman_step4", "description": "Sprinkle the rolled dough with flour, roll into a roll and slice into thin noodles."},
+        {"step_number": 5, "image": "drawable/lagman_step5", "description": "Boil 2 liters of water, add salt. Put the noodles in boiling water and cook for 3-4 minutes until tender."},
+        {"step_number": 6, "image": "drawable/lagman_step6", "description": "Place the finished noodles in a colander and rinse with cold water."},
+        {"step_number": 7, "image": "drawable/lagman_step7", "description": "For the waju, cut the meat into cubes, add salt."},
+        {"step_number": 8, "image": "drawable/lagman_step8", "description": "Carrot cut into strips, onion into cubes."},
+        {"step_number": 9, "image": "drawable/lagman_step9", "description": "Sweet pepper and radish cut into strips."},
+        {"step_number": 10, "image": "drawable/lagman_step10", "description": "Cut potatoes into cubes, finely chop garlic."},
+        {"step_number": 11, "image": "drawable/lagman_step11", "description": "Heat a frying pan or cauldron, add oil, and fry the meat until golden brown (10-15 minutes)."},
+        {"step_number": 12, "image": "drawable/lagman_step12", "description": "Add carrots, onions, sweet peppers. Fry for 8-10 minutes, stirring."},
+        {"step_number": 13, "image": "drawable/lagman_step13", "description": "Put everything in the cauldron."},
+        {"step_number": 14, "image": "drawable/lagman_step14", "description": "Add potatoes, garlic, tomato paste or tomatoes."},
+        {"step_number": 15, "image": "drawable/lagman_step15", "description": "Season with black and red pepper, salt, pour water or broth. Simmer on low heat for 30-40 minutes."},
+        {"step_number": 16, "image": "drawable/lagman_step16", "description": "To serve, heat noodles in hot water and place in a plate."},
+        {"step_number": 17, "image": "drawable/lagman_step17", "description": "Pour meat sauce over noodles, sprinkle with chopped herbs."}
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Pasta",
+      "image": "drawable/makar",
+      "calories": 160,
+      "proteins": 6,
+      "fats": 3,
+      "carbohydrates": 30,
+      "portion": 2,
+      "ingredients": [
+        {"name": "Noodles", "weight": "200", "amount": "g"},
+        {"name": "Water", "weight": "1000", "amount": "ml"},
+        {"name": "Salt", "weight": "5", "amount": "g"},
+        {"name": "Butter", "weight": "20", "amount": "g"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/makarony_step1", "description": "For cooking pasta, it is better to take thick-walled dishes without filling them to the brim. The pasta should be spacious when cooking, so for every 100 g of pasta you need to take 1 liter of water."},
+        {"step_number": 2, "image": "drawable/makarony_step2", "description": "Bring the water to a boil. Before you put the pasta in boiling water, add salt to it, and you need to add salt when the water starts to boil. If you add a little milk or meat broth to the boiling water, the pasta will taste better."},
+        {"step_number": 3, "image": "drawable/makarony_step3", "description": "Put the pasta in boiling water. Immerse long pasta in water without breaking, leaving the ends sticking out."},
+        {"step_number": 4, "image": "drawable/makarony_step4", "description": "Then put a little pressure on them, and they will sink into the water as they soften. As soon as the boiling process is restored, reduce the heat so that the water boils without spilling out of the pan. Keep this mode until the end of cooking, stirring the pasta occasionally with a spoon."},
+        {"step_number": 5, "image": "drawable/makarony_step5", "description": "Cook thick pasta for 20-25 minutes, straws or spaghetti for 15 minutes, noodles for 12-15 minutes, and thin noodles for 10 minutes. When ready, they should not have a powdery layer at the bite site."},
+        {"step_number": 6, "image": "drawable/makarony_step6", "description": "Put the cooked pasta in a colander to drain the water (the broth remaining after cooking the pasta can be used to make dressing soups, puree soups and sauces)."},
+        {"step_number": 7, "image": "drawable/makarony_step7", "description": "Quickly transfer the pasta to the same hot pan, add oil. And, after closing the pan with a lid, shake (do not rinse the cooked pasta with water)."}
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Semolina porridge",
+      "image": "drawable/mann",
+      "calories": 120,
+      "proteins": 4,
+      "fats": 5,
+      "carbohydrates": 18,
+      "portion": 2,
+      "ingredients": [
+        {"name": "Semolina", "weight": "50", "amount": "g"},
+        {"name": "Milk", "weight": "500", "amount": "ml"},
+        {"name": "Butter", "weight": "20", "amount": "g"},
+        {"name": "Water", "weight": "100", "amount": "ml"},
+        {"name": "Sugar", "weight": "20", "amount": "g"},
+        {"name": "Salt", "weight": "3", "amount": "g"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/mannaya_kasha_step1", "description": "Prepare all the ingredients for making semolina porridge with milk without lumps. Pour water into a saucepan with a thick bottom. Put on fire, add milk and bring to a boil over high heat. Season with sugar and salt, mix well."},
+        {"step_number": 2, "image": "drawable/mannaya_kasha_step2", "description": "Pour semolina into a measuring cup with a spout. Take the whisk in your right hand and, continuously stirring the boiling milk with it, pour in a thin stream of semolina with your left hand."},
+        {"step_number": 3, "image": "drawable/mannaya_kasha_step3", "description": "Stirring the contents of the pan with a whisk, cook the semolina porridge for about five minutes over medium heat. Make sure it doesn't burn! If you have done everything correctly, there should be no lumps in the porridge."},
+        {"step_number": 4, "image": "drawable/mannaya_kasha_step4", "description": "Turn off the heat under a pan of semolina porridge with milk. Add the butter. Close the porridge pot and leave it on a hot stove for 5 minutes. Pour semolina porridge with milk without lumps on plates and serve it on the table."}
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Mannik Cake",
+      "image": "drawable/mannik",
+      "calories": 320,
+      "proteins": 8,
+      "fats": 15,
+      "carbohydrates": 40,
+      "portion": 8,
+      "ingredients": [
+        {"name": "Semolina", "weight": "200", "amount": "g"},
+        {"name": "Butter", "weight": "100", "amount": "g"},
+        {"name": "Kefir", "weight": "250", "amount": "ml"},
+        {"name": "Eggs", "weight": "3", "amount": "pcs"},
+        {"name": "Sugar", "weight": "150", "amount": "g"},
+        {"name": "Soda", "weight": "5", "amount": "g"},
+        {"name": "Vinegar", "weight": "10", "amount": "ml"},
+        {"name": "Salt", "weight": "3", "amount": "g"},
+        {"name": "Vanilla", "weight": "5", "amount": "g"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/tort_mannik_step1", "description": "Melt butter over very low heat."},
+        {"step_number": 2, "image": "drawable/tort_mannik_step2", "description": "Add sugar to a bowl and beat in the eggs."},
+        {"step_number": 3, "image": "drawable/tort_mannik_step3", "description": "Grind eggs with sugar."},
+        {"step_number": 4, "image": "drawable/tort_mannik_step4", "description": "Pour semolina into another bowl."},
+        {"step_number": 5, "image": "drawable/tort_mannik_step5", "description": "Mix semolina with melted butter, add kefir and mix."},
+        {"step_number": 6, "image": "drawable/tort_mannik_step6", "description": "Add eggs with sugar, salt, baking soda with vinegar and vanilla. Mix well."},
+        {"step_number": 7, "image": "drawable/tort_mannik_step7", "description": "You can leave it for 1 hour so that the semolina swells."},
+        {"step_number": 8, "image": "drawable/tort_mannik_step8", "description": "Turn on the oven and grease the mold with oil (you can also sprinkle with semolina). Put the mass into the prepared mold."},
+        {"step_number": 9, "image": "drawable/tort_mannik_step9", "description": "Bake the mannikin in the oven at 175°C until golden brown (about 30-40 minutes)."}
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Honey cake",
+      "image": "drawable/medovik",
+      "calories": 380,
+      "proteins": 7,
+      "fats": 18,
+      "carbohydrates": 50,
+      "portion": 10,
+      "ingredients": [
+        {"name": "Sugar", "weight": "200", "amount": "g"},
+        {"name": "Flour", "weight": "400", "amount": "g"},
+        {"name": "Vanilla sugar", "weight": "10", "amount": "g"},
+        {"name": "Milk", "weight": "100", "amount": "ml"},
+        {"name": "Eggs", "weight": "2", "amount": "pcs"},
+        {"name": "Butter", "weight": "100", "amount": "g"},
+        {"name": "Honey", "weight": "100", "amount": "g"},
+        {"name": "Soda", "weight": "5", "amount": "g"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/tort_medovik_step1", "description": "In a saucepan, melt honey, sugar and butter over medium heat until sugar dissolves."},
+        {"step_number": 2, "image": "drawable/tort_medovik_step2", "description": "When the mass starts to boil, add baking soda and stir with a whisk. The mass will begin to foam and increase in volume. Wait until it stops growing and remove from heat."},
+        {"step_number": 3, "image": "drawable/tort_medovik_step3", "description": "Add eggs and mix thoroughly to prevent the eggs from curdling."},
+        {"step_number": 4, "image": "drawable/tort_medovik_step4", "description": "Leave the mass for 5 minutes, then gradually add flour, kneading until smooth."},
+        {"step_number": 5, "image": "drawable/tort_medovik_step5", "description": "The finished dough should be elastic and not stick to your hands. Divide it into 10 parts."},
+        {"step_number": 6, "image": "drawable/tort_medovik_step6", "description": "Form balls from the dough parts, cover with foil and roll out to a thickness of 2 mm. Cut out circles with a diameter of 16 cm, pierce them with a fork and bake at 170 °C for about 6 minutes until golden brown. Remove the cooled cakes from the parchment."},
+        {"step_number": 7, "image": "drawable/tort_medovik_step7", "description": "Stack the cooled cakes, grind the trimmings into crumbs."},
+        {"step_number": 8, "image": "drawable/tort_medovik_step8", "description": "For the cream, beat sour cream with powdered sugar to the consistency of fatty yogurt."},
+        {"step_number": 9, "image": "drawable/tort_medovik_step9", "description": "Assemble the cake, apply 30 g of cream to each cake. Repeat layer by layer, coating the sides and top of the cake."},
+        {"step_number": 10, "image": "drawable/tort_medovik_step10", "description": "Sprinkle the cake with crumbs from scraps."}
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Ice cream",
+      "image": "drawable/morozch",
+      "calories": 200,
+      "proteins": 4,
+      "fats": 12,
+      "carbohydrates": 20,
+      "portion": 4,
+      "ingredients": [
+        {"name": "Cream", "weight": "500", "amount": "ml"},
+        {"name": "Milk", "weight": "200", "amount": "ml"},
+        {"name": "Sugar", "weight": "100", "amount": "g"},
+        {"name": "Eggs", "weight": "4", "amount": "pcs"},
+        {"name": "Vanilla sugar", "weight": "10", "amount": "g"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/morozhenoe_step1", "description": "Egg yolks are ground with sugar and vanilla."},
+        {"step_number": 2, "image": "drawable/morozhenoe_step2", "description": "Bring milk to a boil and remove from heat. Carefully add the yolk mass to the milk, mix. We put it on the lowest heat and, whisking, bring it to a thickening. Do not boil! Cool the mass to room temperature."},
+        {"step_number": 3, "image": "drawable/morozhenoe_step3", "description": "Whisk the cooled cream to steady peaks."},
+        {"step_number": 4, "image": "drawable/morozhenoe_step4", "description": "Add the cooled milk-yolk mass to the cream. Mix well."},
+        {"step_number": 5, "image": "drawable/morozhenoe_step5", "description": "We put the ice cream in the molds and send it to the freezer. After an hour, we take it out, mix it with a mixer and send it back until it completely hardens."},
+        {"step_number": 6, "image": "drawable/morozhenoe_step6", "description": "After that, the Soviet ice cream can be served. Decorate homemade ice cream to your liking."}
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Muesli",
+      "image": "drawable/myusli",
+      "calories": 300,
+      "proteins": 8,
+      "fats": 10,
+      "carbohydrates": 45,
+      "portion": 4,
+      "ingredients": [
+        {"name": "Oatmeal", "weight": "200", "amount": "g"},
+        {"name": "Nuts", "weight": "50", "amount": "g"},
+        {"name": "Seeds", "weight": "30", "amount": "g"},
+        {"name": "Cranberry", "weight": "30", "amount": "g"},
+        {"name": "Cherry", "weight": "30", "amount": "g"},
+        {"name": "Salt", "weight": "3", "amount": "g"},
+        {"name": "Honey", "weight": "50", "amount": "ml"},
+        {"name": "Cinnamon", "weight": "5", "amount": "g"},
+        {"name": "Vegetable oil", "weight": "30", "amount": "ml"},
+        {"name": "Water", "weight": "50", "amount": "ml"},
+        {"name": "Sugar", "weight": "30", "amount": "g"},
+        {"name": "Milk", "weight": "500", "amount": "ml"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/miusli_step1", "description": "Preheat the oven to 130-140 degrees."},
+        {"step_number": 2, "image": "drawable/miusli_step2", "description": "Mix the flakes, sugar, salt, and nuts in a bowl. Heat honey, water, cinnamon, and salt over low heat.butter, so that everything is mixed until smooth."},
+        {"step_number": 3, "image": "drawable/miusli_step3", "description": "Pour into dry ingredients and mix well. Grease a baking sheet with oil or cover with parchment paper, evenly distribute the whole mass over the baking sheet."},
+        {"step_number": 4, "image": "drawable/miusli_step4", "description": "Bake for half an hour, stirring occasionally (approximately every 10 minutes) with a spoon, then remove from the oven, add dried fruits and bake for another 10-15 minutes until golden brown."},
+        {"step_number": 5, "image": "drawable/miusli_step5", "description": "Cool and put in a jar with a tight lid. Serve with milk."}
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Meat pie",
+      "image": "drawable/myaspir",
+      "calories": 350,
+      "proteins": 18,
+      "fats": 20,
+      "carbohydrates": 25,
+      "portion": 8,
+      "ingredients": [
+        {"name": "Milk", "weight": "250", "amount": "ml"},
+        {"name": "Water", "weight": "50", "amount": "ml"},
+        {"name": "Butter", "weight": "50", "amount": "g"},
+        {"name": "Flour", "weight": "500", "amount": "g"},
+        {"name": "Sugar", "weight": "20", "amount": "g"},
+        {"name": "Salt", "weight": "10", "amount": "g"},
+        {"name": "Yeast", "weight": "10", "amount": "g"},
+        {"name": "Vegetable oil", "weight": "30", "amount": "ml"},
+        {"name": "Meat", "weight": "500", "amount": "g"},
+        {"name": "Potato", "weight": "300", "amount": "g"},
+        {"name": "Onion", "weight": "200", "amount": "g"},
+        {"name": "Black pepper", "weight": "5", "amount": "g"},
+        {"name": "Eggs", "weight": "1", "amount": "pcs"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/myasnoi_pirog_step1", "description": "Sift the flour (350 grams first, so as not to clog the dough) and add all the dry ingredients: yeast, sugar, salt. Mix it up."},
+        {"step_number": 2, "image": "drawable/myasnoi_pirog_step2", "description": "We make a depression in the flour and add warm water, warm milk and butter, mix and assemble the dough with a spoon (if necessary, add flour in parts)."},
+        {"step_number": 3, "image": "drawable/myasnoi_pirog_step3", "description": "Then knead the dough with your hands for about 7 minutes. The dough will be soft and will not stick to your hands."},
+        {"step_number": 4, "image": "drawable/myasnoi_pirog_step4", "description": "Lubricate the cup with oil. We form a ball from the dough and put it in a cup and cover with foil. Leave the dough in a warm place to rise for about 1 hour."},
+        {"step_number": 5, "image": "drawable/myasnoi_pirog_step5", "description": "Preparing the filling: wash the meat and cut into small pieces, finely chop the onion, cut the potatoes into thin strips."},
+        {"step_number": 6, "image": "drawable/myasnoi_pirog_step6", "description": "Add onion, salt, pepper, potatoes and a little vegetable oil to the meat for juiciness. Mix the filling well."},
+        {"step_number": 7, "image": "drawable/myasnoi_pirog_step7", "description": "The dough has increased, become airy and porous."},
+        {"step_number": 8, "image": "drawable/myasnoi_pirog_step8", "description": "Divide the dough into 2 unequal parts, form balls."},
+        {"step_number": 9, "image": "drawable/myasnoi_pirog_step9", "description": "Each piece is rolled out into a 0.5 cm thick layer. Most of it will be the bottom of the pie, it is rolled out slightly larger than the size of the mold."},
+        {"step_number": 10, "image": "drawable/myasnoi_pirog_step10", "description": "Lubricate the mold with vegetable oil, spread the dough, form the sides."},
+        {"step_number": 11, "image": "drawable/myasnoi_pirog_step11", "description": "Spreading the filling, leveling."},
+        {"step_number": 12, "image": "drawable/myasnoi_pirog_step12", "description": "Rolling out the second part of the dough to fit the shape. Cover the filling. Pinching (going through several times) the edges of the dough and make a hole in the center for steam to escape. Cover the pie with a napkin and leave for 10 minutes. Preheat the oven to 180 degrees."},
+        {"step_number": 13, "image": "drawable/myasnoi_pirog_step13", "description": "We lubricate the pie with a mixture of egg and milk for browning. We do this at will."},
+        {"step_number": 14, "image": "drawable/myasnoi_pirog_step14", "description": "Bake in a preheated oven at 180 degrees for about 20 minutes, until lightly browned. We take the pie out of the oven. Pour a little warm water into the hole in the center to make the pie juicy."},
+        {"step_number": 15, "image": "drawable/myasnoi_pirog_step15", "description": "Then cover the mold with foil and bake for about 40-50 more minutes at a temperature of 170 degrees, until ready. Readiness is determined by the readiness of potatoes and meat."},
+        {"step_number": 16, "image": "drawable/myasnoi_pirog_step16", "description": "Remove the finished pie from the oven, grease with a piece of butter, cover with a napkin and let it cool."}
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Nuggets",
+      "image": "drawable/naggetsi",
+      "calories": 280,
+      "proteins": 20,
+      "fats": 15,
+      "carbohydrates": 15,
+      "portion": 4,
+      "ingredients": [
+        {"name": "Chicken fillet", "weight": "500", "amount": "g"},
+        {"name": "Eggs", "weight": "2", "amount": "pcs"},
+        {"name": "Salt", "weight": "5", "amount": "g"},
+        {"name": "Pepper", "weight": "3", "amount": "g"},
+        {"name": "Paprika", "weight": "3", "amount": "g"},
+        {"name": "Breadcrumbs", "weight": "100", "amount": "g"},
+        {"name": "Vegetable oil", "weight": "200", "amount": "ml"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/naggetsy_step1", "description": "Chicken fillet cut into small pieces."},
+        {"step_number": 2, "image": "drawable/naggetsy_step2", "description": "Beat eggs in a bowl with a fork."},
+        {"step_number": 3, "image": "drawable/naggetsy_step3", "description": "For breading, mix breadcrumbs, salt, pepper and paprika or use a ready-made mixture."},
+        {"step_number": 4, "image": "drawable/naggetsy_step4", "description": "Heat the vegetable oil in a frying pan."},
+        {"step_number": 5, "image": "drawable/naggetsy_step5", "description": "Dip a piece of chicken into the egg mixture."},
+        {"step_number": 6, "image": "drawable/naggetsy_step6", "description": "Roll the chicken in breadcrumbs and fry until golden brown."},
+        {"step_number": 7, "image": "drawable/naggetsy_step7", "description": "Put the finished nuggets on a paper towel to remove excess fat. Serve hot."}
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Napoleon cake",
+      "image": "drawable/napoleon",
+      "calories": 420,
+      "proteins": 6,
+      "fats": 25,
+      "carbohydrates": 45,
+      "portion": 12,
+      "ingredients": [
+        {"name": "Sugar", "weight": "200", "amount": "g"},
+        {"name": "Flour", "weight": "500", "amount": "g"},
+        {"name": "Vanilla sugar", "weight": "10", "amount": "g"},
+        {"name": "Milk", "weight": "500", "amount": "ml"},
+        {"name": "Eggs", "weight": "3", "amount": "pcs"},
+        {"name": "Water", "weight": "100", "amount": "ml"},
+        {"name": "Water", "weight": "100", "amount": "ml"},
+        {"name": "Vinegar", "weight": "15", "amount": "ml"},
+        {"name": "Butter", "weight": "300", "amount": "g"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/tort_napoleon_step1", "description": "Cut the butter into pieces and grind with flour until crumbly. Mix the water with vinegar and pour into the flour mixture. Knead the dough, wrap in foil and refrigerate for 40 minutes."},
+        {"step_number": 2, "image": "drawable/tort_napoleon_step2", "description": "Divide the dough into 6 parts. Roll each piece out between the parchment into a circle 0.5 cm thick. Bake at 190°C for 20 minutes each. Trim the edges and save the crumbs."},
+        {"step_number": 3, "image": "drawable/tort_napoleon_step3", "description": "For the cream: bring 1.5 cups of milk and sugar to a boil. Beat the remaining milk with egg and flour until smooth."},
+        {"step_number": 4, "image": "drawable/tort_napoleon_step4", "description": "Pour the egg mixture into the boiling milk, reduce the heat and cook for 7-8 minutes until thickened, stirring. Cool it down."},
+        {"step_number": 5, "image": "drawable/tort_napoleon_step5", "description": "Assemble the cake by smearing the cakes with cream. Lightly press and refrigerate for 8-12 hours."},
+        {"step_number": 6, "image": "drawable/tort_napoleon_step6", "description": "Sprinkle the cake with cake crumbs before serving. If desired, decorate with berries, chocolate or almonds."}
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Vegetable stew",
+      "image": "drawable/ovoshchnoeragu",
+      "calories": 120,
+      "proteins": 4,
+      "fats": 5,
+      "carbohydrates": 18,
+      "portion": 4,
+      "ingredients": [
+        {"name": "Potato", "weight": "400", "amount": "g"},
+        {"name": "Squash", "weight": "200", "amount": "g"},
+        {"name": "Tomatoes", "weight": "200", "amount": "g"},
+        {"name": "Pepper", "weight": "100", "amount": "g"},
+        {"name": "Carrot", "weight": "100", "amount": "g"},
+        {"name": "Onion", "weight": "100", "amount": "g"},
+        {"name": "Parsley", "weight": "20", "amount": "g"},
+        {"name": "Basil", "weight": "10", "amount": "g"},
+        {"name": "Garlic", "weight": "10", "amount": "g"},
+        {"name": "Salt", "weight": "5", "amount": "g"},
+        {"name": "Black pepper", "weight": "3", "amount": "g"},
+        {"name": "Vegetable oil", "weight": "50", "amount": "ml"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/ovoshchnoe_ragu_step1", "description": "Finely chop the parsley and basil, add salt, pepper and 1 crushed garlic clove, mix everything well."},
+        {"step_number": 2, "image": "drawable/ovoshchnoe_ragu_step2", "description": "Cut all vegetables into small cubes."},
+        {"step_number": 3, "image": "drawable/ovoshchnoe_ragu_step3", "description": "Add vegetable oil to a preheated frying pan and put the onion. Fry the onion for 1 minute."},
+        {"step_number": 4, "image": "drawable/ovoshchnoe_ragu_step4", "description": "Add carrots and fry for 3 minutes."},
+        {"step_number": 5, "image": "drawable/ovoshchnoe_ragu_step5", "description": "Add potatoes and fry for 10 minutes, stirring occasionally."},
+        {"step_number": 6, "image": "drawable/ovoshchnoe_ragu_step6", "description": "Add tomatoes and pepper, fry for another 5 minutes."},
+        {"step_number": 7, "image": "drawable/ovoshchnoe_ragu_step7", "description": "Mix everything and put the squash on top, without stirring. Cover and simmer the vegetable stew over low heat for 20 minutes."},
+        {"step_number": 8, "image": "drawable/ovoshchnoe_ragu_step8", "description": "Turn off the stove, add the prepared greens to the stewed vegetables and mix gently."}
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Oatmeal porridge",
+      "image": "drawable/ovsyanka",
+      "calories": 150,
+      "proteins": 5,
+      "fats": 6,
+      "carbohydrates": 20,
+      "portion": 2,
+      "ingredients": [
+        {"name": "Cream", "weight": "200", "amount": "ml"},
+        {"name": "Oatmeal", "weight": "100", "amount": "g"},
+        {"name": "Banana", "weight": "100", "amount": "g"},
+        {"name": "Butter", "weight": "20", "amount": "g"},
+        {"name": "Salt", "weight": "3", "amount": "g"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/ovsiannaia_kasha_step1", "description": "Bring the cream to a boil in a small saucepan, add salt and pour in the oat flakes. Cook on low heat for 5 minutes."},
+        {"step_number": 2, "image": "drawable/ovsiannaia_kasha_step2", "description": "Mash the banana with a fork and put it in the porridge (you can leave a few pieces of banana for decoration)."},
+        {"step_number": 3, "image": "drawable/ovsiannaia_kasha_step3", "description": "Beat the porridge well in a saucepan with a mixer, 3 min. Add the butter, put the porridge on warmed plates and serve."}
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Okroshka",
+      "image": "drawable/okroshka",
+      "calories": 100,
+      "proteins": 6,
+      "fats": 3,
+      "carbohydrates": 12,
+      "portion": 4,
+      "ingredients": [
+        {"name": "Eggs", "weight": "4", "amount": "pcs"},
+        {"name": "Sausage", "weight": "200", "amount": "g"},
+        {"name": "Cucumbers", "weight": "200", "amount": "g"},
+        {"name": "Potato", "weight": "200", "amount": "g"},
+        {"name": "Radish", "weight": "100", "amount": "g"},
+        {"name": "Greenery", "weight": "50", "amount": "g"},
+        {"name": "Kvass", "weight": "1000", "amount": "ml"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/okroska_step1", "description": "Dicing all ingredients."},
+        {"step_number": 2, "image": "drawable/okroska_step2", "description": "Mix everything together, put it on plates."},
+        {"step_number": 3, "image": "drawable/okrosh_ka_step3", "description": "Pour kvass, decorate the okroshka with half an egg and sprinkle with chopped herbs."}
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Fritters",
+      "image": "drawable/olad",
+      "calories": 200,
+      "proteins": 6,
+      "fats": 8,
+      "carbohydrates": 25,
+      "portion": 4,
+      "ingredients": [
+        {"name": "Milk", "weight": "300", "amount": "ml"},
+        {"name": "Eggs", "weight": "2", "amount": "pcs"},
+        {"name": "Flour", "weight": "200", "amount": "g"},
+        {"name": "Baking powder", "weight": "5", "amount": "g"},
+        {"name": "Sugar", "weight": "30", "amount": "g"},
+        {"name": "Salt", "weight": "5", "amount": "g"},
+        {"name": "Vegetable oil", "weight": "50", "amount": "ml"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/oladi_step1", "description": "Prepare the necessary products."},
+        {"step_number": 2, "image": "drawable/oladi_step2", "description": "Beat the egg with sugar and salt for a couple of minutes."},
+        {"step_number": 3, "image": "drawable/oladi_step3", "description": "Add milk, mix well."},
+        {"step_number": 4, "image": "drawable/oladi_step4", "description": "Mix flour with baking powder and add to the liquid mass."},
+        {"step_number": 5, "image": "drawable/oladi_step5", "description": "Mix the dough until smooth."},
+        {"step_number": 6, "image": "drawable/oladi_step6", "description": "The pancake batter should be thicker than pancake batter."},
+        {"step_number": 7, "image": "drawable/oladi_step7", "description": "Pour vegetable oil into a frying pan and heat it well over medium heat. Pour a tablespoon of dough into a preheated frying pan with oil. Fry the fritters until golden brown on each side (approximately 3 minutes), adding oil to the pan if necessary."},
+        {"step_number": 8, "image": "drawable/oladi_step8", "description": "Serve ready-made pancakes with milk with sour cream or jam."}
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Omelet",
+      "image": "drawable/omlet",
+      "calories": 180,
+      "proteins": 12,
+      "fats": 12,
+      "carbohydrates": 5,
+      "portion": 2,
+      "ingredients": [
+        {"name": "Butter", "weight": "20", "amount": "g"},
+        {"name": "Eggs", "weight": "4", "amount": "pcs"},
+        {"name": "Milk", "weight": "100", "amount": "ml"},
+        {"name": "Salt", "weight": "3", "amount": "g"},
+        {"name": "Black pepper", "weight": "2", "amount": "g"},
+        {"name": "Vegetable oil", "weight": "10", "amount": "ml"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/omlet_step1", "description": "Delicious egg breakfast, shake the eggs with a fork. Shake the eggs for the omelet in a frying pan with light movements of a fork and milk in a small bowl. Do not beat, but rather shake – just to mix the protein and yolk."},
+        {"step_number": 2, "image": "drawable/omlet_step2", "description": "Put a frying pan with a diameter of about 20 cm on the stove to make an omelet. Turn on the medium heat and let the container warm up (it will take about a minute). Add both types of oil and turn the pan so that it spreads over the entire surface. Increase the fire to maximum."},
+        {"step_number": 3, "image": "drawable/omlet_step3", "description": "When the butter starts to foam, pour in the egg and milk mixture. Tilt the pan in different directions and let it spread evenly. Put it on the fire and count down for 6 seconds."},
+        {"step_number": 4, "image": "drawable/omlet_step4", "description": "Tilt the pan at a 45° angle, pick up the gripped edge of the omelet with a spatula and slide it to the middle (the liquid part from the center will drain into its place). Do the same with the opposite edge."},
+        {"step_number": 5, "image": "drawable/omlet_step5", "description": "Repeat this operation a couple more times so that the entire surface of the omelet with milk seizes (it only takes about 40 seconds). Season with salt and pepper and serve."}
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Pasta Bolognese",
+      "image": "drawable/pastb",
+      "calories": 350,
+      "proteins": 18,
+      "fats": 15,
+      "carbohydrates": 35,
+      "portion": 4,
+      "ingredients": [
+        {"name": "Onion", "weight": "100", "amount": "g"},
+        {"name": "Garlic", "weight": "10", "amount": "g"},
+        {"name": "Vegetable oil", "weight": "30", "amount": "ml"},
+        {"name": "Minced meat", "weight": "400", "amount": "g"},
+        {"name": "Sweet pepper", "weight": "100", "amount": "g"},
+        {"name": "Tomatoes", "weight": "200", "amount": "g"},
+        {"name": "Spaghetti", "weight": "300", "amount": "g"},
+        {"name": "Cheese", "weight": "100", "amount": "g"},
+        {"name": "Parsley", "weight": "20", "amount": "g"},
+        {"name": "Salt", "weight": "5", "amount": "g"},
+        {"name": "Black pepper", "weight": "3", "amount": "g"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/pasta_bolognese_step1", "description": "Cooking sauce for spaghetti bolognese, finely chop onion and garlic. To do this, peel the onion and garlic. Cut the onion into halves, then cut into small cubes. Crush the garlic cloves with the flat side of a knife and chop."},
+        {"step_number": 2, "image": "drawable/pasta_bolognese_step2", "description": "Saute the onion and garlic in a pan. Pour olive oil into a large frying pan and heat it. Add the chopped onion and garlic and stir-fry over medium heat until lightly browned."},
+        {"step_number": 3, "image": "drawable/pasta_bolognese_step3", "description": "Add minced meat, fry, stirring constantly. Add the minced meat to the onion and garlic and, stirring with a fork (so that no lumps form), fry over medium heat for 10 minutes. The meat base for the bolognese sauce is ready!"},
+        {"step_number": 4, "image": "drawable/pasta_bolognese_step4", "description": "Chop sweet peppers for bolognese sauce, add to minced meat. After removing the seeds and partitions, cut the sweet pepper into small cubes. Add the meat to the pan and stir-fry for 5 minutes. Make sure that the pepper doesn't burn."},
+        {"step_number": 5, "image": "drawable/pasta_bolognese_step5", "description": "We punch tomatoes with a blender, spread them with meat and vegetables. Peel the tomatoes and put them in the bowl of a blender. Grind on high speed, then add to the pan with the meat and vegetables. Add salt and pepper. Add the herbs to taste and simmer the bolognese sauce over low heat for 20 minutes."},
+        {"step_number": 6, "image": "drawable/pasta_bolognese_step6", "description": "Cooking spaghetti. Cook the spaghetti. To do this, bring water to a boil in a large saucepan and add a little salt to it. Dip the spaghetti into it without breaking it. Do this gradually, as the submerged part softens. Cook for 10 minutes."},
+        {"step_number": 7, "image": "drawable/pasta_bolognese_step7", "description": "We put the finished pasta in a colander and let it drain. Drain the finished spaghetti in a colander and drain the liquid. It is not necessary to wash them: this way the pasta will combine better with the sauce. But you can add a tablespoon of olive oil."},
+        {"step_number": 8, "image": "drawable/pasta_bolognese_step8", "description": "Put the spaghetti in the bolognese sauce and mix. Add the spaghetti to the bolognese sauce and stir. Warm up everything together. Then arrange on serving plates and sprinkle with grated cheese. Serve immediately."}
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Pasta Carbonara",
+      "image": "drawable/pastk",
+      "calories": 400,
+      "proteins": 15,
+      "fats": 20,
+      "carbohydrates": 40,
+      "portion": 4,
+      "ingredients": [
+        {"name": "Spaghetti", "weight": "300", "amount": "g"},
+        {"name": "Bacon", "weight": "200", "amount": "g"},
+        {"name": "Eggs", "weight": "3", "amount": "pcs"},
+        {"name": "Cheese", "weight": "100", "amount": "g"},
+        {"name": "Butter", "weight": "30", "amount": "g"},
+        {"name": "Vegetable oil", "weight": "20", "amount": "ml"},
+        {"name": "Garlic", "weight": "10", "amount": "g"},
+        {"name": "Water", "weight": "1000", "amount": "ml"},
+        {"name": "Salt", "weight": "5", "amount": "g"},
+        {"name": "Black pepper", "weight": "3", "amount": "g"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/pasta_carbonara_step1", "description": "Dicing bacon. Crush two cloves of garlic with a knife. Heat a frying pan, melt 1 tablespoon of butter and fry the bacon with garlic. Fry on low heat for 10 minutes, the bacon should melt the fat, but the bacon should remain soft. After frying, remove the garlic."},
+        {"step_number": 2, "image": "drawable/pasta_carbonara_step2", "description": "Add 1 tablespoon of salt, 1 tablespoon of olive oil and spaghetti to boiling water (2.3 liters). We cook the spaghetti as indicated on their packaging, it is important to observe the specified cooking time in order to cook the spaghetti correctly."},
+        {"step_number": 3, "image": "drawable/pasta_carbonara_step3", "description": "Separating 3 yolks from the whites. Put the yolks and one egg in a bowl, add salt and pepper (1 pinch each), and whisk well."},
+        {"step_number": 4, "image": "drawable/pasta_carbonara_step4", "description": "Add 2 tablespoons of grated cheese, mix."},
+        {"step_number": 5, "image": "drawable/pasta_carbonara_step5", "description": "Ready-made spaghetti is thrown into a colander, after leaving 300 ml of water in which they were cooked."},
+        {"step_number": 6, "image": "drawable/pasta_carbonara_step6", "description": "Turn off the heat under the bacon pan, add the spaghetti and 1 tablespoon of butter. Pour in the beaten eggs and cheese, mix everything thoroughly. Gradually add 300 ml of broth (water) remove the spaghetti and mix constantly, the eggs should not curdle."},
+        {"step_number": 7, "image": "drawable/pasta_carbonara_step7", "description": "To thicken the sauce a little, turn on a low heat under the pan and stir constantly for about 1 minute so that the eggs do not boil. If the sauce is too thick, add a little water."},
+        {"step_number": 8, "image": "drawable/pasta_carbonara_step8", "description": "We serve the finished dish immediately, sprinkled with grated cheese. The pasta carbonara is ready."}
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Dumplings",
+      "image": "drawable/pelm",
+      "calories": 280,
+      "proteins": 15,
+      "fats": 12,
+      "carbohydrates": 25,
+      "portion": 6,
+      "ingredients": [
+        {"name": "Eggs", "weight": "1", "amount": "pcs"},
+        {"name": "Salt", "weight": "10", "amount": "g"},
+        {"name": "Flour", "weight": "400", "amount": "g"},
+        {"name": "Minced meat", "weight": "500", "amount": "g"},
+        {"name": "Onion", "weight": "200", "amount": "g"},
+        {"name": "Garlic", "weight": "10", "amount": "g"},
+        {"name": "Black pepper", "weight": "5", "amount": "g"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/pelmeni_step1", "description": "Prepare dough for Russian dumplings. Sift the flour into a pile. Make a recess on top, pour in an egg and 1 tbsp. l. water, add a pinch of salt."},
+        {"step_number": 2, "image": "drawable/pelmeni_step2", "description": "Collecting flour from the edges to the middle so that water and egg do not pour out of the recess, knead the dough. Knead the dumpling dough until it becomes elastic and smooth, about 10 minutes. Cover with a damp towel and leave for 30 minutes. The water for the dumpling dough should be ice cold. To do this, they put it in the refrigerator or freezer in advance."},
+        {"step_number": 3, "image": "drawable/pelmeni_step3", "description": "While the dough is melting, prepare the filling for the dumplings. Peel the onion and garlic and chop them very finely. Mix the ground beef and pork, add onion and garlic, season with salt and pepper. Mix thoroughly until smooth."},
+        {"step_number": 4, "image": "drawable/pelmeni_step4", "description": "Divide the finished dough for Russian dumplings into 4 parts. Cover 3 parts with a damp towel and set aside. Roll the remaining dough into a 2 cm thick bundle. Cut it into 1.5 cm wide pieces. On a floured surface, roll out each piece of dough into a thin cake."},
+        {"step_number": 5, "image": "drawable/pelmeni_step5", "description": "Put 1.5 tsp of filling in the center of each tortilla, fold the circle with the filling in half so that a crescent moon is formed. Connect the ends of the crescent and fasten them. Press firmly with your fingers so that the dumplings do not fall apart during cooking."},
+        {"step_number": 6, "image": "drawable/pelmeni_step6", "description": "Place the dumplings on a tray or flat dish, sprinkle with flour and refrigerate. Also cook the dumplings from the remaining dough."}
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Cookies",
+      "image": "drawable/pechen",
+      "calories": 180,
+      "proteins": 3,
+      "fats": 8,
+      "carbohydrates": 25,
+      "portion": 20,
+      "ingredients": [
+        {"name": "Flour", "weight": "300", "amount": "g"},
+        {"name": "Sugar", "weight": "150", "amount": "g"},
+        {"name": "Eggs", "weight": "1", "amount": "pcs"},
+        {"name": "Butter", "weight": "150", "amount": "g"},
+        {"name": "Cinnamon", "weight": "5", "amount": "g"},
+        {"name": "Soda", "weight": "5", "amount": "g"},
+        {"name": "Vinegar", "weight": "10", "amount": "ml"},
+        {"name": "Salt", "weight": "3", "amount": "g"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/pechenie_step1", "description": "In a container, whisk eggs, sugar, cinnamon and a pinch of salt. You can just use a whisk or use a mixer."},
+        {"step_number": 2, "image": "drawable/pechenie_step2", "description": "Add softened butter and whisk thoroughly."},
+        {"step_number": 3, "image": "drawable/pechenie_step3", "description": "Add baking soda, slaked with vinegar, and mix."},
+        {"step_number": 4, "image": "drawable/pechenie_step4", "description": "Mix in the sifted flour parts, the dough should be viscous, but not too clogged with flour."},
+        {"step_number": 5, "image": "drawable/pechenie_step5", "description": "Using a teaspoon, we form dough balls with a diameter of 3 cm and spread them on a baking sheet at a small distance from each other."},
+        {"step_number": 6, "image": "drawable/pechenie_step6", "description": "Bake cookies in a preheated oven at 180°C for 12-15 minutes."}
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Donuts",
+      "image": "drawable/ponchik",
+      "calories": 320,
+      "proteins": 6,
+      "fats": 15,
+      "carbohydrates": 40,
+      "portion": 1,
+      "ingredients": [
+        {"name": "Flour", "weight": "300", "amount": "g"},
+        {"name": "Yeast", "weight": "10", "amount": "g"},
+        {"name": "Milk", "weight": "150", "amount": "ml"},
+        {"name": "Eggs", "weight": "1", "amount": "pcs"},
+        {"name": "Butter", "weight": "30", "amount": "g"},
+        {"name": "Sugar", "weight": "50", "amount": "g"},
+        {"name": "Salt", "weight": "5", "amount": "g"},
+        {"name": "Vegetable oil", "weight": "200", "amount": "ml"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Mix yeast with warm milk, 1 tsp sugar and let stand for 10 minutes."},
+        {"step_number": 2, "image": "", "description": "Add egg, melted butter, remaining sugar and salt to taste."},
+        {"step_number": 3, "image": "", "description": "Gradually add flour, knead soft dough. Cover and leave in a warm place for 1 hour."},
+        {"step_number": 4, "image": "", "description": "Roll out the dough 1.5 cm thick, cut out the circles with a hole in the middle."},
+        {"step_number": 5, "image": "", "description": "Heat the vegetable oil in a deep frying pan. Fry the donuts for 2-3 minutes on each side."},
+        {"step_number": 6, "image": "", "description": "Put the finished donuts on paper towels, then roll in powdered sugar."}
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Rassolnik",
+      "image": "drawable/rassolnik",
+      "calories": 180,
+      "proteins": 8,
+      "fats": 5,
+      "carbohydrates": 25,
+      "portion": 1,
+      "ingredients": [
+        {"name": "Beef", "weight": "200", "amount": "g"},
+        {"name": "Pearl barley", "weight": "50", "amount": "g"},
+        {"name": "Potato", "weight": "2", "amount": "pcs"},
+        {"name": "Pickles", "weight": "2", "amount": "pcs"},
+        {"name": "Carrot", "weight": "1", "amount": "pcs"},
+        {"name": "Onion", "weight": "1", "amount": "pcs"},
+        {"name": "Cucumber pickle", "weight": "100", "amount": "ml"},
+        {"name": "Sour cream", "weight": "30", "amount": "g"},
+        {"name": "Greens", "weight": "", "amount": "to taste"},
+        {"name": "Salt", "weight": "", "amount": "to taste"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Boil beef until tender, strain broth."},
+        {"step_number": 2, "image": "", "description": "Soak pearl barley for 1 hour, then boil until half cooked."},
+        {"step_number": 3, "image": "", "description": "Add diced potatoes and pearl barley to the broth. Cook for 15 minutes."},
+        {"step_number": 4, "image": "", "description": "Fry the onion and carrot, add the grated cucumbers, and simmer for 5 minutes."},
+        {"step_number": 5, "image": "", "description": "Add roast to soup, add brine, salt to taste. Cook for another 10 minutes."},
+        {"step_number": 6, "image": "", "description": "Serve with sour cream and chopped herbs."}
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Greek salad",
+      "image": "drawable/salatgrech",
+      "calories": 250,
+      "proteins": 6,
+      "fats": 20,
+      "carbohydrates": 10,
+      "portion": 2,
+      "ingredients": [
+        {"name": "Tomatoes", "weight": "4", "amount": "pcs"},
+        {"name": "Cucumbers", "weight": "2", "amount": "pcs"},
+        {"name": "Sweet pepper", "weight": "2", "amount": "pcs"},
+        {"name": "Red onion", "weight": "1", "amount": "pcs"},
+        {"name": "Feta cheese", "weight": "200", "amount": "g"},
+        {"name": "Olives", "weight": "100", "amount": "g"},
+        {"name": "Olive oil", "weight": "4", "amount": "tbsp"},
+        {"name": "Lemon juice", "weight": "2", "amount": "tbsp"},
+        {"name": "Salt", "weight": "", "amount": "to taste"},
+        {"name": "Oregano", "weight": "", "amount": "to taste"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Cut vegetables into large pieces, onions into thin half rings."},
+        {"step_number": 2, "image": "", "description": "Diced cheese, halved olives."},
+        {"step_number": 3, "image": "", "description": "Mix all ingredients in a salad bowl."},
+        {"step_number": 4, "image": "", "description": "Season with olive oil and lemon juice, add salt to taste."},
+        {"step_number": 5, "image": "", "description": "Sprinkle with oregano, mix gently before serving."}
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Caesar salad",
+      "image": "drawable/salatcezar",
+      "calories": 350,
+      "proteins": 15,
+      "fats": 25,
+      "carbohydrates": 20,
+      "portion": 1,
+      "ingredients": [
+        {"name": "Chicken fillet", "weight": "200", "amount": "g"},
+        {"name": "Lettuce leaves", "weight": "100", "amount": "g"},
+        {"name": "Wheat crackers", "weight": "50", "amount": "g"},
+        {"name": "Parmesan cheese", "weight": "50", "amount": "g"},
+        {"name": "Eggs", "weight": "1", "amount": "pcs"},
+        {"name": "Garlic", "weight": "1", "amount": "clove"},
+        {"name": "Olive oil", "weight": "2", "amount": "tbsp"},
+        {"name": "Lemon juice", "weight": "1", "amount": "tbsp"},
+        {"name": "Mustard", "weight": "1", "amount": "hl"},
+        {"name": "Salt", "weight": "", "amount": "to taste"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Fry chicken fillet in olive oil with garlic, cut into strips."},
+        {"step_number": 2, "image": "", "description": "Tear the lettuce leaves with your hands and put them on a plate."},
+        {"step_number": 3, "image": "", "description": "Prepare the sauce: mix olive oil, lemon juice, mustard and salt to taste."},
+        {"step_number": 4, "image": "", "description": "Top with chicken, croutons and grated parmesan."},
+        {"step_number": 5, "image": "", "description": "Pour sauce over before serving."}
+      ]
+    },
+    {
+      "id": 35,
+      "name": "Solyanka",
+      "image": "drawable/solyanka",
+      "calories": 280,
+      "proteins": 18,
+      "fats": 15,
+      "carbohydrates": 20,
+      "portion": 1,
+      "ingredients": [
+        {"name": "Beef", "weight": "200", "amount": "g"},
+        {"name": "Boiled sausage", "weight": "100", "amount": "g"},
+        {"name": "Smoked meat", "weight": "100", "amount": "g"},
+        {"name": "Pickles", "weight": "2", "amount": "pcs"},
+        {"name": "Capers", "weight": "1", "amount": "tbsp"},
+        {"name": "Olives", "weight": "10", "amount": "pcs"},
+        {"name": "Tomato paste", "weight": "2", "amount": "tbsp"},
+        {"name": "Lemon", "weight": "2", "amount": "slices"},
+        {"name": "Sour cream", "weight": "30", "amount": "g"},
+        {"name": "Greens", "weight": "", "amount": "to taste"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Cook strong beef broth."},
+        {"step_number": 2, "image": "", "description": "Cut all meat products into strips, cucumbers into slices."},
+        {"step_number": 3, "image": "", "description": "Fry onion with tomato paste, add to broth along with meat products."},
+        {"step_number": 4, "image": "", "description": "Add cucumbers, capers and olives, cook for 10 minutes."},
+        {"step_number": 5, "image": "", "description": "Serve with a slice of lemon, sour cream and herbs."}
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Sausages in dough",
+      "image": "drawable/svtes",
+      "calories": 380,
+      "proteins": 12,
+      "fats": 18,
+      "carbohydrates": 40,
+      "portion": 1,
+      "ingredients": [
+        {"name": "Sausages", "weight": "4", "amount": "pcs"},
+        {"name": "Finished puff pastry", "weight": "250", "amount": "g"},
+        {"name": "Egg", "weight": "1", "amount": "pcs"},
+        {"name": "Mustard", "weight": "1", "amount": "hl"},
+        {"name": "Sesame", "weight": "1", "amount": "hl"},
+        {"name": "Flour", "weight": "1", "amount": "tablespoon"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Defrost the dough and roll it out into a 3 mm thick layer."},
+        {"step_number": 2, "image": "", "description": "Cut the dough into 1.5 cm wide strips."},
+        {"step_number": 3, "image": "", "description": "Wrap each sausage with dough in a spiral, leaving gaps."},
+        {"step_number": 4, "image": "", "description": "Brush with beaten egg, sprinkle with sesame seeds."},
+        {"step_number": 5, "image": "", "description": "Bake at 200°C for 15-20 minutes until golden brown."}
+      ]
+    },
+    {
+      "id": 37,
+      "name": "Pea soup",
+      "image": "drawable/gorohoviy",
+      "calories": 210,
+      "proteins": 10,
+      "fats": 5,
+      "carbohydrates": 30,
+      "portion": 1,
+      "ingredients": [
+        {"name": "Split Peas", "weight": "150", "amount": "g"},
+        {"name": "Smoked ribs", "weight": "200", "amount": "g"},
+        {"name": "Potato", "weight": "2", "amount": "pcs"},
+        {"name": "Carrot", "weight": "1", "amount": "pcs"},
+        {"name": "Onion", "weight": "1", "amount": "pcs"},
+        {"name": "Bay leaf", "weight": "1", "amount": "pcs"},
+        {"name": "Black peppercorns", "weight": "3", "amount": "pcs"},
+        {"name": "Salt", "weight": "", "amount": "to taste"},
+        {"name": "Greens", "weight": "", "amount": "to taste"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Soak the peas for 2 hours, then cook with the ribs for 1 hour."},
+        {"step_number": 2, "image": "", "description": "Add sliced potatoes, cook for 15 minutes."},
+        {"step_number": 3, "image": "", "description": "Fry onions and carrots, add to soup."},
+        {"step_number": 4, "image": "", "description": "Add salt, spices, and cook for another 10 minutes."},
+        {"step_number": 5, "image": "", "description": "Serve with chopped herbs and croutons."}
+      ]
+    },
+    {
+      "id": 38,
+      "name": "Buckwheat soup",
+      "image": "drawable/subgrechneviy",
+      "calories": 210,
+      "proteins": 8,
+      "fats": 5,
+      "carbohydrates": 35,
+      "portion": 2,
+      "ingredients": [
+        {"name": "Onion", "weight": "2", "amount": "pcs"},
+        {"name": "Carrot", "weight": "1", "amount": "pcs"},
+        {"name": "Buckwheat groats", "weight": "6", "amount": "tbsp"},
+        {"name": "Potato", "weight": "200", "amount": "g"},
+        {"name": "Bay leaf", "weight": "2", "amount": "pcs"},
+        {"name": "Butter", "weight": "20", "amount": "g"},
+        {"name": "Salt", "weight": "", "amount": "to taste"},
+        {"name": "Black pepper", "weight": "", "amount": "to taste"},
+        {"name": "Water", "weight": "300", "amount": "ml"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Put water (300 ml) to boil."},
+        {"step_number": 2, "image": "", "description": "Peel and wash the potatoes. Cut into 1x1 cm cubes."},
+        {"step_number": 3, "image": "", "description": "Peel and wash the onions and carrots. Cut the onion into small cubes. Grate the carrots on a coarse grater."},
+        {"step_number": 4, "image": "", "description": "Sort buckwheat, rinse in cold water 2-3 times."},
+        {"step_number": 5, "image": "", "description": "Add potatoes, buckwheat, onions and carrots to boiling water. Cook for 10 minutes."},
+        {"step_number": 6, "image": "", "description": "Add bay leaf, butter, salt and pepper. Cook for another 10-15 minutes until buckwheat is ready."},
+        {"step_number": 7, "image": "", "description": "Serve hot, sprinkled with fresh herbs."}
+      ]
+    },
+    {
+      "id": 39,
+      "name": "Mushroom soup",
+      "image": "drawable/supgribnoy",
+      "calories": 150,
+      "proteins": 6,
+      "fats": 8,
+      "carbohydrates": 15,
+      "portion": 1,
+      "ingredients": [
+        {"name": "Fresh champignons", "weight": "300", "amount": "g"},
+        {"name": "Potato", "weight": "2", "amount": "pcs"},
+        {"name": "Onion", "weight": "1", "amount": "pcs"},
+        {"name": "Carrot", "weight": "1", "amount": "pcs"},
+        {"name": "Cream 20%", "weight": "100", "amount": "ml"},
+        {"name": "Vegetable oil", "weight": "2", "amount": "tablespoon"},
+        {"name": "Dill", "weight": "", "amount": "to taste"},
+        {"name": "Salt, pepper", "weight": "", "amount": "to taste"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Fry onions and carrots in oil for 5 minutes."},
+        {"step_number": 2, "image": "", "description": "Add chopped mushrooms, fry for another 7 minutes."},
+        {"step_number": 3, "image": "", "description": "Pour 1.5 liters of water, add potatoes, cook for 15 minutes."},
+        {"step_number": 4, "image": "", "description": "Add cream, salt, pepper, and cook for 5 minutes."},
+        {"step_number": 5, "image": "", "description": "Serve with dill and sour cream."}
+      ]
+    },
+    {
+      "id": 40,
+      "name": "Vegetable soup",
+      "image": "drawable/supovoshhnoj",
+      "calories": 120,
+      "proteins": 5,
+      "fats": 1,
+      "carbohydrates": 23,
+      "portion": 2,
+      "ingredients": [
+        {"name": "Potatoes", "weight": "2", "amount": "pcs"},
+        {"name": "Carrot", "weight": "1", "amount": "pcs"},
+        {"name": "Tomato", "weight": "2", "amount": "pcs"},
+        {"name": "Red lentils", "weight": "60", "amount": "g"},
+        {"name": "Bay leaf", "weight": "2", "amount": "pcs"},
+        {"name": "Black pepper", "weight": "", "amount": "to taste"},
+        {"name": "Salt", "weight": "", "amount": "to taste"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Peel and dice potatoes and carrots. Cut the tomato into any shape."},
+        {"step_number": 2, "image": "", "description": "Put the potatoes to boil in the pre-prepared broth. If there is no broth, then wash the meat, cut and boil for about 30 minutes, then add the potatoes."},
+        {"step_number": 3, "image": "", "description": "After 10 minutes of cooking potatoes, add the washed lentils and carrots to the soup and season the soup with salt, ground black pepper and spices."},
+        {"step_number": 4, "image": "", "description": "At the end of cooking, add tomatoes to the soup. Boil the soup for 5 minutes and remove it from the stove."}
+      ]
+    },
+    {
+      "id": 41,
+      "name": "Soup with meatballs",
+      "image": "drawable/supfrikad",
+      "calories": 190,
+      "proteins": 14,
+      "fats": 7,
+      "carbohydrates": 20,
+      "portion": 1,
+      "ingredients": [
+        {"name": "Minced chicken", "weight": "200", "amount": "g"},
+        {"name": "Potato", "weight": "3", "amount": "pcs"},
+        {"name": "Carrot", "weight": "1", "amount": "pcs"},
+        {"name": "Rice", "weight": "50", "amount": "g"},
+        {"name": "Egg", "weight": "1", "amount": "pcs"},
+        {"name": "Greens", "weight": "", "amount": "to taste"},
+        {"name": "Salt, pepper", "weight": "", "amount": "to taste"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Mix minced meat with egg, salt and pepper, form meatballs."},
+        {"step_number": 2, "image": "", "description": "Add chopped potatoes and rice to boiling water, cook for 10 minutes."},
+        {"step_number": 3, "image": "", "description": "Add meatballs and grated carrots, cook for 15 minutes."},
+        {"step_number": 4, "image": "", "description": "Season with salt, pepper, and herbs before serving."}
+      ]
+    },
+    {
+      "id": 42,
+      "name": "Syrniki",
+      "image": "drawable/sirniki",
+      "calories": 280,
+      "proteins": 15,
+      "fats": 12,
+      "carbohydrates": 25,
+      "portion": 1,
+      "ingredients": [
+        {"name": "Cottage cheese", "weight": "250", "amount": "g"},
+        {"name": "Egg", "weight": "1", "amount": "pcs"},
+        {"name": "Flour", "weight": "3", "amount": "tbsp"},
+        {"name": "Sugar", "weight": "2", "amount": "tbsp"},
+        {"name": "Vanilla sugar", "weight": "1", "amount": "tsp"},
+        {"name": "Vegetable oil", "weight": "2", "amount": "tablespoon"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Mix cottage cheese, egg, sugar and vanilla sugar."},
+        {"step_number": 2, "image": "", "description": "Add flour, knead the dough."},
+        {"step_number": 3, "image": "", "description": "Form cheesecakes, roll in flour."},
+        {"step_number": 4, "image": "", "description": "Fry in oil for 3 minutes on each side."},
+        {"step_number": 5, "image": "", "description": "Serve with sour cream or jam."}
+      ]
+    },
+    {
+      "id": 43,
+      "name": "Stewed potatoes with chicken",
+      "image": "drawable/tkart",
+      "calories": 290,
+      "proteins": 22,
+      "fats": 14,
+      "carbohydrates": 18,
+      "portion": 4,
+      "ingredients": [
+        {"name": "Potato", "weight": "8", "amount": "pcs"},
+        {"name": "Chicken leg", "weight": "8", "amount": "pcs"},
+        {"name": "Onion", "weight": "2", "amount": "pcs"},
+        {"name": "Celery", "weight": "2", "amount": "stems"},
+        {"name": "Carrot", "weight": "2", "amount": "pcs"},
+        {"name": "Tomato paste", "weight": "4", "amount": "tbsp"},
+        {"name": "Vegetable oil", "weight": "4", "amount": "tablespoon"},
+        {"name": "Salt, pepper, spices", "weight": "", "amount": "to taste"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Beat eggs with sugar until fluffy."},
+        {"step_number": 2, "image": "", "description": "Add flour and mix gently."},
+        {"step_number": 3, "image": "", "description": "Slice the apples and put them in a mold."},
+        {"step_number": 4, "image": "", "description": "Pour in the dough and bake at 180°C for 30-35 minutes."}
+      ]
+    },
+    {
+      "id": 44,
+      "name": "Meatballs",
+      "image": "drawable/frikod",
+      "calories": 320,
+      "proteins": 26,
+      "fats": 18,
+      "carbohydrates": 12,
+      "portion": 1,
+      "ingredients": [
+        {"name": "Ground beef", "weight": "200", "amount": "g"},
+        {"name": "Onion", "weight": "1", "amount": "pcs (small)"},
+        {"name": "Egg", "weight": "1", "amount": "pcs"},
+        {"name": "Tomato paste", "weight": "15", "amount": "g (1 tbsp)"},
+        {"name": "Flour", "weight": "10", "amount": "g (1 tablespoon with a slide)"},
+        {"name": "Salt", "weight": "", "amount": "to taste"},
+        {"name": "Black pepper", "weight": "", "amount": "to taste"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Finely chop the onion and fry in a pan until transparent."},
+        {"step_number": 2, "image": "", "description": "In a bowl, mix the minced meat, egg, fried onion, salt and pepper. Knead the mass."},
+        {"step_number": 3, "image": "", "description": "Form 4 round meatballs, roll them in flour."},
+        {"step_number": 4, "image": "", "description": "Fry the meatballs in hot oil for 2-3 minutes until golden brown."},
+        {"step_number": 5, "image": "", "description": "Add tomato paste and 100 ml of water. Simmer under the lid for 15 minutes."},
+        {"step_number": 6, "image": "", "description": "Serve hot, sprinkled with herbs."}
+      ]
+    },
+    {
+      "id": 45,
+      "name": "Fruit salad",
+      "image": "drawable/salatf",
+      "calories": 180,
+      "proteins": 2,
+      "fats": 1,
+      "carbohydrates": 42,
+      "portion": 2,
+      "ingredients": [
+        {"name": "Apple", "weight": "2", "amount": "pcs (average)"},
+        {"name": "Pear", "weight": "2", "amount": "pcs (small)"},
+        {"name": "Orange", "weight": "1", "amount": "pcs"},
+        {"name": "Grapes", "weight": "20", "amount": "berries"},
+        {"name": "Honey", "weight": "20", "amount": "g (4 tsp)"},
+        {"name": "Lemon juice", "weight": "10", "amount": "ml (2 tsp)"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Diced apple and pear, sprinkle with lemon juice."},
+        {"step_number": 2, "image": "", "description": "Peel the orange, divide into slices, each cut into 2-3 pieces."},
+        {"step_number": 3, "image": "", "description": "Cut the grapes in half, remove the seeds."},
+        {"step_number": 4, "image": "", "description": "Mix all the fruits in a bowl, pour honey over them."},
+        {"step_number": 5, "image": "", "description": "Chill for 15 minutes before serving."}
+      ]
+    },
+    {
+      "id": 46,
+      "name": "Charlotte",
+      "image": "drawable/charlotte",
+      "calories": 280,
+      "proteins": 6,
+      "fats": 8,
+      "carbohydrates": 45,
+      "portion": 1,
+      "ingredients": [
+        {"name": "Flour", "weight": "60", "amount": "g (4 tablespoons with a slide)"},
+        {"name": "Sugar", "weight": "50", "amount": "g (3 tablespoons)"},
+        {"name": "Eggs", "weight": "1", "amount": "pcs (large)"},
+        {"name": "Apples", "weight": "1", "amount": "pcs (average)"},
+        {"name": "Vanilla sugar", "weight": "5", "amount": "g (1 tsp)"},
+        {"name": "Soda", "weight": "3", "amount": "g"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Beat the egg and sugar with a mixer for 5 minutes until light and fluffy."},
+        {"step_number": 2, "image": "", "description": "Add flour, baking soda and vanilla sugar. Beat to a smooth dough (the consistency of sour cream)."},
+        {"step_number": 3, "image": "", "description": "Peel and seed the apple and cut into thin slices."},
+        {"step_number": 4, "image": "", "description": "Carefully mix the apples with the dough. Pour into a greased mold with a diameter of 15 cm."},
+        {"step_number": 5, "image": "", "description": "Bake in a preheated 180°C oven for 25-30 minutes until golden brown."},
+        {"step_number": 6, "image": "", "description": "Check readiness with a toothpick (it should come out dry). Cool for 10 minutes before serving."}
+      ]
+    },
+    {
+      "id": 47,
+      "name": "Shawarma",
+      "image": "drawable/shawarma",
+      "calories": 450,
+      "proteins": 20,
+      "fats": 25,
+      "carbohydrates": 35,
+      "portion": 1,
+      "ingredients": [
+        {"name": "Lavash", "weight": "1", "amount": "pcs"},
+        {"name": "Chicken fillet", "weight": "150", "amount": "g"},
+        {"name": "Fresh cucumbers", "weight": "1", "amount": "pcs"},
+        {"name": "Tomatoes", "weight": "1", "amount": "pcs"},
+        {"name": "Cabbage", "weight": "50", "amount": "g"},
+        {"name": "Garlic", "weight": "1", "amount": "clove"},
+        {"name": "Mayonnaise", "weight": "2", "amount": "tablespoon"},
+        {"name": "Ketchup", "weight": "1", "amount": "tbsp"},
+        {"name": "Salt, pepper", "weight": "", "amount": "to taste"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Roast chicken with spices, cut into strips."},
+        {"step_number": 2, "image": "", "description": "Chop vegetables into strips."},
+        {"step_number": 3, "image": "", "description": "Mix mayonnaise, ketchup and crushed garlic."},
+        {"step_number": 4, "image": "", "description": "Put the filling on the pita bread, roll it up."},
+        {"step_number": 5, "image": "", "description": "Fry in a dry pan for 2 minutes."}
+      ]
+    },
+    {
+      "id": 48,
+      "name": "Eclairs",
+      "image": "drawable/ecleri",
+      "calories": 380,
+      "proteins": 7,
+      "fats": 22,
+      "carbohydrates": 40,
+      "portion": 1,
+      "ingredients": [
+        {"name": "Flour", "weight": "100", "amount": "g"},
+        {"name": "Eggs", "weight": "2", "amount": "pcs"},
+        {"name": "Butter", "weight": "60", "amount": "g"},
+        {"name": "Water", "weight": "200", "amount": "ml"},
+        {"name": "Salt", "weight": "1", "amount": "pinch"},
+        {"name": "Custard cream", "weight": "100", "amount": "g"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Boil water with oil and salt in a saucepan."},
+        {"step_number": 2, "image": "", "description": "Add flour, stirring vigorously. Cook for 2 minutes until a lump forms."},
+        {"step_number": 3, "image": "", "description": "Remove from heat, add eggs one at a time, kneading smooth dough."},
+        {"step_number": 4, "image": "", "description": "Place the dough in a pastry bag on a baking sheet in the form of strips 10 cm long."},
+        {"step_number": 5, "image": "", "description": "Bake at 200°C for 25 minutes until golden brown."},
+        {"step_number": 6, "image": "", "description": "Cool, fill with cream through a hole on the side."}
+      ]
+    },
+    {
+      "id": 49,
+      "name": "Fried eggs",
+      "image": "drawable/yaih",
+      "calories": 200,
+      "proteins": 12,
+      "fats": 15,
+      "carbohydrates": 2,
+      "portion": 1,
+      "ingredients": [
+        {"name": "Eggs", "weight": "2", "amount": "pcs"},
+        {"name": "Butter", "weight": "10", "amount": "g"},
+        {"name": "Salt", "weight": "", "amount": "to taste"},
+        {"name": "Black pepper", "weight": "", "amount": "to taste"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "", "description": "Melt butter in a frying pan."},
+        {"step_number": 2, "image": "", "description": "Break the eggs carefully without damaging the yolks."},
+        {"step_number": 3, "image": "", "description": "Roast over medium heat for 3-4 minutes."},
+        {"step_number": 4, "image": "", "description": "Season with salt, pepper, and serve with toast."}
+      ]
+    }
+  ]
+}
+
+
+
+
+
+
+
+
