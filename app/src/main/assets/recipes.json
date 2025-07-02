@@ -1296,7 +1296,7 @@
     {
       "id": 36,
       "name": "Сосиски в тесте",
-      "image": "",
+      "image": "drawable/svtes",
       "calories": 380,
       "proteins": 12,
       "fats": 18,
@@ -1321,7 +1321,7 @@
     {
       "id": 37,
       "name": "Суп гороховый",
-      "image": "",
+      "image": "drawable/gorohoviy",
       "calories": 210,
       "proteins": 10,
       "fats": 5,
@@ -1349,7 +1349,7 @@
     {
       "id": 39,
       "name": "Суп грибной",
-      "image": "",
+      "image": "drawable/supgribnoy",
       "calories": 150,
       "proteins": 6,
       "fats": 8,
@@ -1376,7 +1376,7 @@
     {
       "id": 40,
       "name": "Суп овощной",
-      "image": "",
+      "image": "drawable/supovoshhnoj",
       "calories": 120,
       "proteins": 5,
       "fats": 1,
@@ -1401,7 +1401,7 @@
     {
       "id": 41,
       "name": "Суп с фрикадельками",
-      "image": "",
+      "image": "drawable/supfrikad",
       "calories": 190,
       "proteins": 14,
       "fats": 7,
@@ -1426,7 +1426,7 @@
     {
       "id": 42,
       "name": "Сырники",
-      "image": "",
+      "image": "drawable/sirniki",
       "calories": 280,
       "proteins": 15,
       "fats": 12,
@@ -1452,7 +1452,7 @@
     {
       "id": 43,
       "name": "Тушеный картофель с курицей",
-      "image": "",
+      "image": "drawable/tkart",
       "calories": 290,
       "proteins": 22,
       "fats": 14,
@@ -1478,7 +1478,7 @@
     {
       "id": 44,
       "name": "Фрикадельки",
-      "image": "",
+      "image": "drawable/frikod",
       "calories": 320,
       "proteins": 26,
       "fats": 18,
@@ -1505,7 +1505,7 @@
     {
       "id": 45,
       "name": "Фруктовый салат",
-      "image": "",
+      "image": "drawable/salatf",
       "calories": 180,
       "proteins": 2,
       "fats": 1,
@@ -1530,7 +1530,7 @@
     {
       "id": 46,
       "name": "Шарлотка",
-      "image": "",
+      "image": "drawable/sharlot",
       "calories": 280,
       "proteins": 6,
       "fats": 8,
@@ -1556,7 +1556,7 @@
     {
       "id": 47,
       "name": "Шаурма",
-      "image": "",
+      "image": "drawable/shaurma",
       "calories": 450,
       "proteins": 20,
       "fats": 25,
@@ -1584,7 +1584,7 @@
     {
       "id": 48,
       "name": "Эклеры",
-      "image": "",
+      "image": "drawable/ekleri",
       "calories": 380,
       "proteins": 7,
       "fats": 22,
@@ -1610,7 +1610,7 @@
     {
       "id": 49,
       "name": "Яичница-глазунья",
-      "image": "",
+      "image": "drawable/yaih",
       "calories": 200,
       "proteins": 12,
       "fats": 15,
