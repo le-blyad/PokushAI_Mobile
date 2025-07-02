@@ -89,7 +89,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             if (selectedCount < 3) {
                 Toast.makeText(
                     requireContext(),
-                    "Пожалуйста, выберите минимум 3 ингредиентов",
+                    "${getString(R.string.select3ing)}",
                     Toast.LENGTH_SHORT
                 ).show()
                 return@setOnClickListener

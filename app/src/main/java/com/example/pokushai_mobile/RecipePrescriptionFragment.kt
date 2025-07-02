@@ -159,7 +159,7 @@ class RecipePrescriptionFragment : Fragment() {
             }
             ingredient.name to displayValue
         }
-        ingredientsAdapter.submitList(updatedIngredients) // Используем правильный метод обновления
+        ingredientsAdapter.submitList(updatedIngredients)
     }
 
     private fun setupTheme(view: View) {

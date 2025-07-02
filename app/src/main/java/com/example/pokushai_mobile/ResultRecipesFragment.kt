@@ -117,17 +117,6 @@ class ResultRecipesFragment : Fragment() {
         }
     }
 
-    private fun loadRecipeById(recipeId: Int): RecipePrescriptionFragment.Recipe? {
-        return try {
-            val inputStream = requireContext().assets.open("recipes-ru.json")
-            val reader = InputStreamReader(inputStream)
-            val recipeResponse = Gson().fromJson(reader, RecipePrescriptionFragment.RecipeResponse::class.java)
-            recipeResponse.recipes.find { it.id == recipeId }
-        } catch (e: Exception) {
-            null
-        }
-    }
-
     private fun getTopNIndices(array: FloatArray, n: Int): List<Int> {
         return array
             .mapIndexed { index, value -> index to value }

@@ -190,4 +190,10 @@
     <string name="ingredients">Ingredients:</string>
     <string name="stepbystep">Step-by-step recipe:</string>
 
+
+    <!-- In-app notifications -->
+
+    <string name="select3ing">Please select a minimum of 3 ingredients</string>
+
+
 </resources>

@@ -191,5 +191,9 @@
     <string name="ingredients">Ингредиенты:</string>
     <string name="stepbystep">Пошаговый рецепт:</string>
 
+    <!-- In-app notifications -->
+
+    <string name="select3ing">Пожалуйста, выберите минимум 3 ингредиентов</string>
+
 
 </resources>
