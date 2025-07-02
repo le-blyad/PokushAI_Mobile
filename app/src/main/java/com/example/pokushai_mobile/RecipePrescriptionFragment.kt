@@ -38,16 +38,18 @@ class RecipePrescriptionFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val recipeId = arguments?.getInt("recipe_id", -1) ?: -1
+        val backButton = view.findViewById<ImageButton>(R.id.buttonBack)
+        backButton.setOnClickListener {
+            FragmentNavigator.navigateBack(parentFragmentManager)
+        }
 
-        // Загружаем данные рецептов из JSON
+        FragmentNavigator.setupBackPressHandler(this)
+
+        val recipeId = arguments?.getInt("recipe_id", -1) ?: -1
         val recipes = loadRecipes()
         recipe = recipes.find { it.id == recipeId } ?: return
-
-        // Устанавливаем начальное количество порций
         portionsAdditionally = recipe.portion
 
-        // Заполняем данные рецепта
         val mainPhoto = view.findViewById<ImageView>(R.id.mainPhoto)
         val title = view.findViewById<TextView>(R.id.title)
         val textViewCalories = view.findViewById<TextView>(R.id.textViewCalories)
@@ -64,33 +66,43 @@ class RecipePrescriptionFragment : Fragment() {
         textViewCarbohydrates.text = "${recipe.carbohydrates} г"
         textPortions.text = "$portionsAdditionally"
 
-        // Настраиваем RecyclerView для ингредиентов
+        // Инициализация адаптера ингредиентов
         ingredientsRecyclerView = view.findViewById(R.id.ingredientsRecyclerView)
-        ingredientsAdapter = IngredientsAdapter(recipe.ingredients.map { ingredient ->
-            val initialValue = if (ingredient.weight != null) {
-                "${ingredient.weight} ${ingredient.amount}"
-            } else {
-                ingredient.amount
-            }
-            ingredient.name to initialValue
-        })
-        ingredientsRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-        ingredientsRecyclerView.adapter = ingredientsAdapter
+        ingredientsAdapter = IngredientsAdapter().apply {
+            submitList(recipe.ingredients.map { ingredient ->
+                val initialValue = if (ingredient.weight != null) {
+                    "${ingredient.weight} ${ingredient.amount}"
+                } else {
+                    ingredient.amount
+                }
+                ingredient.name to initialValue
+            })
+        }
 
-        // Настраиваем RecyclerView для шагов
+        ingredientsRecyclerView.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = ingredientsAdapter
+            isNestedScrollingEnabled = false
+        }
+
+        // Инициализация адаптера шагов
         stepsRecyclerView = view.findViewById(R.id.stepsRecyclerView)
-        stepAdapter = StepAdapter(recipe.steps.mapIndexed { index, step ->
-            StepAdapter.Step(
-                "Шаг ${index + 1}",
-                step.description,
-                resources.getIdentifier(step.image, "drawable", requireContext().packageName)
-            )
-        })
-        stepsRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-        stepsRecyclerView.adapter = stepAdapter
-        stepsRecyclerView.isNestedScrollingEnabled = false
+        stepAdapter = StepAdapter().apply {
+            submitList(recipe.steps.mapIndexed { index, step ->
+                StepAdapter.Step(
+                    "Шаг ${index + 1}",
+                    step.description,
+                    resources.getIdentifier(step.image, "drawable", requireContext().packageName)
+                )
+            })
+        }
 
-        // Кнопки изменения порций
+        stepsRecyclerView.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = stepAdapter
+            isNestedScrollingEnabled = false
+        }
+
         val buttonIncrease = view.findViewById<Button>(R.id.buttonIncrease)
         val buttonDecrease = view.findViewById<Button>(R.id.buttonDecrease)
 
@@ -108,13 +120,6 @@ class RecipePrescriptionFragment : Fragment() {
             }
         }
 
-        // Кнопка "Назад"
-        val buttonBack = view.findViewById<ImageButton>(R.id.buttonBack)
-        buttonBack.setOnClickListener {
-            requireActivity().supportFragmentManager.popBackStack()
-        }
-
-        // Настройка темы
         setupTheme(view)
     }
 
@@ -138,7 +143,7 @@ class RecipePrescriptionFragment : Fragment() {
             }
             ingredient.name to displayValue
         }
-        ingredientsAdapter.updateIngredients(updatedIngredients)
+        ingredientsAdapter.submitList(updatedIngredients) // Используем правильный метод обновления
     }
 
     private fun setupTheme(view: View) {
@@ -176,7 +181,9 @@ class RecipePrescriptionFragment : Fragment() {
     }
 
     // Адаптер для шагов
-    class StepAdapter(private val steps: List<Step>) : RecyclerView.Adapter<StepAdapter.ViewHolder>() {
+    class StepAdapter : RecyclerView.Adapter<StepAdapter.ViewHolder>() {
+
+        private var steps = listOf<Step>()
 
         data class Step(
             val stepNumber: String,
@@ -204,11 +211,17 @@ class RecipePrescriptionFragment : Fragment() {
         }
 
         override fun getItemCount(): Int = steps.size
+
+        fun submitList(newSteps: List<Step>) {
+            steps = newSteps
+            notifyDataSetChanged()
+        }
     }
 
     // Адаптер для ингредиентов
-    class IngredientsAdapter(private var ingredients: List<Pair<String, String>>) :
-        RecyclerView.Adapter<IngredientsAdapter.ViewHolder>() {
+    class IngredientsAdapter : RecyclerView.Adapter<IngredientsAdapter.ViewHolder>() {
+
+        private var ingredients = listOf<Pair<String, String>>()
 
         inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             val ingredientName: TextView = itemView.findViewById(R.id.ingredientName)
@@ -229,7 +242,7 @@ class RecipePrescriptionFragment : Fragment() {
 
         override fun getItemCount(): Int = ingredients.size
 
-        fun updateIngredients(newIngredients: List<Pair<String, String>>) {
+        fun submitList(newIngredients: List<Pair<String, String>>) {
             ingredients = newIngredients
             notifyDataSetChanged()
         }

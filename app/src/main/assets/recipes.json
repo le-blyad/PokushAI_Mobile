@@ -33,6 +33,1120 @@
         {"step_number": 11, "image": "drawable/belyashi_step11", "description": "Достать готовые беляши на бумагу что бы стек лишний жир."},
         {"step_number": 12, "image": "drawable/belyashi_step12", "description": "Подать."}
       ]
+    },
+    {
+      "id": 1,
+      "name": "Блины",
+      "image": "drawable/blin",
+      "calories": 227,
+      "proteins": 6,
+      "fats": 10,
+      "carbohydrates": 28,
+      "portion": 6,
+      "ingredients": [
+        {"name": "Молоко", "weight": "500", "amount": "мл"},
+        {"name": "Яйца", "weight": "3", "amount": "шт"},
+        {"name": "Растительное масло", "weight": "30", "amount": "мл"},
+        {"name": "Мука", "weight": "200", "amount": "г"},
+        {"name": "Сахар", "weight": "30", "amount": "г"},
+        {"name": "Соль", "weight": "5", "amount": "г"},
+        {"name": "Сливочное масло", "weight": "30", "amount": "г"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/blin_step1", "description": "Смешайте яйца, соль, сахар и размешайте миксером. Введите муку и влейте молоко. Взбейте блинное тесто, чтобы добиться однородной консистенции."},
+        {"step_number": 2, "image": "drawable/blin_step2", "description": "Следом отправьте в тесто растительное масло, чтобы блины в момент жарки легко переворачивались и не пригорали."},
+        {"step_number": 3, "image": "drawable/blin_step3", "description": "Разогрейте сковородку и смажьте маслом."},
+        {"step_number": 4, "image": "drawable/blin_step4", "description": "Налейте в центр сковородки небольшую порцию теста. Сразу же вращайте сковородку по кругу, чтобы тесто равномерно распределилось по всей поверхности."},
+        {"step_number": 5, "image": "drawable/blin_step5", "description": "Жарим блины на среднем огне с обеих сторон до зарумянивания. Блины очень тонкие, поэтому переворачивайте их аккуратно с помощью лопатки. После того, как блин будет готов, снимите со сковородки и смажьте сливочным маслом, чтобы края не были сухими, а блины получились нежными."},
+        {"step_number": 6, "image": "drawable/blin_step6", "description": "Блины на молоке можно подавать с вареньем, джемом или сгущенкой. Приятного аппетита!"}
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Блины с мясом",
+      "image": "drawable/blinismyasom",
+      "calories": 320,
+      "proteins": 15,
+      "fats": 18,
+      "carbohydrates": 25,
+      "portion": 4,
+      "ingredients": [
+        {"name": "Молоко", "weight": "400", "amount": "мл"},
+        {"name": "Яйца", "weight": "2", "amount": "шт"},
+        {"name": "Мука", "weight": "180", "amount": "г"},
+        {"name": "Сахар", "weight": "20", "amount": "г"},
+        {"name": "Сливочное масло", "weight": "30", "amount": "г"},
+        {"name": "Соль", "weight": "5", "amount": "г"},
+        {"name": "Вода", "weight": "100", "amount": "мл"},
+        {"name": "Фарш", "weight": "300", "amount": "г"},
+        {"name": "Репчатый лук", "weight": "100", "amount": "г"},
+        {"name": "Чеснок", "weight": "10", "amount": "г"},
+        {"name": "Черный перец", "weight": "3", "amount": "г"},
+        {"name": "Кориандр", "weight": "2", "amount": "г"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/bliny_s_myasom_step1", "description": "Яйца, сахар и соль взбить венчиком до однородной массы."},
+        {"step_number": 2, "image": "drawable/bliny_s_myasom_step2", "description": "Добавить молоко и муку, перемешать до однородного состояния."},
+        {"step_number": 3, "image": "drawable/bliny_s_myasom_step3", "description": "Добавить воду и растительное масло. Тщательно перемешать тесто и оставить на 1 час."},
+        {"step_number": 4, "image": "drawable/bliny_s_myasom_step4", "description": "Лук нарезать и обжарить на сковороде с разогретым растительным маслом (1 ст. л.) на среднем огне 3 минуты."},
+        {"step_number": 5, "image": "drawable/bliny_s_myasom_step5", "description": "Добавить фарш, соль, сушёный чеснок, кориандр, чёрный перец. Жарить до готовности 6-7 минут на среднем огне."},
+        {"step_number": 6, "image": "drawable/bliny_s_myasom_step6", "description": "Тонкие блины жарить на горячей сковороде с каждой стороны по 1 минуте до золотистости."},
+        {"step_number": 7, "image": "drawable/bliny_s_myasom_step7", "description": "На готовые блины выложить по 1 ст. л. фарша."},
+        {"step_number": 8, "image": "drawable/bliny_s_myasom_step8", "description": "Завернуть блины с мясом конвертом."},
+        {"step_number": 9, "image": "drawable/bliny_s_myasom_step9", "description": "Перед подачей обжарить блины на горячей сковороде с маслом до золотистой корочки (по 30 секунд с каждой стороны)."}
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Борщ",
+      "image": "drawable/borsch",
+      "calories": 150,
+      "proteins": 8,
+      "fats": 5,
+      "carbohydrates": 18,
+      "portion": 6,
+      "ingredients": [
+        {"name": "Говядина", "weight": "500", "amount": "г"},
+        {"name": "Картофель", "weight": "300", "amount": "г"},
+        {"name": "Капуста", "weight": "200", "amount": "г"},
+        {"name": "Свекла", "weight": "200", "amount": "г"},
+        {"name": "Морковь", "weight": "100", "amount": "г"},
+        {"name": "Репчатый лук", "weight": "100", "amount": "г"},
+        {"name": "Томатная паста", "weight": "50", "amount": "г"},
+        {"name": "Чернослив", "weight": "50", "amount": "г"},
+        {"name": "Петрушка", "weight": "20", "amount": "г"},
+        {"name": "Соль", "weight": "10", "amount": "г"},
+        {"name": "Растительное масло", "weight": "30", "amount": "мл"},
+        {"name": "Вода", "weight": "2500", "amount": "мл"},
+        {"name": "Сметана", "weight": "100", "amount": "г"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/borshch_step1", "description": "Подготавливают все необходимые продукты. Если чернослив сухой, заливают его кипятком на 10-15 минут."},
+        {"step_number": 2, "image": "drawable/borshch_step2", "description": "Мясо нарезают небольшими кусочками."},
+        {"step_number": 3, "image": "drawable/borshch_step3", "description": "Выкладывают мясо в кастрюлю, заливают холодной водой. Доводят до кипения, снимают пену и варят мясо 1,5 часа на маленьком огне, под крышкой."},
+        {"step_number": 4, "image": "drawable/borshch_step4", "description": "Картофель очищают и нарезают крупными кусками."},
+        {"step_number": 5, "image": "drawable/borshch_step5", "description": "Свеклу очищают, нарезают соломкой. Обычно свёклу тушат в сковороде с добавлением лимонного сока или уксуса - можно сделать именно так. Но в этом рецепте свёкла добавляется в бульон в сыром виде и варится вместе с картошкой и капустой."},
+        {"step_number": 6, "image": "drawable/borshch_step6", "description": "Капусту шинкуют соломкой."},
+        {"step_number": 7, "image": "drawable/borshch_step7", "description": "Лук чистят и мелко нарезают."},
+        {"step_number": 8, "image": "drawable/borshch_step8", "description": "Морковь чистят и натирают на крупной терке."},
+        {"step_number": 9, "image": "drawable/borshch_step9", "description": "Чернослив очищают от косточек, мелко нарезают."},
+        {"step_number": 10, "image": "drawable/borshch_step10", "description": "Сковороду нагревают, наливают растительное масло. В горячее масло выкладывают лук и морковь, обжаривают овощи, помешивая, 3-4 минуты на среднем огне. Добавляют томатную пасту, перемешивают и обжаривают овощи с томатом ещё 1 минуту."},
+        {"step_number": 11, "image": "drawable/borshch_step11", "description": "В мясной бульон добавляют картофель, свёклу, капусту, обжаренные лук и морковь. Добавляют чернослив, соль и варят борщ с черносливом до готовности картофеля, 20-25 минут."},
+        {"step_number": 12, "image": "drawable/borshch_step12", "description": "Зелень моют и мелко режут."},
+        {"step_number": 13, "image": "drawable/borshch_step13", "description": "Готовый борщ с черносливом разливают по тарелкам, посыпают измельченной зеленью петрушки. Подают борщ со сметаной."}
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Горячие бутерброды",
+      "image": "drawable/goryachiebuter",
+      "calories": 280,
+      "proteins": 12,
+      "fats": 15,
+      "carbohydrates": 25,
+      "portion": 4,
+      "ingredients": [
+        {"name": "Батон", "weight": "200", "amount": "г"},
+        {"name": "Колбаса", "weight": "150", "amount": "г"},
+        {"name": "Помидоры", "weight": "100", "amount": "г"},
+        {"name": "Сыр", "weight": "100", "amount": "г"},
+        {"name": "Укроп", "weight": "10", "amount": "г"},
+        {"name": "Майонез", "weight": "50", "amount": "г"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/goriachie_buterbrody_step1", "description": "Помидор мелко нарезать."},
+        {"step_number": 2, "image": "drawable/goriachie_buterbrody_step2", "description": "Мелко нарезать вареную и копченую колбасу."},
+        {"step_number": 3, "image": "drawable/goriachie_buterbrody_step3", "description": "Натереть сыр на мелкой терке."},
+        {"step_number": 4, "image": "drawable/goriachie_buterbrody_step4", "description": "Мелко нарезать зелень."},
+        {"step_number": 5, "image": "drawable/goriachie_buterbrody_step5", "description": "Соединить нарезанные ингредиенты и добавить майонез."},
+        {"step_number": 6, "image": "drawable/goriachie_buterbrody_step6", "description": "Тщательно перемешать начинку."},
+        {"step_number": 7, "image": "drawable/goriachie_buterbrody_step7", "description": "Нарезать батон ломтиками."},
+        {"step_number": 8, "image": "drawable/goriachie_buterbrody_step8", "description": "На каждый ломтик выложить 1-2 ложки начинки."},
+        {"step_number": 9, "image": "drawable/goriachie_buterbrody_step9", "description": "Поставить бутерброды в разогретую духовку на 6-7 минут до расплавления сыра."}
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Гречневая каша",
+      "image": "drawable/grecha",
+      "calories": 150,
+      "proteins": 5,
+      "fats": 3,
+      "carbohydrates": 25,
+      "portion": 2,
+      "ingredients": [
+        {"name": "Гречневая крупа", "weight": "200", "amount": "г"},
+        {"name": "Вода", "weight": "400", "amount": "мл"},
+        {"name": "Сливочное масло", "weight": "20", "amount": "г"},
+        {"name": "Соль", "weight": "5", "amount": "г"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/grechnevaia_kasha_step1", "description": "Подготовьте гречневую крупу для варки. Сначала насыпьте ее на рабочий стол, выстланный белой бумагой для выпечки, и распределите в один слой. Переберите, удаляя мусор."},
+        {"step_number": 2, "image": "drawable/grechnevaia_kasha_step2", "description": "Пересыпьте гречневую крупу в большую миску. Залейте холодной водой и тщательно промойте несколько раз, периодически ее сливая, до тех пор, пока не станет прозрачной."},
+        {"step_number": 3, "image": "drawable/grechnevaia_kasha_step3", "description": "Воду налейте в кастрюлю и быстро доведите до кипения. Добавьте соль по вкусу и перемешайте. Всипьте гречневую крупу и доведите до кипения. Снимите пену."},
+        {"step_number": 4, "image": "drawable/grechnevaia_kasha_step4", "description": "Огонь под кастрюлей уменьшите до минимального. Варите гречневую кашу под крышкой 20–25 минут. Не перемешивайте. Затем выключите огонь, добавьте в кашу масло и оставьте под крышкой еще на 10 минут."}
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Жаренный картофель",
+      "image": "drawable/zkartof",
+      "calories": 200,
+      "proteins": 4,
+      "fats": 10,
+      "carbohydrates": 25,
+      "portion": 3,
+      "ingredients": [
+        {"name": "Картофель", "weight": "500", "amount": "г"},
+        {"name": "Соль", "weight": "5", "amount": "г"},
+        {"name": "Черный перец", "weight": "3", "amount": "г"},
+        {"name": "Паприка", "weight": "3", "amount": "г"},
+        {"name": "Кукуруза", "weight": "50", "amount": "г"},
+        {"name": "Куркума", "weight": "2", "amount": "г"},
+        {"name": "Растительное масло", "weight": "50", "amount": "мл"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/zharenyi_kartofel_step1", "description": "Картофель тщательно промойте при помощи щётки. Обсушите клубни полотенцем. Разрежьте картошку пополам. Затем каждую половинку картофеля разрежьте ещё на 4 дольки. Таким же способом подготовьте оставшуюся картошку."},
+        {"step_number": 2, "image": "drawable/zharenyi_kartofel_step2", "description": "Посыпьте дольки картофеля солью, добавьте чёрный перец, паприку и куркуму. Тщательно перемешайте, чтобы соль и пряности распределились по картошке. (Удобнее перемешивать картофельные дольки руками)."},
+        {"step_number": 3, "image": "drawable/zharenyi_kartofel_step3", "description": "В сковородке разогрейте растительное масло. Выложите подготовленный картофель и обжаривайте на огне чуть больше среднего, помешивая каждые 3 минуты, до полной готовности картофеля. Этот процесс займёт примерно 20-25 минут."},
+        {"step_number": 4, "image": "drawable/zharenyi_kartofel_step4", "description": "Подавать картошку по-деревенски, жаренную на сковороде, лучше сразу после приготовления, пока корочка не размягчилась."}
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Запеканка",
+      "image": "drawable/zapekanka",
+      "calories": 180,
+      "proteins": 12,
+      "fats": 8,
+      "carbohydrates": 15,
+      "portion": 6,
+      "ingredients": [
+        {"name": "Творог", "weight": "500", "amount": "г"},
+        {"name": "Яйца", "weight": "3", "amount": "шт"},
+        {"name": "Лимон", "weight": "50", "amount": "г"},
+        {"name": "Разрыхлитель", "weight": "5", "amount": "г"},
+        {"name": "Сметана", "weight": "100", "amount": "г"},
+        {"name": "Изюм", "weight": "50", "amount": "г"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/zapekanka_step1", "description": "Творог для классической запеканки протереть через мелкое сито. Затем добавить сметану, яйца и сахар, взбить венчиком. Добавить просеянную с разрыхлителем муку. Еще раз взбить."},
+        {"step_number": 2, "image": "drawable/zapekanka_step2", "description": "Лимон вымыть и обсушить. Затем снять с плода мелкой теркой цедру. Изюм промыть теплой водой. Добавить в творожную массу лимонную цедру и изюм, хорошо перемешать."},
+        {"step_number": 3, "image": "drawable/zapekanka_step3", "description": "Форму для выпекания застелить пергаментом, выложить получившуюся массу, разровнять поверхность. Готовить запеканку в заранее разогретой до 180 °С духовке 35 мин."}
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Картофельное пюре",
+      "image": "drawable/pure_kartofel_nov",
+      "calories": 130,
+      "proteins": 4,
+      "fats": 5,
+      "carbohydrates": 20,
+      "portion": 4,
+      "ingredients": [
+        {"name": "Картофель", "weight": "500", "amount": "г"},
+        {"name": "Сливочное масло", "weight": "50", "amount": "г"},
+        {"name": "Молоко", "weight": "200", "amount": "мл"},
+        {"name": "Соль", "weight": "5", "amount": "г"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/kartofelnoe_pure_step1", "description": "Подготовить ингредиенты. Картофель почистить."},
+        {"step_number": 2, "image": "drawable/kartofelnoe_pure_step2", "description": "Выложить картофель в кастрюлю и залить холодной водой на 2 см выше уровня картофеля. Варить около 15-20 минут, готовность проверить вилкой – она должна свободно входить в картофель. Необходимо посолить картофель сразу же, как закипит."},
+        {"step_number": 3, "image": "drawable/kartofelnoe_pure_step3", "description": "Пока картофель варится, необходимо растопить сливочное масло в молоке, которое необходимо подогреть, но не доводить до кипения."},
+        {"step_number": 4, "image": "drawable/kartofelnoe_pure_step4", "description": "Остудить молочно-маслянную смесь."},
+        {"step_number": 5, "image": "drawable/kartofelnoe_pure_step5", "description": "Когда картофель сварится, необходимо слить воду и специальной толкушкой размять картофель."},
+        {"step_number": 6, "image": "drawable/kartofelnoe_pure_step6", "description": "Добавить растопленное молоко с маслом в картофель и хорошо перемешать."},
+        {"step_number": 7, "image": "drawable/kartofelnoe_pure_step7", "description": "Чтобы картофельное пюре получилось нежным и воздушным, необходимо взбивать его миксером около 3-4 минут."},
+        {"step_number": 8, "image": "drawable/kartofelnoe_pure_step8", "description": "Готовое картофельное пюре можно подавать с любым вторым блюдом, будь то овощное, мясное или рыбное."},
+        {"step_number": 9, "image": "drawable/kartofelnoe_pure_step9", "description": "Картофельное пюре готово! Перед подачей можно украсить гарнир, посыпав любой зеленью. Приятного аппетита!"}
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Картошка по-французски",
+      "image": "drawable/kartfranc",
+      "calories": 350,
+      "proteins": 15,
+      "fats": 20,
+      "carbohydrates": 30,
+      "portion": 6,
+      "ingredients": [
+        {"name": "Картофель", "weight": "800", "amount": "г"},
+        {"name": "Растительное масло", "weight": "30", "amount": "мл"},
+        {"name": "Свинина", "weight": "500", "amount": "г"},
+        {"name": "Репчатый лук", "weight": "200", "amount": "г"},
+        {"name": "Майонез", "weight": "200", "amount": "г"},
+        {"name": "Сыр", "weight": "200", "amount": "г"},
+        {"name": "Соль", "weight": "10", "amount": "г"},
+        {"name": "Перец", "weight": "5", "amount": "г"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/kartofel_po_frantsuzski_step1", "description": "Мясо помыть, осушить, нарезать кусочками толщиной около 1 см."},
+        {"step_number": 2, "image": "drawable/kartofel_po_frantsuzski_step2", "description": "Отбить мясо кухонным молотком."},
+        {"step_number": 3, "image": "drawable/kartofel_po_frantsuzski_step3", "description": "Картофель почистить, помыть. Включить духовку."},
+        {"step_number": 4, "image": "drawable/kartofel_po_frantsuzski_step4", "description": "Лук очистить, помыть и нарезать тонкими полукольцами."},
+        {"step_number": 5, "image": "drawable/kartofel_po_frantsuzski_step5", "description": "Картофель нарезать пластинами толщиной 3-4 мм."},
+        {"step_number": 6, "image": "drawable/kartofel_po_frantsuzski_step6", "description": "Сковороду без ручки смазать растительным маслом. Выложить половину картофеля, посолить."},
+        {"step_number": 7, "image": "drawable/kartofel_po_frantsuzski_step7", "description": "Сверху уложить кусочки отбитого мяса, чтобы полностью закрыть слой картошки. Посолить и поперчить."},
+        {"step_number": 8, "image": "drawable/kartofel_po_frantsuzski_step8", "description": "На мясо выложить слой нарезанного полукольцами лука."},
+        {"step_number": 9, "image": "drawable/kartofel_po_frantsuzski_step9", "description": "Затем выложить оставшийся слой картофеля."},
+        {"step_number": 10, "image": "drawable/kartofel_po_frantsuzski_step10", "description": "Посолить и обильно смазать майонезом."},
+        {"step_number": 11, "image": "drawable/kartofel_po_frantsuzski_step11", "description": "Поставить сковороду в разогретую до 180°С духовку. Запекать 40 минут."},
+        {"step_number": 12, "image": "drawable/kartofel_po_frantsuzski_step12", "description": "Сыр натереть на крупной тёрке."},
+        {"step_number": 13, "image": "drawable/kartofel_po_frantsuzski_step13", "description": "Через 40 минут достать сковороду, посыпать блюдо тёртым сыром. Поставить в духовку ещё на 5-10 минут до готовности."}
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Котлеты",
+      "image": "drawable/kotleti",
+      "calories": 250,
+      "proteins": 20,
+      "fats": 15,
+      "carbohydrates": 10,
+      "portion": 4,
+      "ingredients": [
+        {"name": "Свинина", "weight": "300", "amount": "г"},
+        {"name": "Говядина", "weight": "300", "amount": "г"},
+        {"name": "Репчатый лук", "weight": "100", "amount": "г"},
+        {"name": "Соль", "weight": "10", "amount": "г"},
+        {"name": "Яйца", "weight": "1", "amount": "шт"},
+        {"name": "Черный перец", "weight": "5", "amount": "г"},
+        {"name": "Сухари панировочные", "weight": "50", "amount": "г"},
+        {"name": "Растительное масло", "weight": "50", "amount": "мл"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/kotlety_step1", "description": "Мясо нарезать кусочками. Лук репчатый очистить и разрезать на 4 части. Мясо и лук перемолоть на мясорубке."},
+        {"step_number": 2, "image": "drawable/kotlety_step2", "description": "В полученный мясной фарш добавить яйца, соль, перец. Фарш хорошенько перемешать. Для того, чтобы фарш получился удачным, его необходимо тщательно отбить, несколько раз бросая с некоторым усилием в миску. Далее желательно поместить фарш в холодильник на час-два, но если нет времени, можно и сразу жарить котлеты."},
+        {"step_number": 3, "image": "drawable/kotlety_step3", "description": "Сформировать небольшие котлеты из фарша. Обвалять их в сухарях."},
+        {"step_number": 4, "image": "drawable/kotlety_step4", "description": "Разогреть сковороду. Налить растительное масло. Жарить котлеты на среднем огне с двух сторон до румяной корочки. Затем выложить все жареные котлеты в сковороду, налить немного воды, накрыть крышкой и потушить около 10 минут."},
+        {"step_number": 5, "image": "drawable/kotlety_step5", "description": "Котлеты готовы. Приятного аппетита!"}
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Суп куриный",
+      "image": "drawable/supkurin",
+      "calories": 120,
+      "proteins": 10,
+      "fats": 5,
+      "carbohydrates": 15,
+      "portion": 4,
+      "ingredients": [
+        {"name": "Куриное филе", "weight": "300", "amount": "г"},
+        {"name": "Картофель", "weight": "300", "amount": "г"},
+        {"name": "Морковь", "weight": "100", "amount": "г"},
+        {"name": "Репчатый лук", "weight": "100", "amount": "г"},
+        {"name": "Лапша", "weight": "100", "amount": "г"},
+        {"name": "Петрушка", "weight": "20", "amount": "г"},
+        {"name": "Черный перец", "weight": "3", "amount": "г"},
+        {"name": "Соль", "weight": "10", "amount": "г"},
+        {"name": "Растительное масло", "weight": "30", "amount": "мл"},
+        {"name": "Вода", "weight": "2000", "amount": "мл"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/sup_kurinyi_step1", "description": "Подготовьте необходимые продукты для куриного супа с вермишелью. Овощи очистите, вымойте."},
+        {"step_number": 2, "image": "drawable/sup_kurinyi_step2", "description": "Куриное филе вымойте, обсушите, срежьте с филе пленки и нарежьте его крупно."},
+        {"step_number": 3, "image": "drawable/sup_kurinyi_step3", "description": "Выложите курицу в кастрюлю, залейте холодной водой, добавляйте лавровые листья. Доведите до кипения и снимите пену. Варите куриное филе 15 минут, после чего выложите кусочки филе на тарелку."},
+        {"step_number": 4, "image": "drawable/sup_kurinyi_step4", "description": "Морковь натрите на крупной терке."},
+        {"step_number": 5, "image": "drawable/sup_kurinyi_step5", "description": "Лук нарежьте мелкими кубиками."},
+        {"step_number": 6, "image": "drawable/sup_kurinyi_step6", "description": "Разогрейте на сковороде растительное масло и обжарьте на умеренном огне нарезанный лук примерно 2-3 минуты, до мягкости."},
+        {"step_number": 7, "image": "drawable/sup_kurinyi_step7", "description": "Добавьте к луку натертую морковь, перемешайте и обжаривайте лук и морковь еще 2 минуты."},
+        {"step_number": 8, "image": "drawable/sup_kurinyi_step8", "description": "Картофель нарежьте средними кубиками или брусочками."},
+        {"step_number": 9, "image": "drawable/sup_kurinyi_step9", "description": "Куриное филе нарежьте кусочками."},
+        {"step_number": 10, "image": "drawable/sup_kurinyi_step10", "description": "Добавьте в кастрюлю с бульоном картофель и варите примерно 10 минут."},
+        {"step_number": 11, "image": "drawable/sup_kurinyi_step11", "description": "После этого добавьте приготовленную зажарку (пассеровку)."},
+        {"step_number": 12, "image": "drawable/sup_kurinyi_step12", "description": "В суп с овощами добавьте куриное филе."},
+        {"step_number": 13, "image": "drawable/sup_kurinyi_step13", "description": "Всыпьте в суп с курицей вермишель, добавьте соль и молотый перец по вкусу. Перемешайте. Варите куриный суп с вермишелью 5-7 минут. (При желании можно добавить в суп измельченную зелень петрушки.)"},
+        {"step_number": 14, "image": "drawable/sup_kurinyi_step14", "description": "Готовому куриному супу дайте настояться несколько минут. Затем разлейте суп с вермишелью по тарелкам, посыпьте измельчённой свежей зеленью и подавайте к столу."}
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Лагман",
+      "image": "drawable/lagman",
+      "calories": 280,
+      "proteins": 18,
+      "fats": 12,
+      "carbohydrates": 25,
+      "portion": 6,
+      "ingredients": [
+        {
+          "name": "Говядина",
+          "weight": "500",
+          "amount": "г"
+        },
+        {
+          "name": "Картофель",
+          "weight": "300",
+          "amount": "г"
+        },
+        {
+          "name": "Перец",
+          "weight": "100",
+          "amount": "г"
+        },
+        {
+          "name": "Морковь",
+          "weight": "100",
+          "amount": "г"
+        },
+        {
+          "name": "Редька",
+          "weight": "100",
+          "amount": "г"
+        },
+        {
+          "name": "Репчатый лук",
+          "weight": "100",
+          "amount": "г"
+        },
+        {
+          "name": "Чеснок",
+          "weight": "20",
+          "amount": "г"
+        },
+        {
+          "name": "Томатная паста",
+          "weight": "50",
+          "amount": "г"
+        },
+        {
+          "name": "Помидоры",
+          "weight": "200",
+          "amount": "г"
+        },
+        {
+          "name": "Черный перец",
+          "weight": "5",
+          "amount": "г"
+        },
+        {
+          "name": "Соль",
+          "weight": "10",
+          "amount": "г"
+        },
+        {
+          "name": "Вода",
+          "weight": "2000",
+          "amount": "мл"
+        },
+        {
+          "name": "Растительное масло",
+          "weight": "50",
+          "amount": "мл"
+        },
+        {
+          "name": "Зелень",
+          "weight": "30",
+          "amount": "г"
+        },
+        {
+          "name": "Мука",
+          "weight": "300",
+          "amount": "г"
+        },
+        {
+          "name": "Яйца",
+          "weight": "1",
+          "amount": "шт"
+        }
+      ],
+      "steps": [
+        {
+          "step_number": 1,
+          "image": "drawable/lagman_step1",
+          "description": "Муку просеять в миску."
+        },
+        {
+          "step_number": 2,
+          "image": "drawable/lagman_step2",
+          "description": "Добавить яйца и воду, замесить пресное тесто."
+        },
+        {
+          "step_number": 3,
+          "image": "drawable/lagman_step3",
+          "description": "Тесто раскатать в пласт толщиной около 2 мм, подсыпая муку при необходимости."
+        },
+        {
+          "step_number": 4,
+          "image": "drawable/lagman_step4",
+          "description": "Раскатанное тесто посыпать мукой, свернуть рулетом и нарезать тонкой лапшой."
+        },
+        {
+          "step_number": 5,
+          "image": "drawable/lagman_step5",
+          "description": "Кипятить 2 л воды, добавить соль. Лапшу опустить в кипяток и варить 3-4 минуты до готовности."
+        },
+        {
+          "step_number": 6,
+          "image": "drawable/lagman_step6",
+          "description": "Готовую лапшу откинуть на дуршлаг и промыть холодной водой."
+        },
+        {
+          "step_number": 7,
+          "image": "drawable/lagman_step7",
+          "description": "Для ваджу мясо нарезать брусочками, посолить."
+        },
+        {
+          "step_number": 8,
+          "image": "drawable/lagman_step8",
+          "description": "Морковь нарезать соломкой, лук кубиками."
+        },
+        {
+          "step_number": 9,
+          "image": "drawable/lagman_step9",
+          "description": "Сладкий перец и редьку нарезать соломкой."
+        },
+        {
+          "step_number": 10,
+          "image": "drawable/lagman_step10",
+          "description": "Картофель нарезать брусочками, чеснок мелко порубить."
+        },
+        {
+          "step_number": 11,
+          "image": "drawable/lagman_step11",
+          "description": "Разогреть сковороду или казан, добавить масло, обжарить мясо до румяной корочки (10-15 минут)."
+        },
+        {
+          "step_number": 12,
+          "image": "drawable/lagman_step12",
+          "description": "Добавить морковь, лук, сладкий перец. Жарить 8-10 минут, перемешивая."
+        },
+        {
+          "step_number": 13,
+          "image": "drawable/lagman_step13",
+          "description": "Переложить всё в казан."
+        },
+        {
+          "step_number": 14,
+          "image": "drawable/lagman_step14",
+          "description": "Добавить картофель, чеснок, томатную пасту или помидоры."
+        },
+        {
+          "step_number": 15,
+          "image": "drawable/lagman_step15",
+          "description": "Приправить черным и красным перцем, солью, залить водой или бульоном. Тушить на слабом огне 30-40 минут."
+        },
+        {
+          "step_number": 16,
+          "image": "drawable/lagman_step16",
+          "description": "Для подачи лапшу подогреть в горячей воде, выложить в тарелку."
+        },
+        {
+          "step_number": 17,
+          "image": "drawable/lagman_step17",
+          "description": "Залить лапшу мясным соусом, посыпать рубленой зеленью."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Суп куриный",
+      "image": "drawable/sup_kurinyi",
+      "calories": 120,
+      "proteins": 10,
+      "fats": 5,
+      "carbohydrates": 15,
+      "portion": 4,
+      "ingredients": [
+        {"name": "Куриное филе", "weight": "300", "amount": "г"},
+        {"name": "Картофель", "weight": "300", "amount": "г"},
+        {"name": "Морковь", "weight": "100", "amount": "г"},
+        {"name": "Репчатый лук", "weight": "100", "amount": "г"},
+        {"name": "Лапша", "weight": "100", "amount": "г"},
+        {"name": "Петрушка", "weight": "20", "amount": "г"},
+        {"name": "Черный перец", "weight": "3", "amount": "г"},
+        {"name": "Соль", "weight": "10", "amount": "г"},
+        {"name": "Растительное масло", "weight": "30", "amount": "мл"},
+        {"name": "Вода", "weight": "2000", "amount": "мл"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/sup_kurinyi_step1", "description": "Подготовьте необходимые продукты для куриного супа с вермишелью. Овощи очистите, вымойте."},
+        {"step_number": 2, "image": "drawable/sup_kurinyi_step2", "description": "Куриное филе вымойте, обсушите, срежьте с филе пленки и нарежьте его крупно."},
+        {"step_number": 3, "image": "drawable/sup_kurinyi_step3", "description": "Выложите курицу в кастрюлю, залейте холодной водой, добавляйте лавровые листья. Доведите до кипения и снимите пену. Варите куриное филе 15 минут, после чего выложите кусочки филе на тарелку."},
+        {"step_number": 4, "image": "drawable/sup_kurinyi_step4", "description": "Морковь натрите на крупной терке."},
+        {"step_number": 5, "image": "drawable/sup_kurinyi_step5", "description": "Лук нарежьте мелкими кубиками."},
+        {"step_number": 6, "image": "drawable/sup_kurinyi_step6", "description": "Разогрейте на сковороде растительное масло и обжарьте на умеренном огне нарезанный лук примерно 2-3 минуты, до мягкости."},
+        {"step_number": 7, "image": "drawable/sup_kurinyi_step7", "description": "Добавьте к луку натертую морковь, перемешайте и обжаривайте лук и морковь еще 2 минуты."},
+        {"step_number": 8, "image": "drawable/sup_kurinyi_step8", "description": "Картофель нарежьте средними кубиками или брусочками."},
+        {"step_number": 9, "image": "drawable/sup_kurinyi_step9", "description": "Куриное филе нарежьте кусочками."},
+        {"step_number": 10, "image": "drawable/sup_kurinyi_step10", "description": "Добавьте в кастрюлю с бульоном картофель и варите примерно 10 минут."},
+        {"step_number": 11, "image": "drawable/sup_kurinyi_step11", "description": "После этого добавьте приготовленную зажарку (пассеровку)."},
+        {"step_number": 12, "image": "drawable/sup_kurinyi_step12", "description": "В суп с овощами добавьте куриное филе."},
+        {"step_number": 13, "image": "drawable/sup_kurinyi_step13", "description": "Всыпьте в суп с курицей вермишель, добавьте соль и молотый перец по вкусу. Перемешайте. Варите куриный суп с вермишелью 5-7 минут. (При желании можно добавить в суп измельченную зелень петрушки.)"},
+        {"step_number": 14, "image": "drawable/sup_kurinyi_step14", "description": "Готовому куриному супу дайте настояться несколько минут. Затем разлейте суп с вермишелью по тарелкам, посыпьте измельчённой свежей зеленью и подавайте к столу."}
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Лагман",
+      "image": "drawable/lagman",
+      "calories": 280,
+      "proteins": 18,
+      "fats": 12,
+      "carbohydrates": 25,
+      "portion": 6,
+      "ingredients": [
+        {"name": "Говядина", "weight": "500", "amount": "г"},
+        {"name": "Картофель", "weight": "300", "amount": "г"},
+        {"name": "Перец", "weight": "100", "amount": "г"},
+        {"name": "Морковь", "weight": "100", "amount": "г"},
+        {"name": "Редька", "weight": "100", "amount": "г"},
+        {"name": "Репчатый лук", "weight": "100", "amount": "г"},
+        {"name": "Чеснок", "weight": "20", "amount": "г"},
+        {"name": "Томатная паста", "weight": "50", "amount": "г"},
+        {"name": "Помидоры", "weight": "200", "amount": "г"},
+        {"name": "Черный перец", "weight": "5", "amount": "г"},
+        {"name": "Соль", "weight": "10", "amount": "г"},
+        {"name": "Вода", "weight": "2000", "amount": "мл"},
+        {"name": "Растительное масло", "weight": "50", "amount": "мл"},
+        {"name": "Зелень", "weight": "30", "amount": "г"},
+        {"name": "Мука", "weight": "300", "amount": "г"},
+        {"name": "Яйца", "weight": "1", "amount": "шт"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/lagman_step1", "description": "Муку просеять в миску."},
+        {"step_number": 2, "image": "drawable/lagman_step2", "description": "Добавить яйца и воду, замесить пресное тесто."},
+        {"step_number": 3, "image": "drawable/lagman_step3", "description": "Тесто раскатать в пласт толщиной около 2 мм, подсыпая муку при необходимости."},
+        {"step_number": 4, "image": "drawable/lagman_step4", "description": "Раскатанное тесто посыпать мукой, свернуть рулетом и нарезать тонкой лапшой."},
+        {"step_number": 5, "image": "drawable/lagman_step5", "description": "Кипятить 2 л воды, добавить соль. Лапшу опустить в кипяток и варить 3-4 минуты до готовности."},
+        {"step_number": 6, "image": "drawable/lagman_step6", "description": "Готовую лапшу откинуть на дуршлаг и промыть холодной водой."},
+        {"step_number": 7, "image": "drawable/lagman_step7", "description": "Для ваджу мясо нарезать брусочками, посолить."},
+        {"step_number": 8, "image": "drawable/lagman_step8", "description": "Морковь нарезать соломкой, лук кубиками."},
+        {"step_number": 9, "image": "drawable/lagman_step9", "description": "Сладкий перец и редьку нарезать соломкой."},
+        {"step_number": 10, "image": "drawable/lagman_step10", "description": "Картофель нарезать брусочками, чеснок мелко порубить."},
+        {"step_number": 11, "image": "drawable/lagman_step11", "description": "Разогреть сковороду или казан, добавить масло, обжарить мясо до румяной корочки (10-15 минут)."},
+        {"step_number": 12, "image": "drawable/lagman_step12", "description": "Добавить морковь, лук, сладкий перец. Жарить 8-10 минут, перемешивая."},
+        {"step_number": 13, "image": "drawable/lagman_step13", "description": "Переложить всё в казан."},
+        {"step_number": 14, "image": "drawable/lagman_step14", "description": "Добавить картофель, чеснок, томатную пасту или помидоры."},
+        {"step_number": 15, "image": "drawable/lagman_step15", "description": "Приправить черным и красным перцем, солью, залить водой или бульоном. Тушить на слабом огне 30-40 минут."},
+        {"step_number": 16, "image": "drawable/lagman_step16", "description": "Для подачи лапшу подогреть в горячей воде, выложить в тарелку."},
+        {"step_number": 17, "image": "drawable/lagman_step17", "description": "Залить лапшу мясным соусом, посыпать рубленой зеленью."}
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Макароны",
+      "image": "drawable/makar",
+      "calories": 160,
+      "proteins": 6,
+      "fats": 3,
+      "carbohydrates": 30,
+      "portion": 2,
+      "ingredients": [
+        {"name": "Лапша", "weight": "200", "amount": "г"},
+        {"name": "Вода", "weight": "1000", "amount": "мл"},
+        {"name": "Соль", "weight": "5", "amount": "г"},
+        {"name": "Сливочное масло", "weight": "20", "amount": "г"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/makarony_step1", "description": "Для варки макарон лучше взять толстостенную посуду, не наполняя ее до краев. Макаронам при варке должно быть просторно, поэтому на каждые 100 г макарон необходимо взять 1 л воды."},
+        {"step_number": 2, "image": "drawable/makarony_step2", "description": "Воду довести до кипения. Прежде чем опустить макароны в кипящую воду, посолить ее, причем солить надо, когда вода начинает закипать. Если добавить в кипящую воду немного молока или мясного бульона, макароны будут вкуснее."},
+        {"step_number": 3, "image": "drawable/makarony_step3", "description": "В бурно кипящую воду опустить макароны. Длинные макароны погружать в воду, не ломая, оставляя торчащими концы."},
+        {"step_number": 4, "image": "drawable/makarony_step4", "description": "После чего слегка надавить на них, и они опустятся в воду по мере размягчения. Как только процесс кипения восстановится, нагрев уменьшить настолько, чтобы вода кипела, не выплескиваясь из кастрюли. Такой режим сохранять до конца варки, периодически помешивая макароны ложкой."},
+        {"step_number": 5, "image": "drawable/makarony_step5", "description": "Варить толстые макароны - 20-25 минут, соломку или спагетти - 15 минут, лапшу - 12-15 минут, тонкие, как вермишель, изделия - 10 минут. В готовом виде они не должны иметь мучнистого слоя на месте прикуса."},
+        {"step_number": 6, "image": "drawable/makarony_step6", "description": "Сваренные макароны откинуть на дуршлаг, чтобы стекла вода (отвар, оставшийся после варки макарон, можно использовать для приготовления заправочных супов, супов-пюре и соусов)."},
+        {"step_number": 7, "image": "drawable/makarony_step7", "description": "Быстро переложить макароны в ту же горячую кастрюлю, добавить масло. И, закрыв кастрюлю крышкой, встряхнуть (не следует промывать сваренные макаронные изделия водой)."}
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Манная каша",
+      "image": "drawable/mann",
+      "calories": 120,
+      "proteins": 4,
+      "fats": 5,
+      "carbohydrates": 18,
+      "portion": 2,
+      "ingredients": [
+        {"name": "Манная крупа", "weight": "50", "amount": "г"},
+        {"name": "Молоко", "weight": "500", "amount": "мл"},
+        {"name": "Сливочное масло", "weight": "20", "amount": "г"},
+        {"name": "Вода", "weight": "100", "amount": "мл"},
+        {"name": "Сахар", "weight": "20", "amount": "г"},
+        {"name": "Соль", "weight": "3", "amount": "г"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/mannaya_kasha_step1", "description": "Подготовьте все ингредиенты для приготовления манной каши на молоке без комочков. В кастрюлю с толстым дном влейте воду. Поставьте на огонь, добавьте молоко и доведите до кипения на сильном огне. Приправьте сахаром и солью, перемешайте."},
+        {"step_number": 2, "image": "drawable/mannaya_kasha_step2", "description": "Манную крупу насыпьте в мерную кружку с «носиком». Возьмите венчик в правую руку и, непрерывно перемешивая им кипящее молоко, всыпайте левой манку тонкой струйкой."},
+        {"step_number": 3, "image": "drawable/mannaya_kasha_step3", "description": "Перемешивая содержимое кастрюли венчиком, варите манную кашу около пяти минут на среднем огне. Следите, чтобы она не пригорала! Если вы все сделали правильно, комочков в каше быть не должно."},
+        {"step_number": 4, "image": "drawable/mannaya_kasha_step4", "description": "Выключите огонь под кастрюлей с манной кашей на молоке. Добавьте сливочное масло. Закройте кастрюлю с кашей и оставьте на 5 минут на горячей плите. Разлейте манную кашу на молоке без комочков по тарелкам и подайте на стол."}
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Торт Манник",
+      "image": "drawable/mannik",
+      "calories": 320,
+      "proteins": 8,
+      "fats": 15,
+      "carbohydrates": 40,
+      "portion": 8,
+      "ingredients": [
+        {"name": "Манная крупа", "weight": "200", "amount": "г"},
+        {"name": "Сливочное масло", "weight": "100", "amount": "г"},
+        {"name": "Кефир", "weight": "250", "amount": "мл"},
+        {"name": "Яйца", "weight": "3", "amount": "шт"},
+        {"name": "Сахар", "weight": "150", "amount": "г"},
+        {"name": "Сода", "weight": "5", "amount": "г"},
+        {"name": "Уксус", "weight": "10", "amount": "мл"},
+        {"name": "Соль", "weight": "3", "amount": "г"},
+        {"name": "Ваниль", "weight": "5", "amount": "г"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/tort_mannik_step1", "description": "Растопить сливочное масло на самом маленьком огне."},
+        {"step_number": 2, "image": "drawable/tort_mannik_step2", "description": "В миску всыпать сахар и вбить яйца."},
+        {"step_number": 3, "image": "drawable/tort_mannik_step3", "description": "Растереть яйца с сахаром."},
+        {"step_number": 4, "image": "drawable/tort_mannik_step4", "description": "В другую миску насыпать манную крупу."},
+        {"step_number": 5, "image": "drawable/tort_mannik_step5", "description": "Смешать манную крупу с растопленным маслом, добавить кефир и перемешать."},
+        {"step_number": 6, "image": "drawable/tort_mannik_step6", "description": "Добавить яйца с сахаром, соль, соду с уксусом и ваниль. Хорошо перемешать."},
+        {"step_number": 7, "image": "drawable/tort_mannik_step7", "description": "Можно оставить на 1 час, чтобы манка набухла."},
+        {"step_number": 8, "image": "drawable/tort_mannik_step8", "description": "Включить духовку и смазать форму маслом (можно еще обсыпать манной крупой). Выложить массу в подготовленную форму."},
+        {"step_number": 9, "image": "drawable/tort_mannik_step9", "description": "Запекать манник в духовке при 175°C до румяной корочки (около 30-40 минут)."}
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Торт Медовик",
+      "image": "drawable/medovik",
+      "calories": 380,
+      "proteins": 7,
+      "fats": 18,
+      "carbohydrates": 50,
+      "portion": 10,
+      "ingredients": [
+        {"name": "Сахар", "weight": "200", "amount": "г"},
+        {"name": "Мука", "weight": "400", "amount": "г"},
+        {"name": "Ванильный сахар", "weight": "10", "amount": "г"},
+        {"name": "Молоко", "weight": "100", "amount": "мл"},
+        {"name": "Яйца", "weight": "2", "amount": "шт"},
+        {"name": "Сливочное масло", "weight": "100", "amount": "г"},
+        {"name": "Мёд", "weight": "100", "amount": "г"},
+        {"name": "Сода", "weight": "5", "amount": "г"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/tort_medovik_step1", "description": "В кастрюле растопить мед, сахар и сливочное масло на среднем огне до растворения сахара."},
+        {"step_number": 2, "image": "drawable/tort_medovik_step2", "description": "Когда масса начнет закипать, добавить соду и мешать венчиком. Масса начнет пениться и увеличиваться в объеме. Дождаться, пока она перестанет расти и снять с огня."},
+        {"step_number": 3, "image": "drawable/tort_medovik_step3", "description": "Добавить яйца и тщательно перемешать, чтобы не дать яйцам свернуться."},
+        {"step_number": 4, "image": "drawable/tort_medovik_step4", "description": "Оставить массу на 5 минут, затем понемногу добавить муку, вымешивая до однородности."},
+        {"step_number": 5, "image": "drawable/tort_medovik_step5", "description": "Готовое тесто должно быть эластичным и не липнуть к рукам. Поделить на 10 частей."},
+        {"step_number": 6, "image": "drawable/tort_medovik_step6", "description": "Из частей теста сформировать шарики, накрыть пленкой и раскатать до толщины 2 мм. Вырезать круги диаметром 16 см, проколоть их вилкой и выпекать при 170°C около 6 минут до золотистости. Остывшие коржи снять с пергамента."},
+        {"step_number": 7, "image": "drawable/tort_medovik_step7", "description": "Остывшие коржи собрать в стопку, обрезки измельчить в крошку."},
+        {"step_number": 8, "image": "drawable/tort_medovik_step8", "description": "Для крема взбить сметану с сахарной пудрой до консистенции жирного йогурта."},
+        {"step_number": 9, "image": "drawable/tort_medovik_step9", "description": "Собрать торт, на каждый корж нанести 30 г крема. Повторить слой за слоем, обмазав бока и верх торта."},
+        {"step_number": 10, "image": "drawable/tort_medovik_step10", "description": "Посыпать торт крошкой из обрезков."}
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Мороженное",
+      "image": "drawable/morozch",
+      "calories": 200,
+      "proteins": 4,
+      "fats": 12,
+      "carbohydrates": 20,
+      "portion": 4,
+      "ingredients": [
+        {"name": "Сливки", "weight": "500", "amount": "мл"},
+        {"name": "Молоко", "weight": "200", "amount": "мл"},
+        {"name": "Сахар", "weight": "100", "amount": "г"},
+        {"name": "Яйца", "weight": "4", "amount": "шт"},
+        {"name": "Ванильный сахар", "weight": "10", "amount": "г"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/morozhenoe_step1", "description": "Желтки растираем с сахаром и ванилином."},
+        {"step_number": 2, "image": "drawable/morozhenoe_step2", "description": "Молоко доводим до кипения и снимаем с огня. Аккуратно вводим в молоко желтковую массу, перемешиваем. Ставим на самый малый огонь и, взбивая, доводим до загустения. Не кипятим! Массу остужаем до комнатной температуры."},
+        {"step_number": 3, "image": "drawable/morozhenoe_step3", "description": "Охлажденные сливки взбиваем до устойчивых пиков."},
+        {"step_number": 4, "image": "drawable/morozhenoe_step4", "description": "Вводим в сливки остывшую молочно-желтковую массу. Хорошо перемешиваем."},
+        {"step_number": 5, "image": "drawable/morozhenoe_step5", "description": "Выкладываем в формы и отправляем домашний пломбир в морозильную камеру. Через час достаем, перемешиваем миксером и отправляем обратно до полного застывания."},
+        {"step_number": 6, "image": "drawable/morozhenoe_step6", "description": "После этого советский пломбир можно подавать. Украшаем домашнее мороженое по своему вкусу."}
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Мюсли",
+      "image": "drawable/myusli",
+      "calories": 300,
+      "proteins": 8,
+      "fats": 10,
+      "carbohydrates": 45,
+      "portion": 4,
+      "ingredients": [
+        {"name": "Овсяные хлопья", "weight": "200", "amount": "г"},
+        {"name": "Орехи", "weight": "50", "amount": "г"},
+        {"name": "Семечки", "weight": "30", "amount": "г"},
+        {"name": "Клюква", "weight": "30", "amount": "г"},
+        {"name": "Вишня", "weight": "30", "amount": "г"},
+        {"name": "Соль", "weight": "3", "amount": "г"},
+        {"name": "Мёд", "weight": "50", "amount": "мл"},
+        {"name": "Корица", "weight": "5", "amount": "г"},
+        {"name": "Растительное масло", "weight": "30", "amount": "мл"},
+        {"name": "Вода", "weight": "50", "amount": "мл"},
+        {"name": "Сахар", "weight": "30", "amount": "г"},
+        {"name": "Молоко", "weight": "500", "amount": "мл"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/miusli_step1", "description": "Духовку разогреть до 130-140 градусов."},
+        {"step_number": 2, "image": "drawable/miusli_step2", "description": "Смешать в миске хлопья, сахар, соль, орехи. На слабом огне нагреть мёд, воду, корицу, раст.масло, чтобы всё смешалось до однородности."},
+        {"step_number": 3, "image": "drawable/miusli_step3", "description": "Вылить в сухие ингредиенты и хорошо перемешать. Смазать противень маслом или застелить пергаментной бумагой, равномерно распределить всю массу по противню."},
+        {"step_number": 4, "image": "drawable/miusli_step4", "description": "Запекать полчаса, время от времени (приблизительно каждые 10 минут) перемешивая ложкой, затем достать из духовки, добавить сухофрукты и запекать ещё 10-15 минут до золотистого цвета."},
+        {"step_number": 5, "image": "drawable/miusli_step5", "description": "Остудить и убрать в банку с плотной крышкой. Подавать с молоком."}
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Мясной пирог",
+      "image": "drawable/myaspir",
+      "calories": 350,
+      "proteins": 18,
+      "fats": 20,
+      "carbohydrates": 25,
+      "portion": 8,
+      "ingredients": [
+        {"name": "Молоко", "weight": "250", "amount": "мл"},
+        {"name": "Вода", "weight": "50", "amount": "мл"},
+        {"name": "Сливочное масло", "weight": "50", "amount": "г"},
+        {"name": "Мука", "weight": "500", "amount": "г"},
+        {"name": "Сахар", "weight": "20", "amount": "г"},
+        {"name": "Соль", "weight": "10", "amount": "г"},
+        {"name": "Дрожжи", "weight": "10", "amount": "г"},
+        {"name": "Растительное масло", "weight": "30", "amount": "мл"},
+        {"name": "Мясо", "weight": "500", "amount": "г"},
+        {"name": "Картофель", "weight": "300", "amount": "г"},
+        {"name": "Репчатый лук", "weight": "200", "amount": "г"},
+        {"name": "Черный перец", "weight": "5", "amount": "г"},
+        {"name": "Яйца", "weight": "1", "amount": "шт"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/myasnoi_pirog_step1", "description": "Просеиваем муку (сначала 350 граммов, чтобы не забить тесто) и добавляем все сухие ингредиенты: дрожжи, сахар, соль. Перемешиваем."},
+        {"step_number": 2, "image": "drawable/myasnoi_pirog_step2", "description": "В муке делаем углубление и добавляем тёплую воду, тёплое молоко и масло, перемешиваем и собираем тесто ложкой (при необходимости добавляем частями муку)."},
+        {"step_number": 3, "image": "drawable/myasnoi_pirog_step3", "description": "Затем вымешиваем тесто руками, примерно минут 7. Тесто будет мягкое и не будет липнуть к рукам."},
+        {"step_number": 4, "image": "drawable/myasnoi_pirog_step4", "description": "Чашку смазываем маслом. Из теста формируем шарик и кладём его в чашку и накрываем пленкой. Оставляем тесто в тёплом месте для подъема, примерно на 1 час."},
+        {"step_number": 5, "image": "drawable/myasnoi_pirog_step5", "description": "Готовим начинку: мясо промываем и нарезаем небольшими кусочками, мелко режем лук, картофель нарезаем тонкими полосками."},
+        {"step_number": 6, "image": "drawable/myasnoi_pirog_step6", "description": "К мясу добавляем лук, соль, перец, картофель и немного растительного масло для сочности. Хорошо перемешиваем начинку."},
+        {"step_number": 7, "image": "drawable/myasnoi_pirog_step7", "description": "Тесто увеличилось, стало воздушным и пористым."},
+        {"step_number": 8, "image": "drawable/myasnoi_pirog_step8", "description": "Делим тесто на 2 неравные части, формируем шарики."},
+        {"step_number": 9, "image": "drawable/myasnoi_pirog_step9", "description": "Каждую часть раскатываем в пласт толщиной 0,5 см. Бóльшая часть будет низом пирога, её раскатываем чуть больше размера формы."},
+        {"step_number": 10, "image": "drawable/myasnoi_pirog_step10", "description": "Форму смазываем растительным маслом, выкладываем тесто, формируем бортики."},
+        {"step_number": 11, "image": "drawable/myasnoi_pirog_step11", "description": "Выкладываем начинку, разравниваем."},
+        {"step_number": 12, "image": "drawable/myasnoi_pirog_step12", "description": "Раскатываем вторую часть теста по размеру формы. Накрываем начинку. Защипываем (проходим несколько раз) края теста и делаем в центре дырочку для выхода пара. Накрываем пирог салфеткой и оставляем минут на 10. Разогреваем духовку до 180 градусов."},
+        {"step_number": 13, "image": "drawable/myasnoi_pirog_step13", "description": "Пирог для румяности смазываем смесью яйца и молока. Это делаем по желанию."},
+        {"step_number": 14, "image": "drawable/myasnoi_pirog_step14", "description": "Выпекаем в заранее разогретой духовке при температуре 180 градусов примерно минут 20, до легкого румянца. Пирог достаём из духовки. В дырочку в центре вливаем немного тёплой воды, чтобы пирог был сочным."},
+        {"step_number": 15, "image": "drawable/myasnoi_pirog_step15", "description": "Затем закрываем форму фольгой и выпекаем ещё примерно 40-50 минут при температуре уже 170 градусов, до готовности. Готовность определяем по готовности картофеля и мяса."},
+        {"step_number": 16, "image": "drawable/myasnoi_pirog_step16", "description": "Готовый пирог достаём из духовки, смазываем кусочком сливочного масла, накрываем салфеткой и даём ему остыть."}
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Наггетсы",
+      "image": "drawable/naggetsi",
+      "calories": 280,
+      "proteins": 20,
+      "fats": 15,
+      "carbohydrates": 15,
+      "portion": 4,
+      "ingredients": [
+        {"name": "Куриное филе", "weight": "500", "amount": "г"},
+        {"name": "Яйца", "weight": "2", "amount": "шт"},
+        {"name": "Соль", "weight": "5", "amount": "г"},
+        {"name": "Перец", "weight": "3", "amount": "г"},
+        {"name": "Паприка", "weight": "3", "amount": "г"},
+        {"name": "Сухари панировочные", "weight": "100", "amount": "г"},
+        {"name": "Растительное масло", "weight": "200", "amount": "мл"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/naggetsy_step1", "description": "Куриное филе нарезать небольшими кусочками."},
+        {"step_number": 2, "image": "drawable/naggetsy_step2", "description": "В тарелке взбить вилочкой яйца."},
+        {"step_number": 3, "image": "drawable/naggetsy_step3", "description": "Для панировки смешать панировочные сухари, соль, перец и паприку или использовать готовую смесь."},
+        {"step_number": 4, "image": "drawable/naggetsy_step4", "description": "Разогреть растительное масло в сковороде."},
+        {"step_number": 5, "image": "drawable/naggetsy_step5", "description": "Обмакнуть кусочек курицы в яичную смесь."},
+        {"step_number": 6, "image": "drawable/naggetsy_step6", "description": "Обвалять курицу в панировке и обжарить до золотистой корочки."},
+        {"step_number": 7, "image": "drawable/naggetsy_step7", "description": "Готовые наггетсы выложить на бумажное полотенце, чтобы убрать лишний жир. Подавать горячими."}
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Торт Наполеон",
+      "image": "drawable/napoleon",
+      "calories": 420,
+      "proteins": 6,
+      "fats": 25,
+      "carbohydrates": 45,
+      "portion": 12,
+      "ingredients": [
+        {"name": "Сахар", "weight": "200", "amount": "г"},
+        {"name": "Мука", "weight": "500", "amount": "г"},
+        {"name": "Ванильный сахар", "weight": "10", "amount": "г"},
+        {"name": "Молоко", "weight": "500", "amount": "мл"},
+        {"name": "Яйца", "weight": "3", "amount": "шт"},
+        {"name": "Вода", "weight": "100", "amount": "мл"},
+        {"name": "Уксус", "weight": "15", "amount": "мл"},
+        {"name": "Сливочное масло", "weight": "300", "amount": "г"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/tort_napoleon_step1", "description": "Масло нарезать кусочками и перетереть с мукой до состояния крошки. Смешать воду с уксусом и влить в мучную смесь. Вымесить тесто, обернуть пленкой и охладить 40 минут."},
+        {"step_number": 2, "image": "drawable/tort_napoleon_step2", "description": "Разделить тесто на 6 частей. Каждый кусок раскатать между пергаментом в круг толщиной 0.5 см. Выпекать при 190°C, 20 минут каждый. Подровнять края и сохранить крошки."},
+        {"step_number": 3, "image": "drawable/tort_napoleon_step3", "description": "Для крема: довести до кипения 1.5 стакана молока с сахаром. Оставшееся молоко взбить с яйцом и мукой до однородности."},
+        {"step_number": 4, "image": "drawable/tort_napoleon_step4", "description": "Влить яичную смесь в кипящее молоко, уменьшить огонь и варить 7–8 минут до загустения, помешивая. Остудить."},
+        {"step_number": 5, "image": "drawable/tort_napoleon_step5", "description": "Собрать торт, промазав коржи кремом. Слегка прижать и оставить в холодильнике на 8–12 часов."},
+        {"step_number": 6, "image": "drawable/tort_napoleon_step6", "description": "Перед подачей посыпать торт крошками от коржей. По желанию, украсить ягодами, шоколадом или миндалем."}
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Овощное рагу",
+      "image": "drawable/ovoshchnoeragu",
+      "calories": 120,
+      "proteins": 4,
+      "fats": 5,
+      "carbohydrates": 18,
+      "portion": 4,
+      "ingredients": [
+        {"name": "Картофель", "weight": "400", "amount": "г"},
+        {"name": "Кабачок", "weight": "200", "amount": "г"},
+        {"name": "Помидоры", "weight": "200", "amount": "г"},
+        {"name": "Перец", "weight": "100", "amount": "г"},
+        {"name": "Морковь", "weight": "100", "amount": "г"},
+        {"name": "Репчатый лук", "weight": "100", "amount": "г"},
+        {"name": "Петрушка", "weight": "20", "amount": "г"},
+        {"name": "Базилик", "weight": "10", "amount": "г"},
+        {"name": "Чеснок", "weight": "10", "amount": "г"},
+        {"name": "Соль", "weight": "5", "amount": "г"},
+        {"name": "Черный перец", "weight": "3", "amount": "г"},
+        {"name": "Растительное масло", "weight": "50", "amount": "мл"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/ovoshchnoe_ragu_step1", "description": "Нарезать мелко петрушку и базилик, добавить соль, перец и 1 размолотый зубчик чеснока, все хорошо перемешать."},
+        {"step_number": 2, "image": "drawable/ovoshchnoe_ragu_step2", "description": "Нарезать все овощи мелкими кубиками."},
+        {"step_number": 3, "image": "drawable/ovoshchnoe_ragu_step3", "description": "На разогретую сковороду добавить растительное масло и выложить лук. Обжарить лук в течение 1 минуты."},
+        {"step_number": 4, "image": "drawable/ovoshchnoe_ragu_step4", "description": "Добавить морковь и жарить 3 минуты."},
+        {"step_number": 5, "image": "drawable/ovoshchnoe_ragu_step5", "description": "Добавить картофель и жарить 10 минут, иногда помешивая."},
+        {"step_number": 6, "image": "drawable/ovoshchnoe_ragu_step6", "description": "Добавить помидоры и перец, жарить еще 5 минут."},
+        {"step_number": 7, "image": "drawable/ovoshchnoe_ragu_step7", "description": "Всё перемешать и выложить сверху кабачок, не перемешивая. Накрыть крышкой и на слабом огне тушить овощное рагу 20 минут."},
+        {"step_number": 8, "image": "drawable/ovoshchnoe_ragu_step8", "description": "Выключить плиту, добавить подготовленную зелень к тушеным овощам и аккуратно перемешать."}
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Овсянная каша",
+      "image": "drawable/ovsyanka",
+      "calories": 150,
+      "proteins": 5,
+      "fats": 6,
+      "carbohydrates": 20,
+      "portion": 2,
+      "ingredients": [
+        {"name": "Сливки", "weight": "200", "amount": "мл"},
+        {"name": "Овсяные хлопья", "weight": "100", "amount": "г"},
+        {"name": "Банан", "weight": "100", "amount": "г"},
+        {"name": "Сливочное масло", "weight": "20", "amount": "г"},
+        {"name": "Соль", "weight": "3", "amount": "г"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/ovsiannaia_kasha_step1", "description": "Доведите до кипения сливки в небольшой кастрюле, добавьте соль и засыпьте овсяные хлопья. Варите на минимальном огне 5 мин."},
+        {"step_number": 2, "image": "drawable/ovsiannaia_kasha_step2", "description": "Банан разомните вилкой и положите в кашу (несколько кусочков банана можете оставить для украшения)."},
+        {"step_number": 3, "image": "drawable/ovsiannaia_kasha_step3", "description": "Хорошенько взбейте кашу прямо в кастрюле миксером, 3 мин. Добавьте масло, выложите кашу на подогретые тарелки и подавайте."}
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Окрошка",
+      "image": "drawable/okroshka",
+      "calories": 100,
+      "proteins": 6,
+      "fats": 3,
+      "carbohydrates": 12,
+      "portion": 4,
+      "ingredients": [
+        {"name": "Яйца", "weight": "4", "amount": "шт"},
+        {"name": "Колбаса", "weight": "200", "amount": "г"},
+        {"name": "Огурцы", "weight": "200", "amount": "г"},
+        {"name": "Картофель", "weight": "200", "amount": "г"},
+        {"name": "Редис", "weight": "100", "amount": "г"},
+        {"name": "Зелень", "weight": "50", "amount": "г"},
+        {"name": "Квас", "weight": "1000", "amount": "мл"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/okroshka_step1", "description": "Режем кубиками все ингредиенты."},
+        {"step_number": 2, "image": "drawable/okroshka_step2", "description": "Всё перемешиваем, раскладываем по тарелкам."},
+        {"step_number": 3, "image": "drawable/okroshka_step3", "description": "Заливаем квасом, украшаем окрошку половинкой яйца и посыпаем нарезанной зеленью."}
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Оладьи",
+      "image": "drawable/olad",
+      "calories": 200,
+      "proteins": 6,
+      "fats": 8,
+      "carbohydrates": 25,
+      "portion": 4,
+      "ingredients": [
+        {"name": "Молоко", "weight": "300", "amount": "мл"},
+        {"name": "Яйца", "weight": "2", "amount": "шт"},
+        {"name": "Мука", "weight": "200", "amount": "г"},
+        {"name": "Разрыхлитель", "weight": "5", "amount": "г"},
+        {"name": "Сахар", "weight": "30", "amount": "г"},
+        {"name": "Соль", "weight": "5", "amount": "г"},
+        {"name": "Растительное масло", "weight": "50", "amount": "мл"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/oladi_step1", "description": "Подготовить необходимые продукты."},
+        {"step_number": 2, "image": "drawable/oladi_step2", "description": "Яйцо взбить с сахаром и солью в течение пары минут."},
+        {"step_number": 3, "image": "drawable/oladi_step3", "description": "Добавить молоко, хорошо перемешать."},
+        {"step_number": 4, "image": "drawable/oladi_step4", "description": "Муку смешать с разрыхлителем и добавить к жидкой массе."},
+        {"step_number": 5, "image": "drawable/oladi_step5", "description": "Перемешать тесто до однородного состояния."},
+        {"step_number": 6, "image": "drawable/oladi_step6", "description": "Тесто для оладий должно получиться гуще блинного."},
+        {"step_number": 7, "image": "drawable/oladi_step7", "description": "На сковороду налить растительное масло, хорошо разогреть на среднем огне. На разогретую сковороду с маслом наливать тесто столовой ложкой. Жарить оладьи до золотистого цвета с каждой стороны (ориентировочно по 3 минуты), при необходимости добавляя в сковороду масло."},
+        {"step_number": 8, "image": "drawable/oladi_step8", "description": "Готовые оладьи на молоке подавать со сметаной или вареньем."}
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Омлет",
+      "image": "drawable/omlet",
+      "calories": 180,
+      "proteins": 12,
+      "fats": 12,
+      "carbohydrates": 5,
+      "portion": 2,
+      "ingredients": [
+        {"name": "Сливочное масло", "weight": "20", "amount": "г"},
+        {"name": "Яйца", "weight": "4", "amount": "шт"},
+        {"name": "Молоко", "weight": "100", "amount": "мл"},
+        {"name": "Соль", "weight": "3", "amount": "г"},
+        {"name": "Черный перец", "weight": "2", "amount": "г"},
+        {"name": "Растительное масло", "weight": "10", "amount": "мл"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/omlet_step1", "description": "Вкусный завтрак из яиц, взболтайте яйца вилкой. Яйца для омлета в сковороде взболтайте легкими движениями вилки с молоком в небольшой миске. Не взбивайте, а именно взбалтывайте – просто, чтобы смешались белок и желток."},
+        {"step_number": 2, "image": "drawable/omlet_step2", "description": "Сковороду диаметром около 20 см для приготовления омлета поставьте на плиту. Включите средний огонь и дайте емкости прогреться (это займет примерно минуту). Добавьте оба вида масла и поверните сковороду так, чтобы оно распределилось по всей поверхности. Увеличьте огонь до максимума."},
+        {"step_number": 3, "image": "drawable/omlet_step3", "description": "Когда масло начнет пениться, влейте смесь яиц с молоком. Наклоняя сковороду в разные стороны, дайте ей растечься ровным слоем. Поставьте на огонь и отсчитайте 6 секунд."},
+        {"step_number": 4, "image": "drawable/omlet_step4", "description": "Наклоните сковороду под углом 45°, подцепите лопаточкой схватившийся край омлета и сдвиньте к середине (на его место стечет жидкая часть из центра). Сделайте то же самое с противоположным краем."},
+        {"step_number": 5, "image": "drawable/omlet_step5", "description": "Повторите эту операцию еще пару раз, чтобы схватилась вся поверхность омлета с молоком (это займет всего около 40 секунд). Посолите, поперчите и подайте на стол."}
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Паста Болоньеза",
+      "image": "drawable/pastb",
+      "calories": 350,
+      "proteins": 18,
+      "fats": 15,
+      "carbohydrates": 35,
+      "portion": 4,
+      "ingredients": [
+        {"name": "Репчатый лук", "weight": "100", "amount": "г"},
+        {"name": "Чеснок", "weight": "10", "amount": "г"},
+        {"name": "Растительное масло", "weight": "30", "amount": "мл"},
+        {"name": "Фарш", "weight": "400", "amount": "г"},
+        {"name": "Сладкий перец", "weight": "100", "amount": "г"},
+        {"name": "Помидоры", "weight": "200", "amount": "г"},
+        {"name": "Спагетти", "weight": "300", "amount": "г"},
+        {"name": "Сыр", "weight": "100", "amount": "г"},
+        {"name": "Петрушка", "weight": "20", "amount": "г"},
+        {"name": "Соль", "weight": "5", "amount": "г"},
+        {"name": "Черный перец", "weight": "3", "amount": "г"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/pasta_bolognese_step1", "description": "Готовим соус для спагетти болоньезе, лук и чеснок мелко рубим. Для этого лук с чесноком очистите. Лук разрежьте на половинки, затем нарежьте мелкими кубиками. Зубчики чеснока раздавите плоской стороной ножа и порубите."},
+        {"step_number": 2, "image": "drawable/pasta_bolognese_step2", "description": "Пассеруем лук и чеснок на сковороде. В большую сковороду налейте оливковое масло и нагрейте его. Выложите нарезанные лук с чесноком и, помешивая, жарьте на среднем огне до легкого подрумянивания."},
+        {"step_number": 3, "image": "drawable/pasta_bolognese_step3", "description": "Добавляем фарш, обжариваем, постоянно помешивая. К луку с чесноком добавьте фарш и, помешивая вилкой (чтобы не образовывались комочки), жарьте на среднем огне в течение 10 минут. Мясная основа для соуса болоньезе готова!"},
+        {"step_number": 4, "image": "drawable/pasta_bolognese_step4", "description": "Нарезаем сладкий перец для соуса болоньезе, добавляем к фаршу. Сладкий перец, удалив семена и перегородки, нарежьте маленькими кубиками. Добавьте в сковороду к мясу и, помешивая, жарьте 5 минут. Следите, чтобы перец не подгорел."},
+        {"step_number": 5, "image": "drawable/pasta_bolognese_step5", "description": "Томаты пробиваем блендером, выкладываем к мясу с овощами. Помидоры очистите и переложите в чашу блендера. Измельчите на высокой скорости, затем добавьте в сковороду к мясу с овощами. Посолите и поперчите. Добавьте пряные травы по вкусу и тушите соус болоньезе на маленьком огне 20 минут."},
+        {"step_number": 6, "image": "drawable/pasta_bolognese_step6", "description": "Отвариваем спагетти. Приготовьте спагетти. Для этого в большой кастрюле доведите до кипения воду и немного посолите ее. Опустите в нее спагетти, не разламывая. Делайте это постепенно, по мере размягчения погруженной в воду части. Варите 10 минут."},
+        {"step_number": 7, "image": "drawable/pasta_bolognese_step7", "description": "Готовую пасту откидываем на дуршлаг, даем стечь. Готовые спагетти откиньте на дуршлаг и дайте стечь жидкости. Промывать их не надо: так паста будет лучше соединяться с соусом. Но добавить столовую ложку оливкового масла можно."},
+        {"step_number": 8, "image": "drawable/pasta_bolognese_step8", "description": "Спагетти кладем в соус болоньезе, перемешиваем. Спагетти положите в соус болоньезе и перемешайте. Прогрейте все вместе. Затем разложите по порционным тарелкам и посыпьте тертым сыром. Сразу подайте на стол."}
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Паста Карбонара",
+      "image": "drawable/pastk",
+      "calories": 400,
+      "proteins": 15,
+      "fats": 20,
+      "carbohydrates": 40,
+      "portion": 4,
+      "ingredients": [
+        {"name": "Спагетти", "weight": "300", "amount": "г"},
+        {"name": "Бекон", "weight": "200", "amount": "г"},
+        {"name": "Яйца", "weight": "3", "amount": "шт"},
+        {"name": "Сыр", "weight": "100", "amount": "г"},
+        {"name": "Сливочное масло", "weight": "30", "amount": "г"},
+        {"name": "Растительное масло", "weight": "20", "amount": "мл"},
+        {"name": "Чеснок", "weight": "10", "amount": "г"},
+        {"name": "Вода", "weight": "1000", "amount": "мл"},
+        {"name": "Соль", "weight": "5", "amount": "г"},
+        {"name": "Черный перец", "weight": "3", "amount": "г"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/pasta_carbonara_step1", "description": "Нарезаем бекон кубиками. Два зубчика чеснока раздавливаем ножом. Разогреваем сковороду, растапливаем 1 ст. ложку сливочного масла и обжариваем бекон с чесноком. Жарим на слабом огне 10 минут, из бекона должен вытопиться жир, но бекон должен остаться мягким. После обжаривания чеснок удаляем."},
+        {"step_number": 2, "image": "drawable/pasta_carbonara_step2", "description": "В кипящую воду (2,3 л) добавляем 1 ст. ложку соли, 1 ст. ложку оливкового масла и спагетти. Варим спагетти так, как указано на их упаковке, важно соблюдать указанное время варки, чтобы сварить спагетти правильно."},
+        {"step_number": 3, "image": "drawable/pasta_carbonara_step3", "description": "Отделяем 3 желтка от белков. Кладем в миску желтки и одно яйцо, солим и перчим (по 1 щепотке), хорошо взбиваем."},
+        {"step_number": 4, "image": "drawable/pasta_carbonara_step4", "description": "Добавляем 2 ст. ложки натертого сыра, перемешиваем."},
+        {"step_number": 5, "image": "drawable/pasta_carbonara_step5", "description": "Готовые спагетти откидываем на дуршлаг, предварительно оставив 300 мл воды, в которой они варились."},
+        {"step_number": 6, "image": "drawable/pasta_carbonara_step6", "description": "Выключаем огонь под сковородой с беконом, добавляем спагетти и 1 ст. ложку сливочного масла. Вливаем взбитые яйца с сыром, все тщательно перемешиваем. Постепенно добавляем 300 мл бульона (воды) от спагетти и постоянно перемешиваем, яйца не должны свернуться."},
+        {"step_number": 7, "image": "drawable/pasta_carbonara_step7", "description": "Чтобы соус немного загустел, под сковородой включаем слабый огонь и постоянно перемешиваем примерно 1 минуту, чтобы яйца не сварились. Если соус слишком густой, добавляем немного воды."},
+        {"step_number": 8, "image": "drawable/pasta_carbonara_step8", "description": "Готовое блюдо подаем сразу, посыпав тертым сыром. Паста карбонара готова."}
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Пельмени",
+      "image": "drawable/pelm",
+      "calories": 280,
+      "proteins": 15,
+      "fats": 12,
+      "carbohydrates": 25,
+      "portion": 6,
+      "ingredients": [
+        {"name": "Яйца", "weight": "1", "amount": "шт"},
+        {"name": "Соль", "weight": "10", "amount": "г"},
+        {"name": "Мука", "weight": "400", "amount": "г"},
+        {"name": "Фарш", "weight": "500", "amount": "г"},
+        {"name": "Репчатый лук", "weight": "200", "amount": "г"},
+        {"name": "Чеснок", "weight": "10", "amount": "г"},
+        {"name": "Черный перец", "weight": "5", "amount": "г"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/pelmeni_step1", "description": "Приготовить тесто для русских пельменей. Муку просеять горкой. Сделать сверху углубление, влить в него яйцо и 1 ст. л. воды, добавить щепотку соли."},
+        {"step_number": 2, "image": "drawable/pelmeni_step2", "description": "Собирая муку с краев к середине, чтобы вода и яйцо не выливались из углубления, замешивать тесто. Месить тесто для пельменей до тех пор, пока оно не станет эластичным и однородным, примерно 10 мин. Накрыть влажным полотенцем и оставить на 30 мин. Вода для пельменного теста должна быть ледяная. Для этого ее заранее ставят в холодильник или морозильник."},
+        {"step_number": 3, "image": "drawable/pelmeni_step3", "description": "Пока расстаивается тесто, приготовить начинку для пельменей. Лук и чеснок очистить и очень мелко порубить. Смешать говяжий и свиной фарш, добавить лук с чесноком, посолить, поперчить. Тщательно перемешать до однородности."},
+        {"step_number": 4, "image": "drawable/pelmeni_step4", "description": "Готовое тесто для русских пельменей разделить на 4 части. 3 части накрыть влажным полотенцем и отложить. Оставшееся тесто скатать в жгут толщиной 2 см. Нарезать его на кусочки шириной 1,5 см. На присыпанной мукой поверхности раскатать каждый кусочек теста в тонкую лепешку."},
+        {"step_number": 5, "image": "drawable/pelmeni_step5", "description": "Выложить в центр каждой лепешки по 1,5 ч. л. начинки, сложить кружок с начинкой пополам так, чтобы получился полумесяц. Соединить концы полумесяца и скрепить их. Плотно прижать пальцами, чтобы пельмени не разваливались при варке."},
+        {"step_number": 6, "image": "drawable/pelmeni_step6", "description": "Выложить пельмени на поднос или плоское блюдо, присыпать мукой и поставить в холодильник. Так же приготовить пельмени из оставшегося теста."}
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Печенье",
+      "image": "drawable/pechen",
+      "calories": 180,
+      "proteins": 3,
+      "fats": 8,
+      "carbohydrates": 25,
+      "portion": 20,
+      "ingredients": [
+        {"name": "Мука", "weight": "300", "amount": "г"},
+        {"name": "Сахар", "weight": "150", "amount": "г"},
+        {"name": "Яйца", "weight": "1", "amount": "шт"},
+        {"name": "Сливочное масло", "weight": "150", "amount": "г"},
+        {"name": "Корица", "weight": "5", "amount": "г"},
+        {"name": "Сода", "weight": "5", "amount": "г"},
+        {"name": "Уксус", "weight": "10", "amount": "мл"},
+        {"name": "Соль", "weight": "3", "amount": "г"}
+      ],
+      "steps": [
+        {"step_number": 1, "image": "drawable/pechenie_step1", "description": "В емкости взбиваем яйца, сахар, корицу и щепотку соли. Можно просто венчиком или воспользоваться миксером."},
+        {"step_number": 2, "image": "drawable/pechenie_step2", "description": "Добавляем размягченное сливочное масло и тщательно взбиваем."},
+        {"step_number": 3, "image": "drawable/pechenie_step3", "description": "Добавляем соду, гашенную уксусом, и перемешиваем."},
+        {"step_number": 4, "image": "drawable/pechenie_step4", "description": "Вмешиваем частями просеянную муку, тесто должно быть вязким, но не слишком забитым мукой."},
+        {"step_number": 5, "image": "drawable/pechenie_step5", "description": "С помощью чайной ложки формируем из теста шарики диаметром 3 см и выкладываем их на противень на небольшом расстоянии друг от друга."},
+        {"step_number": 6, "image": "drawable/pechenie_step6", "description": "Выпекаем печенье в разогретой духовке при температуре 180°C 12-15 минут."}
+      ]
     }
   ]
 }
