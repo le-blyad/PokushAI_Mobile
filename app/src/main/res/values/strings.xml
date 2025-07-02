@@ -194,6 +194,7 @@
     <!-- In-app notifications -->
 
     <string name="select3ing">Пожалуйста, выберите минимум 3 ингредиентов</string>
+    <string name="noconn">Нет подключения к интернету</string>
 
 
 </resources>

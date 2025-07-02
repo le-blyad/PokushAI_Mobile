@@ -45,9 +45,9 @@ class MainActivity : AppCompatActivity() {
 
         feedButton.setOnClickListener {
             if (isInternetAvailable(this)) {
-                Toast.makeText(this, "Feed Fragment (в разработке)", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Feed Fragment", Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(this, "Нет подключения к интернету", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "${getString(R.string.noconn)}", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -57,9 +57,9 @@ class MainActivity : AppCompatActivity() {
 
         userButton.setOnClickListener {
             if (isInternetAvailable(this)) {
-                Toast.makeText(this, "User Fragment (в разработке)", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "User Fragment", Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(this, "Нет подключения к интернету", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "${getString(R.string.noconn)}", Toast.LENGTH_SHORT).show()
             }
         }
     }
