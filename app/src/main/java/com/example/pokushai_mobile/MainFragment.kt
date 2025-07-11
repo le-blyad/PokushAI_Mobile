@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.TypedValue
 import android.view.View
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.SearchView
 import android.widget.Switch
@@ -14,15 +15,23 @@ import java.io.FileInputStream
 import java.nio.MappedByteBuffer
 import java.nio.channels.FileChannel
 
-class MainFragment : Fragment(R.layout.fragment_main) {
+class MainFragment : Fragment(R.layout.fragment_main), FilterFragment.FilterCommunicator {
 
     private lateinit var interpreter: Interpreter
     private val switches = mutableListOf<Switch>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        loadModel() // Загружаем модель
+        loadModel()
         initUIElements(view)
+    }
+
+    override fun updateSwitchVisibility(positions: List<Int>, isVisible: Boolean) {
+        positions.forEach { position ->
+            if (position < switches.size) {
+                switches[position].visibility = if (isVisible) View.VISIBLE else View.GONE
+            }
+        }
     }
 
     private fun loadModel() {
@@ -83,7 +92,6 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         }
 
         view.findViewById<Button>(R.id.searchRecipes)?.setOnClickListener {
-            // Проверяем количество выбранных ингредиентов
             val selectedCount = switches.count { it.isChecked }
 
             if (selectedCount < 3) {
@@ -95,7 +103,6 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                 return@setOnClickListener
             }
 
-            // Подготовка данных
             val selectedIngredients = switches.map { it.isChecked }.toBooleanArray()
             val inputArray = Array(1) { FloatArray(96) }
             switches.forEachIndexed { index, switch ->
@@ -106,24 +113,15 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             interpreter.run(inputArray, outputArray)
             val result = outputArray[0]
 
-            // Создание фрагмента с результатами
-            val resultFragment = ResultRecipesFragment().apply {
-                arguments = Bundle().apply {
-                    putBooleanArray("switchValues", selectedIngredients)
-                    putFloatArray("result", result)
-                }
-            }
-
-            FragmentNavigator.navigateForward(
-                parentFragmentManager,
-                R.id.fragment_container,
-                ResultRecipesFragment().apply {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, ResultRecipesFragment().apply {
                     arguments = Bundle().apply {
                         putBooleanArray("switchValues", selectedIngredients)
                         putFloatArray("result", result)
                     }
-                }
-            )
+                })
+                .addToBackStack(null)
+                .commit()
         }
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
@@ -133,6 +131,15 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                 return true
             }
         })
+
+        view.findViewById<ImageButton>(R.id.filter_button).setOnClickListener {
+            val filterFragment = FilterFragment()
+            filterFragment.setTargetFragment(this, 0)
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, filterFragment)
+                .addToBackStack(null)
+                .commit()
+        }
     }
 
     private fun filterSwitches(query: String?) {
