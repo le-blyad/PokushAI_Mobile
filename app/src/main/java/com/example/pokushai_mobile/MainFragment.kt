@@ -14,32 +14,15 @@ import java.io.FileInputStream
 import java.nio.MappedByteBuffer
 import java.nio.channels.FileChannel
 
-class MainFragment : Fragment(R.layout.fragment_main), AllergenFragment.OnAllergensSelectedListener {
+class MainFragment : Fragment(R.layout.fragment_main) {
 
     private lateinit var interpreter: Interpreter
     private val switches = mutableListOf<Switch>()
-    private var hiddenAllergens = mutableSetOf<Int>()
-
-    override fun onAllergensSelected(allergenIndices: Set<Int>) {
-        hiddenAllergens.clear()
-        hiddenAllergens.addAll(allergenIndices)
-        view?.findViewById<LinearLayout>(R.id.switches_container)?.let {
-            createSwitches(it)
-        }
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        loadModel()
+        loadModel() // Загружаем модель
         initUIElements(view)
-
-        view.findViewById<Button>(R.id.allergen_button)?.setOnClickListener {
-            FragmentNavigator.navigateForward(
-                parentFragmentManager,
-                R.id.fragment_container,
-                AllergenFragment()
-            )
-        }
     }
 
     private fun loadModel() {
@@ -64,8 +47,6 @@ class MainFragment : Fragment(R.layout.fragment_main), AllergenFragment.OnAllerg
         switches.clear()
 
         for (i in 0 until 96) {
-            if (i in hiddenAllergens) continue
-
             val switch = Switch(requireContext()).apply {
                 id = View.generateViewId()
                 val resourceName = "ingredient$i"
@@ -92,16 +73,17 @@ class MainFragment : Fragment(R.layout.fragment_main), AllergenFragment.OnAllerg
 
     private fun initUIElements(view: View) {
         val searchView = view.findViewById<SearchView>(R.id.searchView)
-        searchView?.setOnClickListener { searchView.isIconified = false }
+        searchView.setOnClickListener { searchView.isIconified = false }
 
         val container = view.findViewById<LinearLayout>(R.id.switches_container)
-        container?.let { createSwitches(it) }
+        createSwitches(container)
 
         view.findViewById<Button>(R.id.deleteCheck)?.setOnClickListener {
             switches.forEach { it.isChecked = false }
         }
 
         view.findViewById<Button>(R.id.searchRecipes)?.setOnClickListener {
+            // Проверяем количество выбранных ингредиентов
             val selectedCount = switches.count { it.isChecked }
 
             if (selectedCount < 3) {
@@ -113,6 +95,7 @@ class MainFragment : Fragment(R.layout.fragment_main), AllergenFragment.OnAllerg
                 return@setOnClickListener
             }
 
+            // Подготовка данных
             val selectedIngredients = switches.map { it.isChecked }.toBooleanArray()
             val inputArray = Array(1) { FloatArray(96) }
             switches.forEachIndexed { index, switch ->
@@ -122,6 +105,14 @@ class MainFragment : Fragment(R.layout.fragment_main), AllergenFragment.OnAllerg
             val outputArray = Array(1) { FloatArray(50) }
             interpreter.run(inputArray, outputArray)
             val result = outputArray[0]
+
+            // Создание фрагмента с результатами
+            val resultFragment = ResultRecipesFragment().apply {
+                arguments = Bundle().apply {
+                    putBooleanArray("switchValues", selectedIngredients)
+                    putFloatArray("result", result)
+                }
+            }
 
             FragmentNavigator.navigateForward(
                 parentFragmentManager,
@@ -135,7 +126,7 @@ class MainFragment : Fragment(R.layout.fragment_main), AllergenFragment.OnAllerg
             )
         }
 
-        searchView?.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?) = false
             override fun onQueryTextChange(newText: String?): Boolean {
                 filterSwitches(newText)

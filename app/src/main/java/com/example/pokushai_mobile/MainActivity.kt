@@ -11,6 +11,7 @@ import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,6 +28,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        if (isUserLoggedIn()) {
+            loadFragment(UserFragment())
+        } else {
+            loadFragment(LoginFragment())
+        }
+
         initBottomMenu()
 
         if (savedInstanceState == null) {
@@ -34,18 +41,36 @@ class MainActivity : AppCompatActivity() {
                 .replace(R.id.fragment_container, MainFragment())
                 .commit()
         }
-    }
 
-    fun onLanguageButtonClick(view: View) {
-        val currentLang = LocaleHelper.getLanguage(this)
-        val newLang = if (currentLang == "ru") "en" else "ru"
-
-        LocaleHelper.setLocale(this, newLang)
-        recreateActivity()
     }
 
     override fun attachBaseContext(newBase: Context) {
         super.attachBaseContext(LocaleHelper.attachBaseContext(newBase))
+    }
+
+    private fun isUserLoggedIn(): Boolean {
+        val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
+        return sharedPreferences.getLong("user_id", -1) != -1L
+    }
+
+    private fun loadFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .commit()
+    }
+
+    private fun navigateToFragment(fragment: Fragment) {
+        val currentFragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
+
+        if (fragment::class.java == currentFragment?.javaClass) {
+            return
+        }
+
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .addToBackStack(null)
+            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+            .commit()
     }
 
     private fun initBottomMenu() {
@@ -54,29 +79,55 @@ class MainActivity : AppCompatActivity() {
         val userButton = findViewById<ImageButton>(R.id.user)
 
         feedButton.setOnClickListener {
+            val currentFragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
+            if (currentFragment is MainFragment) return@setOnClickListener // Проверка
+
             if (isInternetAvailable(this)) {
-                Toast.makeText(this, "Feed Fragment", Toast.LENGTH_SHORT).show()
+                navigateToFragment(MainFragment())
             } else {
                 Toast.makeText(this, "${getString(R.string.noconn)}", Toast.LENGTH_SHORT).show()
             }
         }
 
         allRecipesButton.setOnClickListener {
+            val currentFragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
+            if (currentFragment is ResultRecipesFragment) return@setOnClickListener // Проверка
+
             navigateToFragment(ResultRecipesFragment())
         }
 
         userButton.setOnClickListener {
+            val currentFragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
+
+            if (isUserLoggedIn()) {
+                if (currentFragment is UserFragment) return@setOnClickListener // Проверка
+            } else {
+                if (currentFragment is LoginFragment) return@setOnClickListener // Проверка
+            }
+
             if (isInternetAvailable(this)) {
-                Toast.makeText(this, "User Fragment", Toast.LENGTH_SHORT).show()
+                if (isUserLoggedIn()) {
+                    navigateToFragment(UserFragment())
+                } else {
+                    navigateToFragment(LoginFragment())
+                }
             } else {
                 Toast.makeText(this, "${getString(R.string.noconn)}", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+    /*override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.language_menu, menu)
         return true
+    }
+
+    fun onLanguageButtonClick(view: View) {
+        val currentLang = LocaleHelper.getLanguage(this)
+        val newLang = if (currentLang == "ru") "en" else "ru"
+
+        LocaleHelper.setLocale(this, newLang)
+        recreateActivity()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -89,6 +140,11 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    private fun recreateActivity() {
+        finish()
+        startActivity(Intent(this, MainActivity::class.java))
+    }
+
     private fun toggleLanguage() {
         val currentLang = LocaleHelper.getLanguage(this)
         val newLang = if (currentLang == "ru") "en" else "ru"
@@ -97,26 +153,9 @@ class MainActivity : AppCompatActivity() {
         recreateActivity()
     }
 
-    private fun recreateActivity() {
-        finish()
-        startActivity(Intent(this, MainActivity::class.java))
-    }
-
-    private fun navigateToFragment(fragment: Fragment) {
-        val currentFragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
-        if (currentFragment?.javaClass == fragment.javaClass) return
-
-        FragmentNavigator.navigateForward(
-            supportFragmentManager,
-            R.id.fragment_container,
-            fragment
-        )
-    }
-
     private fun isInternetAvailable(context: Context): Boolean {
         val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val networkInfo = connectivityManager.activeNetworkInfo
         return networkInfo != null && networkInfo.isConnected
-    }
-
+    }*/
 }

@@ -22,6 +22,8 @@
 
 
     <!-- MainFragment -->
+    <string name="settings">Настройки</string>
+
     <string name="searchProducts">Поиск продуктов:</string>
     <string name="buttonDeleteSearch">Убрать все отмеченные продукты</string>
     <string name="questionLine">Какие продукты у вас есть дома?</string>
