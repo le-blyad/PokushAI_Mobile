@@ -26,6 +26,9 @@
     <string name="questionLine">What products do you have at home?</string>
     <string name="searchRecipes">Find recipe</string>
 
+    <string name="save_allergens">Save allergens</string>
+    <string name="allergens_title">Сhoose allergens</string>
+
     <!-- Ingredients -->
     <string name="ingredient0">Orange</string>
     <string name="ingredient1">Basil</string>

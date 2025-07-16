@@ -26,6 +26,9 @@
     <string name="buttonDeleteSearch">Убрать все отмеченные продукты</string>
     <string name="questionLine">Какие продукты у вас есть дома?</string>
 
+    <string name="save_allergens">Сохранить аллергены</string>
+    <string name="allergens_title">Выберите аллергены</string>
+
     <string name="searchRecipes">Найти рецепт</string>
 
     <string name="ingredient0">Апельсин</string>

@@ -13,6 +13,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 
 class MainActivity : AppCompatActivity() {
+
+    private val hiddenAllergens = mutableSetOf<Int>()
+
+    fun getHiddenAllergens(): Set<Int> = hiddenAllergens
+
+    fun setHiddenAllergens(allergens: Set<Int>) {
+        hiddenAllergens.clear()
+        hiddenAllergens.addAll(allergens)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

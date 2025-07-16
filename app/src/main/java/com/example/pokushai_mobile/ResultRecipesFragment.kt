@@ -9,9 +9,15 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import java.io.InputStreamReader
 
 class ResultRecipesFragment : Fragment() {
+
+    private lateinit var dishIngredients: Map<Int, List<Int>>
+    private val hiddenAllergens by lazy {
+        (activity as? MainActivity)?.getHiddenAllergens() ?: emptySet()
+    }
 
     private val allFoodItems = listOf(
         FoodItem(0, R.drawable.belya, R.string.recip0),
@@ -75,6 +81,7 @@ class ResultRecipesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        loadDishIngredients()
 
         val backButton = view.findViewById<ImageButton>(R.id.buttonBack)
         backButton.setOnClickListener {
@@ -115,6 +122,13 @@ class ResultRecipesFragment : Fragment() {
                 .addToBackStack(null)
                 .commit()
         }
+
+        val filteredItems = itemsToShow.filter { dish ->
+            val ingredients = dishIngredients[dish.id] ?: emptyList()
+            ingredients.none { it in hiddenAllergens } // Фильтруем блюда с аллергенами
+        }
+
+        recyclerView.adapter = FoodAdapter(filteredItems) { /* ... */ }
     }
 
     private fun getTopNIndices(array: FloatArray, n: Int): List<Int> {
@@ -124,4 +138,18 @@ class ResultRecipesFragment : Fragment() {
             .take(n)
             .map { it.first }
     }
+
+    private fun loadDishIngredients() {
+        try {
+            val inputStream = requireContext().assets.open("dishes_ingredients.json")
+            val jsonString = inputStream.bufferedReader().use { it.readText() }
+            val type = object : TypeToken<List<DishIngredients>>() {}.type
+            val ingredientsList: List<DishIngredients> = Gson().fromJson(jsonString, type)
+            dishIngredients = ingredientsList.associate { it.id to it.ingredients }
+        } catch (e: Exception) {
+            dishIngredients = emptyMap()
+        }
+    }
+
+    private data class DishIngredients(val id: Int, val ingredients: List<Int>)
 }
