@@ -1,6 +1,7 @@
 package com.example.pokushai_mobile
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -85,56 +86,44 @@ class ResultRecipesFragment : Fragment() {
 
         val backButton = view.findViewById<ImageButton>(R.id.buttonBack)
         backButton.setOnClickListener {
-            if (parentFragmentManager.findFragmentById(R.id.fragment_container) is MainFragment) {
-                return@setOnClickListener
-            }
             parentFragmentManager.popBackStack()
         }
 
-        // Определяем какие элементы показывать
         val itemsToShow = if (arguments?.containsKey("result") == true) {
             val result = arguments?.getFloatArray("result") ?: floatArrayOf()
             if (result.isNotEmpty()) {
-                // Показываем топ-3 от нейросети
                 val top3Indices = getTopNIndices(result, 3)
                 top3Indices.map { index -> allFoodItems[index] }
             } else {
-                // Если массив пустой - показываем всё
                 allFoodItems
             }
         } else {
-            // Если данных нет - показываем всё
             allFoodItems
         }
 
+        // Фильтрация рецептов с аллергенами
+        val filteredItems = itemsToShow.filter { dish ->
+            val ingredients = dishIngredients[dish.id] ?: emptyList()
+            !ingredients.any { it in hiddenAllergens }
+        }
+
+        Log.d("FilterDebug", "Hidden allergens: $hiddenAllergens")
+        Log.d("FilterDebug", "Filtered items count: ${filteredItems.size}/${itemsToShow.size}")
+
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = FoodAdapter(itemsToShow) { recipeId ->
-            val bundle = Bundle().apply {
-                putInt("recipe_id", recipeId)  // Используем полученный ID
-            }
-
-            val fragment = RecipePrescriptionFragment().apply {
-                arguments = bundle
-            }
-
+        recyclerView.adapter = FoodAdapter(filteredItems) { recipeId ->
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, fragment)
+                .replace(R.id.fragment_container, RecipePrescriptionFragment().apply {
+                    arguments = Bundle().apply { putInt("recipe_id", recipeId) }
+                })
                 .addToBackStack(null)
                 .commit()
         }
-
-        val filteredItems = itemsToShow.filter { dish ->
-            val ingredients = dishIngredients[dish.id] ?: emptyList()
-            ingredients.none { it in hiddenAllergens } // Фильтруем блюда с аллергенами
-        }
-
-        recyclerView.adapter = FoodAdapter(filteredItems) { /* ... */ }
     }
 
     private fun getTopNIndices(array: FloatArray, n: Int): List<Int> {
-        return array
-            .mapIndexed { index, value -> index to value }
+        return array.mapIndexed { index, value -> index to value }
             .sortedByDescending { it.second }
             .take(n)
             .map { it.first }
@@ -147,7 +136,15 @@ class ResultRecipesFragment : Fragment() {
             val type = object : TypeToken<List<DishIngredients>>() {}.type
             val ingredientsList: List<DishIngredients> = Gson().fromJson(jsonString, type)
             dishIngredients = ingredientsList.associate { it.id to it.ingredients }
+
+            Log.d("IngredientDebug", "Loaded ${ingredientsList.size} dishes")
+            ingredientsList.forEach { dish ->
+                if (dish.ingredients.any { it in hiddenAllergens }) {
+                    Log.d("IngredientDebug", "Dish ${dish.id} contains hidden allergens")
+                }
+            }
         } catch (e: Exception) {
+            Log.e("IngredientError", "Error loading ingredients", e)
             dishIngredients = emptyMap()
         }
     }

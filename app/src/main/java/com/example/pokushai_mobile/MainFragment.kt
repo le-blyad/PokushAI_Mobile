@@ -1,5 +1,6 @@
 package com.example.pokushai_mobile
 
+import android.content.Context
 import android.os.Bundle
 import android.util.TypedValue
 import android.view.View
@@ -20,9 +21,15 @@ class MainFragment : Fragment(R.layout.fragment_main), AllergenFragment.OnAllerg
     private val switches = mutableListOf<Switch>()
     private var hiddenAllergens = mutableSetOf<Int>()
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        hiddenAllergens = (activity as MainActivity).getHiddenAllergens().toMutableSet()
+    }
+
     override fun onAllergensSelected(allergenIndices: Set<Int>) {
         hiddenAllergens.clear()
         hiddenAllergens.addAll(allergenIndices)
+        (activity as MainActivity).setHiddenAllergens(allergenIndices)
         view?.findViewById<LinearLayout>(R.id.switches_container)?.let {
             createSwitches(it)
         }
@@ -34,10 +41,15 @@ class MainFragment : Fragment(R.layout.fragment_main), AllergenFragment.OnAllerg
         initUIElements(view)
 
         view.findViewById<Button>(R.id.allergen_button)?.setOnClickListener {
+            val allergenFragment = AllergenFragment().apply {
+                arguments = Bundle().apply {
+                    putIntegerArrayList("current_allergens", ArrayList(hiddenAllergens))
+                }
+            }
             FragmentNavigator.navigateForward(
                 parentFragmentManager,
                 R.id.fragment_container,
-                AllergenFragment()
+                allergenFragment
             )
         }
     }

@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.Switch
 import androidx.fragment.app.Fragment
@@ -15,6 +16,7 @@ class AllergenFragment : Fragment() {
 
     private lateinit var container: LinearLayout
     private val allergenSwitches = mutableListOf<Switch>()
+    private var currentAllergens = mutableSetOf<Int>()
     private var allergenListener: OnAllergensSelectedListener? = null
 
     interface OnAllergensSelectedListener {
@@ -25,6 +27,10 @@ class AllergenFragment : Fragment() {
         super.onAttach(context)
         if (context is OnAllergensSelectedListener) {
             allergenListener = context
+        }
+
+        arguments?.getIntegerArrayList("current_allergens")?.let {
+            currentAllergens = it.toMutableSet()
         }
     }
 
@@ -40,8 +46,14 @@ class AllergenFragment : Fragment() {
         container = view.findViewById(R.id.allergen_container)
         createAllergenSwitches()
 
+        val backButton = view.findViewById<ImageButton>(R.id.buttonBack)
+        backButton.setOnClickListener {
+            parentFragmentManager.popBackStack()
+        }
+
         view.findViewById<Button>(R.id.save_button).setOnClickListener {
             saveSelectedAllergens()
+            parentFragmentManager.popBackStack()
         }
     }
 
@@ -64,6 +76,7 @@ class AllergenFragment : Fragment() {
                     setMargins(100, 0.dpToPx(), 100, 0.dpToPx())
                     setPadding(0, 15.dpToPx(), 0, 15.dpToPx())
                 }
+                isChecked = i in currentAllergens
             }
             container.addView(switch)
             allergenSwitches.add(switch)
@@ -78,7 +91,6 @@ class AllergenFragment : Fragment() {
             .toSet()
 
         allergenListener?.onAllergensSelected(selectedIndices)
-        parentFragmentManager.popBackStack()
     }
 
     private fun Int.dpToPx(): Int = (this * resources.displayMetrics.density).toInt()

@@ -117,7 +117,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    /*override fun onCreateOptionsMenu(menu: Menu): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.language_menu, menu)
         return true
     }
@@ -157,5 +157,5 @@ class MainActivity : AppCompatActivity() {
         val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val networkInfo = connectivityManager.activeNetworkInfo
         return networkInfo != null && networkInfo.isConnected
-    }*/
+    }
 }

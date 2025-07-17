@@ -40,6 +40,14 @@ class LoginFragment : Fragment() {
         // Обработка системной кнопки «Назад»
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
             parentFragmentManager.popBackStack("login", 0)
+
+            val backButton = view.findViewById<ImageButton>(R.id.buttonBack)
+            backButton.setOnClickListener {
+                if (parentFragmentManager.findFragmentById(R.id.fragment_container) is MainFragment) {
+                    return@setOnClickListener
+                }
+                parentFragmentManager.popBackStack()
+            }
         }
 
         // UI

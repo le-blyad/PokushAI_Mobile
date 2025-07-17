@@ -201,5 +201,7 @@
     <string name="select3ing">Please select a minimum of 3 ingredients</string>
     <string name="noconn">No internet connection</string>
 
+    <!-- AllergensFragment -->
+    <string name="whatAreYouAllergicTo">What are you allergic to?</string>
 
 </resources>
